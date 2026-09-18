@@ -1,0 +1,1028 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Estudo da SETDIG sobre diagramação, boas práticas e nomenclatura de campos em formulários de serviços digitais do Estado de MS.">
+      
+      
+        <meta name="author" content="SETDIG — Secretaria-Executiva de Transformação Digital">
+      
+      
+        <link rel="canonical" href="https://fabioramos-02.github.io/estudo-formularios/guia-do-antonio/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../01-diagramacao/">
+      
+      
+      <link rel="icon" href="../assets/img/brasao-ms.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Guia do Antonio - Estudo de Formulários — X-Forms</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/css/segov.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#guia-do-antonio" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href=".." title="Estudo de Formulários — X-Forms" class="md-header__button md-logo" aria-label="Estudo de Formulários — X-Forms" data-md-component="logo">
+      
+  <img src="../assets/img/segov-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Estudo de Formulários — X-Forms
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guia do Antonio
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Estudo de Formulários — X-Forms" class="md-nav__button md-logo" aria-label="Estudo de Formulários — X-Forms" data-md-component="logo">
+      
+  <img src="../assets/img/segov-logo.svg" alt="logo">
+
+    </a>
+    Estudo de Formulários — X-Forms
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Guia do Antonio
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Guia do Antonio
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-que-estamos-fazendo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. O que estamos fazendo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-suas-tres-perguntas-de-pesquisa" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Suas três perguntas de pesquisa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Suas três perguntas de pesquisa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagina-1-diagramacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Página 1 — Diagramação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagina-2-aprendizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Página 2 — Aprendizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagina-3-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Página 3 — Nomenclatura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-como-escrever" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Como escrever
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Como escrever">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-marque-toda-afirmacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Marque toda afirmação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-todo-fato-tem-fonte" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Todo [FATO] tem fonte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-nunca-copie-mais-que-25-palavras-seguidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Nunca copie mais que 25 palavras seguidas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-nao-achou-escreva-nao-identificado" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Não achou? Escreva **Não identificado**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-escreva-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Escreva simples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-auditar-os-14-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Como auditar os 14 formulários
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-em-que-ordem-trabalhar" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Em que ordem trabalhar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-como-rodar-o-site-na-sua-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Como rodar o site na sua máquina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-duvidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Dúvidas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-diagramacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Diagramação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-aprendizados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Aprendizados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-nomenclatura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Nomenclatura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-auditoria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Auditoria dos 14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fichas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Fichas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fichas/_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Como preencher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fontes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fontes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-que-estamos-fazendo" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. O que estamos fazendo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-suas-tres-perguntas-de-pesquisa" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Suas três perguntas de pesquisa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Suas três perguntas de pesquisa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pagina-1-diagramacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Página 1 — Diagramação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagina-2-aprendizados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Página 2 — Aprendizados
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pagina-3-nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Página 3 — Nomenclatura
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-como-escrever" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Como escrever
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Como escrever">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-marque-toda-afirmacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Marque toda afirmação
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-todo-fato-tem-fonte" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Todo [FATO] tem fonte
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-nunca-copie-mais-que-25-palavras-seguidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Nunca copie mais que 25 palavras seguidas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-nao-achou-escreva-nao-identificado" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4. Não achou? Escreva **Não identificado**
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-escreva-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5. Escreva simples
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-auditar-os-14-formularios" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Como auditar os 14 formulários
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-em-que-ordem-trabalhar" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Em que ordem trabalhar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-como-rodar-o-site-na-sua-maquina" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Como rodar o site na sua máquina
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-duvidas" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Dúvidas
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="guia-do-antonio">Guia do Antonio<a class="headerlink" href="#guia-do-antonio" title="Permanent link">&para;</a></h1>
+<p>Este guia é o seu ponto de partida. Leia até o fim antes de começar — são 10 minutos.</p>
+<hr />
+<h2 id="1-o-que-estamos-fazendo">1. O que estamos fazendo<a class="headerlink" href="#1-o-que-estamos-fazendo" title="Permanent link">&para;</a></h2>
+<p>Os formulários dos serviços digitais do Estado vão ser refeitos numa ferramenta nova (o <strong>X-Forms</strong>).
+Antes de refazer, precisamos responder: <strong>como um bom formulário deve ser?</strong></p>
+<p>Seu trabalho tem duas partes:</p>
+<ol>
+<li><strong>Pesquisar</strong> o que já se sabe sobre bons formulários (páginas 1, 2 e 3 deste site).</li>
+<li><strong>Auditar</strong> 14 formulários que existem hoje, comparando com o que você pesquisou.</li>
+</ol>
+<p>Sempre com uma pergunta na cabeça: <strong>isso deixa o formulário mais fácil de preencher?</strong></p>
+<hr />
+<h2 id="2-suas-tres-perguntas-de-pesquisa">2. Suas três perguntas de pesquisa<a class="headerlink" href="#2-suas-tres-perguntas-de-pesquisa" title="Permanent link">&para;</a></h2>
+<p>Cada página abaixo é um arquivo que <strong>você preenche</strong>. O arquivo já está criado, com as perguntas
+dentro. Você abre, responde e apaga a pergunta.</p>
+<h3 id="pagina-1-diagramacao">Página 1 — <a href="../01-diagramacao/">Diagramação</a><a class="headerlink" href="#pagina-1-diagramacao" title="Permanent link">&para;</a></h3>
+<p><em>Como dispor os campos na tela para a pessoa preencher rápido e sem errar?</em></p>
+<p>Responda: uma pergunta por tela ou tudo de uma vez? Quando agrupar campos? Que ordem seguir?
+Uma coluna ou duas? Onde fica o botão de enviar? Marca-se o campo obrigatório ou o opcional?</p>
+<p><strong>Onde procurar:</strong> GOV.UK Design System (procure os padrões de formulário e o conceito
+<em>one thing per page</em>), Design System do gov.br, Nielsen Norman Group (form design),
+Baymard Institute.</p>
+<h3 id="pagina-2-aprendizados">Página 2 — <a href="../02-aprendizados/">Aprendizados</a><a class="headerlink" href="#pagina-2-aprendizados" title="Permanent link">&para;</a></h3>
+<p><em>O que faz a pessoa desistir no meio do preenchimento?</em></p>
+<p>Responda: que erros se repetem em formulário de governo? Como escrever uma mensagem de erro que
+ajuda em vez de culpar? Que dado o governo já tem e não deveria pedir de novo?</p>
+<p><strong>Onde procurar:</strong> WCAG 2.2 (critérios 3.3.x — rótulos, identificação e sugestão de erro),
+Lei 14.129/2021 (o governo não pode exigir dado que já possui), LGPD art. 6º III (minimização de
+dados), Lei 15.263/2025 e Decreto Estadual 16.744/2026 (linguagem simples).</p>
+<h3 id="pagina-3-nomenclatura">Página 3 — <a href="../03-nomenclatura/">Nomenclatura</a><a class="headerlink" href="#pagina-3-nomenclatura" title="Permanent link">&para;</a></h3>
+<p><em>Como nomear os campos?</em></p>
+<p>Aqui existe uma distinção que é o centro de tudo:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>O que é</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rótulo</strong></td>
+<td>O texto que o cidadão lê na tela</td>
+<td><code>CPF</code></td>
+</tr>
+<tr>
+<td><strong>Nome técnico</strong></td>
+<td>A chave que vai no JSON enviado ao Integrador</td>
+<td><code>cpf</code></td>
+</tr>
+</tbody>
+</table>
+<p>Um formulário pode ter o rótulo perfeito e o nome técnico uma bagunça — e aí o dado não conversa
+entre serviços. Se em um serviço o campo se chama <code>cpf</code>, em outro <code>CPF_solicitante</code> e em outro
+<code>documento</code>, ninguém consegue cruzar nada depois.</p>
+<p>Responda: qual convenção usar no nome técnico? Como garantir que o mesmo dado tenha sempre o mesmo
+nome em todo serviço? Como nomear anexo e campo que se repete?</p>
+<p>E monte o <strong>dicionário de campos canônicos</strong> — a tabela com os campos que aparecem em todo
+formulário (CPF, CNPJ, nome, e-mail, telefone, CEP, endereço, data de nascimento…), dizendo o nome
+técnico, o rótulo recomendado, o tipo, a máscara e a validação de cada um.</p>
+<hr />
+<h2 id="3-como-escrever">3. Como escrever<a class="headerlink" href="#3-como-escrever" title="Permanent link">&para;</a></h2>
+<p>Cinco regras. São curtas de propósito.</p>
+<h3 id="31-marque-toda-afirmacao">3.1. Marque toda afirmação<a class="headerlink" href="#31-marque-toda-afirmacao" title="Permanent link">&para;</a></h3>
+<p>Use um dos três marcadores no começo da frase:</p>
+<ul>
+<li><code>[FATO]</code> — alguém publicou isso; você tem o link.</li>
+<li><code>[INTERPRETAÇÃO]</code> — é a sua conclusão a partir dos fatos.</li>
+<li><code>[RECOMENDAÇÃO]</code> — é o que você propõe para o X-Forms.</li>
+</ul>
+<p><strong>Exemplo:</strong></p>
+<blockquote>
+<p><code>[FATO]</code> O GOV.UK recomenda uma pergunta por página em formulários de serviço público.
+<code>[INTERPRETAÇÃO]</code> Nos serviços do Estado, isso tende a ajudar mais nos fluxos longos, com anexo.
+<code>[RECOMENDAÇÃO]</code> Adotar uma pergunta por tela quando o formulário passar de 10 campos.</p>
+</blockquote>
+<h3 id="32-todo-fato-tem-fonte">3.2. Todo <code>[FATO]</code> tem fonte<a class="headerlink" href="#32-todo-fato-tem-fonte" title="Permanent link">&para;</a></h3>
+<p>Registre em <a href="../fontes/">fontes.md</a>: título, link e data em que você acessou. Sem fonte, não é
+<code>[FATO]</code> — é <code>[INTERPRETAÇÃO]</code>.</p>
+<h3 id="33-nunca-copie-mais-que-25-palavras-seguidas">3.3. Nunca copie mais que 25 palavras seguidas<a class="headerlink" href="#33-nunca-copie-mais-que-25-palavras-seguidas" title="Permanent link">&para;</a></h3>
+<p>Leia, entenda e escreva com as suas palavras. Copiar bloco inteiro de texto de outro site não é
+pesquisa e tem problema de direito autoral.</p>
+<h3 id="34-nao-achou-escreva-nao-identificado">3.4. Não achou? Escreva <code>**Não identificado**</code><a class="headerlink" href="#34-nao-achou-escreva-nao-identificado" title="Permanent link">&para;</a></h3>
+<p>É uma resposta legítima e útil. Inventar não é.</p>
+<h3 id="35-escreva-simples">3.5. Escreva simples<a class="headerlink" href="#35-escreva-simples" title="Permanent link">&para;</a></h3>
+<p>Frase curta. Português do Brasil. Sem jargão. Se precisar usar um termo técnico, explique na
+primeira vez que aparecer.</p>
+<p>❌ "Implementar mecanismos de validação client-side visando mitigar a incidência de inputs inválidos."
+✅ "Validar o campo na hora em que a pessoa digita, para ela corrigir antes de enviar."</p>
+<hr />
+<h2 id="4-como-auditar-os-14-formularios">4. Como auditar os 14 formulários<a class="headerlink" href="#4-como-auditar-os-14-formularios" title="Permanent link">&para;</a></h2>
+<p>Para cada serviço da <a href="../05-auditoria/">lista</a>:</p>
+<ol>
+<li>Abra o serviço no Portal e vá até o formulário.</li>
+<li>Copie o arquivo <code>docs/fichas/_template.md</code> para <code>docs/fichas/01-nome-do-servico.md</code>.</li>
+<li>Preencha a ficha enquanto navega — não confie na memória depois.</li>
+<li>Tire print de cada tela e salve em <code>docs/assets/img/fichas/</code>.</li>
+<li>Aplique o <a href="../04-checklist/">checklist</a>, marcando sim / não / não se aplica.</li>
+<li>Atualize a linha desse serviço na tabela de <a href="../05-auditoria/">05-auditoria.md</a>.</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Não envie o formulário de verdade</p>
+<p>Você está olhando, não solicitando. Preencha até onde der para ver os campos e as validações,
+mas <strong>não conclua o envio</strong> — isso criaria uma solicitação real no órgão. Se o formulário só
+mostrar a próxima etapa depois de enviar, registre isso na ficha como limite da análise e
+fale com o Fabio.</p>
+</div>
+<p>Se algum formulário exigir login que você não tem, ou pedir dado que você não possui, <strong>pare e
+avise</strong>. Não force.</p>
+<hr />
+<h2 id="5-em-que-ordem-trabalhar">5. Em que ordem trabalhar<a class="headerlink" href="#5-em-que-ordem-trabalhar" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A[Pesquisa&lt;br/&gt;páginas 1, 2 e 3] --&gt; B[Checklist&lt;br/&gt;revisado]
+    B --&gt; C[Auditoria&lt;br/&gt;14 fichas]
+    C --&gt; D[Achados&lt;br/&gt;consolidados]</code></pre>
+<p><strong>Pesquisa primeiro, auditoria depois.</strong> Motivo: o checklist é a régua da auditoria. Sem entender o
+que é um bom formulário, você não reconhece um ruim — só anota o que achou estranho.</p>
+<p>Quando terminar a pesquisa, revise o <a href="../04-checklist/">checklist</a> com o Fabio: o que você
+descobriu pode acrescentar ou tirar itens dele.</p>
+<hr />
+<h2 id="6-como-rodar-o-site-na-sua-maquina">6. Como rodar o site na sua máquina<a class="headerlink" href="#6-como-rodar-o-site-na-sua-maquina" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+python<span class="w"> </span>-m<span class="w"> </span>mkdocs<span class="w"> </span>serve<span class="w"> </span>-a<span class="w"> </span><span class="m">127</span>.0.0.1:8000
+</code></pre></div>
+<p>Abra <code>http://127.0.0.1:8000</code>. Ele atualiza sozinho a cada arquivo que você salvar.</p>
+<p>Antes de entregar, rode:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>mkdocs<span class="w"> </span>build<span class="w"> </span>--strict
+</code></pre></div>
+<p>Se aparecer erro, tem link quebrado ou página fora da navegação. Corrija antes de avisar que acabou.</p>
+<hr />
+<h2 id="7-duvidas">7. Dúvidas<a class="headerlink" href="#7-duvidas" title="Permanent link">&para;</a></h2>
+<p>Anote a dúvida e siga para a próxima parte — não fique travado. Traga a lista para o Fabio na
+próxima conversa.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.setdig.ms.gov.br/" target="_blank" rel="noopener" title="SETDIG" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
