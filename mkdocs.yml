@@ -1,0 +1,88 @@
+site_name: Estudo de Formulários — X-Forms
+site_description: Estudo da SETDIG sobre diagramação, boas práticas e nomenclatura de campos em formulários de serviços digitais do Estado de MS.
+site_author: SETDIG — Secretaria-Executiva de Transformação Digital
+site_url: https://fabioramos-02.github.io/estudo-formularios/
+
+docs_dir: docs
+
+theme:
+  name: material
+  language: pt-BR
+
+  logo: assets/img/segov-logo.svg
+  favicon: assets/img/brasao-ms.svg
+  font: false
+
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Modo escuro
+
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Modo claro
+
+  features:
+    - navigation.top
+    - navigation.indexes
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+extra_css:
+  - assets/css/segov.css
+
+extra:
+  generator: false
+
+  social:
+    - icon: material/web
+      link: https://www.setdig.ms.gov.br/
+      name: SETDIG
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+
+  - toc:
+      permalink: true
+
+  - pymdownx.details
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+
+nav:
+  - Início: index.md
+  - Guia do Antonio: guia-do-antonio.md
+  - 1. Diagramação: 01-diagramacao.md
+  - 2. Aprendizados: 02-aprendizados.md
+  - 3. Nomenclatura: 03-nomenclatura.md
+  - 4. Checklist: 04-checklist.md
+  - 5. Auditoria dos 14: 05-auditoria.md
+  - Fichas:
+      - Como preencher: fichas/_template.md
+  - Fontes: fontes.md
