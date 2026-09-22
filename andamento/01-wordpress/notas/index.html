@@ -802,12 +802,12 @@
 </tr>
 <tr>
 <td><code>nome_gestor2</code>, <code>cpf_gestor2</code>, ...</td>
-<td>eliminados</td>
-<td>duplicação estrutural — bloco unificado</td>
+<td>eliminados como <code>name</code> distinto — reaproveitam <code>nome_gestor</code> na página duplicada</td>
+<td>mesma pessoa, mesmo <code>name</code>; duas páginas o exibem sob <code>visibleIf</code></td>
 </tr>
 <tr>
 <td><code>nome_colaborador2</code>, <code>cpf_colaborador2</code>, ...</td>
-<td>eliminados</td>
+<td>eliminados como <code>name</code> distinto — reaproveitam <code>nome_colaborador</code> na página duplicada</td>
 <td>idem</td>
 </tr>
 <tr>
@@ -836,33 +836,35 @@
 </thead>
 <tbody>
 <tr>
-<td>Páginas</td>
+<td>Páginas totais no JSON</td>
 <td>7</td>
-<td><strong>5</strong></td>
+<td>7</td>
 </tr>
 <tr>
-<td>Campos</td>
+<td>Páginas exibidas ao mesmo cidadão</td>
+<td>7 (todas)</td>
+<td><strong>5</strong> (as outras 2 ficam ocultas por <code>visibleIf</code>)</td>
+</tr>
+<tr>
+<td>Campos totais (<code>name</code> únicos)</td>
 <td>51</td>
 <td><strong>32</strong></td>
 </tr>
 <tr>
-<td>Redução</td>
-<td>—</td>
-<td><strong>−37% campos, −29% páginas</strong></td>
+<td>Elementos declarados no JSON</td>
+<td>51</td>
+<td>51 (duas cópias de gestor e duas de colab, cada dupla mutuamente exclusiva)</td>
 </tr>
 </tbody>
 </table>
 <h3 id="mudancas">Mudanças<a class="headerlink" href="#mudancas" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>[FATO] Blocos duplicados unificados.</strong> <code>pagina_gestor1</code> + <code>pagina_gestor_2</code> → um bloco <code>dados_gestor</code>. Idem colaborador.</li>
-<li><code>[FATO]</code> Consequência: a ordem visual das páginas fica fixa (gestor → colaborador → responsável). A reordenação dinâmica original não é possível no X-Forms atual.</li>
-<li><code>[HIPÓTESE]</code> A ordem fixa <strong>canônica</strong> (gestor primeiro) é aceitável porque:<ul>
-<li>O gestor autoriza o pedido — figura hierárquica primeiro faz sentido cognitivo.</li>
-<li>Colaborador vê a página do gestor apenas conferindo o nome do seu chefe — não precisa reescrever, se pré-preenchido.</li>
-</ul>
-</li>
+<li><strong>[FATO] Ordem das páginas segue a escolha inicial.</strong> No X-Forms não dá pra reordenar páginas em tempo real, então declaramos as duas ordens e usamos <code>visibleIf</code> por página para exibir só a correta:</li>
+<li>Se <code>perfil_solicitante = 'gestor'</code> → aparece <code>gestor_primeiro</code> depois <code>colaborador_depois</code>.</li>
+<li>Se <code>perfil_solicitante = 'colaborador'</code> → aparece <code>colaborador_primeiro</code> depois <code>gestor_depois</code>.</li>
+<li>As páginas duplicadas <strong>compartilham os mesmos <code>name</code> de campo</strong> (<code>nome_gestor</code>, <code>cpf_gestor</code> etc.). Como apenas uma dupla é visível por vez, o cidadão preenche cada campo uma única vez.</li>
 <li>
-<p><code>[RECOMENDAÇÃO]</code> Se plataforma um dia suportar reordenação por escolha, marcar a mudança no dicionário e não voltar ao pattern duplicado.</p>
+<p><code>[HIPÓTESE]</code> X-Forms grava o valor no <code>name</code> mesmo entre páginas duplicadas ocultas — validar na plataforma. Se der conflito, fallback: sufixo <code>_alt</code> na 2ª cópia + coalescer no fluxo Activepieces.</p>
 </li>
 <li>
 <p><strong>[RECOMENDAÇÃO GOV.UK — one thing per page]</strong> Página <code>perfil</code> isolada com única pergunta (imagepicker). Decisão que muda o fluxo → página própria.</p>
@@ -871,16 +873,18 @@
 <p><strong>[RECOMENDAÇÃO checklist A3]</strong> Ordem canônica <strong>dentro</strong> de cada bloco de pessoa:</p>
 </li>
 <li>Identificação (nome, cpf, telefone, e-mail)</li>
-<li>Vínculo (matrícula, cargo, orgão, setor, município)</li>
+<li>Vínculo (matrícula, cargo, [login de rede — só colab], órgão, setor, município)</li>
 <li>
-<p><code>orgao</code> <strong>imediatamente antes</strong> de <code>setor</code> — antes o <code>orgao</code> era posição 7 e o <code>setor</code> posição 8 do bloco original, mas com o <code>setor</code> como <em>penúltimo</em> campo. Agora estão encostados, e <code>setor</code> só aparece após <code>orgao</code> ser preenchido (<code>visibleIf</code>).</p>
+<p><code>orgao</code> <strong>imediatamente antes</strong> de <code>setor</code> — antes o <code>setor</code> era <em>penúltimo</em> campo. Agora estão encostados, e <code>setor</code> só aparece após <code>orgao</code> ser preenchido (<code>visibleIf</code>).</p>
 </li>
 <li>
-<p><strong>[RECOMENDAÇÃO checklist A3]</strong> Ordem canônica <strong>das páginas</strong>:</p>
+<p><strong>[RECOMENDAÇÃO checklist A3]</strong> Ordem canônica <strong>das páginas</strong> vista pelo cidadão:</p>
 </li>
 <li>Escolha (<code>perfil</code>)</li>
 <li>Detalhe do pedido (<code>site</code> — nome, URL, permissão)</li>
-<li>Identificação: gestor → colaborador → responsável.</li>
+<li>Bloco "eu" (gestor ou colaborador, conforme escolha)</li>
+<li>Bloco "o outro" (colaborador ou gestor)</li>
+<li>Responsável pelo site (sempre)</li>
 <li>
 <p><code>[FATO]</code> Original abria com "Sites e Permissões" duas vezes (páginas 1 e 2) — inconsistência de título corrigida.</p>
 </li>
@@ -892,39 +896,58 @@
 <table>
 <thead>
 <tr>
+<th>Ordem visual</th>
 <th>Página</th>
+<th>Condição</th>
 <th>Campos</th>
-<th>Assunto</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>perfil</code></td>
 <td>1</td>
-<td>Escolha de perfil (gestor ou colaborador)</td>
+<td><code>perfil</code></td>
+<td>sempre</td>
+<td>1</td>
 </tr>
 <tr>
+<td>2</td>
 <td><code>site</code></td>
+<td>sempre</td>
 <td>3</td>
-<td>Nome, URL, permissão</td>
 </tr>
 <tr>
-<td><code>dados_gestor</code></td>
+<td>3</td>
+<td><code>gestor_primeiro</code></td>
+<td><code>perfil = 'gestor'</code></td>
 <td>9</td>
-<td>Identificação + vínculo do gestor</td>
 </tr>
 <tr>
-<td><code>dados_colaborador</code></td>
+<td>4</td>
+<td><code>colaborador_depois</code></td>
+<td><code>perfil = 'gestor'</code></td>
 <td>10</td>
-<td>Identificação + vínculo + login de rede do colaborador</td>
 </tr>
 <tr>
-<td><code>dados_responsavel</code></td>
+<td>3</td>
+<td><code>colaborador_primeiro</code></td>
+<td><code>perfil = 'colaborador'</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>gestor_depois</code></td>
+<td><code>perfil = 'colaborador'</code></td>
 <td>9</td>
-<td>Identificação + vínculo do responsável pelo site</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>dados_responsavel</code></td>
+<td>sempre</td>
+<td>9</td>
 </tr>
 </tbody>
 </table>
+<p>Cidadão sempre vê <strong>5 páginas</strong>. Nunca as 7 juntas.</p>
 <hr />
 <h2 id="linguagem-simples">Linguagem simples<a class="headerlink" href="#linguagem-simples" title="Permanent link">&para;</a></h2>
 <p>Base legal: <strong>Lei 15.263/2025</strong> (Federal), <strong>Decreto Estadual MS 16.744/2026</strong>.</p>
@@ -1058,22 +1081,28 @@ Depois: mensagem específica <strong>como corrigir</strong> (checklist D2).</p>
 </thead>
 <tbody>
 <tr>
-<td>Páginas</td>
+<td>Páginas exibidas ao cidadão</td>
 <td>7</td>
 <td>5</td>
 <td>−2</td>
 </tr>
 <tr>
-<td>Campos</td>
+<td>Campos preenchidos pelo cidadão (<code>name</code> únicos)</td>
 <td>51</td>
 <td>32</td>
 <td>−19</td>
 </tr>
 <tr>
-<td>Duplicações estruturais</td>
+<td>Duplicações de dado no preenchimento</td>
 <td>19</td>
 <td>0</td>
 <td>−19</td>
+</tr>
+<tr>
+<td>Páginas declaradas no JSON</td>
+<td>7</td>
+<td>7</td>
+<td>0 (2 delas mutuamente exclusivas)</td>
 </tr>
 <tr>
 <td>Mensagens de erro específicas</td>
@@ -1099,12 +1128,19 @@ Depois: mensagem específica <strong>como corrigir</strong> (checklist D2).</p>
 <td>sim</td>
 <td>✓</td>
 </tr>
+<tr>
+<td>Ordem responde à escolha do perfil</td>
+<td>sim (via duplicação)</td>
+<td>sim (via <code>visibleIf</code>, sem duplicar preenchimento)</td>
+<td>✓</td>
+</tr>
 </tbody>
 </table>
 <hr />
 <h2 id="limitacoes-do-x-forms-observadas">Limitações do X-Forms observadas<a class="headerlink" href="#limitacoes-do-x-forms-observadas" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>[FATO]</strong> Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado unificando blocos e adotando ordem canônica.</li>
+<li><strong>[FATO]</strong> Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado declarando as duas ordens no JSON, cada página com <code>visibleIf</code> no <code>perfil_solicitante</code>, e reaproveitando os mesmos <code>name</code> de campo nas duplicatas para que o cidadão preencha o dado uma única vez.</li>
+<li><strong>[HIPÓTESE]</strong> X-Forms respeita <code>name</code> compartilhado entre páginas exclusivas por <code>visibleIf</code>. Validar na plataforma. Fallback: sufixo <code>_alt</code> na 2ª cópia + coalescer no fluxo.</li>
 <li><strong>[FATO]</strong> Validação cruzada entre campos (ex.: "se <code>orgao_gestor</code> = AGEMS, <code>email_gestor</code> deve terminar em <code>@segov.ms.gov.br</code>") não é expressável na configuração declarativa. Não aplicada em <code>saida.json</code>.</li>
 <li><strong>[FATO]</strong> Máscara de CPF/telefone não persiste no webhook — dígitos chegam sem formatação. O fluxo Activepieces é o local certo pra formatar antes de enviar por e-mail/PDF.</li>
 <li><strong>[FATO]</strong> Tooltip não suportado. Ajuda vai em <code>description</code> (visível permanente).</li>
