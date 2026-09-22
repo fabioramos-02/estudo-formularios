@@ -83,6 +83,11 @@ nav:
   - 3. Nomenclatura: 03-nomenclatura.md
   - 4. Checklist: 04-checklist.md
   - 5. Auditoria dos 14: 05-auditoria.md
+  - Andamento:
+      - Visão geral: andamento/index.md
+      - Recomendações comuns: andamento/recomendacoes.md
+      - 1. WordPress — Notas: andamento/wordpress.md
+      - 1. WordPress — Refatoração: andamento/01-wordpress/notas.md
   - Fichas:
       - Como preencher: fichas/_template.md
   - Fontes: fontes.md

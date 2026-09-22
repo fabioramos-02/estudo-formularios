@@ -54,7 +54,9 @@ que for observado nos 14 formulários auditados.**
 | `nome_completo` | Nome completo | texto | — | *(a preencher)* |
 | `email` | E-mail | e-mail | — | *(a preencher)* |
 | `telefone_celular` | Celular | texto | `(00) 00000-0000` | *(a preencher)* |
-| `data_nascimento` | Data de nascimento | data | `dd/mm/aaaa` | *(a preencher)* |
+| `data_nascimento` | Data de nascimento | 3 inputs (dia/mês/ano) | — | data válida no calendário; ano com 4 dígitos |
+| `data_inicio` | Data de início | 3 inputs (dia/mês/ano) | — | não pode ser anterior a hoje quando o pedido depende de agendamento |
+| `data_fim` / `data_retorno` | Data de fim / retorno | 3 inputs (dia/mês/ano) | — | `>= data_inicio`; mensagem de erro por parte (dia, mês, ano) |
 | `cep` | CEP | texto | `00000-000` | *(a preencher)* |
 | `logradouro` | Endereço | texto | — | *(a preencher)* |
 | `numero` | Número | texto | — | *(a preencher)* |
