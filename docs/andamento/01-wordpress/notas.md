@@ -59,8 +59,8 @@ Dicionário canônico aplicado (fonte: `docs/03-nomenclatura.md` §3.5).
 | `cidade_colaborador` | `municipio_colaborador` | idem |
 | `cidade_responsavel` | `municipio_responsavel` | idem |
 | `login_colaborador` | `login_rede_colaborador` | dicionário: `login_rede` |
-| `nome_gestor2`, `cpf_gestor2`, ... | eliminados | duplicação estrutural — bloco unificado |
-| `nome_colaborador2`, `cpf_colaborador2`, ... | eliminados | idem |
+| `nome_gestor2`, `cpf_gestor2`, ... | eliminados como `name` distinto — reaproveitam `nome_gestor` na página duplicada | mesma pessoa, mesmo `name`; duas páginas o exibem sob `visibleIf` |
+| `nome_colaborador2`, `cpf_colaborador2`, ... | eliminados como `name` distinto — reaproveitam `nome_colaborador` na página duplicada | idem |
 | `email_gestor` (imagepicker `Image 3`/`Image 4`) | valores `gestor`/`colaborador` | valores legíveis no e-mail e no fluxo |
 
 ### Valores do imagepicker
@@ -77,43 +77,49 @@ Dicionário canônico aplicado (fonte: `docs/03-nomenclatura.md` §3.5).
 
 | | Antes | Depois |
 |---|---|---|
-| Páginas | 7 | **5** |
-| Campos | 51 | **32** |
-| Redução | — | **−37% campos, −29% páginas** |
+| Páginas totais no JSON | 7 | 7 |
+| Páginas exibidas ao mesmo cidadão | 7 (todas) | **5** (as outras 2 ficam ocultas por `visibleIf`) |
+| Campos totais (`name` únicos) | 51 | **32** |
+| Elementos declarados no JSON | 51 | 51 (duas cópias de gestor e duas de colab, cada dupla mutuamente exclusiva) |
 
 ### Mudanças
 
-1. **[FATO] Blocos duplicados unificados.** `pagina_gestor1` + `pagina_gestor_2` → um bloco `dados_gestor`. Idem colaborador.
-   - `[FATO]` Consequência: a ordem visual das páginas fica fixa (gestor → colaborador → responsável). A reordenação dinâmica original não é possível no X-Forms atual.
-   - `[HIPÓTESE]` A ordem fixa **canônica** (gestor primeiro) é aceitável porque:
-     - O gestor autoriza o pedido — figura hierárquica primeiro faz sentido cognitivo.
-     - Colaborador vê a página do gestor apenas conferindo o nome do seu chefe — não precisa reescrever, se pré-preenchido.
-   - `[RECOMENDAÇÃO]` Se plataforma um dia suportar reordenação por escolha, marcar a mudança no dicionário e não voltar ao pattern duplicado.
+1. **[FATO] Ordem das páginas segue a escolha inicial.** No X-Forms não dá pra reordenar páginas em tempo real, então declaramos as duas ordens e usamos `visibleIf` por página para exibir só a correta:
+   - Se `perfil_solicitante = 'gestor'` → aparece `gestor_primeiro` depois `colaborador_depois`.
+   - Se `perfil_solicitante = 'colaborador'` → aparece `colaborador_primeiro` depois `gestor_depois`.
+   - As páginas duplicadas **compartilham os mesmos `name` de campo** (`nome_gestor`, `cpf_gestor` etc.). Como apenas uma dupla é visível por vez, o cidadão preenche cada campo uma única vez.
+   - `[HIPÓTESE]` X-Forms grava o valor no `name` mesmo entre páginas duplicadas ocultas — validar na plataforma. Se der conflito, fallback: sufixo `_alt` na 2ª cópia + coalescer no fluxo Activepieces.
 
 2. **[RECOMENDAÇÃO GOV.UK — one thing per page]** Página `perfil` isolada com única pergunta (imagepicker). Decisão que muda o fluxo → página própria.
 
 3. **[RECOMENDAÇÃO checklist A3]** Ordem canônica **dentro** de cada bloco de pessoa:
    - Identificação (nome, cpf, telefone, e-mail)
-   - Vínculo (matrícula, cargo, orgão, setor, município)
-   - `orgao` **imediatamente antes** de `setor` — antes o `orgao` era posição 7 e o `setor` posição 8 do bloco original, mas com o `setor` como *penúltimo* campo. Agora estão encostados, e `setor` só aparece após `orgao` ser preenchido (`visibleIf`).
+   - Vínculo (matrícula, cargo, [login de rede — só colab], órgão, setor, município)
+   - `orgao` **imediatamente antes** de `setor` — antes o `setor` era *penúltimo* campo. Agora estão encostados, e `setor` só aparece após `orgao` ser preenchido (`visibleIf`).
 
-4. **[RECOMENDAÇÃO checklist A3]** Ordem canônica **das páginas**:
+4. **[RECOMENDAÇÃO checklist A3]** Ordem canônica **das páginas** vista pelo cidadão:
    1. Escolha (`perfil`)
    2. Detalhe do pedido (`site` — nome, URL, permissão)
-   3. Identificação: gestor → colaborador → responsável.
+   3. Bloco "eu" (gestor ou colaborador, conforme escolha)
+   4. Bloco "o outro" (colaborador ou gestor)
+   5. Responsável pelo site (sempre)
    - `[FATO]` Original abria com "Sites e Permissões" duas vezes (páginas 1 e 2) — inconsistência de título corrigida.
 
 5. **[FATO] Dependência explícita:** `setor_*` tem `visibleIf: {orgao_*} notempty` — o campo só aparece após o órgão ser selecionado (checklist A3 + fluxo cognitivo).
 
 ### Estrutura final
 
-| Página | Campos | Assunto |
-|---|---|---|
-| `perfil` | 1 | Escolha de perfil (gestor ou colaborador) |
-| `site` | 3 | Nome, URL, permissão |
-| `dados_gestor` | 9 | Identificação + vínculo do gestor |
-| `dados_colaborador` | 10 | Identificação + vínculo + login de rede do colaborador |
-| `dados_responsavel` | 9 | Identificação + vínculo do responsável pelo site |
+| Ordem visual | Página | Condição | Campos |
+|---|---|---|---|
+| 1 | `perfil` | sempre | 1 |
+| 2 | `site` | sempre | 3 |
+| 3 | `gestor_primeiro` | `perfil = 'gestor'` | 9 |
+| 4 | `colaborador_depois` | `perfil = 'gestor'` | 10 |
+| 3 | `colaborador_primeiro` | `perfil = 'colaborador'` | 10 |
+| 4 | `gestor_depois` | `perfil = 'colaborador'` | 9 |
+| 5 | `dados_responsavel` | sempre | 9 |
+
+Cidadão sempre vê **5 páginas**. Nunca as 7 juntas.
 
 ---
 
@@ -155,19 +161,22 @@ Depois: mensagem específica **como corrigir** (checklist D2).
 
 | Métrica | Antes | Depois | Δ |
 |---|---|---|---|
-| Páginas | 7 | 5 | −2 |
-| Campos | 51 | 32 | −19 |
-| Duplicações estruturais | 19 | 0 | −19 |
+| Páginas exibidas ao cidadão | 7 | 5 | −2 |
+| Campos preenchidos pelo cidadão (`name` únicos) | 51 | 32 | −19 |
+| Duplicações de dado no preenchimento | 19 | 0 | −19 |
+| Páginas declaradas no JSON | 7 | 7 | 0 (2 delas mutuamente exclusivas) |
 | Mensagens de erro específicas | 0 | 32 | +32 |
 | Campos com `description` (ajuda) | 0 | 3 | +3 |
 | `orgao` antes de `setor` em todos blocos | não | sim | ✓ |
 | Sigla expandida na 1ª ocorrência | não | sim | ✓ |
+| Ordem responde à escolha do perfil | sim (via duplicação) | sim (via `visibleIf`, sem duplicar preenchimento) | ✓ |
 
 ---
 
 ## Limitações do X-Forms observadas
 
-- **[FATO]** Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado unificando blocos e adotando ordem canônica.
+- **[FATO]** Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado declarando as duas ordens no JSON, cada página com `visibleIf` no `perfil_solicitante`, e reaproveitando os mesmos `name` de campo nas duplicatas para que o cidadão preencha o dado uma única vez.
+- **[HIPÓTESE]** X-Forms respeita `name` compartilhado entre páginas exclusivas por `visibleIf`. Validar na plataforma. Fallback: sufixo `_alt` na 2ª cópia + coalescer no fluxo.
 - **[FATO]** Validação cruzada entre campos (ex.: "se `orgao_gestor` = AGEMS, `email_gestor` deve terminar em `@segov.ms.gov.br`") não é expressável na configuração declarativa. Não aplicada em `saida.json`.
 - **[FATO]** Máscara de CPF/telefone não persiste no webhook — dígitos chegam sem formatação. O fluxo Activepieces é o local certo pra formatar antes de enviar por e-mail/PDF.
 - **[FATO]** Tooltip não suportado. Ajuda vai em `description` (visível permanente).
