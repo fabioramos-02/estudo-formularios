@@ -466,6 +466,14 @@
     
       
         
+          
+        
+      
+        
+      
+        
+      
+        
       
     
     
@@ -477,7 +485,126 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../andamento/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Andamento
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Andamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../andamento/recomendacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recomendações comuns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../andamento/wordpress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Notas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../andamento/01-wordpress/notas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Refatoração
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -488,8 +615,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Fichas
           </label>
@@ -739,9 +866,23 @@ que for observado nos 14 formulários auditados.</strong></p>
 <tr>
 <td><code>data_nascimento</code></td>
 <td>Data de nascimento</td>
-<td>data</td>
-<td><code>dd/mm/aaaa</code></td>
-<td><em>(a preencher)</em></td>
+<td>3 inputs (dia/mês/ano)</td>
+<td>—</td>
+<td>data válida no calendário; ano com 4 dígitos</td>
+</tr>
+<tr>
+<td><code>data_inicio</code></td>
+<td>Data de início</td>
+<td>3 inputs (dia/mês/ano)</td>
+<td>—</td>
+<td>não pode ser anterior a hoje quando o pedido depende de agendamento</td>
+</tr>
+<tr>
+<td><code>data_fim</code> / <code>data_retorno</code></td>
+<td>Data de fim / retorno</td>
+<td>3 inputs (dia/mês/ano)</td>
+<td>—</td>
+<td><code>&gt;= data_inicio</code>; mensagem de erro por parte (dia, mês, ano)</td>
 </tr>
 <tr>
 <td><code>cep</code></td>

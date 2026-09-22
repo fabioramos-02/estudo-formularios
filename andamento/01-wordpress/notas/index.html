@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://fabioramos-02.github.io/estudo-formularios/andamento/01-wordpress/notas/">
       
       
+        <link rel="prev" href="../../wordpress/">
+      
+      
+        <link rel="next" href="../../../fichas/_template/">
       
       
       <link rel="icon" href="../../../assets/img/brasao-ms.svg">
@@ -22,7 +26,7 @@
     
     
       
-        <title>SETDIG — Solicitação de Acesso ao WordPress - Estudo de Formulários — X-Forms</title>
+        <title>1. WordPress — Refatoração - Estudo de Formulários — X-Forms</title>
       
     
     
@@ -105,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              SETDIG — Solicitação de Acesso ao WordPress
+              1. WordPress — Refatoração
             
           </span>
         </div>
@@ -362,6 +366,325 @@
       
   
   
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Andamento
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Andamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recomendacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recomendações comuns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wordpress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Notas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1. WordPress — Refatoração
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Refatoração
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-snapshot-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métricas — snapshot inicial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Métricas — snapshot inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#campos-por-pagina-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      Campos por página (entrada)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#achados" class="md-nav__link">
+    <span class="md-ellipsis">
+      Achados
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nomenclatura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nomenclatura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Nomenclatura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#valores-do-imagepicker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Valores do imagepicker
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagramacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagramação
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagramação">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-antes-depois" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura antes → depois
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mudancas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mudanças
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#estrutura-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estrutura final
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linguagem-simples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linguagem simples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Linguagem simples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mensagens-de-erro-padrao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mensagens de erro (padrão)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metricas-snapshot-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      Métricas — snapshot final
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitacoes-do-x-forms-observadas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limitações do X-Forms observadas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proximos-passos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Próximos passos
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
   
   
     
@@ -376,10 +699,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -390,8 +713,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Fichas
           </label>
