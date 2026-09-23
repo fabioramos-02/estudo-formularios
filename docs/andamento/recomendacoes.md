@@ -27,3 +27,14 @@
 # Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura
 
 **[RECOMENDAÇÃO] Foi feito a junção dos campo Telefone e Telefone Adicional para apenas um campo Telefone Contato onde esse campo é Texto múltiplo, onde Telefone está como Telefone Principal e Telefone Adicional está como Telefone Adicional, os dois estão como obrigatórios**
+
+
+# Cadastro no Sistema Estadual de Bibliotecas Públicas
+
+**[RECOMENDAÇÃO] campos que acho desnecessário ter (Descreva sua biblioteca em uma frase) e (Coordenadas Geográficas).**
+
+**[INTERPRETAÇÃO] o campo Horário de funcionamento deveria ser obrigatório? por que uma biblioteca que não está em funcionamento, não possui horário de funcionamento.**
+
+**[INTERPRETAÇÃO] o campo Região não faz sentido no formulario porque o que adiante ter esse campo, se a resposta sempre será Centro-Oeste, por que o serviço será só para biblioteca do estado do Mato Grosso do Sul, e no campo municipio só pode ser selecionado cidades do MS, portanto afirmando que o serviço será pro estado MS.**
+
+**[RECOMENDAÇÃO]  primeira etapa onde serão caastrados os dados sobre a biblioteca erá dividido em duas etapas para que um formulário não fiquei muito grande, na minha opnião será divido em (Cadastro de Dados da Biblioteca) em seguida (Informações adicionais e anexos de arquivos) mas terei que ver se poderá ser divido de outra maneira, já que o preenchimento dos dados da biblioteca ocupam 23 campo, contando que o campo (Coordenadas Geográficas) e (Regiões) foram removidos**
