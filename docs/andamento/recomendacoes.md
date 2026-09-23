@@ -91,3 +91,19 @@
     2. **Informações adicionais e anexos de arquivos** (dados complementares e envio de documentos).
 
     *Observação: avaliar a distribuição exata dos campos entre as etapas para garantir um fluxo equilibrado.*
+
+---
+
+## Cadastrar ou atualizar empresa integradora de ave ou suíno
+
+!!! tip "[RECOMENDAÇÃO] — remoção dos campos via de acesso e coordenadas geográficas"
+    Campos dispensáveis para a localização e cadastro da empresa:
+    - **Via de acesso**: com as ferramentas atuais de navegação e mapas, apenas o endereço
+      completo da empresa já é suficiente para localizá-la, tornando desnecessária a inserção
+      manual de pontos de referência.
+    - **Coordenadas Geográficas**: dado excessivamente técnico que a maioria das empresas não sabe
+      informar de imediato.
+
+    Além disso, ambos os campos atualmente não são obrigatórios. Na prática, a grande maioria dos
+    usuários, mesmo tendo esses dados, prefere não preenchê-los para poupar tempo. Mantê-los no
+    formulário gera atrito e poluição visual desnecessários.
