@@ -509,6 +509,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cadastro-no-sistema-estadual-de-bibliotecas-publicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadastro no Sistema Estadual de Bibliotecas Públicas
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -716,6 +725,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cadastro-no-sistema-estadual-de-bibliotecas-publicas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadastro no Sistema Estadual de Bibliotecas Públicas
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -787,7 +805,45 @@ produtos a serem vendidos.</p>
 </div>
 <hr />
 <h2 id="cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura">Cadastrar ou atualizar médico veterinário — avicultura ou suinocultura<a class="headerlink" href="#cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura" title="Permanent link">&para;</a></h2>
-<p><strong>[RECOMENDAÇÃO] Foi feito a junção dos campo Telefone e Telefone Adicional para apenas um campo Telefone Contato onde esse campo é Texto múltiplo, onde Telefone está como Telefone Principal e Telefone Adicional está como Telefone Adicional, os dois estão como obrigatórios</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — unificação de telefones em campo múltiplo</p>
+<p>Foi feita a junção dos campos <strong>Telefone</strong> e <strong>Telefone Adicional</strong> em apenas um campo
+(<strong>Telefone Contato</strong>), onde esse campo é texto múltiplo: o <strong>Telefone</strong> está configurado
+como "Telefone Principal" e o <strong>Telefone Adicional</strong> como secundário, ambos como obrigatórios.</p>
+</div>
+<hr />
+<h2 id="cadastro-no-sistema-estadual-de-bibliotecas-publicas">Cadastro no Sistema Estadual de Bibliotecas Públicas<a class="headerlink" href="#cadastro-no-sistema-estadual-de-bibliotecas-publicas" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — remoção de campos desnecessários</p>
+<p>Campos com baixa utilidade operacional ou complexidade desnecessária para o usuário:
+- <strong>Descreva sua biblioteca em uma frase</strong>: campo subjetivo e de pouco valor cadastral para o
+  registro no sistema.
+- <strong>Coordenadas Geográficas</strong>: dado complexo para o usuário obter e preencher manualmente,
+  sendo redundante quando endereço completo, CEP e município já são coletados.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">[INTERPRETAÇÃO] — obrigatoriedade do horário de funcionamento</p>
+<p>O campo <strong>Horário de funcionamento</strong> deveria ser obrigatório? Uma biblioteca que não está em
+funcionamento (por exemplo, inativa ou temporariamente fechada) não possui horário de
+atendimento. A obrigatoriedade deveria ser revista ou condicionada à confirmação de que a
+unidade está ativa.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">[INTERPRETAÇÃO] + [RECOMENDAÇÃO] — campo Região redundante</p>
+<p>O campo <strong>Região</strong> não faz sentido no formulário. Como o serviço é exclusivo para bibliotecas do
+estado de Mato Grosso do Sul (MS) e no campo <strong>Município</strong> só é possível selecionar cidades de
+MS, a resposta sempre será invariavelmente "Centro-Oeste". Mantê-lo gera etapa e atrito
+desnecessários.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — divisão da primeira etapa em duas etapas</p>
+<p>A primeira etapa atual concentra o cadastro dos dados da biblioteca com 23 campos (mesmo
+removendo <strong>Coordenadas Geográficas</strong> e <strong>Região</strong>). Para evitar sobrecarga cognitiva e que o
+formulário fique excessivamente longo, recomenda-se dividi-la em duas:
+1. <strong>Cadastro de Dados da Biblioteca</strong> (dados principais de identificação, localização e contato);
+2. <strong>Informações adicionais e anexos de arquivos</strong> (dados complementares e envio de documentos).</p>
+<p><em>Observação: avaliar a distribuição exata dos campos entre as etapas para garantir um fluxo equilibrado.</em></p>
+</div>
 
 
 
