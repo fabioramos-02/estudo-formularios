@@ -1,40 +1,58 @@
-# Recomendações que foram utiliaas no SETDIG - Solicitação de Acesso Wordpress mas poderam ser utilizadas em outros formulários, como os que estão em andamento.
+# Recomendações comuns aos 14 formulários
 
-**na primeira etapa, estão sendo pedido os dados dos getores mas como o gestor que fará a solicitação, acho que dados como cpf, nome completo, rg, orgao expedidor e telefone podem ser retirados do gov, seguindo o principio da [FATO] Lei nº 13.709/2018 - Lei Geral de Proteção de Dados (LGPD) sobre minimização (art. 6º III), onde o governo, neste caso o govbr, já possui esses dados.**
+> **Autor:** Antonio (estagiário)
+> **Propósito:** padrões observados durante a auditoria de um formulário que valem para os outros. Alimenta `03-nomenclatura.md` e `04-checklist.md`.
 
+---
 
-**[RECOMENDAÇÃO] o campo (Setor/Unidade Gestora) poderia estar ligado com o campo (Secretaria / Órgãos). Para que quando um valor for selecionado no campo (Setor/Unidade Gestora) o campo (Secretaria / Órgãos) fica se vizivel.**
+## SETDIG — Solicitação de Acesso ao WordPress
 
+!!! info "[FATO] + [RECOMENDAÇÃO] — pré-preencher com dados do gov.br"
+    Na primeira etapa estão sendo pedidos os dados dos gestores, mas como o gestor é quem faz a
+    solicitação, dados como **CPF, nome completo, RG, órgão expedidor e telefone** podem ser
+    retirados do gov.br, seguindo o princípio da **Lei nº 13.709/2018 — LGPD**, art. 6º III
+    (minimização): o governo, neste caso o gov.br, já possui esses dados.
 
-**[RECOMENDAÇÃO] o campo rg realmemte será necesário, por que com a nova carteira de identidade que utiliza o cpf como numero do resgistro geral, acho que o campo cpf já será suficiente.**
+!!! tip "[RECOMENDAÇÃO] — Setor depende de Secretaria/Órgão"
+    O campo **Setor / Unidade Gestora** poderia estar ligado ao campo **Secretaria / Órgãos**.
+    Assim, quando um valor é selecionado em **Secretaria / Órgãos**, o campo **Setor / Unidade
+    Gestora** aparece.
 
+    *Aplicado no `saida.json` do piloto WordPress via `visibleIf: {orgao_gestor} notempty`.*
 
-**[INTERPRETAÇÃO] os campos estão mal distribuidos como por exemplo o campo (Secretaria / Órgãos) é o primeiro campo enquanto o (Setor/Unidade Gestora) é o penultimo, [RECOMENDAÇÃO] para mim os campos com dados pessoias deveriao ser colocados como primeiros, e os dados sobre o trabalho logo em seguida.**
+!!! tip "[RECOMENDAÇÃO] — remoção do campo RG"
+    O campo RG realmente será necessário? Com a nova carteira de identidade que utiliza o CPF
+    como número do registro geral, o campo CPF já é suficiente.
 
+!!! note "[INTERPRETAÇÃO] + [RECOMENDAÇÃO] — ordem lógica dos campos"
+    Os campos estão mal distribuídos: **Secretaria / Órgãos** é o primeiro, enquanto
+    **Setor / Unidade Gestora** é o penúltimo.
 
-# Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico
+    **Recomendação:** dados pessoais primeiro, dados sobre o trabalho logo em seguida.
 
-**[RECOMENDAÇÃO] o campo UF realmente será necessário, por que o campo munícipio já está preenchido com as cidades do MS, onde o usuario só pode selecionar elas.**
+---
 
-**[RECOMENDAÇÃO] logicas que não estão no X-Forms, comparar campos entre si, por exemplo (cidade_origem != cidade_destino). E para o campo data/saída ou data/retorno, eles teriam que ser maior que o dia atual da solicitação mas não tem como selecionar o dia dinamicamente**
+## Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico
 
+!!! tip "[RECOMENDAÇÃO] — UF redundante"
+    O campo UF realmente será necessário? O campo **município** já está preenchido com as cidades
+    de MS, então o usuário só pode selecionar cidades daqui.
 
-# Obter Selo ARTE
+!!! warning "[RECOMENDAÇÃO] — lógicas não suportadas no X-Forms"
+    - **Comparação entre campos**: por exemplo `cidade_origem != cidade_destino`.
+    - **Data dinâmica**: os campos **data/saída** ou **data/retorno** teriam que ser maiores que
+      o dia atual da solicitação, mas não há como selecionar o dia dinamicamente.
 
-**[RECOMENDAÇÃO] o campo produtos deverá ser multiplo para o usuario poder adicionar todos os seus produtos a serem vendidos**
+---
 
+## Obter Selo ARTE
 
-# Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura
+!!! tip "[RECOMENDAÇÃO] — campo produtos precisa ser múltiplo"
+    O campo **produtos** deverá ser múltiplo para o usuário poder adicionar todos os seus
+    produtos a serem vendidos.
+
+---
+
+## Cadastrar ou atualizar médico veterinário — avicultura ou suinocultura
 
 **[RECOMENDAÇÃO] Foi feito a junção dos campo Telefone e Telefone Adicional para apenas um campo Telefone Contato onde esse campo é Texto múltiplo, onde Telefone está como Telefone Principal e Telefone Adicional está como Telefone Adicional, os dois estão como obrigatórios**
-
-
-# Cadastro no Sistema Estadual de Bibliotecas Públicas
-
-**[RECOMENDAÇÃO] campos que acho desnecessário ter (Descreva sua biblioteca em uma frase) e (Coordenadas Geográficas).**
-
-**[INTERPRETAÇÃO] o campo Horário de funcionamento deveria ser obrigatório? por que uma biblioteca que não está em funcionamento, não possui horário de funcionamento.**
-
-**[INTERPRETAÇÃO] o campo Região não faz sentido no formulario porque o que adiante ter esse campo, se a resposta sempre será Centro-Oeste, por que o serviço será só para biblioteca do estado do Mato Grosso do Sul, e no campo municipio só pode ser selecionado cidades do MS, portanto afirmando que o serviço será pro estado MS.**
-
-**[RECOMENDAÇÃO]  primeira etapa onde serão caastrados os dados sobre a biblioteca erá dividido em duas etapas para que um formulário não fiquei muito grande, na minha opnião será divido em (Cadastro de Dados da Biblioteca) em seguida (Informações adicionais e anexos de arquivos) mas terei que ver se poderá ser divido de outra maneira, já que o preenchimento dos dados da biblioteca ocupam 23 campo, contando que o campo (Coordenadas Geográficas) e (Regiões) foram removidos**

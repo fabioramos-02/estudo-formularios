@@ -61,6 +61,12 @@ Ao editar uma página do Antonio, preservar o que ele escreveu — complementar,
 estudo-formularios/
 ├── README.md, CLAUDE.md, mkdocs.yml, requirements.txt
 ├── .github/workflows/gh-pages.yml
+├── .claude/skills/           5 skills project-local (autoload no Claude Code)
+│   ├── nomenclatura-campos/
+│   ├── regras-diagramacao/
+│   ├── linguagem-simples-rotulos/
+│   ├── auditoria-metricas/
+│   └── melhorar-formulario/  Orquestrador — /melhorar-formulario <json>
 └── docs/
     ├── index.md               O estudo em uma tela
     ├── guia-do-antonio.md     Passo a passo do estagiário
@@ -71,8 +77,29 @@ estudo-formularios/
     ├── 05-auditoria.md        Tabela dos 14 formulários + achados consolidados
     ├── fontes.md              Bibliografia
     ├── fichas/_template.md    Ficha que se copia por formulário
+    ├── andamento/             Uma pasta por formulário refatorado
+    │   ├── recomendacoes.md   Padrões observados (Antonio)
+    │   └── 01-wordpress/      entrada.json | saida.json | notas.md
     └── assets/{img,css}       Tema SEGOV
 ```
+
+## Skills do estudo (`.claude/skills/`)
+
+O Claude Code carrega estas 5 skills automaticamente quando o repo é aberto:
+
+- `nomenclatura-campos` — normaliza `name` contra dicionário canônico
+- `regras-diagramacao` — reordena páginas/campos (GOV.UK + gov.br)
+- `linguagem-simples-rotulos` — reescreve rótulos (Lei 15.263/2025)
+- `auditoria-metricas` — snapshot read-only (antes e depois)
+- `melhorar-formulario` — orquestrador: `/melhorar-formulario <caminho-json>`
+
+Fluxo padrão: exportar JSON do X-Forms → `docs/andamento/<NN>-<slug>/entrada.json` →
+rodar `/melhorar-formulario` → revisar `saida.json` + `notas.md`.
+
+Cada `SKILL.md` tem seção **"Como o Antonio edita esta skill"**. Quando a pesquisa validar um
+termo canônico novo, uma regra nova ou um limite (páginas, campos), editar o SKILL.md, refletir
+em `docs/03-nomenclatura.md` ou `docs/04-checklist.md` e commit. As skills viajam versionadas
+junto com o estudo — não estão no `~/.claude/skills/` global.
 
 ## Base legal aplicável
 

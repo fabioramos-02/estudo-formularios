@@ -21,6 +21,8 @@ Toda afirmação marcada como `[FATO]` nas páginas do estudo tem a sua fonte re
 | Fonte | Link | Acesso | Sustenta |
 |---|---|---|---|
 | GOV.UK Design System | *(a preencher)* | | Padrões de formulário, uma pergunta por página |
+| GOV.UK — Form structure | https://www.gov.uk/service-manual/design/form-structure | 2026-09-22 | Estrutura de formulário: one thing per page, ordem lógica de campos |
+| GOV.UK — Ask users for dates | https://design-system.service.gov.uk/patterns/dates/ | 2026-09-22 | Padrão de campo de data: 3 inputs (dia/mês/ano) ou datepicker; mensagens de erro por parte |
 | Design System gov.br | *(a preencher)* | | Componentes e rótulos no padrão federal |
 | WCAG 2.2 | *(a preencher)* | | Critérios de acessibilidade em formulário (3.3.x) |
 
