@@ -55,4 +55,39 @@
 
 ## Cadastrar ou atualizar médico veterinário — avicultura ou suinocultura
 
-**[RECOMENDAÇÃO] Foi feito a junção dos campo Telefone e Telefone Adicional para apenas um campo Telefone Contato onde esse campo é Texto múltiplo, onde Telefone está como Telefone Principal e Telefone Adicional está como Telefone Adicional, os dois estão como obrigatórios**
+!!! tip "[RECOMENDAÇÃO] — unificação de telefones em campo múltiplo"
+    Foi feita a junção dos campos **Telefone** e **Telefone Adicional** em apenas um campo
+    (**Telefone Contato**), onde esse campo é texto múltiplo: o **Telefone** está configurado
+    como "Telefone Principal" e o **Telefone Adicional** como secundário, ambos como obrigatórios.
+
+---
+
+## Cadastro no Sistema Estadual de Bibliotecas Públicas
+
+!!! tip "[RECOMENDAÇÃO] — remoção de campos desnecessários"
+    Campos com baixa utilidade operacional ou complexidade desnecessária para o usuário:
+    - **Descreva sua biblioteca em uma frase**: campo subjetivo e de pouco valor cadastral para o
+      registro no sistema.
+    - **Coordenadas Geográficas**: dado complexo para o usuário obter e preencher manualmente,
+      sendo redundante quando endereço completo, CEP e município já são coletados.
+
+!!! note "[INTERPRETAÇÃO] — obrigatoriedade do horário de funcionamento"
+    O campo **Horário de funcionamento** deveria ser obrigatório? Uma biblioteca que não está em
+    funcionamento (por exemplo, inativa ou temporariamente fechada) não possui horário de
+    atendimento. A obrigatoriedade deveria ser revista ou condicionada à confirmação de que a
+    unidade está ativa.
+
+!!! note "[INTERPRETAÇÃO] + [RECOMENDAÇÃO] — campo Região redundante"
+    O campo **Região** não faz sentido no formulário. Como o serviço é exclusivo para bibliotecas do
+    estado de Mato Grosso do Sul (MS) e no campo **Município** só é possível selecionar cidades de
+    MS, a resposta sempre será invariavelmente "Centro-Oeste". Mantê-lo gera etapa e atrito
+    desnecessários.
+
+!!! tip "[RECOMENDAÇÃO] — divisão da primeira etapa em duas etapas"
+    A primeira etapa atual concentra o cadastro dos dados da biblioteca com 23 campos (mesmo
+    removendo **Coordenadas Geográficas** e **Região**). Para evitar sobrecarga cognitiva e que o
+    formulário fique excessivamente longo, recomenda-se dividi-la em duas:
+    1. **Cadastro de Dados da Biblioteca** (dados principais de identificação, localização e contato);
+    2. **Informações adicionais e anexos de arquivos** (dados complementares e envio de documentos).
+
+    *Observação: avaliar a distribuição exata dos campos entre as etapas para garantir um fluxo equilibrado.*
