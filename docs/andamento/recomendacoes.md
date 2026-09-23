@@ -107,3 +107,21 @@
     Além disso, ambos os campos atualmente não são obrigatórios. Na prática, a grande maioria dos
     usuários, mesmo tendo esses dados, prefere não preenchê-los para poupar tempo. Mantê-los no
     formulário gera atrito e poluição visual desnecessários.
+
+---
+
+## Solicitar cópia de laudos periciais
+
+!!! tip "[RECOMENDAÇÃO] — remoção dos campos RG e Órgão expedidor"
+    Com a nova carteira de identidade nacional que adota o CPF como número único do registro geral,
+    os campos **RG** e **Órgão expedidor** tornam-se redundantes. Apenas o campo **CPF** é
+    suficiente para a identificação do usuário, simplificando o preenchimento.
+
+!!! tip "[RECOMENDAÇÃO] — divisão do formulário em 3 etapas"
+    Atualmente o formulário concentra todos os campos em uma única página, prejudicando a
+    legibilidade e o fluxo do usuário. Recomenda-se dividi-lo em 3 etapas lógicas:
+    1. **Dados do Solicitante**: informações da pessoa que está requerendo a cópia do laudo pericial;
+    2. **Dados da Vítima**: identificação da vítima do evento;
+    3. **Dados do Evento**: dados específicos da ocorrência, como informações sobre o inquérito
+       policial ou boletim de ocorrência (B.O.).
+
