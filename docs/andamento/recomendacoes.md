@@ -156,5 +156,29 @@
     campos para baixo e aumentar desnecessariamente o tamanho da página. A descrição pode ser
     sintetizada (inclusive com auxílio de IA) para focar apenas nas informações essenciais ao cidadão.
 
+!!! tip "[RECOMENDAÇÃO] — máscaras de entrada em campos com tamanho fixo"
+    Adicionar máscaras nos campos que possuem formato e quantidade de caracteres pré-determinados:
+    - **CPF**: `999.999.999-99`
+    - **CEP**: `99999-999`
+    - **Telefone**: `(99) 99999-9999`
+
+    *Nota técnica X-Forms:* o X-Forms lê o dígito `9` como máscara numérica (renderizando `_` para o
+    usuário, por exemplo `___.___.___-__`). Isso impede que o cidadão preencha o dado incorretamente
+    ou com quantidade incompleta de caracteres, garantindo a validação antes do envio.
+
+---
+
+## Solicitar emissão de certidão de atendimento de emergência
+
+!!! tip "[RECOMENDAÇÃO] — unificação dos campos de endereço em campo único"
+    Os campos **Endereço (rua ou avenida)**, **Bairro** e **Número do imóvel** podem ser
+    mesclados em um único campo de texto, evitando a fragmentação excessiva de campos e a poluição
+    visual no formulário.
+
+    *Orientação no campo:* a descrição ou texto de ajuda deve orientar o cidadão a preencher no
+    formato preferencial: `Bairro / Rua ou Avenida / Número do imóvel`.
+
+
+
 
 
