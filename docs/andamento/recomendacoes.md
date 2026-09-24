@@ -125,3 +125,36 @@
     3. **Dados do Evento**: dados específicos da ocorrência, como informações sobre o inquérito
        policial ou boletim de ocorrência (B.O.).
 
+---
+
+## Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola
+
+!!! tip "[RECOMENDAÇÃO] — campos de endereço condicionais ao CEP"
+    Os campos relacionados a endereço (como logradouro, bairro e município) poderiam iniciar
+    invisíveis e ser exibidos apenas após o usuário preencher o **CEP**. Como o CEP é um campo
+    sempre obrigatório e comum a formulários com endereço, essa lógica condicional diminui a
+    poluição visual inicial da tela.
+
+!!! tip "[RECOMENDAÇÃO] — alinhamento lado a lado de Telefone e E-mail"
+    Organizar os campos **Telefone** e **E-mail** em duas colunas (lado a lado). Como ambos
+    tratam de meios de contato e contêm textos curtos, a leitura e a digitação ficam mais práticas,
+    sem risco de quebra de layout, além de economizar espaço vertical no formulário.
+
+!!! tip "[RECOMENDAÇÃO] — alinhamento lado a lado de Estado (UF) e Município"
+    Os campos **Estado (UF)** e **Município** também devem ficar alinhados lado a lado, pois
+    possuem relação direta de dependência e ocupam pouco espaço horizontal (especialmente a UF
+    com apenas 2 dígitos), otimizando a leitura e a disposição dos dados de localização.
+
+!!! tip "[RECOMENDAÇÃO] — uso de campos de seleção para dados padronizados"
+    Campos que possuem valores universais ou tabelados (como **Estado/UF** ou **Cor/Raça**) devem
+    ser estruturados como listas de seleção (`select`/`dropdown`) ou botões de escolha, em vez de
+    campos de texto aberto. Isso elimina o risco de erros de digitação ou divergências de grafia,
+    garantindo a integridade dos dados coletados.
+
+!!! tip "[RECOMENDAÇÃO] — sintetizar a descrição do serviço"
+    Manter a descrição do serviço no cabeçalho do formulário sempre enxuta para não empurrar os
+    campos para baixo e aumentar desnecessariamente o tamanho da página. A descrição pode ser
+    sintetizada (inclusive com auxílio de IA) para focar apenas nas informações essenciais ao cidadão.
+
+
+
