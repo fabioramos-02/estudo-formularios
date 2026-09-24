@@ -85,7 +85,22 @@ nav:
   - 5. Auditoria dos 14: 05-auditoria.md
   - Andamento:
       - Visão geral: andamento/index.md
-      - Mapeamento dos 14: andamento/mapeamento.md
+      - Mapeamento dos 14:
+          - Visão estratégica: andamento/mapeamento/index.md
+          - 01. WordPress: andamento/mapeamento/01-wordpress.md
+          - 02. RT agrícola: andamento/mapeamento/02-rt-agricola.md
+          - 03. Diárias Fundect: andamento/mapeamento/03-diarias-fundect.md
+          - 04. Indústria agrotóxicos: andamento/mapeamento/04-industria-agrotoxicos.md
+          - 05. Cancelar agrotóxicos: andamento/mapeamento/05-cancelar-agrotoxicos.md
+          - 06. Selo Arte: andamento/mapeamento/06-selo-arte.md
+          - 07. Negativa de tombamento: andamento/mapeamento/07-negativa-tombamento.md
+          - 08. Veterinário avi/suíno: andamento/mapeamento/08-veterinario-avi-suino.md
+          - 09. Bibliotecas públicas: andamento/mapeamento/09-bibliotecas-publicas.md
+          - 10. Empresa integradora: andamento/mapeamento/10-empresa-integradora.md
+          - 11. Soqueira de algodão: andamento/mapeamento/11-soqueira-algodao.md
+          - 12. Laudos periciais: andamento/mapeamento/12-laudos-periciais.md
+          - 13. Laboratório avícola: andamento/mapeamento/13-laboratorio-avicola.md
+          - 14. Certidão 190/193: andamento/mapeamento/14-certidao-190-193.md
       - Recomendações comuns: andamento/recomendacoes.md
       - 1. WordPress — Notas: andamento/wordpress.md
       - 1. WordPress — Refatoração: andamento/01-wordpress/notas.md
