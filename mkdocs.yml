@@ -85,6 +85,7 @@ nav:
   - 5. Auditoria dos 14: 05-auditoria.md
   - Andamento:
       - Visão geral: andamento/index.md
+      - Mapeamento dos 14: andamento/mapeamento.md
       - Recomendações comuns: andamento/recomendacoes.md
       - 1. WordPress — Notas: andamento/wordpress.md
       - 1. WordPress — Refatoração: andamento/01-wordpress/notas.md

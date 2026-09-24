@@ -1,22 +1,30 @@
-# Mapeamento do Formulário: SETDIG — Solicitação de Acesso ao WordPress
+# Mapeamento dos 14 formulários
 
-## 📊 Resumo Geral
+> Levantamento campo-a-campo feito pelo Antonio: resumo geral, distribuição por páginas
+> e contagem por tipo de campo, para cada um dos 14 formulários do estudo. Fonte primária
+> para [recomendacoes.md](recomendacoes.md) e para a refatoração automática de cada formulário.
+
+---
+
+## Mapeamento — SETDIG — Solicitação de Acesso ao WordPress
+
+### 📊 Resumo Geral
 - **Total de Páginas:** 5
 - **Total de Campos:** 28
 - **Campos Obrigatórios:** 28 (100% dos campos)
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página: `perfil` — *Quem está solicitando*
+#### 1. Página: `perfil` — *Quem está solicitando*
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
 | 1 | `perfil_solicitante` | Quem está preenchendo este formulário? | `imagepicker` | **Sim** | Seleção por imagem (gestor / colaborador) |
 
 ---
 
-### 2. Página: `site` — *Sobre o site*
+#### 2. Página: `site` — *Sobre o site*
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
 | 2 | `nome_site` | Nome do site | `text` (Texto) | **Sim** | - |
@@ -25,7 +33,7 @@
 
 ---
 
-### 3. Página: `dados_gestor` — *Dados do gestor do setor*
+#### 3. Página: `dados_gestor` — *Dados do gestor do setor*
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
 | 5 | `nome_gestor` | Nome completo | `text` (Texto) | **Sim** | Autocomplete `name` |
@@ -40,7 +48,7 @@
 
 ---
 
-### 4. Página: `dados_colaborador` — *Dados do colaborador que vai usar o acesso*
+#### 4. Página: `dados_colaborador` — *Dados do colaborador que vai usar o acesso*
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
 | 14 | `nome_colaborador` | Nome completo | `text` (Texto) | **Sim** | Autocomplete `name` |
@@ -56,7 +64,7 @@
 
 ---
 
-### 5. Página: `dados_responsavel` — *Dados do responsável pelo site*
+#### 5. Página: `dados_responsavel` — *Dados do responsável pelo site*
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
 | 24 | `nome_responsavel` | Nome completo | `text` (Texto) | **Sim** | Autocomplete `name` |
@@ -71,7 +79,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 13
 - **Texto / Máscara de CPF (`text` + pattern):** 3
 - **Texto / Telefone (`text` + tel):** 3
@@ -83,9 +91,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Cadastrar profissional habilitado para cultivos e estabelecimentos de insumos agrícolas
+## Mapeamento — Cadastrar profissional habilitado para cultivos e estabelecimentos de insumos agrícolas
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Cadastrar responsável técnico para cultivos e estabelecimentos de insumos agrícolas
 - **Total de Páginas:** 1
 - **Total de Campos:** 8
@@ -93,9 +101,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página: `página1` — *Requerimento de cadastro RT*
+#### 1. Página: `página1` — *Requerimento de cadastro RT*
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
 | 1 | `nome` | Nome | `text` (Texto) | **Sim** | Informe nome completo |
@@ -109,7 +117,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 2
 - **Texto / Máscara de CPF (`text` + pattern):** 1
 - **Texto / Telefone (`text` + pattern):** 1
@@ -118,9 +126,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Solicitação de Diárias para Servidores da Fundect
+## Mapeamento — Solicitação de Diárias para Servidores da Fundect
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Serviço para solicitação online e acompanhamento de diárias de viagens oficiais da Fundect, permitindo o envio eletrónico de pedidos e documentos comprovativos.
 - **Total de Páginas:** 3
 - **Total de Campos:** 15
@@ -129,9 +137,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *Dados do Servidor e da Viagem*
+#### 1. Página 1: `página1` — *Dados do Servidor e da Viagem*
 *Informe os dados do servidor que vai viajar e os dados de sua viagem*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -142,7 +150,7 @@
 
 ---
 
-### 2. Página 2: `página2` — *Roteiro da Viagem*
+#### 2. Página 2: `página2` — *Roteiro da Viagem*
 *Preencha as informações do roteiro da viagem*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -157,7 +165,7 @@
 
 ---
 
-### 3. Página 3: `página3` — *Dados Bancários e Pessoais*
+#### 3. Página 3: `página3` — *Dados Bancários e Pessoais*
 *Dados obrigatórios para estagiário. Servidores não precisam preencher, pois seus dados já constam no sistema de Recursos Humanos.*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -170,7 +178,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 8
 - **Texto / Máscara de CPF (`text` + pattern):** 1
 - **Texto Multilinha / Comentário (`comment`):** 2
@@ -179,9 +187,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Cadastrar indústria produtos agrotóxicos no e-saniagro
+## Mapeamento — Cadastrar indústria produtos agrotóxicos no e-saniagro
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Cadastrar indústria produtos agrotóxicos no e-saniagro
 - **Total de Páginas:** 1
 - **Total de Campos:** 13
@@ -189,9 +197,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *Requerimento para cadastro da indústria de produtos agrotóxicos no e-saniagro*
+#### 1. Página 1: `página1` — *Requerimento para cadastro da indústria de produtos agrotóxicos no e-saniagro*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -211,7 +219,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 7
 - **Texto / Telefone (`text` + pattern):** 1
 - **Texto / CEP (`text` + pattern):** 1
@@ -220,9 +228,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico
+## Mapeamento — Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Serviço para solicitar o encerramento oficial do registro de empresas que atuam com agrotóxicos (fabricação, comércio, transporte, armazenamento ou prestação de serviços).
 - **Total de Páginas:** 1
 - **Total de Campos:** 14
@@ -230,9 +238,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *TERMO DE COMPROMISSO*
+#### 1. Página 1: `página1` — *TERMO DE COMPROMISSO*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -253,7 +261,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 8
 - **Texto / Máscara de CPF (`text` + pattern):** 1
 - **Lista Suspensa (`dropdown`):** 3
@@ -261,9 +269,9 @@
 
 -- -- --
 
-# Mapeamento do Formulário: Obter selo arte
+## Mapeamento — Obter selo arte
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Requerimento de solicitação do Selo Arte conforme legislação vigente para produtos alimentícios de origem animal produzidos de forma artesanal.
 - **Total de Páginas:** 1
 - **Total de Campos:** 9
@@ -271,9 +279,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *REQUERIMENTO DE SOLICITAÇÃO DE SELO ARTE*
+#### 1. Página 1: `página1` — *REQUERIMENTO DE SOLICITAÇÃO DE SELO ARTE*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -289,7 +297,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 6
 - **Texto / Máscara de CPF (`text` + pattern):** 1
 - **Lista Suspensa (`dropdown`):** 1
@@ -297,9 +305,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Solicitação da Negativa de Tombamento
+## Mapeamento — Solicitação da Negativa de Tombamento
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Formulário de Solicitação da Certidão Negativa de Tombamento, documento oficial que atesta que determinado imóvel ou bem não está protegido por tombamento em nível municipal, estadual ou federal.
 - **Total de Páginas:** 1
 - **Total de Campos:** 10
@@ -307,9 +315,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *Formulário de Solicitação da Certidão Negativa de Tombamento*
+#### 1. Página 1: `página1` — *Formulário de Solicitação da Certidão Negativa de Tombamento*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -326,16 +334,16 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 5
 - **Texto / Máscara de CPF (`text` + pattern):** 1
 - **Envio de Arquivo (`file`):** 4
 
 --- --- ---
 
-# Mapeamento do Formulário: Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura
+## Mapeamento — Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Cadastro ou atualização dos dados cadastrais de médicos veterinários que atuam no setor privado das cadeias produtivas da avicultura e da suinocultura no Estado de Mato Grosso do Sul.
 - **Total de Páginas:** 2
 - **Total de Campos:** 17
@@ -344,9 +352,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `pagina_cadastro_medico` — *FICHA DE CADASTRO DE MÉDICOS VETERINÁRIOS – AVICULTURA/SUINOCULTURA*
+#### 1. Página 1: `pagina_cadastro_medico` — *FICHA DE CADASTRO DE MÉDICOS VETERINÁRIOS – AVICULTURA/SUINOCULTURA*
 *CADASTRO DE MÉDICOS VETERINÁRIOS*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -367,7 +375,7 @@
 
 ---
 
-### 2. Página 2: `pagina_empresa_vinculada` — *EMPRESA INTEGRADORA OU COOPERATIVA VINCULADA*
+#### 2. Página 2: `pagina_empresa_vinculada` — *EMPRESA INTEGRADORA OU COOPERATIVA VINCULADA*
 *Página condicional (Exibida apenas se `empresa_vincula = true`)*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -380,7 +388,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 11
 - **Múltiplos Textos / Telefones (`multipletext`):** 1 (com 2 subcampos internos)
 - **Lista Suspensa (`dropdown`):** 1
@@ -389,9 +397,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Cadastro no Sistema Estadual de Bibliotecas Públicas
+## Mapeamento — Cadastro no Sistema Estadual de Bibliotecas Públicas
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Cadastro oficial de bibliotecas públicas e comunitárias de Mato Grosso do Sul junto à Fundação de Cultura de Mato Grosso do Sul (FCMS), que garante reconhecimento institucional e acesso a formações, recursos, acervos, equipamentos e parcerias.
 - **Total de Páginas:** 3
 - **Total de Campos:** 31
@@ -400,9 +408,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `pagina_dados_biblioteca` — *Cadastro de Dados da Biblioteca*
+#### 1. Página 1: `pagina_dados_biblioteca` — *Cadastro de Dados da Biblioteca*
 *Manter os dados atualizados anualmente ou sempre que houver alteração na gestão, endereço ou estrutura.*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -428,7 +436,7 @@
 
 ---
 
-### 2. Página 2: `pagina_anexos` — *Informações adicionais e anexos de arquivos*
+#### 2. Página 2: `pagina_anexos` — *Informações adicionais e anexos de arquivos*
 *Anexar documento de criação da biblioteca (decreto, lei ou ato administrativo, no caso de bibliotecas públicas). Enviar comprovante de funcionamento (fotos atuais do espaço, horário de atendimento e endereço completo).*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -441,7 +449,7 @@
 
 ---
 
-### 3. Página 3: `pagina_instituicao` — *Dados sobre a Instituição ligada a biblioteca*
+#### 3. Página 3: `pagina_instituicao` — *Dados sobre a Instituição ligada a biblioteca*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -456,7 +464,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 16
 - **Texto / Máscara de Telefone (`text` + pattern):** 1
 - **Texto Multilinha / Comentário (`comment`):** 3
@@ -467,9 +475,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Cadastrar ou atualizar empresa integradora de ave ou suíno
+## Mapeamento — Cadastrar ou atualizar empresa integradora de ave ou suíno
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Serviço para cadastrar ou atualizar os dados de empresas integradoras da cadeia de avicultura e suinocultura em Mato Grosso do Sul.
 - **Total de Páginas:** 2
 - **Total de Campos:** 16
@@ -478,9 +486,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *Dados do Representante legal*
+#### 1. Página 1: `página1` — *Dados do Representante legal*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -490,7 +498,7 @@
 
 ---
 
-### 2. Página 2: `página2` — *FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS*
+#### 2. Página 2: `página2` — *FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS*
 *FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -511,7 +519,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 13
 - **Texto / Máscara de Telefone (`text` + pattern):** 2
 - **Lista Suspensa (`dropdown`):** 1
@@ -519,9 +527,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Requerer certificado de destruição de soqueira de algodão
+## Mapeamento — Requerer certificado de destruição de soqueira de algodão
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Solicitação do Certificado de Destruição de Soqueira de Algodão.
 - **Total de Páginas:** 1
 - **Total de Campos:** 8
@@ -530,9 +538,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `pagina` — *REQUERIMENTO DE CERTIFICADO*
+#### 1. Página 1: `pagina` — *REQUERIMENTO DE CERTIFICADO*
 *Requerer certificado de destruição de soqueira de algodão*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -548,7 +556,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 3
 - **Texto / Máscara de Telefone (`text` + pattern):** 1
 - **Caixa de Seleção (`checkbox`):** 1
@@ -556,9 +564,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Solicitar cópia de laudos periciais
+## Mapeamento — Solicitar cópia de laudos periciais
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Serviço para solicitação de cópias de laudos periciais emitidos pela CGP/SEJUSP/MS para fins judiciais, seguros ou outras finalidades oficiais.
 - **Total de Páginas:** 3
 - **Total de Campos:** 22
@@ -567,9 +575,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *Dados do Solicitante da cópia de laudos periciais*
+#### 1. Página 1: `página1` — *Dados do Solicitante da cópia de laudos periciais*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -585,7 +593,7 @@
 
 ---
 
-### 2. Página 2: `página2` — *Dados sobre a vítima do evento*
+#### 2. Página 2: `página2` — *Dados sobre a vítima do evento*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -598,7 +606,7 @@
 
 ---
 
-### 3. Página 3: `página3` — *Dados sobre o inquérito ou boletim de ocorrência*
+#### 3. Página 3: `página3` — *Dados sobre o inquérito ou boletim de ocorrência*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -612,7 +620,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 11
 - **Texto / Máscara de Telefone (`text` + pattern):** 1
 - **Texto / Seleção de Data (`text` + date):** 2
@@ -621,9 +629,9 @@
 
 --- --- ---
 
-# Mapeamento do Formulário: Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola
+## Mapeamento — Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Serviço para cadastrar ou atualizar os dados de laboratórios que realizam análises de sanidade avícola para os programas oficiais de monitoramento sanitário.
 - **Total de Páginas:** 1
 - **Total de Campos:** 14
@@ -632,9 +640,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `página1` — *FICHA DE CADASTRO DE LABORATÓRIO DE DIAGNÓSTICO EM SANIDADE AVÍCOLA*
+#### 1. Página 1: `página1` — *FICHA DE CADASTRO DE LABORATÓRIO DE DIAGNÓSTICO EM SANIDADE AVÍCOLA*
 *DADOS PARA CADASTRO DO LABORATÓRIO*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -656,15 +664,15 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples / Formatado (`text`):** 13
 - **Lista Suspensa (`dropdown`):** 1
 
 --- --- ---
 
-# Mapeamento do Formulário: Solicitar emissão de certidão de atendimento de emergência
+## Mapeamento — Solicitar emissão de certidão de atendimento de emergência
 
-## 📊 Resumo Geral
+### 📊 Resumo Geral
 - **Descrição:** Serviço para solicitação de certidão oficial que comprove chamadas feitas ao 190 (Polícia Militar) ou 193 (Bombeiros) nas cidades de Campo Grande, Dourados, Corumbá e Ponta Porã, para uso pessoal, administrativo ou judicial.
 - **Total de Páginas:** 2
 - **Total de Campos:** 18
@@ -673,9 +681,9 @@
 
 ---
 
-## 📄 Distribuição por Páginas
+### 📄 Distribuição por Páginas
 
-### 1. Página 1: `pagina_ligou` — *Dados de quem ligou*
+#### 1. Página 1: `pagina_ligou` — *Dados de quem ligou*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
 |---|---|---|---|---|---|
@@ -694,7 +702,7 @@
 
 ---
 
-### 2. Página 2: `pagina_ocorrencia` — *Dados da Ocorrência*
+#### 2. Página 2: `pagina_ocorrencia` — *Dados da Ocorrência*
 *Informe os dados da Ocorrência.*
 
 | # | Campo (`name`) | Rótulo / Título | Tipo | Obrigatório | Observações / Validação |
@@ -709,7 +717,7 @@
 
 ---
 
-## 📈 Contagem Por Tipo de Campo
+### 📈 Contagem Por Tipo de Campo
 - **Texto Simples (`text`):** 5
 - **Texto / Máscara de Telefone (`text` + pattern):** 1
 - **Texto / Seleção de Data (`text` + date):** 1

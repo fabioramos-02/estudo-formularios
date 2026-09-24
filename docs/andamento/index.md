@@ -12,6 +12,7 @@ Cada formulário ganha uma pasta numerada (`01-<slug>/`, `02-<slug>/`…) com tr
 
 Além disso, esta seção guarda:
 
+- [Mapeamento dos 14](mapeamento.md) — levantamento campo-a-campo do Antonio para todos os formulários (páginas, campos, tipos, obrigatoriedade).
 - [Recomendações comuns](recomendacoes.md) — padrões que valem para mais de um formulário. Fonte para engrossar `03-nomenclatura.md` e `04-checklist.md`.
 - Uma página por formulário com as **notas iniciais do Antonio** (levantamento manual), separada das notas da refatoração automática.
 
