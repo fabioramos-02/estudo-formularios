@@ -545,6 +545,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solicitar-emissao-de-certidao-de-atendimento-de-emergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solicitar emissão de certidão de atendimento de emergência
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -788,6 +797,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#solicitar-emissao-de-certidao-de-atendimento-de-emergencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solicitar emissão de certidão de atendimento de emergência
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -962,6 +980,26 @@ garantindo a integridade dos dados coletados.</p>
 <p>Manter a descrição do serviço no cabeçalho do formulário sempre enxuta para não empurrar os
 campos para baixo e aumentar desnecessariamente o tamanho da página. A descrição pode ser
 sintetizada (inclusive com auxílio de IA) para focar apenas nas informações essenciais ao cidadão.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — máscaras de entrada em campos com tamanho fixo</p>
+<p>Adicionar máscaras nos campos que possuem formato e quantidade de caracteres pré-determinados:
+- <strong>CPF</strong>: <code>999.999.999-99</code>
+- <strong>CEP</strong>: <code>99999-999</code>
+- <strong>Telefone</strong>: <code>(99) 99999-9999</code></p>
+<p><em>Nota técnica X-Forms:</em> o X-Forms lê o dígito <code>9</code> como máscara numérica (renderizando <code>_</code> para o
+usuário, por exemplo <code>___.___.___-__</code>). Isso impede que o cidadão preencha o dado incorretamente
+ou com quantidade incompleta de caracteres, garantindo a validação antes do envio.</p>
+</div>
+<hr />
+<h2 id="solicitar-emissao-de-certidao-de-atendimento-de-emergencia">Solicitar emissão de certidão de atendimento de emergência<a class="headerlink" href="#solicitar-emissao-de-certidao-de-atendimento-de-emergencia" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — unificação dos campos de endereço em campo único</p>
+<p>Os campos <strong>Endereço (rua ou avenida)</strong>, <strong>Bairro</strong> e <strong>Número do imóvel</strong> podem ser
+mesclados em um único campo de texto, evitando a fragmentação excessiva de campos e a poluição
+visual no formulário.</p>
+<p><em>Orientação no campo:</em> a descrição ou texto de ajuda deve orientar o cidadão a preencher no
+formato preferencial: <code>Bairro / Rua ou Avenida / Número do imóvel</code>.</p>
 </div>
 
 
