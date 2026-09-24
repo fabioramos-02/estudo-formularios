@@ -1,0 +1,3307 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Estudo da SETDIG sobre diagramação, boas práticas e nomenclatura de campos em formulários de serviços digitais do Estado de MS.">
+      
+      
+        <meta name="author" content="SETDIG — Secretaria-Executiva de Transformação Digital">
+      
+      
+        <link rel="canonical" href="https://fabioramos-02.github.io/estudo-formularios/andamento/layout/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/img/brasao-ms.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Mapeamento do Formulário: SETDIG — Solicitação de Acesso ao WordPress - Estudo de Formulários — X-Forms</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/segov.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mapeamento-do-formulario-setdig-solicitacao-de-acesso-ao-wordpress" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Estudo de Formulários — X-Forms" class="md-header__button md-logo" aria-label="Estudo de Formulários — X-Forms" data-md-component="logo">
+      
+  <img src="../../assets/img/segov-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Estudo de Formulários — X-Forms
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mapeamento do Formulário: SETDIG — Solicitação de Acesso ao WordPress
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Estudo de Formulários — X-Forms" class="md-nav__button md-logo" aria-label="Estudo de Formulários — X-Forms" data-md-component="logo">
+      
+  <img src="../../assets/img/segov-logo.svg" alt="logo">
+
+    </a>
+    Estudo de Formulários — X-Forms
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guia-do-antonio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia do Antonio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-diagramacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Diagramação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-aprendizados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Aprendizados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-nomenclatura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Nomenclatura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-auditoria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Auditoria dos 14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Andamento
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Andamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recomendacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recomendações comuns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wordpress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Notas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-wordpress/notas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Refatoração
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fichas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Fichas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Como preencher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fontes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fontes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resumo-geral" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Resumo Geral
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distribuicao-por-paginas" class="md-nav__link">
+    <span class="md-ellipsis">
+      📄 Distribuição por Páginas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📄 Distribuição por Páginas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-pagina-perfil-quem-esta-solicitando" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Página: perfil — Quem está solicitando
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-pagina-site-sobre-o-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Página: site — Sobre o site
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-pagina-dados_gestor-dados-do-gestor-do-setor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Página: dados_gestor — Dados do gestor do setor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-pagina-dados_colaborador-dados-do-colaborador-que-vai-usar-o-acesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Página: dados_colaborador — Dados do colaborador que vai usar o acesso
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pagina-dados_responsavel-dados-do-responsavel-pelo-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Página: dados_responsavel — Dados do responsável pelo site
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contagem-por-tipo-de-campo" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Contagem Por Tipo de Campo
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mapeamento-do-formulario-setdig-solicitacao-de-acesso-ao-wordpress">Mapeamento do Formulário: SETDIG — Solicitação de Acesso ao WordPress<a class="headerlink" href="#mapeamento-do-formulario-setdig-solicitacao-de-acesso-ao-wordpress" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral">📊 Resumo Geral<a class="headerlink" href="#resumo-geral" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Total de Páginas:</strong> 5</li>
+<li><strong>Total de Campos:</strong> 28</li>
+<li><strong>Campos Obrigatórios:</strong> 28 (100% dos campos)</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-perfil-quem-esta-solicitando">1. Página: <code>perfil</code> — <em>Quem está solicitando</em><a class="headerlink" href="#1-pagina-perfil-quem-esta-solicitando" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>perfil_solicitante</code></td>
+<td>Quem está preenchendo este formulário?</td>
+<td><code>imagepicker</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção por imagem (gestor / colaborador)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-site-sobre-o-site">2. Página: <code>site</code> — <em>Sobre o site</em><a class="headerlink" href="#2-pagina-site-sobre-o-site" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td><code>nome_site</code></td>
+<td>Nome do site</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>url_site</code></td>
+<td>Endereço do site</td>
+<td><code>text</code> (URL)</td>
+<td><strong>Sim</strong></td>
+<td>Formato de URL (<code>https://...</code>)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>permissao_acesso</code></td>
+<td>Tipo de permissão de acesso</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Permite selecionar 1 opção</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3-pagina-dados_gestor-dados-do-gestor-do-setor">3. Página: <code>dados_gestor</code> — <em>Dados do gestor do setor</em><a class="headerlink" href="#3-pagina-dados_gestor-dados-do-gestor-do-setor" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5</td>
+<td><code>nome_gestor</code></td>
+<td>Nome completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Autocomplete <code>name</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>cpf_gestor</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>telefone_gestor</code></td>
+<td>Celular</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>email_gestor</code></td>
+<td>E-mail institucional</td>
+<td><code>text</code> (E-mail)</td>
+<td><strong>Sim</strong></td>
+<td>Validador de formato de e-mail</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>matricula_gestor</code></td>
+<td>Matrícula</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>cargo_gestor</code></td>
+<td>Cargo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>orgao_gestor</code></td>
+<td>Órgão onde trabalha</td>
+<td><code>dropdown</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção de lista</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>setor_gestor</code></td>
+<td>Setor ou unidade</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Visível se <code>orgao_gestor</code> preenchido</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>municipio_gestor</code></td>
+<td>Município</td>
+<td><code>dropdown</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção de lista</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="4-pagina-dados_colaborador-dados-do-colaborador-que-vai-usar-o-acesso">4. Página: <code>dados_colaborador</code> — <em>Dados do colaborador que vai usar o acesso</em><a class="headerlink" href="#4-pagina-dados_colaborador-dados-do-colaborador-que-vai-usar-o-acesso" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td><code>nome_colaborador</code></td>
+<td>Nome completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Autocomplete <code>name</code></td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>cpf_colaborador</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>telefone_colaborador</code></td>
+<td>Celular</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>email_colaborador</code></td>
+<td>E-mail institucional</td>
+<td><code>text</code> (E-mail)</td>
+<td><strong>Sim</strong></td>
+<td>Validador de formato de e-mail</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>matricula_colaborador</code></td>
+<td>Matrícula</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>cargo_colaborador</code></td>
+<td>Cargo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>login_rede_colaborador</code></td>
+<td>Login de rede</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Login de domínio/rede</td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>orgao_colaborador</code></td>
+<td>Órgão onde trabalha</td>
+<td><code>dropdown</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção de lista</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>setor_colaborador</code></td>
+<td>Setor ou unidade</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Visível se <code>orgao_colaborador</code> preenchido</td>
+</tr>
+<tr>
+<td>23</td>
+<td><code>municipio_colaborador</code></td>
+<td>Município</td>
+<td><code>dropdown</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção de lista</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="5-pagina-dados_responsavel-dados-do-responsavel-pelo-site">5. Página: <code>dados_responsavel</code> — <em>Dados do responsável pelo site</em><a class="headerlink" href="#5-pagina-dados_responsavel-dados-do-responsavel-pelo-site" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td><code>nome_responsavel</code></td>
+<td>Nome completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Autocomplete <code>name</code></td>
+</tr>
+<tr>
+<td>25</td>
+<td><code>cpf_responsavel</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>26</td>
+<td><code>telefone_responsavel</code></td>
+<td>Celular</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>27</td>
+<td><code>email_responsavel</code></td>
+<td>E-mail institucional</td>
+<td><code>text</code> (E-mail)</td>
+<td><strong>Sim</strong></td>
+<td>Validador de formato de e-mail</td>
+</tr>
+<tr>
+<td>28</td>
+<td><code>matricula_responsavel</code></td>
+<td>Matrícula</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>29</td>
+<td><code>cargo_responsavel</code></td>
+<td>Cargo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td>30</td>
+<td><code>orgao_responsavel</code></td>
+<td>Órgão onde trabalha</td>
+<td><code>dropdown</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção de lista</td>
+</tr>
+<tr>
+<td>31</td>
+<td><code>setor_responsavel</code></td>
+<td>Setor ou unidade</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Visível se <code>orgao_responsavel</code> preenchido</td>
+</tr>
+<tr>
+<td>32</td>
+<td><code>municipio_responsavel</code></td>
+<td>Município</td>
+<td><code>dropdown</code></td>
+<td><strong>Sim</strong></td>
+<td>Seleção de lista</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 13</li>
+<li><strong>Texto / Máscara de CPF (<code>text</code> + pattern):</strong> 3</li>
+<li><strong>Texto / Telefone (<code>text</code> + tel):</strong> 3</li>
+<li><strong>Texto / E-mail (<code>text</code> + email):</strong> 3</li>
+<li><strong>Texto / URL (<code>text</code> + url):</strong> 1</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 6</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 1</li>
+<li><strong>Seletor de Imagem (<code>imagepicker</code>):</strong> 1</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cadastrar-profissional-habilitado-para-cultivos-e-estabelecimentos-de-insumos-agricolas">Mapeamento do Formulário: Cadastrar profissional habilitado para cultivos e estabelecimentos de insumos agrícolas<a class="headerlink" href="#mapeamento-do-formulario-cadastrar-profissional-habilitado-para-cultivos-e-estabelecimentos-de-insumos-agricolas" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_1">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Cadastrar responsável técnico para cultivos e estabelecimentos de insumos agrícolas</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 8</li>
+<li><strong>Campos Obrigatórios:</strong> 8 (100% dos campos)</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_1">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-pagina1-requerimento-de-cadastro-rt">1. Página: <code>página1</code> — <em>Requerimento de cadastro RT</em><a class="headerlink" href="#1-pagina-pagina1-requerimento-de-cadastro-rt" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe nome completo</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>email</code></td>
+<td>Email</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe seu email</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>telefone</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>rg_cnh</code></td>
+<td>Documento de identidade - RG ou CNH</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo de documento</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>carteira_conselho</code></td>
+<td>Carteira do conselho de classe</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo de carteira (CREA ou CFTA)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>comprovante_residencia</code></td>
+<td>Comprovante de residência</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo de comprovante emitido há max. 90 dias</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>pergunta1</code></td>
+<td>Objetivo do cadastro de RT</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Mínimo 1 e máximo 2 escolhas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_1">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 2</li>
+<li><strong>Texto / Máscara de CPF (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Texto / Telefone (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 3</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 1</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-solicitacao-de-diarias-para-servidores-da-fundect">Mapeamento do Formulário: Solicitação de Diárias para Servidores da Fundect<a class="headerlink" href="#mapeamento-do-formulario-solicitacao-de-diarias-para-servidores-da-fundect" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_2">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Serviço para solicitação online e acompanhamento de diárias de viagens oficiais da Fundect, permitindo o envio eletrónico de pedidos e documentos comprovativos.</li>
+<li><strong>Total de Páginas:</strong> 3</li>
+<li><strong>Total de Campos:</strong> 15</li>
+<li><strong>Campos Obrigatórios:</strong> 12</li>
+<li><strong>Campos Opcionais:</strong> 3</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_2">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_2" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-dados-do-servidor-e-da-viagem">1. Página 1: <code>página1</code> — <em>Dados do Servidor e da Viagem</em><a class="headerlink" href="#1-pagina-1-pagina1-dados-do-servidor-e-da-viagem" title="Permanent link">&para;</a></h3>
+<p><em>Informe os dados do servidor que vai viajar e os dados de sua viagem</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe seu nome</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>matricula</code></td>
+<td>Matricula</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe sua matrícula</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>solicitacao</code></td>
+<td>Tipo de Solicitação</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Mínimo 1 e máximo 1 escolha</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-2-pagina2-roteiro-da-viagem">2. Página 2: <code>página2</code> — <em>Roteiro da Viagem</em><a class="headerlink" href="#2-pagina-2-pagina2-roteiro-da-viagem" title="Permanent link">&para;</a></h3>
+<p><em>Preencha as informações do roteiro da viagem</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><code>cidade_origem</code></td>
+<td>Cidade de Origem</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe a cidade de origem</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>cidade_destino</code></td>
+<td>Cidade de Destino</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe a cidade de destino</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>data_saida</code></td>
+<td>Data/Saída</td>
+<td><code>text</code> (Data)</td>
+<td><strong>Sim</strong></td>
+<td>Validador do tipo <code>expression</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>data_retorno</code></td>
+<td>Data/Retorno</td>
+<td><code>text</code> (Data)</td>
+<td><strong>Sim</strong></td>
+<td>Informe a data de retorno</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>objetivo_viagem</code></td>
+<td>Objetivo da Viagem</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Sim</strong></td>
+<td>Informe o objetivo da viagem</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>veiculo_utilizado</code></td>
+<td>Veículo utilizado</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Não</strong></td>
+<td>Oculto por padrão (<code>visible: false</code>)</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>documento_pessoal</code></td>
+<td>Documento pessoal com foto</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Cópia do documento em PDF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3-pagina-3-pagina3-dados-bancarios-e-pessoais">3. Página 3: <code>página3</code> — <em>Dados Bancários e Pessoais</em><a class="headerlink" href="#3-pagina-3-pagina3-dados-bancarios-e-pessoais" title="Permanent link">&para;</a></h3>
+<p><em>Dados obrigatórios para estagiário. Servidores não precisam preencher, pois seus dados já constam no sistema de Recursos Humanos.</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td><code>cpf</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>rg</code></td>
+<td>RG</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Informe o número do RG</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>banco</code></td>
+<td>Banco</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe o código ou nome do banco</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>agencia</code></td>
+<td><em>Sem Título</em> (<code>agencia</code>)</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Agência com dígito</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>conta_corrente</code></td>
+<td>Conta Corrente</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número da conta</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_2">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 8</li>
+<li><strong>Texto / Máscara de CPF (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Texto Multilinha / Comentário (<code>comment</code>):</strong> 2</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 1</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cadastrar-industria-produtos-agrotoxicos-no-e-saniagro">Mapeamento do Formulário: Cadastrar indústria produtos agrotóxicos no e-saniagro<a class="headerlink" href="#mapeamento-do-formulario-cadastrar-industria-produtos-agrotoxicos-no-e-saniagro" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_3">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Cadastrar indústria produtos agrotóxicos no e-saniagro</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 13</li>
+<li><strong>Campos Obrigatórios:</strong> 13 (100% dos campos)</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_3">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_3" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-requerimento-para-cadastro-da-industria-de-produtos-agrotoxicos-no-e-saniagro">1. Página 1: <code>página1</code> — <em>Requerimento para cadastro da indústria de produtos agrotóxicos no e-saniagro</em><a class="headerlink" href="#1-pagina-1-pagina1-requerimento-para-cadastro-da-industria-de-produtos-agrotoxicos-no-e-saniagro" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>representante_legal</code></td>
+<td>Representante legal</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do representante legal</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cnpj</code></td>
+<td>CNPJ</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe o CNPJ</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>razao_social</code></td>
+<td>Razão Social</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Razão social da empresa</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>contato</code></td>
+<td>Contato</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do contato da empresa</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>telefone_contato</code></td>
+<td>Telefone do Contato</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>cep</code></td>
+<td>CEP</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>99999-999</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>endereco_correspondencia</code></td>
+<td>Endereço da correspondência</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Endereço de correspondência</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>estado</code></td>
+<td>Estado</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>Sigla do Estado</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>cidade</code></td>
+<td>Cidade</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Cidade da correspondência</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>bairro</code></td>
+<td>Bairro</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Bairro</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>cnpj_anexo</code></td>
+<td>CNPJ</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Cópia do CNPJ da empresa</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>contrato_social</code></td>
+<td>Contrato social</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Contrato social atualizado</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>procuracao_remetente</code></td>
+<td>Procuração do remetente</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Procuração específica do representante</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_3">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 7</li>
+<li><strong>Texto / Telefone (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Texto / CEP (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 3</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cancelar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico">Mapeamento do Formulário: Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico<a class="headerlink" href="#mapeamento-do-formulario-cancelar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_4">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Serviço para solicitar o encerramento oficial do registro de empresas que atuam com agrotóxicos (fabricação, comércio, transporte, armazenamento ou prestação de serviços).</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 14</li>
+<li><strong>Campos Obrigatórios:</strong> 14 (100% dos campos)</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_4">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_4" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-termo-de-compromisso">1. Página 1: <code>página1</code> — <em>TERMO DE COMPROMISSO</em><a class="headerlink" href="#1-pagina-1-pagina1-termo-de-compromisso" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do responsável pela empresa</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>uf_orgao</code></td>
+<td>UF</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>UF do Órgão Expedidor</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>orgao_expedidor</code></td>
+<td>Órgão Expedidor</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Órgão Expedidor do RG</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>rg</code></td>
+<td>RG</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>RG do responsável da empresa</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>nome_empresa</code></td>
+<td>Nome da empresa</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome da empresa</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>cnpj</code></td>
+<td>CNPJ</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>CNPJ da empresa</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>inscricao_estadual</code></td>
+<td>Inscrição Estadual</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Inscrição Estadual da empresa</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>uf</code></td>
+<td>UF</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>UF do endereço/empresa</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>municipio</code></td>
+<td>Município</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Município</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>endereco</code></td>
+<td>Endereço</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Endereço da empresa</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>motivo</code></td>
+<td>Motivo</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>Motivo do cancelamento (4 opções)</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>copia_cnpj</code></td>
+<td>Cópia do CNPJ</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo da cópia do CNPJ</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>guia_recolhimento</code></td>
+<td>Guia de recolhimento</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo da guia de recolhimento</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_4">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_4" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 8</li>
+<li><strong>Texto / Máscara de CPF (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 3</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 2</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-obter-selo-arte">Mapeamento do Formulário: Obter selo arte<a class="headerlink" href="#mapeamento-do-formulario-obter-selo-arte" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_5">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Requerimento de solicitação do Selo Arte conforme legislação vigente para produtos alimentícios de origem animal produzidos de forma artesanal.</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 9</li>
+<li><strong>Campos Obrigatórios:</strong> 9 (100% dos campos)</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_5">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_5" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-requerimento-de-solicitacao-de-selo-arte">1. Página 1: <code>página1</code> — <em>REQUERIMENTO DE SOLICITAÇÃO DE SELO ARTE</em><a class="headerlink" href="#1-pagina-1-pagina1-requerimento-de-solicitacao-de-selo-arte" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do requerente</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>nome_estabelecimento</code></td>
+<td>Nome do estabelecimento</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do estabelecimento produtor</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>registro_servico_inspecao</code></td>
+<td>Registro no serviço de inspeção</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Registro no serviço de inspeção</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>numero_registro</code></td>
+<td>Número</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do registro</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>municipio</code></td>
+<td>Múnicipio</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>Seleção de município</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>endereco</code></td>
+<td>Endereço</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Endereço completo</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>produtos</code></td>
+<td>Produtos</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Descrição dos produtos</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>identidade_visual_industria</code></td>
+<td>Identidade visual da indústria</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo da logomarca</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_5">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 6</li>
+<li><strong>Texto / Máscara de CPF (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 1</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-solicitacao-da-negativa-de-tombamento">Mapeamento do Formulário: Solicitação da Negativa de Tombamento<a class="headerlink" href="#mapeamento-do-formulario-solicitacao-da-negativa-de-tombamento" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_6">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Formulário de Solicitação da Certidão Negativa de Tombamento, documento oficial que atesta que determinado imóvel ou bem não está protegido por tombamento em nível municipal, estadual ou federal.</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 10</li>
+<li><strong>Campos Obrigatórios:</strong> 10 (100% dos campos)</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_6">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_6" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-formulario-de-solicitacao-da-certidao-negativa-de-tombamento">1. Página 1: <code>página1</code> — <em>Formulário de Solicitação da Certidão Negativa de Tombamento</em><a class="headerlink" href="#1-pagina-1-pagina1-formulario-de-solicitacao-da-certidao-negativa-de-tombamento" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome do Requerente</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do Requerente</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf_requerente</code></td>
+<td>CPF do Requerente</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>999.999.999-99</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>rg_requerente</code></td>
+<td>RG do Requerente</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>RG do Requerente</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>cpf_proprietario</code></td>
+<td>CPF do Proprietário</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>CPF do Proprietário</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>rg_proprietario</code></td>
+<td>RG do Proprietário</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>RG do Proprietário</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>identificacao_imovel</code></td>
+<td>Identificação do imóvel</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome e localização do imóvel</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>procuracao</code></td>
+<td>Procuração</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo de procuração (Assinada por Gov.br ou certificado digital)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>certidao_matricula_atualizada_imovel</code></td>
+<td>Certidão de matrícula atualizada do imóvel</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Certidão de matrícula atualizada em PDF</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>rg_cpf_proprietario</code></td>
+<td>RG e CPF do Proprietário</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo dos documentos do proprietário (Permite múltiplos arquivos)</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>rg_cpf_requerente</code></td>
+<td>RG e CPF do Requerente</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Anexo dos documentos do requerente (Permite múltiplos arquivos)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_6">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_6" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 5</li>
+<li><strong>Texto / Máscara de CPF (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 4</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura">Mapeamento do Formulário: Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura<a class="headerlink" href="#mapeamento-do-formulario-cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_7">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Cadastro ou atualização dos dados cadastrais de médicos veterinários que atuam no setor privado das cadeias produtivas da avicultura e da suinocultura no Estado de Mato Grosso do Sul.</li>
+<li><strong>Total de Páginas:</strong> 2</li>
+<li><strong>Total de Campos:</strong> 17</li>
+<li><strong>Campos Obrigatórios:</strong> 16</li>
+<li><strong>Campos Opcionais:</strong> 1</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_7">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_7" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina_cadastro_medico-ficha-de-cadastro-de-medicos-veterinarios-aviculturasuinocultura">1. Página 1: <code>pagina_cadastro_medico</code> — <em>FICHA DE CADASTRO DE MÉDICOS VETERINÁRIOS – AVICULTURA/SUINOCULTURA</em><a class="headerlink" href="#1-pagina-1-pagina_cadastro_medico-ficha-de-cadastro-de-medicos-veterinarios-aviculturasuinocultura" title="Permanent link">&para;</a></h3>
+<p><em>CADASTRO DE MÉDICOS VETERINÁRIOS</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome completo</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do CPF</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>orgao_expedidor_uf</code></td>
+<td>Órgão expedidor UF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Estado emissor do RG</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>orgao_expedidor</code></td>
+<td>Órgão expedidor</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Órgão expedidor do RG</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>rg</code></td>
+<td>RG</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do registro geral</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>email</code></td>
+<td>Email</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail de contato</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>telefone</code></td>
+<td>Telefones de Contato</td>
+<td><code>multipletext</code> (Múltiplos Campos)</td>
+<td><strong>Sim</strong></td>
+<td>Contém 2 subcampos: <br>- <code>telefone_primario</code>: (99) 99999-9999<br>- <code>telefone_adicional</code>: (99) 99999-9999</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>cep</code></td>
+<td>CEP</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe o CEP</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>endereco_completo</code></td>
+<td>Endereço completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Rua/Avenida, nº e bairro</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>uf</code></td>
+<td>UF</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>UF do endereço</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>municipio</code></td>
+<td>Município</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Indicativo do município</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>crmv_ms</code></td>
+<td>CRMV/MS</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Número do CRMV</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>empresa_vincula</code></td>
+<td>Vinculado a alguma empresa integradora ou cooperativa?</td>
+<td><code>boolean</code> (Sim/Não)</td>
+<td><strong>Sim</strong></td>
+<td>Define exibição da Página 2 (<code>visibleIf: {empresa_vincula} = true</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-2-pagina_empresa_vinculada-empresa-integradora-ou-cooperativa-vinculada">2. Página 2: <code>pagina_empresa_vinculada</code> — <em>EMPRESA INTEGRADORA OU COOPERATIVA VINCULADA</em><a class="headerlink" href="#2-pagina-2-pagina_empresa_vinculada-empresa-integradora-ou-cooperativa-vinculada" title="Permanent link">&para;</a></h3>
+<p><em>Página condicional (Exibida apenas se <code>empresa_vincula = true</code>)</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td><code>cnpj_empresa</code></td>
+<td>CNPJ</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>CNPJ da empresa integradora ou cooperativa</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>razao_social_fantasia</code></td>
+<td>Razão social e nome fantasia</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Razão social e nome fantasia</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>portaria_habitacao</code></td>
+<td>Nº Portaria de Habilitação no MAPA</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informação necessária para emissão de GTA</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>documento_empresa</code></td>
+<td>Documento da empresa, integradora ou cooperativa</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Comprovante de vínculo com a empresa</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>documento_portaria_habitacao_mapa</code></td>
+<td><em>Sem Título</em> (<code>documento_portaria_habitacao_mapa</code>)</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Para emissão de GTA (Permite múltiplos arquivos)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_7">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 11</li>
+<li><strong>Múltiplos Textos / Telefones (<code>multipletext</code>):</strong> 1 (com 2 subcampos internos)</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 1</li>
+<li><strong>Booleano / Sim ou Não (<code>boolean</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 2</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cadastro-no-sistema-estadual-de-bibliotecas-publicas">Mapeamento do Formulário: Cadastro no Sistema Estadual de Bibliotecas Públicas<a class="headerlink" href="#mapeamento-do-formulario-cadastro-no-sistema-estadual-de-bibliotecas-publicas" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_8">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Cadastro oficial de bibliotecas públicas e comunitárias de Mato Grosso do Sul junto à Fundação de Cultura de Mato Grosso do Sul (FCMS), que garante reconhecimento institucional e acesso a formações, recursos, acervos, equipamentos e parcerias.</li>
+<li><strong>Total de Páginas:</strong> 3</li>
+<li><strong>Total de Campos:</strong> 31</li>
+<li><strong>Campos Obrigatórios:</strong> 22</li>
+<li><strong>Campos Opcionais:</strong> 9</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_8">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_8" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina_dados_biblioteca-cadastro-de-dados-da-biblioteca">1. Página 1: <code>pagina_dados_biblioteca</code> — <em>Cadastro de Dados da Biblioteca</em><a class="headerlink" href="#1-pagina-1-pagina_dados_biblioteca-cadastro-de-dados-da-biblioteca" title="Permanent link">&para;</a></h3>
+<p><em>Manter os dados atualizados anualmente ou sempre que houver alteração na gestão, endereço ou estrutura.</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome_responsavel_biblioteca</code></td>
+<td>Nome do responsável pela biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do responsável</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cargo_responsavel_biblioteca</code></td>
+<td>Cargo do Responsável pela biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Cargo do responsável</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>escolaridade_responsavel_biblioteca</code></td>
+<td>Escolaridade do responsável pela biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Escolaridade do responsável</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>nome_biblioteca</code></td>
+<td>Nome da biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome da biblioteca</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>diagnostico_mais_recente_biblioteca</code></td>
+<td>Respondeu ao diagnóstico mais recente das bibliotecas?</td>
+<td><code>boolean</code> (Sim/Não)</td>
+<td><strong>Sim</strong></td>
+<td>Confirmação de resposta</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>esta_funcionamento</code></td>
+<td>Está em funcionamento ?</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Escolha única (Sim/Não)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>tipo_cadastrada</code></td>
+<td>Tipo de biblioteca a ser cadastrada</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Escolha única (Pública/Comunitária/Associada)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>legislacao_criacao</code></td>
+<td>Legislação de Criação</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Exibida apenas se <code>tipo_cadastrada = 'publica'</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>numero_pessoas_bibliotecas</code></td>
+<td>Número de pessoas que trabalham na biblioteca</td>
+<td><code>text</code> (Número)</td>
+<td><strong>Sim</strong></td>
+<td>Mínimo 0, numérico</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>nome_completo_pessoas_trabalham_biblioteca</code></td>
+<td>Nome completo das pessoas que trabalham na biblioteca</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Não</strong></td>
+<td>Exibida apenas se <code>numero_pessoas_bibliotecas</code> for preenchido</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>descreva_biblioteca_frase</code></td>
+<td>Descreva sua biblioteca em uma frase</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Frase descritiva</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>historia_biblioteca</code></td>
+<td>Conte a história da biblioteca</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Sim</strong></td>
+<td>História da biblioteca</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>horario_funcionamento</code></td>
+<td>Horário de funcionamento</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Sim</strong></td>
+<td>Exibida apenas se <code>esta_funcionamento = 'sim'</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>informacoes_adicionais_horario_funcionamento</code></td>
+<td>Informações adicionais sobre o horário de funcionamento</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Informações adicionais</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>endereco_biblioteca</code></td>
+<td>Endereço da Biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>CEP, Logradouro, Número, Complemento, Bairro</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>municipio</code></td>
+<td>Município</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>Seleção de município</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>facilidade_pessoas_deficiencia</code></td>
+<td>Possui alguma facilidade para pessoas com deficiência ou mobilidade reduzida?</td>
+<td><code>boolean</code> (Sim/Não)</td>
+<td><strong>Não</strong></td>
+<td>Acessibilidade</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>facilidade_acessibilidade_oferece</code></td>
+<td>Quais facilidades de acessibilidade a biblioteca oferece</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Exibida apenas se <code>facilidade_pessoas_deficiencia = true</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-2-pagina_anexos-informacoes-adicionais-e-anexos-de-arquivos">2. Página 2: <code>pagina_anexos</code> — <em>Informações adicionais e anexos de arquivos</em><a class="headerlink" href="#2-pagina-2-pagina_anexos-informacoes-adicionais-e-anexos-de-arquivos" title="Permanent link">&para;</a></h3>
+<p><em>Anexar documento de criação da biblioteca (decreto, lei ou ato administrativo, no caso de bibliotecas públicas). Enviar comprovante de funcionamento (fotos atuais do espaço, horário de atendimento e endereço completo).</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>19</td>
+<td><code>rede_sociais</code></td>
+<td>Contato e Redes Sociais da Biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>E-mail, Telefone, Redes Sociais</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>legislacao_arquivo</code></td>
+<td>Legislação</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Exibida apenas se <code>tipo_cadastrada = 'publica'</code></td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>foto_capa</code></td>
+<td>Foto de capa</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Foto da fachada ou entrada (JPEG)</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>foto_divulgacao</code></td>
+<td>Foto de divulgação</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Imagem de divulgação (JPEG)</td>
+</tr>
+<tr>
+<td>23</td>
+<td><code>documentacao_cadastro_anteriores</code></td>
+<td>Documentação de Cadastros anteriores</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Comprovantes de cadastros anteriores (PDF/JPEG, Múltiplos)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3-pagina-3-pagina_instituicao-dados-sobre-a-instituicao-ligada-a-biblioteca">3. Página 3: <code>pagina_instituicao</code> — <em>Dados sobre a Instituição ligada a biblioteca</em><a class="headerlink" href="#3-pagina-3-pagina_instituicao-dados-sobre-a-instituicao-ligada-a-biblioteca" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>24</td>
+<td><code>nome_responsavel_instituicao</code></td>
+<td>Nome do Responsável</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do responsável pela instituição</td>
+</tr>
+<tr>
+<td>25</td>
+<td><code>cargo_reponsavel_instituicao</code></td>
+<td>Cargo do responsável</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Cargo do responsável</td>
+</tr>
+<tr>
+<td>26</td>
+<td><code>telefone_instituicao</code></td>
+<td>Telefone da Instituição</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>27</td>
+<td><code>email_instituicao</code></td>
+<td>E-mail da Instituição</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail da instituição</td>
+</tr>
+<tr>
+<td>28</td>
+<td><code>nome_instiucao_vinculada</code></td>
+<td>Nome da instituição à qual a biblioteca está vinculada</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome da instituição vinculada</td>
+</tr>
+<tr>
+<td>29</td>
+<td><code>tipo_documento_instituicao</code></td>
+<td>Tipo de documento da instituição</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Opções: CNPJ ou CPF</td>
+</tr>
+<tr>
+<td>30</td>
+<td><code>numero_documento_vinculado_biblioteca</code></td>
+<td>Número do documento vinculado à biblioteca</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do CNPJ ou CPF</td>
+</tr>
+<tr>
+<td>31</td>
+<td><code>endereco_intituicao</code></td>
+<td>Endereço da Instituição</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Endereço completo da instituição</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_8">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 16</li>
+<li><strong>Texto / Máscara de Telefone (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Texto Multilinha / Comentário (<code>comment</code>):</strong> 3</li>
+<li><strong>Booleano / Sim ou Não (<code>boolean</code>):</strong> 2</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 3</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 5</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino">Mapeamento do Formulário: Cadastrar ou atualizar empresa integradora de ave ou suíno<a class="headerlink" href="#mapeamento-do-formulario-cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_9">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Serviço para cadastrar ou atualizar os dados de empresas integradoras da cadeia de avicultura e suinocultura em Mato Grosso do Sul.</li>
+<li><strong>Total de Páginas:</strong> 2</li>
+<li><strong>Total de Campos:</strong> 16</li>
+<li><strong>Campos Obrigatórios:</strong> 10</li>
+<li><strong>Campos Opcionais:</strong> 6</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_9">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_9" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-dados-do-representante-legal">1. Página 1: <code>página1</code> — <em>Dados do Representante legal</em><a class="headerlink" href="#1-pagina-1-pagina1-dados-do-representante-legal" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome_representante</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Representante legal</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>telefone_representante</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>email_representante</code></td>
+<td>E-mail</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail do representante legal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-2-pagina2-ficha-de-cadastro-de-empresas-integradoras-de-aves-e-suinos">2. Página 2: <code>página2</code> — <em>FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS</em><a class="headerlink" href="#2-pagina-2-pagina2-ficha-de-cadastro-de-empresas-integradoras-de-aves-e-suinos" title="Permanent link">&para;</a></h3>
+<p><em>FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td><code>nome_fantasia</code></td>
+<td>Nome fantasia</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome fantasia da empresa</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>razao_social</code></td>
+<td>Razão social</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Conforme cartão CNPJ</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>cnpj</code></td>
+<td>CNPJ</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do CNPJ</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>inscricao_estadual</code></td>
+<td>Inscrição Estadual</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número da IE</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>telefone_empresa</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>email_empresa</code></td>
+<td>E-mail</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail da integradora</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>uf_empresa</code></td>
+<td>UF</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Não</strong></td>
+<td>UF do estado</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>municipio_empresa</code></td>
+<td>Município</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do município</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>cep</code></td>
+<td>CEP</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do CEP</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>via_acesso</code></td>
+<td>Via de acesso</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Ponto de referência</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>coordenada_geografica</code></td>
+<td>Coordenada geográfica</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Formato em graus decimais (Ex.: <code>S: -20.00000 -50.00000</code>)</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>integradora</code></td>
+<td>Integradora de:</td>
+<td><code>checkbox</code></td>
+<td><strong>Não</strong></td>
+<td>Escolha única (Avicultura ou Suinocultura)</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>informacoes_complementares</code></td>
+<td>Informações complementares</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Outras informações importantes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_9">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_9" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 13</li>
+<li><strong>Texto / Máscara de Telefone (<code>text</code> + pattern):</strong> 2</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 1</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 1</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-requerer-certificado-de-destruicao-de-soqueira-de-algodao">Mapeamento do Formulário: Requerer certificado de destruição de soqueira de algodão<a class="headerlink" href="#mapeamento-do-formulario-requerer-certificado-de-destruicao-de-soqueira-de-algodao" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_10">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Solicitação do Certificado de Destruição de Soqueira de Algodão.</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 8</li>
+<li><strong>Campos Obrigatórios:</strong> 8</li>
+<li><strong>Campos Opcionais:</strong> 0</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_10">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_10" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina-requerimento-de-certificado">1. Página 1: <code>pagina</code> — <em>REQUERIMENTO DE CERTIFICADO</em><a class="headerlink" href="#1-pagina-1-pagina-requerimento-de-certificado" title="Permanent link">&para;</a></h3>
+<p><em>Requerer certificado de destruição de soqueira de algodão</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome do responsável</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do CPF</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>telefone</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>email</code></td>
+<td>Email</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail do solicitante</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>area_plantio</code></td>
+<td>Área de plantio</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Opções: <br>- Até 50 hectares (<code>igual_menor_50_hectares</code>) <br>- Acima de 50 hectares (<code>acima_50_hectares</code>)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>relatorio_fiscalizacao</code></td>
+<td>Relatório de Fiscalização (RF)</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Emitir no E-Saniagro (Permite múltiplos arquivos)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>guia_daems</code></td>
+<td>Guia da DAEMS</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Emitir DAEMS correspondente à área de plantio (Permite múltiplos arquivos)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>comprovante_pagamento</code></td>
+<td>Comprovante de pagamento</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>Comprovante de pagamento da taxa (Permite múltiplos arquivos)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_10">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_10" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 3</li>
+<li><strong>Texto / Máscara de Telefone (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 3</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-solicitar-copia-de-laudos-periciais">Mapeamento do Formulário: Solicitar cópia de laudos periciais<a class="headerlink" href="#mapeamento-do-formulario-solicitar-copia-de-laudos-periciais" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_11">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Serviço para solicitação de cópias de laudos periciais emitidos pela CGP/SEJUSP/MS para fins judiciais, seguros ou outras finalidades oficiais.</li>
+<li><strong>Total de Páginas:</strong> 3</li>
+<li><strong>Total de Campos:</strong> 22</li>
+<li><strong>Campos Obrigatórios:</strong> 13</li>
+<li><strong>Campos Opcionais:</strong> 9</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_11">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_11" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-dados-do-solicitante-da-copia-de-laudos-periciais">1. Página 1: <code>página1</code> — <em>Dados do Solicitante da cópia de laudos periciais</em><a class="headerlink" href="#1-pagina-1-pagina1-dados-do-solicitante-da-copia-de-laudos-periciais" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome_solicitante</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome completo do solicitante</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf_solicitante</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>CPF do solicitante</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>rg</code></td>
+<td>RG</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Registro Geral do solicitante</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>orgao_emissor</code></td>
+<td>Órgão emissor</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Órgão emissor do RG</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>telefone_solicitante</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>email_solicitante</code></td>
+<td>E-mail</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail do solicitante</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>endereco_solicitante</code></td>
+<td>Endereço</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Endereço completo (Rua, nº, bairro, município e CEP)</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>data_nascimento</code></td>
+<td>Data de nascimento</td>
+<td><code>text</code> (Data)</td>
+<td><strong>Sim</strong></td>
+<td>Formato de data (<code>inputType: "date"</code>)</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>tipo_solicitante</code></td>
+<td>Tipo de solicitante</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Escolha única: <br>- Pessoa envolvida no evento<br>- Procurador devidamente constituído<br>- Familiar de 1º grau de vítima fatal</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-2-pagina2-dados-sobre-a-vitima-do-evento">2. Página 2: <code>página2</code> — <em>Dados sobre a vítima do evento</em><a class="headerlink" href="#2-pagina-2-pagina2-dados-sobre-a-vitima-do-evento" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td><code>nome_vitima</code></td>
+<td>Nome da vítima</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome da vítima envolvida no evento</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>nome_outorgante</code></td>
+<td>Nome do outorgante</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Se for procurador, insira o nome completo do procurador</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>copia_procuracao</code></td>
+<td>Anexar cópia da procuração (se aplicável)</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Suporta: <code>.pdf</code>, <code>.png</code>, <code>.jpg</code>, <code>.webp</code>, <code>.zip</code>, <code>.jpeg</code> (Múltiplos)</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>documento_identificacao_pessoa_envolvida</code></td>
+<td>Documento de identificação da pessoa envolvida no evento</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Suporta: <code>.pdf</code>, <code>.png</code>, <code>.jpg</code>, <code>.webp</code>, <code>.zip</code>, <code>.jpeg</code> (Múltiplos)</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>documento_identificacao_pessoal_solicitante</code></td>
+<td>Documento de Identificação pessoal do solicitante (familiares de 1º grau) ou Procurador (se aplicável)</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Suporta: <code>.pdf</code>, <code>.png</code>, <code>.jpg</code>, <code>.webp</code>, <code>.zip</code>, <code>.jpeg</code> (Múltiplos)</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>documento_comprove_relacao_parentesco</code></td>
+<td>Documento que comprove a relação de parentesco com a vítima fatal (se aplicável)</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Suporta: <code>.pdf</code>, <code>.png</code>, <code>.jpg</code>, <code>.webp</code>, <code>.zip</code>, <code>.jpeg</code> (Múltiplos)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="3-pagina-3-pagina3-dados-sobre-o-inquerito-ou-boletim-de-ocorrencia">3. Página 3: <code>página3</code> — <em>Dados sobre o inquérito ou boletim de ocorrência</em><a class="headerlink" href="#3-pagina-3-pagina3-dados-sobre-o-inquerito-ou-boletim-de-ocorrencia" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>16</td>
+<td><code>numero_inquerito_boletim</code></td>
+<td>Número do inquérito/boletim de ocorrência policial ou processo penal</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Número do B.O. ou processo penal</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>endereco_evento</code></td>
+<td>Local de ocorrência do fato</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Endereço completo do fato (Rua, Bairro, Cidade, CEP, complemento)</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>descricao_fato</code></td>
+<td>Descrição do fato</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Descrição detalhada do ocorrido</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>data_fato</code></td>
+<td>Data do fato</td>
+<td><code>text</code> (Data)</td>
+<td><strong>Sim</strong></td>
+<td>Formato de data (<code>inputType: "date"</code>)</td>
+</tr>
+<tr>
+<td>20</td>
+<td><code>tipo_laudo</code></td>
+<td>Informe o tipo do laudo pericial solicitado</td>
+<td><code>checkbox</code></td>
+<td><strong>Não</strong></td>
+<td>Mínimo 1 seleção: <br>- Análise Laboratoriais<br>- Criminalística<br>- Identificação<br>- Medicina-Legal</td>
+</tr>
+<tr>
+<td>21</td>
+<td><code>informacoes_adicionais</code></td>
+<td>Informações adicionais</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Texto livre para observações</td>
+</tr>
+<tr>
+<td>22</td>
+<td><code>termo</code></td>
+<td>Condições para fornecimento da cópia do laudo pericial</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Aceite dos termos referentes a segredo de justiça e taxa DAEMS de 0,5 UFERMS/folha</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_11">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_11" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 11</li>
+<li><strong>Texto / Máscara de Telefone (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Texto / Seleção de Data (<code>text</code> + date):</strong> 2</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 3</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 4</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola">Mapeamento do Formulário: Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola<a class="headerlink" href="#mapeamento-do-formulario-cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_12">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_12" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Serviço para cadastrar ou atualizar os dados de laboratórios que realizam análises de sanidade avícola para os programas oficiais de monitoramento sanitário.</li>
+<li><strong>Total de Páginas:</strong> 1</li>
+<li><strong>Total de Campos:</strong> 14</li>
+<li><strong>Campos Obrigatórios:</strong> 11</li>
+<li><strong>Campos Opcionais:</strong> 3</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_12">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_12" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina1-ficha-de-cadastro-de-laboratorio-de-diagnostico-em-sanidade-avicola">1. Página 1: <code>página1</code> — <em>FICHA DE CADASTRO DE LABORATÓRIO DE DIAGNÓSTICO EM SANIDADE AVÍCOLA</em><a class="headerlink" href="#1-pagina-1-pagina1-ficha-de-cadastro-de-laboratorio-de-diagnostico-em-sanidade-avicola" title="Permanent link">&para;</a></h3>
+<p><em>DADOS PARA CADASTRO DO LABORATÓRIO</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome</code></td>
+<td>Nome</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>escopo_aves</code></td>
+<td>Escopo - Aves (Salmonela/Micoplasma)</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Tipo de testes ou outro escopo</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>nome_fantasia</code></td>
+<td>Nome fantasia</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Nome fantasia do laboratório</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>razao_social</code></td>
+<td>Razão social</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Conforme cartão CNPJ</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>cnpj</code></td>
+<td>CNPJ</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número do CNPJ</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>inscricao_estadual</code></td>
+<td>Inscrição Estadual</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Número da IE</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>portaria_credenciamento</code></td>
+<td>Nº Portaria de Credenciamento</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Para laboratórios credenciados junto ao MAPA</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>crl</code></td>
+<td>Nº do CRL</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Preencher se houver</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>telefone</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Telefone do laboratório</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>email</code></td>
+<td>E-mail</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail do laboratório</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>cep</code></td>
+<td>CEP</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>99999-999</code></td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>enredeco_completo</code></td>
+<td>Endereço completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Exibida apenas se <code>cep</code> for preenchido (Rua/Avenida, nº e bairro)</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>uf</code></td>
+<td>UF</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Sim</strong></td>
+<td>Exibida apenas se <code>cep</code> for preenchido (Seleção das 27 UFs)</td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>municipio</code></td>
+<td>Município</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Exibida apenas se <code>cep</code> for preenchido</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_12">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_12" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples / Formatado (<code>text</code>):</strong> 13</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 1</li>
+</ul>
+<hr />
+<h1 id="mapeamento-do-formulario-solicitar-emissao-de-certidao-de-atendimento-de-emergencia">Mapeamento do Formulário: Solicitar emissão de certidão de atendimento de emergência<a class="headerlink" href="#mapeamento-do-formulario-solicitar-emissao-de-certidao-de-atendimento-de-emergencia" title="Permanent link">&para;</a></h1>
+<h2 id="resumo-geral_13">📊 Resumo Geral<a class="headerlink" href="#resumo-geral_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Descrição:</strong> Serviço para solicitação de certidão oficial que comprove chamadas feitas ao 190 (Polícia Militar) ou 193 (Bombeiros) nas cidades de Campo Grande, Dourados, Corumbá e Ponta Porã, para uso pessoal, administrativo ou judicial.</li>
+<li><strong>Total de Páginas:</strong> 2</li>
+<li><strong>Total de Campos:</strong> 18</li>
+<li><strong>Campos Obrigatórios:</strong> 13</li>
+<li><strong>Campos Opcionais:</strong> 5</li>
+</ul>
+<hr />
+<h2 id="distribuicao-por-paginas_13">📄 Distribuição por Páginas<a class="headerlink" href="#distribuicao-por-paginas_13" title="Permanent link">&para;</a></h2>
+<h3 id="1-pagina-1-pagina_ligou-dados-de-quem-ligou">1. Página 1: <code>pagina_ligou</code> — <em>Dados de quem ligou</em><a class="headerlink" href="#1-pagina-1-pagina_ligou-dados-de-quem-ligou" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>nome_completo_ligou</code></td>
+<td>Nome completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe seu nome completo</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>cpf_ligou</code></td>
+<td>CPF</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Informe seu CPF</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>data_nascimento_ligou</code></td>
+<td>Data de nascimento</td>
+<td><code>text</code> (Data)</td>
+<td><strong>Sim</strong></td>
+<td>Formato de data (<code>inputType: "date"</code>)</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>telefone_ligou</code></td>
+<td>Telefone</td>
+<td><code>text</code> (Telefone)</td>
+<td><strong>Sim</strong></td>
+<td>Máscara <code>(99) 99999-9999</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>email_ligou</code></td>
+<td>E-mail</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>E-mail válido do solicitante</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>endereco_ligou</code></td>
+<td>Endereço completo</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Bairro, Rua/Avenida, Número</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>complemento_endereco_ligou</code></td>
+<td>Complemento endereço</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Não</strong></td>
+<td>Ex.: casa, apartamento, ponto de referência</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>cidade_ligou</code></td>
+<td>Cidade</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Não</strong></td>
+<td>Seleção dentre os 79 municípios do MS</td>
+</tr>
+<tr>
+<td>9</td>
+<td><code>documento_identificacao_cpf</code></td>
+<td>Documento de identificação e CPF</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Sim</strong></td>
+<td>RG ou CNH contendo CPF (Formato PDF / Múltiplos)</td>
+</tr>
+<tr>
+<td>10</td>
+<td><code>documento_identificacao_representante</code></td>
+<td>Documento de identificação do representante legal ou procurador</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Anexar se aplicável (Formato PDF / Múltiplos)</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>procuracao_ligou</code></td>
+<td>Procuração</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Procuração se houver (Formato PDF / Múltiplos)</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>outros_documentos</code></td>
+<td>Outros documentos</td>
+<td><code>file</code> (Arquivo)</td>
+<td><strong>Não</strong></td>
+<td>Documentos complementares (Formato PDF / Múltiplos)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="2-pagina-2-pagina_ocorrencia-dados-da-ocorrencia">2. Página 2: <code>pagina_ocorrencia</code> — <em>Dados da Ocorrência</em><a class="headerlink" href="#2-pagina-2-pagina_ocorrencia-dados-da-ocorrencia" title="Permanent link">&para;</a></h3>
+<p><em>Informe os dados da Ocorrência.</em></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Campo (<code>name</code>)</th>
+<th>Rótulo / Título</th>
+<th>Tipo</th>
+<th>Obrigatório</th>
+<th>Observações / Validação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13</td>
+<td><code>telefone_origem_emergencia</code></td>
+<td>Telefone de origem das chamadas de emergência</td>
+<td><code>checkbox</code></td>
+<td><strong>Sim</strong></td>
+<td>Escolha única: <br>- <code>190</code> <br>- <code>193</code></td>
+</tr>
+<tr>
+<td>14</td>
+<td><code>cidade_ocorrencia</code></td>
+<td>Cidade</td>
+<td><code>dropdown</code> (Seleção)</td>
+<td><strong>Não</strong></td>
+<td>Cidade onde o fato ocorreu (79 municípios do MS)</td>
+</tr>
+<tr>
+<td>15</td>
+<td><code>endereco_ocorrencia</code></td>
+<td>Endereço completo da ocorrência</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Bairro, Rua/Avenida, Número (ou "Sem número")</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>data_horario_fato</code></td>
+<td>Data e horário do fato</td>
+<td><code>text</code> (Data e Hora)</td>
+<td><strong>Sim</strong></td>
+<td>Formato data/hora (<code>inputType: "datetime-local"</code>)</td>
+</tr>
+<tr>
+<td>17</td>
+<td><code>finalidade_registro</code></td>
+<td>Finalidade do registro de atendimento</td>
+<td><code>text</code> (Texto)</td>
+<td><strong>Sim</strong></td>
+<td>Motivo do pedido (Ex.: Questões judiciais)</td>
+</tr>
+<tr>
+<td>18</td>
+<td><code>descricao_ocorrencia</code></td>
+<td>Descrição da ocorrência</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Sim</strong></td>
+<td>Relato breve sobre o ocorrido</td>
+</tr>
+<tr>
+<td>19</td>
+<td><code>informacoes_adicionais</code></td>
+<td>Informações adicionais</td>
+<td><code>comment</code> (Texto Longo)</td>
+<td><strong>Sim</strong></td>
+<td>Informações relevantes adicionais</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="contagem-por-tipo-de-campo_13">📈 Contagem Por Tipo de Campo<a class="headerlink" href="#contagem-por-tipo-de-campo_13" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Texto Simples (<code>text</code>):</strong> 5</li>
+<li><strong>Texto / Máscara de Telefone (<code>text</code> + pattern):</strong> 1</li>
+<li><strong>Texto / Seleção de Data (<code>text</code> + date):</strong> 1</li>
+<li><strong>Texto / Seleção de Data e Hora (<code>text</code> + datetime-local):</strong> 1</li>
+<li><strong>Área de Texto / Texto Longo (<code>comment</code>):</strong> 2</li>
+<li><strong>Lista Suspensa (<code>dropdown</code>):</strong> 2</li>
+<li><strong>Caixa de Seleção (<code>checkbox</code>):</strong> 1</li>
+<li><strong>Envio de Arquivo (<code>file</code>):</strong> 4</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.setdig.ms.gov.br/" target="_blank" rel="noopener" title="SETDIG" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
