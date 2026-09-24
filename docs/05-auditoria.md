@@ -7,20 +7,20 @@ ficha, preenchida com o [checklist](04-checklist.md).
 
 | # | Serviço | Órgão | Status |
 |---|---|---|---|
-| 1 | [Solicitar acesso ao WordPress](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/validar-antonio-wordpress) | *(a confirmar)* | pronto |
+| 1 | [Solicitar acesso ao WordPress](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/validar-antonio-wordpress) | SEGOV | pronto |
 | 2 | [Solicitação de diárias para servidores da Fundect](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitacao-de-diarias-para-servidores-da-fundect) | Fundect | pronto |
-| 3 | [Cadastrar profissional habilitado para cultivos e estabelecimentos de insumos agrícolas](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-profissional-habilitado-para-cultivos-e-estabelecimentos-de-insumos-agricolas) | *(a confirmar)* | pronto |
-| 4 | [Cadastrar indústria de produtos agrotóxicos no e-Saniagro](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-industria-produtos-agrotoxicos-no-e-saniagro) | *(a confirmar)* | pronto |
-| 5 | [Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cancelar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico) | *(a confirmar)* | pronto |
-| 6 | [Obter Selo ARTE](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/obter-selo-arte) | *(a confirmar)* | pronto |
-| 7 | [Solicitação da Negativa de Tombamento](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitacao-da-negativa-de-tombamento) | *(a confirmar)* | pronto |
-| 8 | [Cadastrar ou atualizar médico veterinário — avicultura ou suinocultura](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura) | *(a confirmar)* | pronto |
-| 9 | [Cadastro no Sistema Estadual de Bibliotecas Públicas](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms) | *(a confirmar)* | pronto |
-| 10 | [Cadastrar ou atualizar empresa integradora de ave ou suíno](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino) | *(a confirmar)* | pronto |
-| 11 | [Requerer certificado de destruição de soqueira de algodão](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/requerer-certificado-de-destruicao-de-soqueira-de-algodao) | *(a confirmar)* | pronto |
-| 12 | [Solicitar cópia de laudos periciais](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitar-copia-de-laudos-periciais) | *(a confirmar)* | pronto |
-| 13 | [Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola) | *(a confirmar)* | pronto |
-| 14 | [Solicitar emissão de certidão de atendimento de emergência](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitar-emissao-de-certidao-de-atendimento-de-emergencia-teste) | *(a confirmar)* | pronto |
+| 3 | [Cadastrar profissional habilitado para cultivos e estabelecimentos de insumos agrícolas](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-profissional-habilitado-para-cultivos-e-estabelecimentos-de-insumos-agricolas) | IAGRO | pronto |
+| 4 | [Cadastrar indústria de produtos agrotóxicos no e-Saniagro](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-industria-produtos-agrotoxicos-no-e-saniagro) | IAGRO | pronto |
+| 5 | [Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cancelar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico) | IAGRO | pronto |
+| 6 | [Obter Selo ARTE](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/obter-selo-arte) | IAGRO | pronto |
+| 7 | [Solicitação da Negativa de Tombamento](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitacao-da-negativa-de-tombamento) | FCMS | pronto |
+| 8 | [Cadastrar ou atualizar médico veterinário — avicultura ou suinocultura](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura) | IAGRO | pronto |
+| 9 | [Cadastro no Sistema Estadual de Bibliotecas Públicas](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms) | FCMS | pronto |
+| 10 | [Cadastrar ou atualizar empresa integradora de ave ou suíno](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino) | IAGRO | pronto |
+| 11 | [Requerer certificado de destruição de soqueira de algodão](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/requerer-certificado-de-destruicao-de-soqueira-de-algodao) | IAGRO | pronto |
+| 12 | [Solicitar cópia de laudos periciais](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitar-copia-de-laudos-periciais) | CGP | pronto |
+| 13 | [Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola) | IAGRO | pronto |
+| 14 | [Solicitar emissão de certidão de atendimento de emergência](https://portal.demo-aws.xvia.com.br/app/ms-forms-designer/forms/edit/solicitar-emissao-de-certidao-de-atendimento-de-emergencia-teste) | SEJUSP | pronto |
 
 Ao terminar uma ficha: troque o status para `pronto`.
 
