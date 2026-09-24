@@ -536,6 +536,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -770,6 +779,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -910,6 +928,40 @@ legibilidade e o fluxo do usuário. Recomenda-se dividi-lo em 3 etapas lógicas:
 2. <strong>Dados da Vítima</strong>: identificação da vítima do evento;
 3. <strong>Dados do Evento</strong>: dados específicos da ocorrência, como informações sobre o inquérito
    policial ou boletim de ocorrência (B.O.).</p>
+</div>
+<hr />
+<h2 id="cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola">Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola<a class="headerlink" href="#cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola" title="Permanent link">&para;</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — campos de endereço condicionais ao CEP</p>
+<p>Os campos relacionados a endereço (como logradouro, bairro e município) poderiam iniciar
+invisíveis e ser exibidos apenas após o usuário preencher o <strong>CEP</strong>. Como o CEP é um campo
+sempre obrigatório e comum a formulários com endereço, essa lógica condicional diminui a
+poluição visual inicial da tela.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — alinhamento lado a lado de Telefone e E-mail</p>
+<p>Organizar os campos <strong>Telefone</strong> e <strong>E-mail</strong> em duas colunas (lado a lado). Como ambos
+tratam de meios de contato e contêm textos curtos, a leitura e a digitação ficam mais práticas,
+sem risco de quebra de layout, além de economizar espaço vertical no formulário.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — alinhamento lado a lado de Estado (UF) e Município</p>
+<p>Os campos <strong>Estado (UF)</strong> e <strong>Município</strong> também devem ficar alinhados lado a lado, pois
+possuem relação direta de dependência e ocupam pouco espaço horizontal (especialmente a UF
+com apenas 2 dígitos), otimizando a leitura e a disposição dos dados de localização.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — uso de campos de seleção para dados padronizados</p>
+<p>Campos que possuem valores universais ou tabelados (como <strong>Estado/UF</strong> ou <strong>Cor/Raça</strong>) devem
+ser estruturados como listas de seleção (<code>select</code>/<code>dropdown</code>) ou botões de escolha, em vez de
+campos de texto aberto. Isso elimina o risco de erros de digitação ou divergências de grafia,
+garantindo a integridade dos dados coletados.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">[RECOMENDAÇÃO] — sintetizar a descrição do serviço</p>
+<p>Manter a descrição do serviço no cabeçalho do formulário sempre enxuta para não empurrar os
+campos para baixo e aumentar desnecessariamente o tamanho da página. A descrição pode ser
+sintetizada (inclusive com auxílio de IA) para focar apenas nas informações essenciais ao cidadão.</p>
 </div>
 
 
