@@ -412,6 +412,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#o-que-precisa-mudar-acoes-prioritarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que precisa mudar (ações prioritárias)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1084,6 +1093,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#o-que-precisa-mudar-acoes-prioritarias" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que precisa mudar (ações prioritárias)
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1203,31 +1221,118 @@ ficha, preenchida com o <a href="../04-checklist/">checklist</a>.</p>
 <hr />
 <h2 id="achados-que-se-repetem">Achados que se repetem<a class="headerlink" href="#achados-que-se-repetem" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Preencher <strong>depois</strong> de pelo menos 5 fichas prontas. É esta seção que vai para a conversa com a
-SGD — o problema que aparece em um formulário é um caso; o que aparece em oito é um padrão.</p>
+<p>Síntese dos padrões que aparecem em mais de um formulário. Lista completa,
+com todos os formulários citados por linha, em
+<a href="../andamento/recomendacoes/#1-achados-que-se-repetem">andamento/recomendacoes.md</a>.</p>
 </blockquote>
 <table>
 <thead>
 <tr>
 <th>#</th>
 <th>Achado</th>
-<th>Em quantos formulários</th>
+<th>Em quantos</th>
 <th>Item do checklist</th>
 <th>O que fazer no X-Forms</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td><em>(a preencher)</em></td>
-<td></td>
-<td></td>
-<td></td>
+<td>1</td>
+<td>Campo RG (e "Órgão expedidor") redundante — CPF já basta com a nova CIN</td>
+<td>3+</td>
+<td>C.3</td>
+<td>Remover; manter só <code>cpf</code> com máscara</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Campo UF / Estado / Região redundante quando serviço é só de MS</td>
+<td>3</td>
+<td>C.3</td>
+<td>Remover ou fixar oculto com valor <code>MS</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Coordenadas geográficas exigidas do cidadão</td>
+<td>2</td>
+<td>C.3</td>
+<td>Remover — endereço + CEP + município já localizam</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Dados pessoais <strong>não</strong> pré-preenchidos do gov.br</td>
+<td>14</td>
+<td>C.1</td>
+<td>Puxar do gov.br (Lei 14.129/2021 + LGPD art. 6º III)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Ordem dos campos fora da lógica</td>
+<td>2+</td>
+<td>B.1</td>
+<td>identificação → vínculo → pedido → anexos → confirmação</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Formulário longo em 1 única página (&gt;15 campos)</td>
+<td>2</td>
+<td>A.1</td>
+<td>Dividir em etapas (<em>one thing per page</em>)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Campo duplicado para o mesmo dado (2 telefones, 3 partes de endereço)</td>
+<td>2</td>
+<td>C.4</td>
+<td>Unificar em campo múltiplo ou texto único</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Dependência entre campos não modelada (Setor↔Órgão, endereço↔CEP)</td>
+<td>2</td>
+<td>B.3</td>
+<td><code>visibleIf</code> — filho só aparece após pai preenchido</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Falta máscara em campos de formato fixo (CPF, CEP, telefone)</td>
+<td>2+</td>
+<td>D.2</td>
+<td>Aplicar máscara — X-Forms lê <code>9</code> como dígito numérico</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Texto aberto onde deveria ser lista fechada (Estado, Cor/Raça)</td>
+<td>2</td>
+<td>C.5</td>
+<td>Trocar por <code>dropdown</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="o-que-ja-esta-bom-e-deve-ser-mantido">O que já está bom e deve ser mantido<a class="headerlink" href="#o-que-ja-esta-bom-e-deve-ser-mantido" title="Permanent link">&para;</a></h2>
-<p><em>(a preencher — nem tudo no FormFlow está errado; o que funciona precisa sobreviver à migração)</em></p>
+<ul>
+<li><strong>Máscaras</strong> de CPF, CNPJ e telefone já ativas em vários formulários — manter via <code>inputMask</code>.</li>
+<li><strong><code>dropdown</code> para Município</strong> com cidades de MS — manter em todos com endereço.</li>
+<li><strong>Upload com múltiplos anexos</strong> já configurado — manter, declarar tipo aceito.</li>
+<li><strong>Campos condicionais <code>visibleIf</code></strong> já suportados nativamente — expandir uso.</li>
+<li><strong>Descrição no cabeçalho</strong> de cada página com contexto — manter, desde que enxuta.</li>
+<li><strong>Separação em etapas coerentes</strong> (modelo: Diárias Fundect — servidor → viagem → dados bancários).</li>
+</ul>
+<p>Detalhe e justificativa em <a href="../andamento/recomendacoes/#2-o-que-ja-esta-bom-e-deve-ser-mantido">andamento/recomendacoes.md</a>.</p>
+<h2 id="o-que-precisa-mudar-acoes-prioritarias">O que precisa mudar (ações prioritárias)<a class="headerlink" href="#o-que-precisa-mudar-acoes-prioritarias" title="Permanent link">&para;</a></h2>
+<p>Ordem = impacto na experiência de preenchimento.</p>
+<ol>
+<li><strong>Pré-preencher dados do cidadão via gov.br</strong> (14/14) — Lei 14.129/2021 + LGPD art. 6º III.</li>
+<li><strong>Reordenar campos por lógica</strong> — identificação → vínculo → pedido → anexos → confirmação.</li>
+<li><strong>Dividir formulário longo em etapas</strong> (&gt;10 campos ou temas distintos) — GOV.UK.</li>
+<li><strong>Remover campos redundantes</strong> — RG, UF/Região, coordenadas, campos subjetivos.</li>
+<li><strong>Unificar campos duplicados</strong> — telefones e partes de endereço.</li>
+<li><strong>Aplicar máscara e validação na entrada</strong> — WCAG 2.2 critério 3.3.1.</li>
+<li><strong>Trocar texto aberto por <code>dropdown</code></strong> quando a lista é finita e conhecida.</li>
+<li><strong>Enxugar a descrição do cabeçalho</strong> — não empurrar o primeiro campo para fora da dobra.</li>
+<li><strong>Modelar dependências com <code>visibleIf</code></strong> — reduzir poluição visual inicial.</li>
+<li><strong>Documentar limites do X-Forms</strong> — comparação entre campos e data dinâmica não são suportados hoje. Levar à SGD.</li>
+</ol>
+<p>Justificativa e evidência por formulário em <a href="../andamento/recomendacoes/#3-o-que-precisa-mudar-acoes-prioritarias">andamento/recomendacoes.md</a>.</p>
 
 
 
