@@ -150,7 +150,30 @@ descobriu pode acrescentar ou tirar itens dele.
 
 ---
 
-## 6. Como rodar o site na sua máquina
+## 6. Como consolidar as recomendações
+
+Quando terminar de mapear os 14 formulários, abra
+[`docs/andamento/recomendacoes.md`](andamento/recomendacoes.md) e classifique
+cada achado em **uma** das 3 seções:
+
+1. **Achados que se repetem** — o mesmo problema aparece em 2 ou mais
+   formulários? Vira linha da tabela. Preencha a coluna *Em quantos* — sem
+   número, não é padrão.
+2. **O que já está bom** — funciona hoje e precisa **sobreviver** ao X-Forms?
+   Lista curta, uma linha por prática.
+3. **O que precisa mudar** — mudança estrutural que atravessa vários
+   formulários? Ordem = impacto na experiência.
+
+**Regra:** achado que só apareceu em 1 formulário **não** fica em
+`recomendacoes.md`. Volta para a ficha dele em
+`docs/andamento/mapeamento/NN-nome.md`.
+
+Depois de fechar `recomendacoes.md`, avise o Fabio — ele espelha o resumo em
+`docs/05-auditoria.md` para levar à SGD.
+
+---
+
+## 7. Como rodar o site na sua máquina
 
 ```bash
 pip install -r requirements.txt
@@ -169,7 +192,7 @@ Se aparecer erro, tem link quebrado ou página fora da navegação. Corrija ante
 
 ---
 
-## 7. Dúvidas
+## 8. Dúvidas
 
 Anote a dúvida e siga para a próxima parte — não fique travado. Traga a lista para o Fabio na
 próxima conversa.
