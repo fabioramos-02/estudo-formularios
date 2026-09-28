@@ -42,6 +42,7 @@ X-Forms.
 - [ ] **C6.** A validação aceita as variações legítimas (nome com acento, CEP com e sem hífen)?
 - [ ] **C7.** O nome técnico do campo segue o padrão e bate com o usado em outros serviços?
 - [ ] **C8.** O anexo informa formato, tamanho máximo e quantidade aceita?
+- [ ] **C9.** Dependência entre campos estão modelados?
 
 ## D. Erro e acessibilidade
 
