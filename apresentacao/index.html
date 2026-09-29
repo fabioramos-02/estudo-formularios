@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estudo de Formulários — X-Forms</title>
+<link rel="icon" href="../assets/img/brasao-ms.svg">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reset.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/white.css">
+<style>
+  :root {
+    --p: #004f9f; --p-dk: #003a76; --p-lt: #1a67b5; --txt: #30302e;
+    --soft: #eef4fb; --line: #d7e3f1; --muted: #6b6b68; --warn: #c2410c;
+    --r-background-color: #fff;
+    --r-main-font: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    --r-heading-font: var(--r-main-font);
+    --r-main-color: var(--txt);
+    --r-heading-color: var(--p-dk);
+    --r-heading-text-transform: none;
+    --r-heading-font-weight: 700;
+    --r-heading-letter-spacing: -0.02em;
+    --r-link-color: var(--p);
+    --r-main-font-size: 30px;
+  }
+  .reveal .slides section { text-align: left; height: 100%; }
+  .reveal h2 { font-size: 1.7em; margin-bottom: .15em; }
+  .kicker { color: var(--p); font-weight: 700; font-size: .55em; letter-spacing: .12em; text-transform: uppercase; margin-bottom: .4em; }
+  .lead { color: var(--muted); font-size: .8em; margin: 0 0 1em; }
+  .grid { display: grid; gap: 18px; }
+  .g4 { grid-template-columns: repeat(4, 1fr); }
+  .g5 { grid-template-columns: repeat(5, 1fr); }
+  .card { background: var(--soft); border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px; }
+  .card .ico { font-size: 1.4em; line-height: 1; }
+  .card h3 { font-size: .72em; color: var(--p-dk); margin: .5em 0 .25em; line-height: 1.2; }
+  .card p { font-size: .56em; margin: 0; color: var(--muted); line-height: 1.35; }
+  .big { font-size: 2.6em; font-weight: 800; color: var(--p); line-height: 1; letter-spacing: -.03em; }
+  .big small { font-size: .45em; font-weight: 700; }
+  .lbl { font-size: .6em; color: var(--muted); margin-top: .4em; }
+  .quote { margin-top: 1.1em; border-left: 6px solid var(--p); padding: .35em 0 .35em .8em; font-size: 1.05em; font-weight: 700; color: var(--p-dk); }
+  .tag { display: inline-block; font-size: .45em; font-weight: 700; padding: .3em .8em; border-radius: 999px; background: var(--p); color: #fff; }
+  .tag.o { background: #fff; color: var(--p); border: 2px solid var(--p); }
+
+  /* capa */
+  section.cover { color: #fff; }
+  .reveal section.cover h1 { color: #fff; font-size: 2.3em; line-height: 1.05; margin: .3em 0 .4em; max-width: 14em; }
+  .cover .sub { font-size: .8em; opacity: .9; }
+  .cover .meta { position: absolute; bottom: 40px; left: 0; font-size: .55em; opacity: .85; }
+  .cover img.brasao { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); width: 260px; opacity: .18; filter: brightness(0) invert(1); }
+
+  /* barras */
+  .bars { display: grid; grid-template-columns: 15em 1fr 3em; gap: 12px 18px; align-items: center; font-size: .6em; }
+  .bars .t { text-align: right; }
+  .bars .track { background: var(--soft); border-radius: 6px; height: 26px; overflow: hidden; }
+  .bars .fill { height: 100%; background: var(--p); border-radius: 6px; width: var(--w); }
+  .bars .fill.hi { background: var(--p-dk); }
+  .bars .n { font-weight: 800; color: var(--p-dk); }
+
+  /* pipeline */
+  .flow { display: flex; align-items: stretch; gap: 10px; }
+  .flow .step { flex: 1; background: #fff; border: 2px solid var(--p); border-radius: 14px; padding: 16px 14px; }
+  .flow .step.fill { background: var(--p); color: #fff; }
+  .flow .step.fill h3, .flow .step.fill p { color: #fff; }
+  .flow .step h3 { font-size: .62em; margin: 0 0 .3em; color: var(--p-dk); }
+  .flow .step p { font-size: .52em; margin: 0; line-height: 1.4; color: var(--muted); }
+  .flow .arr { align-self: center; color: var(--p); font-size: 1.1em; font-weight: 800; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: .5em; }
+  .chip { font-family: ui-monospace, Consolas, monospace; font-size: .46em; background: var(--soft); color: var(--p-dk); border-radius: 6px; padding: 3px 7px; }
+  .flow .step.fill .chip { background: rgba(255,255,255,.18); color: #fff; }
+  .proof { display: flex; gap: 40px; align-items: center; margin-top: 1em; }
+  .proof .big { font-size: 1.9em; }
+  .proof .x { color: var(--muted); text-decoration: line-through; font-weight: 600; font-size: .6em; }
+
+  /* agente */
+  .arch { display: grid; grid-template-columns: 1fr 56px 1.35fr 56px 1fr; grid-template-rows: auto 48px auto 48px auto;
+          grid-template-areas: ". . in . ." ". . a1 . ." "sk ar1 ag ar2 rg" ". . a2 . ." ". . out . ."; align-items: center; margin-top: 1em; }
+  .arch .io { justify-self: center; background: var(--soft); border: 1px solid var(--line); color: var(--p-dk); border-radius: 999px; padding: 12px 30px; font-size: .64em; font-weight: 700; }
+  .arch .io.out { background: var(--p); border-color: var(--p); color: #fff; }
+  .arch .ar { color: var(--p-lt); font-weight: 800; font-size: .9em; text-align: center; line-height: 1; }
+  .arch .side { border: 2px solid var(--line); border-radius: 16px; padding: 14px 16px 16px; background: #fff; }
+  .arch .side h4 { margin: 0 0 .5em; font-size: .62em; color: var(--p-dk); text-transform: none; letter-spacing: 0; }
+  .arch .side h4 small { display: block; font-weight: 400; color: var(--muted); font-size: .85em; margin-top: 2px; }
+  .arch .side div { background: var(--soft); border-radius: 8px; padding: 8px 12px; margin-top: 7px; font-size: .5em; color: var(--p-dk); }
+  .arch .side.sk div { font-family: ui-monospace, Consolas, monospace; }
+  .arch .core { background: linear-gradient(160deg, var(--p-dk), var(--p)); color: #fff; border-radius: 22px; padding: 26px 22px 30px; text-align: center; box-shadow: 0 12px 30px rgba(0,58,118,.25); }
+  .arch .core h3 { color: #fff; font-size: .9em; margin: 0 0 .6em; }
+  .arch .core .inner { display: flex; align-items: center; justify-content: center; gap: 12px; }
+  .arch .core .tile { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35); border-radius: 12px; padding: 14px 18px; font-size: .58em; font-weight: 700; min-width: 7.5em; }
+  .arch .core .tile span { display: block; font-weight: 400; opacity: .8; font-size: .8em; margin-top: 3px; }
+  .arch .core .sw { font-size: .7em; opacity: .8; }
+  .strip { display: flex; align-items: center; gap: 12px; margin-top: 1.6em; font-size: .52em; }
+  .strip b { color: var(--p); letter-spacing: .1em; text-transform: uppercase; font-size: .9em; margin-right: 4px; }
+  .strip span { border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; color: var(--txt); }
+  .strip span i { font-style: normal; font-weight: 800; color: var(--p); margin-right: 6px; }
+
+  /* rodapé */
+  .foot { font-family: var(--r-main-font); position: fixed; bottom: 1.2vw; left: 2vw; right: 7vw; display: flex; justify-content: space-between; align-items: center; font-size: clamp(9px, 1vw, 14px); color: var(--muted); z-index: 10; pointer-events: none; }
+  .foot img { height: clamp(16px, 2.2vw, 30px); }
+  .reveal .controls, .reveal .progress { color: var(--p); }
+  body.on-cover .foot { display: none; }
+</style>
+</head>
+<body class="on-cover">
+<div class="reveal">
+<div class="slides">
+
+  <!-- 1. Capa -->
+  <section class="cover" data-background-gradient="linear-gradient(135deg, #003a76, #004f9f 60%, #1a67b5)">
+    <img class="brasao" src="../assets/img/brasao-ms.svg" alt="">
+    <div class="kicker" style="color:#fff;opacity:.8">Estudo de Formulários · X-Forms</div>
+    <h1>Formulário bom é o que o cidadão consegue terminar</h1>
+    <div class="sub">O que aprendemos com o GOV.UK e com 14 formulários do Estado — e como isso virou regra para agentes.</div>
+    <div class="meta">SETDIG — Secretaria-Executiva de Transformação Digital · Superintendência de Governo Digital (SGD)<br>Fabio Ramos e Antonio · setembro de 2026</div>
+    <aside class="notes">Roteiro do Antonio: padronizar como refazemos os formulários das cartas de serviço, para que sejam feitos de forma automatizada. GOV.UK como padrão. Foco na experiência de quem preenche.</aside>
+  </section>
+
+  <!-- 2. Ponto de partida -->
+  <section>
+    <div class="kicker">Ponto de partida</div>
+    <h2>FormFlow → X-Forms: a chance de acertar</h2>
+    <p class="lead">Se ninguém define o padrão antes, o formulário novo nasce com os problemas do antigo.</p>
+    <div class="grid g4">
+      <div class="card fragment"><div class="big">14</div><div class="lbl">formulários mapeados campo a campo</div></div>
+      <div class="card fragment"><div class="big">223</div><div class="lbl">campos no total</div></div>
+      <div class="card fragment"><div class="big">84<small>%</small></div><div class="lbl">dos campos são obrigatórios</div></div>
+      <div class="card fragment"><div class="big">7<small>/14</small></div><div class="lbl">com tudo numa página só</div></div>
+    </div>
+    <div class="quote fragment">Isso deixa o formulário mais fácil de preencher?</div>
+    <aside class="notes">Números do mapeamento do Antonio. A pergunta-guia é o filtro: recomendação que não responde a ela não entra no padrão.</aside>
+  </section>
+
+  <!-- 3. GOV.UK -->
+  <section>
+    <div class="kicker">Referência · GOV.UK Design System</div>
+    <h2>O que o GOV.UK ensina</h2>
+    <p class="lead">Cinco princípios que viraram regra no nosso padrão.</p>
+    <div class="grid g5">
+      <div class="card fragment"><div class="ico">1️⃣</div><h3>Uma coisa por vez</h3><p>Etapas curtas no lugar de uma página longa.</p></div>
+      <div class="card fragment"><div class="ico">✂️</div><h3>Pergunte só o necessário</h3><p>Se o governo já tem o dado, não peça de novo.</p></div>
+      <div class="card fragment"><div class="ico">💬</div><h3>Diga por que pede</h3><p>Ex.: para que serve o seu e-mail.</p></div>
+      <div class="card fragment"><div class="ico">🧭</div><h3>Mostre o formato</h3><p>Exemplo no campo e erro que ensina a corrigir.</p></div>
+      <div class="card fragment"><div class="ico">⚡</div><h3>Deixe o navegador ajudar</h3><p>Autopreenchimento e tipo certo de campo.</p></div>
+    </div>
+    <p class="fragment" style="margin-top:1em"><span class="tag o">Adaptado ao X-Forms</span> <span style="font-size:.55em;color:var(--muted)">&nbsp;Data de nascimento em calendário, não em 3 campos — a ferramenta faz melhor.</span></p>
+    <aside class="notes">Estudo do Antonio em recomendacoesGOVUK.md: data, e-mail, nome e telefone. Onde divergimos do GOV.UK, justificamos.</aside>
+  </section>
+
+  <!-- 4. 14 formulários -->
+  <section>
+    <div class="kicker">Diagnóstico · 14 formulários</div>
+    <h2>O que os 14 revelaram</h2>
+    <p class="lead">Problemas que se repetem — em quantos formulários aparecem.</p>
+    <div class="bars">
+      <div class="t">Campos fora de ordem lógica</div><div class="track"><div class="fill hi" style="--w:100%"></div></div><div class="n">14</div>
+      <div class="t">Sem máscara ou validação</div><div class="track"><div class="fill hi" style="--w:100%"></div></div><div class="n">14</div>
+      <div class="t">+15 campos numa página</div><div class="track"><div class="fill" style="--w:57%"></div></div><div class="n">8+</div>
+      <div class="t">Campos ligados sem regra</div><div class="track"><div class="fill" style="--w:57%"></div></div><div class="n">8+</div>
+      <div class="t">Texto livre em dado padrão</div><div class="track"><div class="fill" style="--w:43%"></div></div><div class="n">6+</div>
+      <div class="t">RG pedido junto com CPF</div><div class="track"><div class="fill" style="--w:43%"></div></div><div class="n">6</div>
+      <div class="t">Dado repetido ou picado</div><div class="track"><div class="fill" style="--w:29%"></div></div><div class="n">4+</div>
+      <div class="t">UF em serviço só de MS</div><div class="track"><div class="fill" style="--w:29%"></div></div><div class="n">4+</div>
+      <div class="t">Latitude e longitude</div><div class="track"><div class="fill" style="--w:21%"></div></div><div class="n">3+</div>
+    </div>
+    <aside class="notes">Fonte: achados-repetem.md, do Antonio. Os dois primeiros aparecem em todos os formulários — são as primeiras regras que todo formulário novo precisa cumprir.</aside>
+  </section>
+
+  <!-- 5. Estudo → regras → skills -->
+  <section>
+    <div class="kicker">Do estudo às regras</div>
+    <h2>O conhecimento virou ferramenta</h2>
+    <p class="lead">Cada aprendizado vira uma regra. Cada regra, uma skill que o agente executa.</p>
+    <div class="flow">
+      <div class="step fragment"><h3>📚 Estudo</h3><p>GOV.UK · gov.br · 14 formulários do FormFlow</p></div>
+      <div class="arr fragment">→</div>
+      <div class="step fragment"><h3>📏 Régua</h3><p>Checklist em 4 blocos</p>
+        <div class="chips"><span class="chip">A organização</span><span class="chip">B linguagem</span><span class="chip">C campos</span><span class="chip">D erro e acessibilidade</span></div></div>
+      <div class="arr fragment">→</div>
+      <div class="step fill fragment" style="flex:1.6"><h3>🤖 5 skills</h3><p>orquestradas por <b>/melhorar-formulario</b></p>
+        <div class="chips"><span class="chip">auditoria</span><span class="chip">nomenclatura</span><span class="chip">diagramação</span><span class="chip">linguagem simples</span><span class="chip">auditoria</span></div></div>
+    </div>
+    <div class="proof fragment">
+      <span class="tag">Prova · WordPress</span>
+      <div><span class="x">51</span> <span class="big">32</span> <span class="lbl">campos</span></div>
+      <div><span class="x">7</span> <span class="big">5</span> <span class="lbl">páginas</span></div>
+    </div>
+    <aside class="notes">JSON do formulário entra, sai o JSON refatorado mais um diário do que mudou. As skills ficam versionadas no repositório do estudo — quando a pesquisa acha regra nova, a skill é atualizada.</aside>
+  </section>
+
+  <!-- 6. Agente -->
+  <section>
+    <div class="kicker">Próximo passo</div>
+    <h2>Um agente que cria formulários</h2>
+    <div class="arch">
+      <div class="io fragment" style="grid-area:in" data-fragment-index="1">📄 Carta de serviço</div>
+      <div class="ar fragment" style="grid-area:a1" data-fragment-index="1">↓</div>
+
+      <div class="side sk fragment" style="grid-area:sk" data-fragment-index="2">
+        <h4>📚 Skills<small>o que o estudo ensinou · SKILL.md</small></h4>
+        <div>nomenclatura-campos</div><div>regras-diagramacao</div><div>linguagem-simples-rotulos</div><div>auditoria-metricas</div>
+      </div>
+      <div class="ar fragment" style="grid-area:ar1" data-fragment-index="2">→</div>
+
+      <div class="core" style="grid-area:ag">
+        <h3>🤖 Agente de formulários</h3>
+        <div class="inner">
+          <div class="tile">IA<span>lê e decide</span></div>
+          <div class="sw">⇄</div>
+          <div class="tile">Ferramentas<span>monta e confere o JSON</span></div>
+        </div>
+      </div>
+
+      <div class="ar fragment" style="grid-area:ar2" data-fragment-index="3">←</div>
+      <div class="side fragment" style="grid-area:rg" data-fragment-index="3">
+        <h4>📏 Régua<small>o que não pode faltar</small></h4>
+        <div>Checklist A · B · C · D</div><div>Dicionário de campos</div><div>Lei 14.129 · LGPD</div><div>Linguagem simples (Lei 15.263)</div>
+      </div>
+
+      <div class="ar fragment" style="grid-area:a2" data-fragment-index="4">↓</div>
+      <div class="io out fragment" style="grid-area:out" data-fragment-index="4">✅ Formulário X-Forms no padrão</div>
+    </div>
+
+    <div class="strip fragment" data-fragment-index="5">
+      <b>Próximos passos</b>
+      <span><i>01</i>Refatorar os 13 que faltam</span>
+      <span><i>02</i>Achado novo vira regra na skill</span>
+      <span><i>03</i>Validar o padrão com a SGD</span>
+    </div>
+    <aside class="notes">A mesma base que corrige os formulários antigos serve para criar os novos. Entra a carta de serviço; o agente usa as skills (o que o estudo ensinou) e a régua (checklist, dicionário, leis); sai o JSON do X-Forms no padrão. Cada achado novo do Antonio vira regra numa skill — o agente melhora sem programar. Créditos: pesquisa, mapeamento e achados — Antonio; consolidação e skills — Fabio Ramos.</aside>
+  </section>
+
+</div>
+</div>
+
+<div class="foot"><img src="../assets/img/segov-logo.svg" alt="SEGOV"><span>SETDIG — Secretaria-Executiva de Transformação Digital</span></div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
+<script>
+  Reveal.initialize({ hash: true, width: 1280, height: 720, margin: 0.06, center: false, transition: 'slide', plugins: [RevealNotes] });
+  Reveal.on('slidechanged', e => document.body.classList.toggle('on-cover', e.indexh === 0));
+</script>
+</body>
+</html>
