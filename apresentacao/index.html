@@ -35,9 +35,14 @@
   .card h3 { font-size: .72em; color: var(--p-dk); margin: .5em 0 .25em; line-height: 1.2; }
   .card p { font-size: .56em; margin: 0; color: var(--muted); line-height: 1.35; }
   .big { font-size: 2.6em; font-weight: 800; color: var(--p); line-height: 1; letter-spacing: -.03em; }
-  .big small { font-size: .45em; font-weight: 700; }
+  .big small { font-size: .45em; font-weight: 700; vertical-align: baseline; }
   .lbl { font-size: .6em; color: var(--muted); margin-top: .4em; }
   .quote { margin-top: 1.1em; border-left: 6px solid var(--p); padding: .35em 0 .35em .8em; font-size: 1.05em; font-weight: 700; color: var(--p-dk); }
+  .sm { font-size: .8em; font-weight: 600; color: var(--muted); letter-spacing: .02em; }
+  .quote .sm { font-size: .5em; text-transform: uppercase; letter-spacing: .1em; color: var(--p); font-weight: 800; }
+  .quote { font-size: .8em; line-height: 1.3; }
+  .quote.risk { border-left-color: var(--warn); color: var(--txt); }
+  .quote.risk .sm { color: var(--warn); }
   .tag { display: inline-block; font-size: .45em; font-weight: 700; padding: .3em .8em; border-radius: 999px; background: var(--p); color: #fff; }
   .tag.o { background: #fff; color: var(--p); border: 2px solid var(--p); }
 
@@ -128,16 +133,19 @@
   <!-- 2. Ponto de partida -->
   <section>
     <div class="kicker">Ponto de partida</div>
-    <h2>FormFlow → X-Forms: a chance de acertar</h2>
-    <p class="lead">Se ninguém define o padrão antes, o formulário novo nasce com os problemas do antigo.</p>
+    <h2>O X-Forms é a chance de acertar</h2>
+    <p class="lead">Os formulários vão ser refeitos. Sem padrão, os problemas de hoje mudam de ferramenta junto.</p>
     <div class="grid g4">
-      <div class="card fragment"><div class="big">14</div><div class="lbl">formulários mapeados campo a campo</div></div>
-      <div class="card fragment"><div class="big">223</div><div class="lbl">campos no total</div></div>
-      <div class="card fragment"><div class="big">84<small>%</small></div><div class="lbl">dos campos são obrigatórios</div></div>
-      <div class="card fragment"><div class="big">7<small>/14</small></div><div class="lbl">com tudo numa página só</div></div>
+      <div class="card fragment"><div class="big">14</div><div class="lbl">serviços do Estado analisados</div></div>
+      <div class="card fragment"><div class="big">~16</div><div class="lbl">perguntas por formulário, em média<br><span class="sm">223 no total</span></div></div>
+      <div class="card fragment"><div class="big">8<small> em 10</small></div><div class="lbl">perguntas são obrigatórias<br><span class="sm">187 de 223, somando os 14</span></div></div>
+      <div class="card fragment"><div class="big">7<small>/14</small></div><div class="lbl">põem tudo numa tela só</div></div>
     </div>
-    <div class="quote fragment">Isso deixa o formulário mais fácil de preencher?</div>
-    <aside class="notes">Números do mapeamento do Antonio. A pergunta-guia é o filtro: recomendação que não responde a ela não entra no padrão.</aside>
+    <div class="grid fragment" style="grid-template-columns:1fr 1fr;margin-top:1em">
+      <div class="quote" style="margin-top:0"><span class="sm">Critério do estudo</span><br>Toda regra precisa deixar o formulário mais fácil de preencher.</div>
+      <div class="quote risk" style="margin-top:0"><span class="sm">Custo de errar</span><br>Quem desiste no meio vira atendimento presencial, telefone e retrabalho.</div>
+    </div>
+    <aside class="notes">Números do mapeamento do Antonio. O 8 em 10 é a soma dos 14 formulários: 187 de 223 campos são obrigatórios. Cada formulário varia de 59% a 100%, e 7 deles têm todos os campos obrigatórios. O critério é o filtro: recomendação que não deixa o formulário mais fácil de preencher não entra no padrão.</aside>
   </section>
 
   <!-- 3. GOV.UK -->
