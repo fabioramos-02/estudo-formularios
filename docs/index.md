@@ -3,6 +3,8 @@
 **SETDIG — Secretaria-Executiva de Transformação Digital**
 Superintendência de Governo Digital (SGD)
 
+[▶ Ver a apresentação do estudo](apresentacao/index.html){ .md-button .md-button--primary }
+
 ---
 
 ## Por que este estudo existe
