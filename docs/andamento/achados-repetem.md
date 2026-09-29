@@ -13,4 +13,4 @@
 | C5 | Falta de máscara de formatação e validação em campos de formato fixo (ex.: CPF). | Aplicar máscaras de preenchimento e validação de quantidade exata de dígitos (ex.: 11 dígitos no CPF) para impedir envio com erros. | Se repete em todos os formulários |
 | C4 | Uso de campos de texto livre para dados padronizados (ex.: Estados, Cor/Raça). | Substituir campos de texto aberto por listas suspensas (dropdown) com opções fechadas para evitar digitação incorreta. | Se repete em mais de 6 formulários |
 
-Detalhe e justificativa sobre a coluna Item e seus dados em [docs/04-checklist.md](docs/04-checklist.md#a-organizacao).
+Detalhe e justificativa sobre a coluna Item e seus dados em [docs/04-checklist.md](../04-checklist.md#a-organizacao).
