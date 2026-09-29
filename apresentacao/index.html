@@ -49,8 +49,19 @@
   .cover img.brasao { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); width: 260px; opacity: .18; filter: brightness(0) invert(1); }
 
   /* barras */
-  .bars { display: grid; grid-template-columns: 15em 1fr 3em; gap: 12px 18px; align-items: center; font-size: .6em; }
+  .diag { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: start; }
+  .bars { font-size: .56em; }
+  .bars .row { display: grid; grid-template-columns: 14em 1fr 2.4em; gap: 14px; align-items: center; padding: 6px 10px; border-radius: 8px; cursor: pointer; transition: background .15s; }
+  .bars .row:hover, .bars .row.on { background: var(--soft); }
+  .bars .row.on .t { color: var(--p-dk); font-weight: 700; }
   .bars .t { text-align: right; }
+  .why { background: #fff; border: 2px solid var(--p); border-radius: 16px; padding: 22px 24px; font-size: .64em; min-height: 13em; }
+  .why .code { display: inline-block; font-size: .8em; font-weight: 800; color: #fff; background: var(--p); border-radius: 6px; padding: 2px 8px; }
+  .why h3 { font-size: 1.25em; color: var(--p-dk); margin: .45em 0 .7em; line-height: 1.2; }
+  .why dt { font-size: .75em; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--p); margin-top: .8em; }
+  .why dt.bad { color: var(--warn); }
+  .why dd { margin: .2em 0 0; line-height: 1.4; }
+  .hint { font-size: .45em; color: var(--muted); margin-top: .6em; }
   .bars .track { background: var(--soft); border-radius: 6px; height: 26px; overflow: hidden; }
   .bars .fill { height: 100%; background: var(--p); border-radius: 6px; width: var(--w); }
   .bars .fill.hi { background: var(--p-dk); }
@@ -150,18 +161,28 @@
     <div class="kicker">Diagnóstico · 14 formulários</div>
     <h2>O que os 14 revelaram</h2>
     <p class="lead">Problemas que se repetem — em quantos formulários aparecem.</p>
-    <div class="bars">
-      <div class="t">Campos fora de ordem lógica</div><div class="track"><div class="fill hi" style="--w:100%"></div></div><div class="n">14</div>
-      <div class="t">Sem máscara ou validação</div><div class="track"><div class="fill hi" style="--w:100%"></div></div><div class="n">14</div>
-      <div class="t">+15 campos numa página</div><div class="track"><div class="fill" style="--w:57%"></div></div><div class="n">8+</div>
-      <div class="t">Campos ligados sem regra</div><div class="track"><div class="fill" style="--w:57%"></div></div><div class="n">8+</div>
-      <div class="t">Texto livre em dado padrão</div><div class="track"><div class="fill" style="--w:43%"></div></div><div class="n">6+</div>
-      <div class="t">RG pedido junto com CPF</div><div class="track"><div class="fill" style="--w:43%"></div></div><div class="n">6</div>
-      <div class="t">Dado repetido ou picado</div><div class="track"><div class="fill" style="--w:29%"></div></div><div class="n">4+</div>
-      <div class="t">UF em serviço só de MS</div><div class="track"><div class="fill" style="--w:29%"></div></div><div class="n">4+</div>
-      <div class="t">Latitude e longitude</div><div class="track"><div class="fill" style="--w:21%"></div></div><div class="n">3+</div>
+    <div class="diag">
+      <div>
+        <div class="bars">
+          <div class="row on" data-c="A2" data-p="O CEP vem primeiro e a cidade é a penúltima pergunta. A pessoa vai e volta no formulário." data-f="Ordem fixa: identificação → vínculo → pedido → anexos → confirmação."><div class="t">Campos fora de ordem lógica</div><div class="track"><div class="fill hi" style="--w:100%"></div></div><div class="n">14</div></div>
+          <div class="row" data-c="C5" data-p="O CPF aceita qualquer coisa. O pedido chega com dígito a mais ou a menos e volta para correção." data-f="Máscara no campo e validação dos 11 dígitos antes de enviar."><div class="t">Sem máscara ou validação</div><div class="track"><div class="fill hi" style="--w:100%"></div></div><div class="n">14</div></div>
+          <div class="row" data-c="A1" data-p="Mais de 15 perguntas numa página só. Cansa e faz a pessoa desistir no meio." data-f="Tirar o campo que não é usado ou dividir em etapas curtas."><div class="t">+15 campos numa página</div><div class="track"><div class="fill" style="--w:57%"></div></div><div class="n">8+</div></div>
+          <div class="row" data-c="C9" data-p="Órgão e setor, ou CEP e endereço, aparecem longe um do outro e sem ligação." data-f="Colocar lado a lado e mostrar o campo filho só depois do pai (visibleIf)."><div class="t">Campos ligados sem regra</div><div class="track"><div class="fill" style="--w:57%"></div></div><div class="n">8+</div></div>
+          <div class="row" data-c="C4" data-p="Estado e cor/raça digitados à mão. Cada pessoa escreve de um jeito." data-f="Trocar por lista com opções fechadas."><div class="t">Texto livre em dado padrão</div><div class="track"><div class="fill" style="--w:43%"></div></div><div class="n">6+</div></div>
+          <div class="row" data-c="C1" data-p="Pede RG e CPF. Com a nova Carteira de Identidade, o CPF já identifica a pessoa." data-f="Remover o RG. Órgão expedidor só quando for mesmo necessário."><div class="t">RG pedido junto com CPF</div><div class="track"><div class="fill" style="--w:43%"></div></div><div class="n">6</div></div>
+          <div class="row" data-c="C3" data-p="Dois campos de telefone e endereço partido em três. Parece que a pessoa tem que repetir." data-f="Um campo de telefone (com opção de mais de um) e endereço agrupado."><div class="t">Dado repetido ou picado</div><div class="track"><div class="fill" style="--w:29%"></div></div><div class="n">4+</div></div>
+          <div class="row" data-c="C1" data-p="Pergunta o estado num serviço que só atende Mato Grosso do Sul." data-f="Remover ou preencher sozinho, sem mostrar para a pessoa."><div class="t">UF em serviço só de MS</div><div class="track"><div class="fill" style="--w:29%"></div></div><div class="n">4+</div></div>
+          <div class="row" data-c="C1" data-p="Pede latitude e longitude. Quase ninguém sabe onde achar esse dado." data-f="Usar só endereço e CEP, que já são pedidos."><div class="t">Latitude e longitude</div><div class="track"><div class="fill" style="--w:21%"></div></div><div class="n">3+</div></div>
+        </div>
+        <div class="hint">Passe o mouse ou clique numa barra para ver o problema.</div>
+      </div>
+      <div class="why" aria-live="polite">
+        <span class="code">A2</span>
+        <h3>Campos fora de ordem lógica</h3>
+        <dl><dt class="bad">O problema</dt><dd class="p"></dd><dt>O que fazer no X-Forms</dt><dd class="f"></dd></dl>
+      </div>
     </div>
-    <aside class="notes">Fonte: achados-repetem.md, do Antonio. Os dois primeiros aparecem em todos os formulários — são as primeiras regras que todo formulário novo precisa cumprir.</aside>
+    <aside class="notes">Fonte: achados-repetem.md, do Antonio. O código (A2, C5…) é o item do checklist. Os dois primeiros aparecem em todos os formulários — são as primeiras regras que todo formulário novo precisa cumprir.</aside>
   </section>
 
   <!-- 5. Estudo → regras → skills -->
@@ -237,6 +258,16 @@
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/plugin/notes/notes.js"></script>
 <script>
   Reveal.initialize({ hash: true, width: 1280, height: 720, margin: 0.06, center: false, transition: 'slide', plugins: [RevealNotes] });
+  const why = document.querySelector('.why');
+  const show = r => {
+    document.querySelectorAll('.bars .row').forEach(x => x.classList.toggle('on', x === r));
+    why.querySelector('.code').textContent = r.dataset.c;
+    why.querySelector('h3').textContent = r.querySelector('.t').textContent;
+    why.querySelector('.p').textContent = r.dataset.p;
+    why.querySelector('.f').textContent = r.dataset.f;
+  };
+  document.querySelectorAll('.bars .row').forEach(r => { r.onmouseenter = r.onclick = () => show(r); });
+  show(document.querySelector('.bars .row'));
   Reveal.on('slidechanged', e => document.body.classList.toggle('on-cover', e.indexh === 0));
 </script>
 </body>
