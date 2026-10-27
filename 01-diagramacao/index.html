@@ -480,6 +480,26 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../pendencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pendências
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
     
     
       
@@ -506,7 +526,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           
@@ -522,14 +542,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Andamento
           </label>
@@ -585,7 +605,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
         
           
           
@@ -601,14 +621,14 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
             <span class="md-nav__icon md-icon"></span>
             Mapeamento dos 14
           </label>
@@ -1048,10 +1068,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -1062,8 +1082,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_9">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             Fichas
           </label>
@@ -1232,42 +1252,216 @@
 
 <h1 id="1-diagramacao-de-formularios">1. Diagramação de formulários<a class="headerlink" href="#1-diagramacao-de-formularios" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p><strong>Status:</strong> esqueleto — a preencher (Antonio)
+<p><strong>Status:</strong> rascunho — Fabio, a validar com Antonio
 <strong>Pergunta desta página:</strong> como dispor os campos na tela para a pessoa preencher rápido e sem errar?</p>
 </blockquote>
 <p>Leia antes o <a href="../guia-do-antonio/">Guia do Antonio</a>. Use os marcadores <code>[FATO]</code>, <code>[INTERPRETAÇÃO]</code> e
 <code>[RECOMENDAÇÃO]</code> e registre cada fonte em <a href="../fontes/">fontes.md</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Filtro aplicado nesta página</p>
+<p>Uma regra do GOV.UK ou do gov.br só entrou aqui se passou em três perguntas:</p>
+<ol>
+<li>Resolve um problema visto em pelo menos um dos <a href="../andamento/mapeamento/">14 formulários</a>?</li>
+<li>Faz sentido no Portal MS: login gov.br, CPF/CNPJ, municípios de MS, servidor e empresa como público?</li>
+<li>O X-Forms consegue fazer? Se não, a regra vira limite a levar à SGD.</li>
+</ol>
+<p>Ficou de fora o que só existe no Reino Unido: passaporte, visto, <em>postcode</em>, <em>National Insurance</em>.
+Cada seção termina com <strong>Onde aparece nos 14</strong>.</p>
+</div>
 <hr />
 <h2 id="11-uma-pergunta-por-tela-ou-tudo-de-uma-vez">1.1. Uma pergunta por tela ou tudo de uma vez?<a class="headerlink" href="#11-uma-pergunta-por-tela-ou-tudo-de-uma-vez" title="Permanent link">&para;</a></h2>
 <p><em>Quando vale quebrar o formulário em etapas? Quando a quebra atrapalha? O que muda em formulário
 curto e em formulário longo com anexo?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O GOV.UK orienta a começar com uma coisa por página. Juntar perguntas só quando a
+  pesquisa com usuários mostrar que ajuda (GOV.UK — Form structure).</li>
+<li><strong>[FATO]</strong> O guia federal manda quebrar formulário longo em etapas menores, com indicador de
+  progresso. Também manda retirar o que pode vir de outra base (gov.br — Simplificação de formulários,
+  prática 2).</li>
+<li><strong>[FATO]</strong> O GOV.UK põe as perguntas de elegibilidade primeiro, para ninguém perder tempo com um
+  pedido que não vai ser aceito (GOV.UK — Form structure).</li>
+<li><strong>[INTERPRETAÇÃO]</strong> No Portal MS, "uma por página" ao pé da letra geraria 20 ou 30 cliques em
+  formulário de empresa ou de servidor. A âncora federal fala em <strong>etapas</strong>, não em uma pergunta por
+  tela. Adotamos a leitura federal, com uma exceção: a pergunta que <strong>muda o caminho</strong> fica sozinha.</li>
+<li><strong>[RECOMENDAÇÃO]</strong><ul>
+<li>Pergunta que muda o fluxo fica sozinha na página: perfil, tipo de pedido, "é para você ou para
+  outra pessoa?".</li>
+<li>A pergunta de elegibilidade vem primeiro. Exemplo: a Certidão 190/193 só atende 4 cidades, então
+  a cidade é perguntada antes de tudo.</li>
+<li>O resto é agrupado por assunto em etapas (ver 1.2).</li>
+<li>Formulário de até ~8 campos do mesmo assunto pode ficar numa página só.</li>
+<li>Anexo ganha etapa própria quando há mais de um arquivo.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> 7 de 14 formulários estão numa página só. Quatro deles passam de 10 campos:
+Indústria de agrotóxicos (13), Cancelar registro (14), Laboratório avícola (14) e Negativa de
+tombamento (10). O perfil do <a href="../andamento/01-wordpress/notas/">WordPress</a> já virou página própria.
+O modelo a replicar é o <strong>Diárias Fundect</strong>, com 3 etapas: servidor → viagem → dados bancários.</p>
 <h2 id="12-agrupamento-dos-campos">1.2. Agrupamento dos campos<a class="headerlink" href="#12-agrupamento-dos-campos" title="Permanent link">&para;</a></h2>
 <p><em>O que justifica agrupar: o assunto, a origem do dado, quem responde? Quantos campos por grupo?
 Grupo precisa de título?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O guia federal manda agrupar informações relacionadas perto umas das outras (gov.br —
+  prática 4).</li>
+<li><strong>[FATO]</strong> O mesmo guia manda perguntar se a pessoa quer <strong>reaproveitar</strong> o que já digitou,
+  como dados do requerente e do interessado, ou endereço (gov.br — prática 6).</li>
+<li><strong>[FATO]</strong> O GOV.UK pede título de página específico ao que se pergunta, não o nome genérico do
+  setor (GOV.UK — Question pages).</li>
+<li><strong>[RECOMENDAÇÃO]</strong><ul>
+<li>Agrupar por <strong>quem responde</strong> primeiro e por <strong>assunto</strong> depois. Dados do gestor numa etapa, do
+  colaborador em outra. Não misturar.</li>
+<li>Toda etapa tem título que diz o que se pede: "Dados do servidor", "Dados da viagem". Nada de
+  "Página 1".</li>
+<li>Quando duas pessoas têm o mesmo dado (requerente e interessado, gestor e colaborador), perguntar
+  "É a mesma pessoa?" antes de repetir o bloco.</li>
+<li>Limite de trabalho: ~8 campos por etapa. Até 10 se forem todos do mesmo assunto (endereço).
+  <strong>[HIPÓTESE]</strong> Número herdado da skill <code>regras-diagramacao</code>, ainda sem pesquisa que o confirme.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> o WordPress duplicava o bloco inteiro de gestor e colaborador (19 campos
+repetidos). Laudos periciais tem requerente e interessado. Achados C3 (campos espalhados) e C9
+(campos ligados sem dependência) em <a href="../andamento/achados-repetem/">achados-repetem.md</a>.</p>
 <h2 id="13-ordem-dos-campos">1.3. Ordem dos campos<a class="headerlink" href="#13-ordem-dos-campos" title="Permanent link">&para;</a></h2>
 <p><em>Que ordem reduz esforço? Dado fácil primeiro? Dado pessoal antes ou depois do dado do pedido?
 Onde entra o anexo?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O guia federal pede um caminho simples e rápido para quem preenche (gov.br — prática 3).</li>
+<li><strong>[FATO]</strong> O GOV.UK usa perguntas com ramificação: a pessoa só responde o que vale para o caso dela
+  (GOV.UK — Form structure).</li>
+<li><strong>[RECOMENDAÇÃO]</strong> Ordem das etapas:<ol>
+<li><strong>Escolha</strong> (o que quer fazer), se houver bifurcação.</li>
+<li><strong>Identificação</strong> (quem é). Vem do login gov.br sempre que possível.</li>
+<li><strong>Vínculo</strong> (onde trabalha, qual empresa), se houver.</li>
+<li><strong>Pedido</strong> (o que quer, especificamente).</li>
+<li><strong>Anexos</strong>.</li>
+<li><strong>Revisão</strong> antes de enviar (ver 1.7).</li>
+</ol>
+</li>
+<li><strong>[RECOMENDAÇÃO]</strong> Dentro de cada etapa:<ul>
+<li>O campo pai vem antes do filho e encostado nele: órgão → setor, CEP → endereço, município →
+  bairro.</li>
+<li>O filho só aparece depois que o pai foi preenchido (<code>visibleIf</code>).</li>
+<li>Endereço segue a ordem de quem escreve um envelope no Brasil: CEP, logradouro, número,
+  complemento, bairro, município.</li>
+</ul>
+</li>
+<li><strong>[INTERPRETAÇÃO]</strong> Pôr o dado pessoal primeiro só funciona se ele vier pronto do gov.br. Se o
+  cidadão tiver que digitar tudo, a etapa 2 vira a mais cansativa logo no início.</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> a ordem fora da lógica aparece em todos (achado A2). No WordPress, <em>Setor</em>
+era o penúltimo campo, longe de <em>Órgão</em>. Há CEP no topo e cidade no fim. Detalhe em
+<a href="../andamento/recomendacoes/">recomendacoes.md</a>.</p>
 <h2 id="14-layout-coluna-unica-largura-e-tamanho-do-campo">1.4. Layout: coluna única, largura e tamanho do campo<a class="headerlink" href="#14-layout-coluna-unica-largura-e-tamanho-do-campo" title="Permanent link">&para;</a></h2>
 <p><em>Uma coluna ou duas? O tamanho da caixa deve sugerir o tamanho da resposta? O que acontece no
 celular?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O guia federal manda usar coluna única, porque a pessoa preenche mais rápido (gov.br —
+  prática 1) e evita layout com várias colunas (prática 3).</li>
+<li><strong>[FATO]</strong> O GOV.UK limita a área do formulário a dois terços da tela, para a leitura ficar
+  confortável (GOV.UK — Question pages).</li>
+<li><strong>[FATO]</strong> A NN/g recomenda coluna única: várias colunas quebram o movimento de descer pelo
+  formulário (NN/g — Website forms usability, 2016).</li>
+<li><strong>[RECOMENDAÇÃO]</strong><ul>
+<li>Um campo por linha, sempre. Não usar <code>startWithNewLine: false</code> para pôr dois campos lado a lado.</li>
+<li>A largura da caixa sugere a resposta: CEP e número curtos, nome e e-mail longos.</li>
+<li>Texto longo é caixa de várias linhas (<code>comment</code>), não campo de uma linha.</li>
+<li>Todo formulário é testado no celular antes de publicar (checklist A7).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> o <code>entrada.json</code> do WordPress tem 11 campos com <code>startWithNewLine: false</code>,
+ou seja, lado a lado. Itens A1, A6 e A7 do <a href="../04-checklist/#a-organizacao">checklist</a>.</p>
 <h2 id="15-obrigatorio-x-opcional">1.5. Obrigatório x opcional<a class="headerlink" href="#15-obrigatorio-x-opcional" title="Permanent link">&para;</a></h2>
 <p><em>Marca-se o obrigatório ou o opcional? Com qual símbolo ou palavra? Onde a regra fica explicada?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O GOV.UK marca só o opcional, com a palavra "(opcional)", e não usa asterisco (GOV.UK —
+  Question pages).</li>
+<li><strong>[FATO]</strong> A NN/g recomenda o contrário: marcar todo campo obrigatório, com asterisco antes do rótulo
+  (NN/g — Marking required fields, 2019).</li>
+<li><strong>[FATO]</strong> O guia federal só pede para deixar claro o que é pedido, sem fixar símbolo (gov.br —
+  práticas 7 e 8).</li>
+<li><strong>[FATO]</strong> Nos 14 formulários, 187 de 223 campos são obrigatórios (84%)
+  (<a href="../andamento/mapeamento/">mapeamento</a>).</li>
+<li><strong>[RECOMENDAÇÃO]</strong> Divergência resolvida pela nossa realidade:<ul>
+<li>Manter o asterisco que o X-Forms já põe no campo obrigatório (<code>isRequired</code>). É o que o cidadão
+  já vê no Portal, e trocar exigiria mudar a ferramenta.</li>
+<li>Escrever <strong>"(opcional)"</strong> no rótulo dos poucos campos opcionais. Com 84% obrigatórios, o
+  opcional é a exceção, e a exceção é o que precisa de destaque. Essa parte segue o GOV.UK.</li>
+<li>Explicar o asterisco uma vez, no topo do formulário: "Campos com * são obrigatórios."</li>
+<li>Antes de marcar um campo como obrigatório, perguntar se o serviço anda sem ele. Se anda, o
+  campo sai (checklist C1).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> 7 formulários têm 100% dos campos obrigatórios (WordPress, RT agrícola,
+Indústria de agrotóxicos, Cancelar registro, Selo Arte, Negativa de tombamento, Soqueira). Isso
+mostra que a marcação não está sendo usada para decidir se o campo é necessário.</p>
 <h2 id="16-botoes-e-acao-principal">1.6. Botões e ação principal<a class="headerlink" href="#16-botoes-e-acao-principal" title="Permanent link">&para;</a></h2>
 <p><em>Onde fica o botão de enviar? Quantos botões por tela? Como escrever o texto do botão? Existe
 "voltar" e "salvar rascunho"?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O GOV.UK recomenda um só botão principal por página. Mais de uma ação principal confunde
+  o próximo passo (GOV.UK — Button).</li>
+<li><strong>[FATO]</strong> O texto do botão diz a ação: "Continuar", "Enviar solicitação". O GOV.UK prefere
+  "Continuar" a "Próximo" e mantém um link "Voltar" em toda página de pergunta (GOV.UK — Button e
+  Question pages).</li>
+<li><strong>[FATO]</strong> O guia federal pede botão com texto que revele o que acontece depois do clique (gov.br —
+  prática 5).</li>
+<li><strong>[RECOMENDAÇÃO]</strong><ul>
+<li>Um botão principal por etapa, no fim da etapa.</li>
+<li>Nas etapas intermediárias o botão diz "Continuar". Na última, "Enviar solicitação" ou o nome do
+  pedido ("Solicitar certidão"). Nunca "OK" ou "Concluir".</li>
+<li>Toda etapa depois da primeira tem "Voltar", e o que foi preenchido não se perde (checklist A5).</li>
+<li>No X-Forms (SurveyJS), os textos saem de <code>pageNextText</code>, <code>pagePrevText</code> e <code>completeText</code>.
+  <strong>[HIPÓTESE]</strong> Validar se o X-Forms expõe esses campos no editor.</li>
+<li><strong>Salvar rascunho:</strong> <strong>Não identificado</strong> no X-Forms. Levar à SGD como limite, porque pesa nos
+  formulários com anexo que a pessoa precisa ir buscar (Soqueira, Bibliotecas).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> item B5 do <a href="../04-checklist/#b-linguagem">checklist</a>. O texto do botão final
+não aparece no mapeamento. <strong>Não identificado</strong> para os 14; conferir na próxima rodada.</p>
 <h2 id="17-progresso-em-fluxo-de-varias-etapas">1.7. Progresso em fluxo de várias etapas<a class="headerlink" href="#17-progresso-em-fluxo-de-varias-etapas" title="Permanent link">&para;</a></h2>
 <p><em>Como mostrar em que ponto a pessoa está? Barra, "etapa 2 de 5", lista lateral? Dá para voltar e
 corrigir?</em></p>
-<p><em>(a preencher)</em></p>
+<ul>
+<li><strong>[FATO]</strong> O guia federal manda informar em que etapa a pessoa está (gov.br — prática 12).</li>
+<li><strong>[FATO]</strong> O GOV.UK sugere um indicador simples, do tipo "Pergunta 3 de 9". Recomenda testar primeiro
+  sem ele e evitar indicador que mostre todas as perguntas de uma vez (GOV.UK — Question pages).</li>
+<li><strong>[FATO]</strong> O GOV.UK usa uma página de revisão antes do envio. Ela mostra cada resposta com um link
+  "Alterar" e, depois da correção, volta direto para a revisão (GOV.UK — Check answers).</li>
+<li><strong>[RECOMENDAÇÃO]</strong><ul>
+<li>Com 2 etapas ou mais, mostrar "Etapa X de Y" com o título da etapa. No X-Forms:
+  <code>showProgressBar: "top"</code> e <code>progressBarType: "pages"</code>, como no <code>saida.json</code> do WordPress.</li>
+<li>Com 3 etapas ou mais, ativar a revisão antes do envio (<code>showPreviewBeforeComplete</code>).
+  <strong>[HIPÓTESE]</strong> Validar se o X-Forms suporta.</li>
+<li>Contar só as etapas que a pessoa vai ver. Página escondida por <code>visibleIf</code> não entra no "de Y".</li>
+<li>Depois do envio, dizer o que acontece: protocolo, prazo, por onde vem a resposta (gov.br —
+  prática 13; checklist B6).</li>
+</ul>
+</li>
+</ul>
+<p><strong>Onde aparece nos 14:</strong> 7 formulários têm 2 páginas ou mais e nenhum tem revisão antes do envio
+mapeada. O WordPress refatorado já usa a barra de progresso por páginas.</p>
 <hr />
 <h2 id="resumo-o-que-recomendamos">Resumo — o que recomendamos<a class="headerlink" href="#resumo-o-que-recomendamos" title="Permanent link">&para;</a></h2>
-<p><em>(preencher no fim: lista curta de regras de diagramação para o X-Forms)</em></p>
+<p>Regras de diagramação para o X-Forms, na ordem em que o cidadão as sente:</p>
+<ol>
+<li><strong>Pergunta que muda o caminho fica sozinha na página.</strong> A de elegibilidade vem primeiro. (1.1)</li>
+<li><strong>O resto vai em etapas por assunto</strong>, com ~8 campos cada e título que diz o que se pede. (1.1, 1.2)</li>
+<li><strong>Ordem das etapas:</strong> escolha → identificação → vínculo → pedido → anexos → revisão. (1.3)</li>
+<li><strong>Campo pai antes do filho</strong>, encostados, e o filho só aparece depois do pai (<code>visibleIf</code>). (1.3)</li>
+<li><strong>Dado do gov.br vem pronto.</strong> Se duas pessoas repetem dados, perguntar "é a mesma pessoa?". (1.2, 1.3)</li>
+<li><strong>Uma coluna só.</strong> Nada de <code>startWithNewLine: false</code>. A caixa tem o tamanho da resposta. (1.4)</li>
+<li><strong>Asterisco no obrigatório</strong> (padrão do X-Forms) <strong>e "(opcional)" no rótulo do opcional.</strong> (1.5)</li>
+<li><strong>Um botão principal por etapa</strong>, com verbo: "Continuar" e, no fim, "Enviar solicitação". (1.6)</li>
+<li><strong>"Etapa X de Y"</strong> a partir de 2 etapas e <strong>revisão antes do envio</strong> a partir de 3. (1.7)</li>
+<li><strong>Limites a levar à SGD:</strong> salvar rascunho e confirmação das propriedades do SurveyJS no X-Forms. (1.6, 1.7)</li>
+</ol>
+<p>Estas regras alimentam a seção A do <a href="../04-checklist/#a-organizacao">checklist</a> e a skill
+<code>regras-diagramacao</code> (<code>.claude/skills/regras-diagramacao/SKILL.md</code>).</p>
 
 
 
