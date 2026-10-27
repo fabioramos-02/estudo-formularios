@@ -1,0 +1,2232 @@
+
+<!doctype html>
+<html lang="pt" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Estudo da SETDIG sobre diagramação, boas práticas e nomenclatura de campos em formulários de serviços digitais do Estado de MS.">
+      
+      
+        <meta name="author" content="SETDIG — Secretaria-Executiva de Transformação Digital">
+      
+      
+        <link rel="canonical" href="https://fabioramos-02.github.io/estudo-formularios/xforms-manual/10-logica-e-expressoes/">
+      
+      
+        <link rel="prev" href="../04-tipos-de-pergunta/">
+      
+      
+        <link rel="next" href="../05-aprovacao/">
+      
+      
+      <link rel="icon" href="../../assets/img/brasao-ms.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Lógica e expressões - Estudo de Formulários — X-Forms</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/segov.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#logica-e-expressoes" class="md-skip">
+          Pular para conteúdo
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
+    <a href="../.." title="Estudo de Formulários — X-Forms" class="md-header__button md-logo" aria-label="Estudo de Formulários — X-Forms" data-md-component="logo">
+      
+  <img src="../../assets/img/segov-logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Estudo de Formulários — X-Forms
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lógica e expressões
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo escuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo escuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Buscar" placeholder="Buscar" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Pesquisar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpar" aria-label="Limpar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando busca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegação" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Estudo de Formulários — X-Forms" class="md-nav__button md-logo" aria-label="Estudo de Formulários — X-Forms" data-md-component="logo">
+      
+  <img src="../../assets/img/segov-logo.svg" alt="logo">
+
+    </a>
+    Estudo de Formulários — X-Forms
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Início
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guia-do-antonio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia do Antonio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-diagramacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. Diagramação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02-aprendizados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2. Aprendizados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-nomenclatura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3. Nomenclatura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-checklist/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4. Checklist
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05-auditoria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. Auditoria dos 14
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pendencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pendências
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../andamento/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Andamento
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Andamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../andamento/mapeamento/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mapeamento dos 14
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mapeamento dos 14
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/01-wordpress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    01. WordPress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/02-rt-agricola/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    02. RT agrícola
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/03-diarias-fundect/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    03. Diárias Fundect
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/04-industria-agrotoxicos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    04. Indústria agrotóxicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/05-cancelar-agrotoxicos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    05. Cancelar agrotóxicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/06-selo-arte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    06. Selo Arte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/07-negativa-tombamento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    07. Negativa de tombamento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/08-veterinario-avi-suino/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    08. Veterinário avi/suíno
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/09-bibliotecas-publicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    09. Bibliotecas públicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/10-empresa-integradora/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10. Empresa integradora
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/11-soqueira-algodao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11. Soqueira de algodão
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/12-laudos-periciais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12. Laudos periciais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/13-laboratorio-avicola/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13. Laboratório avícola
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/mapeamento/14-certidao-190-193/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14. Certidão 190/193
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/recomendacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recomendações comuns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/recomendacoesGOVUK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recomendações GOV.UK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/achados-repetem/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Achados que se repetem
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/wordpress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Notas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../andamento/01-wordpress/notas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1. WordPress — Refatoração
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fichas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Fichas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fichas/_template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Como preencher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Manual do X-Forms
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_11" id="__nav_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Manual do X-Forms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-acesso-e-central/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acesso e Central
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-lista-de-formularios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lista de formulários
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-criar-e-editar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Criar e editar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-tipos-de-pergunta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tipos de pergunta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lógica e expressões
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lógica e expressões
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-como-pensar-numa-regra" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Como pensar numa regra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-onde-as-regras-ficam-no-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Onde as regras ficam no Designer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-as-regras-de-uma-pergunta" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. As regras de uma pergunta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-modo-avancado-a-gramatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Modo avançado: a gramática
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-funcoes-disponiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Funções disponíveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-gatilhos-valores-calculados-e-a-pergunta-expressao" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Gatilhos, valores calculados e a pergunta Expressão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-o-que-o-portal-faz-diferente-do-surveyjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. O que o portal faz diferente do SurveyJS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-armadilhas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Armadilhas comuns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-receitas-prontas" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Receitas prontas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-logica-e-o-envio-para-a-api-externa" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Lógica e o envio para a API externa
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-aprovacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alterações com aprovação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-divulgar-e-respostas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Divulgar e respostas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-pesquisas-nps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisas NPS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-problemas-comuns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Problemas comuns
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-manutencao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manutenção do manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fontes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fontes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-como-pensar-numa-regra" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Como pensar numa regra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-onde-as-regras-ficam-no-designer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Onde as regras ficam no Designer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-as-regras-de-uma-pergunta" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. As regras de uma pergunta
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-operadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Operadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-modo-avancado-a-gramatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Modo avançado: a gramática
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-funcoes-disponiveis" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Funções disponíveis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-gatilhos-valores-calculados-e-a-pergunta-expressao" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Gatilhos, valores calculados e a pergunta Expressão
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Validadores
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-o-que-o-portal-faz-diferente-do-surveyjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. O que o portal faz diferente do SurveyJS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-armadilhas-comuns" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Armadilhas comuns
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-receitas-prontas" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Receitas prontas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-logica-e-o-envio-para-a-api-externa" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Lógica e o envio para a API externa
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="logica-e-expressoes">Lógica e expressões<a class="headerlink" href="#logica-e-expressoes" title="Permanent link">&para;</a></h1>
+<p><a href="../">← Manual do X-Forms</a></p>
+<p>Lógica é o que faz um formulário reagir ao que o cidadão responde: mostrar uma pergunta só quando outra tiver certa resposta, tornar um campo obrigatório em uma situação, calcular um valor, pular uma página ou encerrar o formulário mais cedo. Tudo isso é escrito como <strong>condições</strong> e <strong>expressões</strong>, e este capítulo explica como pensar nelas, como montá-las no Designer e o que a página do cidadão entende.</p>
+<p>O Designer é o Survey Creator do <strong>SurveyJS 1.12.14</strong> e o formulário é salvo no JSON do SurveyJS, com a mesma gramática de condições e expressões usada pelo construtor do X-Forms do CMS. É isso que garante a compatibilidade quando um formulário criado aqui é importado no X-Forms do CMS: as regras continuam valendo, desde que fiquem dentro do que este capítulo descreve. A página que o cidadão responde não roda o SurveyJS: ela tem um renderizador próprio que interpreta as mesmas regras. Quando o renderizador e o SurveyJS se comportam diferente, a <a href="#9-o-que-o-portal-faz-diferente-do-surveyjs">seção 9</a> diz o que fazer.</p>
+<p>Os exemplos vêm de um formulário de demonstração, o pré-cadastro familiar para programas sociais: o cidadão informa a moradia e as pessoas da casa, e o formulário calcula a renda por pessoa e mostra avisos conforme as respostas.</p>
+<h2 id="1-como-pensar-numa-regra">1. Como pensar numa regra<a class="headerlink" href="#1-como-pensar-numa-regra" title="Permanent link">&para;</a></h2>
+<p>Toda regra tem três partes: <strong>onde</strong> ela vale (uma pergunta, uma coluna de matriz, uma página ou o formulário inteiro), <strong>o que</strong> ela faz (mostrar, habilitar, exigir, limpar, definir, pular, encerrar) e <strong>quando</strong> ela vale (a condição). A condição é sempre uma pergunta sobre as respostas: "a moradia é alugada?", "a renda por pessoa passa do limite?", "a lista de interesses contém saúde?". Quando a resposta é sim, a regra age; quando é não, a regra não faz nada.</p>
+<p>No formulário de demonstração, a pergunta <em>Valor mensal do aluguel</em> só faz sentido quando o cidadão marcou <em>Alugada</em> em <em>A casa onde a família mora é</em>. Então, na pergunta do aluguel, a regra <strong>Torne a pergunta visível se</strong> recebe a condição <code>{tipo_moradia} = 'alugada'</code>. Como nesse caso o valor precisa ser informado, a regra <strong>Faça a pergunta obrigatória se</strong> recebe a mesma condição, e um validador recusa zero.</p>
+<p><img alt="A pergunta do aluguel aparece quando a moradia é alugada e o validador recusa zero" src="../img/62-visivel-se-e-validador.png" /></p>
+<p>A chave para ler qualquer condição: o que está entre chaves é o <strong>nome da pergunta</strong> (o campo <strong>Nome</strong> do painel de propriedades, que também é a chave da resposta no envio), e o que está entre aspas simples é um <strong>valor</strong>. Em perguntas de escolha, o valor é o valor da opção, não o texto que o cidadão lê (veja <a href="#10-armadilhas-comuns">Armadilhas</a>).</p>
+<h2 id="2-onde-as-regras-ficam-no-designer">2. Onde as regras ficam no Designer<a class="headerlink" href="#2-onde-as-regras-ficam-no-designer" title="Permanent link">&para;</a></h2>
+<p>Há três caminhos para a mesma regra, e o que se faz em um aparece nos outros:</p>
+<ul>
+<li><strong>Painel de propriedades → Lógica</strong>, com a pergunta selecionada. Cada regra tem um campo de texto para a condição e o ícone de varinha mágica, que abre o construtor.</li>
+<li><strong>Aba Lógica</strong>, no topo do Designer. Lista todas as regras do formulário em frases, como "Se 'tipo_moradia' == 'alugada', torna questão 'valor_aluguel' visível". Clicar numa regra abre o construtor com a condição e as ações; <strong>Adicionar Condição</strong> e <strong>Adicionar Ação</strong> completam a regra e <strong>Terminar</strong> fecha.</li>
+<li><strong>Editor de JSON</strong>, para quem precisa ajustar direto. Cada regra é uma propriedade da pergunta, como <code>"visibleIf": "{tipo_moradia} = 'alugada'"</code>.</li>
+</ul>
+<p><img alt="Aba Lógica com as regras do formulário em frases" src="../img/60-logica-lista-de-regras.png" /></p>
+<p><img alt="Regra aberta na aba Lógica: a condição e as ações" src="../img/61-logica-editar-regra.png" /></p>
+<h2 id="3-as-regras-de-uma-pergunta">3. As regras de uma pergunta<a class="headerlink" href="#3-as-regras-de-uma-pergunta" title="Permanent link">&para;</a></h2>
+<p>Ficam em <strong>Painel de propriedades → Lógica</strong>, com a pergunta selecionada. A coluna JSON é o nome da propriedade no Editor de JSON.</p>
+<table>
+<thead>
+<tr>
+<th>Regra no Designer</th>
+<th>JSON</th>
+<th>Quando a condição é verdadeira...</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torne a pergunta visível se</td>
+<td><code>visibleIf</code></td>
+<td>...a pergunta aparece. Fora disso, fica oculta.</td>
+<td><code>{tipo_moradia} = 'alugada'</code></td>
+</tr>
+<tr>
+<td>Editável se</td>
+<td><code>enableIf</code></td>
+<td>...a pergunta pode ser respondida. Fora disso, aparece desabilitada.</td>
+<td><code>{aceite} = true</code></td>
+</tr>
+<tr>
+<td>Faça a pergunta obrigatória se</td>
+<td><code>requiredIf</code></td>
+<td>...a pergunta passa a ser obrigatória.</td>
+<td><code>{tipo_moradia} = 'alugada'</code></td>
+</tr>
+<tr>
+<td>Redefinir valor se</td>
+<td><code>resetValueIf</code></td>
+<td>...a resposta é apagada. Útil quando a resposta anterior deixa de fazer sentido.</td>
+<td><code>{tipo_pessoa} &lt;&gt; 'pj'</code></td>
+</tr>
+<tr>
+<td>Defina o valor se + Definir expressão de valor</td>
+<td><code>setValueIf</code> + <code>setValueExpression</code></td>
+<td>...a resposta recebe o resultado da expressão.</td>
+<td><code>{quantidade} notempty</code> e <code>{quantidade} * 2</code></td>
+</tr>
+<tr>
+<td>Escolhas estão visiveis se / Escolhas são selecionáveis se</td>
+<td><code>choicesVisibleIf</code> / <code>choicesEnableIf</code></td>
+<td>...as opções da pergunta de escolha aparecem (ou ficam selecionáveis). Vale para a lista toda.</td>
+<td><code>{tem_dependente} = true</code></td>
+</tr>
+<tr>
+<td>Expressão valor mínimo / máximo, em perguntas de data</td>
+<td><code>minValueExpression</code> / <code>maxValueExpression</code></td>
+<td>...limita as datas aceitas.</td>
+<td><code>today()</code></td>
+</tr>
+</tbody>
+</table>
+<p>O campo <strong>Valor de expressão pré-definida</strong> (<code>defaultValueExpression</code>) aparece no painel, mas a página do cidadão não o aplica. Para começar uma pergunta com um valor calculado, use <strong>Defina o valor se</strong> ou um gatilho (seção 7).</p>
+<p><strong>Página e painel</strong> também têm <strong>Visível se</strong>: com a condição falsa, a página inteira é pulada e o painel inteiro some, com as perguntas de dentro.</p>
+<p><strong>Colunas da matriz</strong> (linhas dinâmicas ou dropdown) aceitam <strong>Tornar a coluna visível se</strong>, <strong>Editável se</strong>, <strong>Tornar a coluna obrigatória se</strong>, <strong>Redefinir valor se</strong> e <strong>Defina o valor se</strong>. A condição da coluna olha as respostas do formulário, não a linha: no exemplo, a coluna <em>Pessoa com deficiência?</em> só aparece quando <code>{possui_pcd} = true</code>, para todas as linhas.</p>
+<p><strong>Respostas de perguntas ocultas.</strong> Uma pergunta oculta não é validada nem conta como obrigatória. O que acontece com a resposta dela é decidido em <em>Propriedades do questionário → Data → Limpar valores invisíveis</em>: <strong>ao completar</strong> (padrão: a resposta oculta é descartada no envio), <strong>ao ocultar</strong>, <strong>Quando a pergunta ou seu painel/página fica oculto</strong> ou <strong>Nunca</strong>.</p>
+<h2 id="4-operadores">4. Operadores<a class="headerlink" href="#4-operadores" title="Permanent link">&para;</a></h2>
+<p>O construtor monta a condição em três partes: a <strong>pergunta</strong>, o <strong>operador</strong> e o <strong>valor</strong>. <strong>Adicionar Condição</strong> acrescenta outra linha, e você escolhe se as linhas se juntam com <em>e</em> (todas precisam valer) ou <em>ou</em> (basta uma).</p>
+<table>
+<thead>
+<tr>
+<th>Operador no construtor</th>
+<th>Na expressão</th>
+<th>Serve para</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>é igual a</td>
+<td><code>=</code></td>
+<td>texto, número, opção única, sim/não</td>
+</tr>
+<tr>
+<td>é diferente de</td>
+<td><code>&lt;&gt;</code></td>
+<td>o contrário de "é igual a"</td>
+</tr>
+<tr>
+<td>é maior que, é maior ou igual a, é menor que, é menor ou igual a</td>
+<td><code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code></td>
+<td>números, datas</td>
+</tr>
+<tr>
+<td>contém</td>
+<td><code>contains</code></td>
+<td>múltipla escolha e tags (a lista contém o valor) e texto (contém o trecho)</td>
+</tr>
+<tr>
+<td>não contém</td>
+<td><code>notcontains</code></td>
+<td>o contrário de "contém"</td>
+</tr>
+<tr>
+<td>é qualquer um de</td>
+<td><code>anyof</code></td>
+<td>a resposta é uma das opções listadas</td>
+</tr>
+<tr>
+<td>contém todos</td>
+<td><code>allof</code></td>
+<td>múltipla escolha com todas as opções listadas</td>
+</tr>
+<tr>
+<td>está vazio</td>
+<td><code>empty</code></td>
+<td>sem resposta</td>
+</tr>
+<tr>
+<td>está preenchido</td>
+<td><code>notempty</code></td>
+<td>com qualquer resposta</td>
+</tr>
+</tbody>
+</table>
+<p>Com "é qualquer um de" e "contém todos", a lista fica entre colchetes: <code>{interesses} anyof ['saude', 'educacao']</code>.</p>
+<h2 id="5-modo-avancado-a-gramatica">5. Modo avançado: a gramática<a class="headerlink" href="#5-modo-avancado-a-gramatica" title="Permanent link">&para;</a></h2>
+<p>O campo de texto da regra aceita a expressão escrita à mão. Vale a pena quando a condição mistura <em>e</em> com <em>ou</em>, usa uma função ou faz conta. Uma expressão que o construtor não sabe representar continua valendo, só não volta para o modo visual.</p>
+<table>
+<thead>
+<tr>
+<th>Peça</th>
+<th>Escrita</th>
+<th>Observações</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pergunta</td>
+<td><code>{nome_da_pergunta}</code></td>
+<td>Em texto múltiplo e matrizes: <code>{endereco.cidade}</code>, <code>{membros[0].nome}</code>. Quantidade de linhas: <code>{membros.length}</code>.</td>
+</tr>
+<tr>
+<td>Texto</td>
+<td><code>'assim'</code></td>
+<td>Aspas simples.</td>
+</tr>
+<tr>
+<td>Número</td>
+<td><code>10</code>, <code>2.5</code></td>
+<td>Ponto como separador decimal.</td>
+</tr>
+<tr>
+<td>Sim/Não</td>
+<td><code>true</code>, <code>false</code></td>
+<td>Sem aspas.</td>
+</tr>
+<tr>
+<td>Lista</td>
+<td><code>['a', 'b']</code></td>
+<td>Usada com <code>anyof</code> e <code>allof</code>.</td>
+</tr>
+<tr>
+<td>Comparação</td>
+<td><code>=</code>, <code>&lt;&gt;</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>contains</code>, <code>notcontains</code>, <code>anyof</code>, <code>allof</code></td>
+<td><code>==</code> e <code>!=</code> também valem.</td>
+</tr>
+<tr>
+<td>Vazio</td>
+<td><code>{x} empty</code>, <code>{x} notempty</code></td>
+<td>Depois da pergunta, sem valor.</td>
+</tr>
+<tr>
+<td>Junção</td>
+<td><code>and</code>, <code>or</code></td>
+<td>Use parênteses para agrupar: <code>({a} = 1 or {b} = 1) and {c} notempty</code>.</td>
+</tr>
+<tr>
+<td>Conta</td>
+<td><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></td>
+<td>Com números ou perguntas numéricas, e parênteses: <code>({a} + {b}) / 2</code>. <code>+</code> entre textos junta os textos.</td>
+</tr>
+<tr>
+<td>Função</td>
+<td><code>nome(argumentos)</code></td>
+<td>Lista na seção seguinte.</td>
+</tr>
+</tbody>
+</table>
+<p>Não existe <code>not</code> nem resto de divisão (<code>%</code>). Para negar, use o operador contrário: <code>&lt;&gt;</code> em vez de "não é igual", <code>notcontains</code>, <code>empty</code>.</p>
+<h2 id="6-funcoes-disponiveis">6. Funções disponíveis<a class="headerlink" href="#6-funcoes-disponiveis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Função</th>
+<th>Resultado</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sum(a, b, ...)</code></td>
+<td>Soma. Aceita listas.</td>
+<td><code>sum({adultos}, {criancas})</code></td>
+</tr>
+<tr>
+<td><code>min(...)</code>, <code>max(...)</code>, <code>avg(...)</code></td>
+<td>Menor, maior valor e média.</td>
+<td><code>max({nota1}, {nota2})</code></td>
+</tr>
+<tr>
+<td><code>count(lista)</code></td>
+<td>Quantidade de itens marcados.</td>
+<td><code>count({interesses}) &gt;= 2</code></td>
+</tr>
+<tr>
+<td><code>sumInArray(matriz, 'coluna')</code></td>
+<td>Soma de uma coluna da matriz.</td>
+<td><code>sumInArray({membros}, 'renda_mensal')</code></td>
+</tr>
+<tr>
+<td><code>countInArray(matriz, 'coluna')</code></td>
+<td>Quantas linhas têm a coluna preenchida.</td>
+<td><code>countInArray({membros}, 'nome') + 1</code></td>
+</tr>
+<tr>
+<td><code>avgInArray</code>, <code>minInArray</code>, <code>maxInArray</code></td>
+<td>Média, menor e maior valor de uma coluna.</td>
+<td><code>maxInArray({membros}, 'idade')</code></td>
+</tr>
+<tr>
+<td>As funções <code>...InArray</code> com um terceiro argumento</td>
+<td>Só as linhas que atendem ao filtro, escrito entre aspas simples.</td>
+<td><code>countInArray({membros}, 'nome', '{idade} &gt;= 60')</code></td>
+</tr>
+<tr>
+<td><code>iif(condição, se_sim, se_não)</code></td>
+<td>Escolhe um valor conforme a condição.</td>
+<td><code>iif({renda} &gt; 5000, 'alta', 'baixa')</code></td>
+</tr>
+<tr>
+<td><code>today()</code>, <code>currentDate()</code></td>
+<td>A data de hoje.</td>
+<td><code>{data_viagem} &gt; today()</code></td>
+</tr>
+<tr>
+<td><code>getDate(data)</code></td>
+<td>Converte texto em data.</td>
+<td><code>getDate({nascimento})</code></td>
+</tr>
+<tr>
+<td><code>currentYear()</code>, <code>getYear(data)</code>, <code>year(data)</code>, <code>month(data)</code>, <code>day(data)</code>, <code>weekday(data)</code></td>
+<td>Partes de uma data.</td>
+<td><code>year({nascimento}) &lt; 2008</code></td>
+</tr>
+<tr>
+<td><code>age(data)</code></td>
+<td>Idade em anos a partir de uma data de nascimento.</td>
+<td><code>age({nascimento}) &gt;= 18</code></td>
+</tr>
+<tr>
+<td><code>dateDiff(a, b, unidade)</code>, <code>diffDays(a, b)</code></td>
+<td>Diferença entre datas (unidade <code>days</code>, <code>months</code> ou <code>years</code>).</td>
+<td><code>diffDays({inicio}, {fim}) &lt;= 30</code></td>
+</tr>
+<tr>
+<td><code>substring(texto, início, fim)</code></td>
+<td>Trecho de um texto.</td>
+<td><code>substring({cep}, 0, 2) = '79'</code></td>
+</tr>
+</tbody>
+</table>
+<p>Não há função de arredondamento (<code>round</code>): para mostrar um valor com casas decimais fixas, use a pergunta <strong>Expressão</strong> com estilo de exibição número ou moeda.</p>
+<h2 id="7-gatilhos-valores-calculados-e-a-pergunta-expressao">7. Gatilhos, valores calculados e a pergunta Expressão<a class="headerlink" href="#7-gatilhos-valores-calculados-e-a-pergunta-expressao" title="Permanent link">&para;</a></h2>
+<p>Com nada selecionado, <strong>Propriedades do questionário → Lógica</strong> traz o que vale para o formulário inteiro.</p>
+<p><strong>Condições (gatilhos)</strong> executam uma ação quando a condição vira verdadeira:</p>
+<table>
+<thead>
+<tr>
+<th>Gatilho no Designer</th>
+<th>JSON</th>
+<th>O que faz</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Completar questionário</td>
+<td><code>complete</code></td>
+<td>Termina o formulário e envia, sem passar pelas páginas restantes.</td>
+</tr>
+<tr>
+<td>Pular para a pergunta</td>
+<td><code>skip</code></td>
+<td>Vai direto para a pergunta escolhida.</td>
+</tr>
+<tr>
+<td>Definir resposta</td>
+<td><code>setvalue</code></td>
+<td>Grava um valor fixo em uma pergunta.</td>
+</tr>
+<tr>
+<td>Copiar resposta</td>
+<td><code>copyvalue</code></td>
+<td>Copia a resposta de uma pergunta para outra.</td>
+</tr>
+<tr>
+<td>Executar expressão</td>
+<td><code>runexpression</code></td>
+<td>Grava numa pergunta o resultado de uma expressão.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Valores calculados</strong> são variáveis que o cidadão não vê, usadas nas condições e em outras expressões. No exemplo, <code>qtd_idosos</code> tem a expressão <code>countInArray({membros}, 'nome', '{idade} &gt;= 60')</code> e o aviso de prioridade usa <code>{qtd_idosos} &gt; 0</code> em <strong>Visível se</strong>. Um valor calculado <strong>não vai na resposta enviada</strong>; se o valor precisa chegar às respostas ou à API externa, use a pergunta Expressão.</p>
+<p><strong>A pergunta Expressão</strong> (grupo Conteúdo da caixa de ferramentas) mostra o resultado em tempo real e envia o valor com a resposta. O <strong>Estilo de exibição de valor</strong> pode ser número, moeda (com a moeda, como <code>BRL</code>), porcentagem ou data. No exemplo, <em>Renda por pessoa</em> usa <code>(sumInArray({membros}, 'renda_mensal') + {renda_responsavel}) / (countInArray({membros}, 'nome') + 1)</code> com estilo moeda.</p>
+<p>Na matriz, a coluna também pode ter <strong>Tipo total</strong> (soma, contagem, média, mínimo ou máximo), mostrado abaixo da coluna. O total vai na resposta como <code>&lt;nome da matriz&gt;-total</code>, por exemplo <code>"membros-total": { "renda_mensal": 1412 }</code>.</p>
+<p><img alt="Matriz com total, perguntas Expressão e avisos condicionais" src="../img/63-expressoes-e-avisos.png" /></p>
+<h2 id="8-validadores">8. Validadores<a class="headerlink" href="#8-validadores" title="Permanent link">&para;</a></h2>
+<p>Ficam em <strong>Painel de propriedades → Validação → Validadores</strong>; a lista de tipos usa os nomes abaixo. A mensagem aparece embaixo do campo e, no envio, num resumo no topo da página.</p>
+<table>
+<thead>
+<tr>
+<th>Validador</th>
+<th>JSON</th>
+<th>O que confere</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expressão</td>
+<td><code>expression</code></td>
+<td>A condição precisa ser verdadeira.</td>
+<td><code>{declaracao_veracidade} = true</code>, <code>{data} &gt;= today()</code></td>
+</tr>
+<tr>
+<td>numérico</td>
+<td><code>numeric</code></td>
+<td>Número dentro do mínimo e do máximo.</td>
+<td>mínimo 1 no valor do aluguel</td>
+</tr>
+<tr>
+<td>texto</td>
+<td><code>text</code></td>
+<td>Quantidade de caracteres e, se marcado, sem dígitos.</td>
+<td>mínimo 10 caracteres</td>
+</tr>
+<tr>
+<td>regex</td>
+<td><code>regex</code></td>
+<td>O texto segue um padrão.</td>
+<td>CPF com ou sem pontuação: <code>^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$</code></td>
+</tr>
+<tr>
+<td>e-mail</td>
+<td><code>email</code></td>
+<td>Formato de e-mail.</td>
+<td><code>nome@exemplo.com</code></td>
+</tr>
+<tr>
+<td>contador de respostas</td>
+<td><code>answercount</code></td>
+<td>Quantidade de opções marcadas na múltipla escolha.</td>
+<td>mínimo 2</td>
+</tr>
+</tbody>
+</table>
+<p>Escreva o <strong>Texto</strong> do validador dizendo o que fazer, como "Informe um valor maior que zero", e não só o que está errado.</p>
+<h2 id="9-o-que-o-portal-faz-diferente-do-surveyjs">9. O que o portal faz diferente do SurveyJS<a class="headerlink" href="#9-o-que-o-portal-faz-diferente-do-surveyjs" title="Permanent link">&para;</a></h2>
+<p>A aba <strong>Testar questionário</strong> roda o SurveyJS do Designer, não o renderizador do portal, então uma regra pode funcionar no teste e não na página do cidadão, ou o contrário. Confira sempre na <strong>Visualizar</strong> da lista (<a href="../06-divulgar-e-respostas/#prévia">prévia</a>), que usa o mesmo renderizador do portal e não grava resposta.</p>
+<table>
+<thead>
+<tr>
+<th>No SurveyJS (e no Testar questionário)</th>
+<th>Na página do cidadão</th>
+<th>O que fazer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Uma função com filtro funciona direto na condição: <code>countInArray({membros}, 'nome', '{idade} &gt;= 60') &gt; 0</code></td>
+<td>A condição não reconhece o filtro e fica falsa.</td>
+<td>Calcule num valor calculado (<code>qtd_idosos</code>) e compare o resultado: <code>{qtd_idosos} &gt; 0</code>.</td>
+</tr>
+<tr>
+<td><code>%</code> dá o resto da divisão.</td>
+<td>Não existe.</td>
+<td>Evite. Para "número par", use uma pergunta de escolha ou valide no destino das respostas.</td>
+</tr>
+<tr>
+<td><strong>Escolhas estão visiveis se</strong> vale opção por opção, com <code>{item}</code>.</td>
+<td>Vale para a lista toda; <code>{item}</code> não tem valor.</td>
+<td>Use para mostrar ou esconder todas as opções. Para esconder opções específicas, separe em perguntas com <strong>Visível se</strong>.</td>
+</tr>
+<tr>
+<td>A coluna de escolha da matriz pode ter opções próprias.</td>
+<td>As colunas de escolha usam as <strong>Opções</strong> da própria matriz.</td>
+<td>Cadastre as opções na matriz (painel da matriz → Opções), não na coluna.</td>
+</tr>
+<tr>
+<td>Um texto só com dígitos, como o CEP <code>79800000</code>, é tratado como número: <code>substring({cep}, 0, 2)</code> devolve vazio.</td>
+<td>O texto continua texto e <code>substring</code> devolve <code>'79'</code>.</td>
+<td>Teste no Visualizar; se o formulário também for usado no CMS, prefira comparar a pergunta inteira ou guardar o CEP com a máscara.</td>
+</tr>
+<tr>
+<td>Célula de matriz com tipo de entrada data.</td>
+<td>A célula vira texto livre.</td>
+<td>Peça a idade (número) ou use uma pergunta de data fora da matriz.</td>
+</tr>
+<tr>
+<td><strong>Valor de expressão pré-definida</strong> preenche a pergunta.</td>
+<td>Não é aplicado.</td>
+<td>Use <strong>Defina o valor se</strong> ou um gatilho <strong>Executar expressão</strong>.</td>
+</tr>
+<tr>
+<td><strong>Questionário Completo</strong> mostra a página de conclusão configurada.</td>
+<td>O portal mostra a janela "Resposta enviada!".</td>
+<td>Não dependa da página de conclusão para orientar o cidadão; coloque a orientação na última página.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-armadilhas-comuns">10. Armadilhas comuns<a class="headerlink" href="#10-armadilhas-comuns" title="Permanent link">&para;</a></h2>
+<p><strong>Valor ≠ rótulo.</strong> Em uma pergunta de escolha, a condição compara o <strong>valor</strong> da opção. Se a opção tem valor <code>alugada</code> e texto "Alugada", a condição é <code>{tipo_moradia} = 'alugada'</code>. Quando a opção foi criada só com o texto, valor e texto são iguais. Confira na aba Opções da pergunta.</p>
+<p><strong>Múltipla escolha é uma lista.</strong> Em <em>Caixas de verificação</em> e <em>Tags</em> a resposta é uma lista, então <code>=</code> quase nunca é o que você quer: use <code>contains</code> ("marcou saúde"), <code>anyof</code> ("marcou saúde ou educação") ou <code>allof</code> ("marcou as duas").</p>
+<p><strong>Vazio não é zero.</strong> Uma pergunta numérica sem resposta está <code>empty</code>, e zero é uma resposta (<code>notempty</code>). Para "informou um valor positivo", combine: <code>{valor} notempty and {valor} &gt; 0</code>.</p>
+<p><strong>Sim/Não começa em "Não".</strong> A pergunta booleana aparece desligada, com valor <code>false</code>. Uma condição <code>{mora_sozinho} = false</code> já vale antes de o cidadão mexer, por isso no exemplo a lista de pessoas aparece de início.</p>
+<p><strong>Renomear a pergunta quebra a condição.</strong> As regras guardam o nome da pergunta. Se <code>tipo_moradia</code> virar <code>moradia</code>, toda condição com <code>{tipo_moradia}</code> deixa de funcionar até ser atualizada. A aba Lógica ajuda a achar as regras afetadas.</p>
+<p><strong>Perguntas em outra página.</strong> Uma condição pode citar qualquer pergunta do formulário, inclusive de páginas anteriores. Citar uma pergunta de uma página posterior funciona, mas a condição só vira verdadeira quando o cidadão chegar lá.</p>
+<p><strong>Obrigatória e oculta.</strong> Uma pergunta obrigatória que está oculta não bloqueia o envio. É o esperado: o <strong>Visível se</strong> já diz que ela não se aplica.</p>
+<p><strong>Aspas.</strong> Texto sempre entre aspas simples. <code>{uf} = MS</code> não funciona; <code>{uf} = 'MS'</code> sim.</p>
+<h2 id="11-receitas-prontas">11. Receitas prontas<a class="headerlink" href="#11-receitas-prontas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Quero...</th>
+<th>Onde</th>
+<th>Condição ou expressão</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pedir o valor do aluguel só para quem mora de aluguel</td>
+<td>Visível se e Obrigatória se do valor</td>
+<td><code>{tipo_moradia} = 'alugada'</code></td>
+</tr>
+<tr>
+<td>Mostrar "Qual?" quando marcar "Outro"</td>
+<td>Visível se e Obrigatória se da pergunta "Qual?"</td>
+<td><code>{motivo} = 'outro'</code></td>
+</tr>
+<tr>
+<td>Perguntar o motivo da nota baixa num NPS</td>
+<td>Visível se do comentário</td>
+<td><code>{nota} &lt;= 6</code></td>
+</tr>
+<tr>
+<td>Pedir o nome do responsável para menores</td>
+<td>Visível se do responsável</td>
+<td><code>age({nascimento}) &lt; 18</code></td>
+</tr>
+<tr>
+<td>Mostrar uma coluna da matriz só quando faz sentido</td>
+<td>Tornar a coluna visível se</td>
+<td><code>{possui_pcd} = true</code></td>
+</tr>
+<tr>
+<td>Contar quantas pessoas da lista atendem a um critério</td>
+<td>Valor calculado</td>
+<td><code>countInArray({membros}, 'nome', '{idade} &gt;= 60')</code></td>
+</tr>
+<tr>
+<td>Mostrar um aviso quando esse número passa de zero</td>
+<td>Visível se de uma pergunta HTML</td>
+<td><code>{qtd_idosos} &gt; 0</code></td>
+</tr>
+<tr>
+<td>Mostrar o total em tempo real</td>
+<td>Pergunta Expressão, estilo moeda</td>
+<td><code>sumInArray({membros}, 'renda_mensal') + {renda_responsavel}</code></td>
+</tr>
+<tr>
+<td>Comparar com um limite que pode mudar</td>
+<td>Valor calculado com o limite e Visível se do aviso</td>
+<td><code>limite_renda_per_capita</code> = <code>759</code>; <code>{renda_per_capita} &gt; {limite_renda_per_capita}</code></td>
+</tr>
+<tr>
+<td>Exigir que o cidadão confirme uma declaração</td>
+<td>Validador expressão na pergunta Sim/Não</td>
+<td><code>{declaracao_veracidade} = true</code></td>
+</tr>
+<tr>
+<td>Não aceitar data no passado</td>
+<td>Validador expressão na pergunta de data</td>
+<td><code>{data_agendamento} &gt;= today()</code></td>
+</tr>
+<tr>
+<td>Exigir ao menos duas opções marcadas</td>
+<td>Validador contador de respostas</td>
+<td>mínimo 2</td>
+</tr>
+<tr>
+<td>Encerrar o formulário para quem não atende ao critério</td>
+<td>Gatilho Completar questionário</td>
+<td><code>{reside_no_estado} = false</code></td>
+</tr>
+<tr>
+<td>Pular a página de endereço para quem já é cadastrado</td>
+<td>Visível se da página</td>
+<td><code>{ja_cadastrado} = true</code> na página de confirmação, <code>false</code> na de endereço</td>
+</tr>
+</tbody>
+</table>
+<p>Monte a regra, abra a <strong>Visualizar</strong> e percorra os dois caminhos (condição verdadeira e falsa) antes de salvar ou de enviar para aprovação.</p>
+<h2 id="12-logica-e-o-envio-para-a-api-externa">12. Lógica e o envio para a API externa<a class="headerlink" href="#12-logica-e-o-envio-para-a-api-externa" title="Permanent link">&para;</a></h2>
+<p>Com <strong>Enviar as respostas também para uma API externa</strong> ligado (<a href="../03-criar-e-editar/#2-configurações-do-formulário">Criar e editar</a>), o JSON enviado tem em <code>answers</code> tudo o que o cidadão respondeu, os valores das perguntas Expressão e os totais da matriz. Perguntas ocultas ficam de fora (com o padrão <strong>ao completar</strong>) e valores calculados não vão.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"formName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pré-cadastro familiar para programas sociais (demonstração)"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"serviceSlug"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;serviço do portal&gt;"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"submittedAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-10-23T18:51:50.000Z"</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"answers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"tipo_moradia"</span><span class="p">:</span><span class="w"> </span><span class="s2">"alugada"</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"valor_aluguel"</span><span class="p">:</span><span class="w"> </span><span class="mi">700</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"membros"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bruno"</span><span class="p">,</span><span class="w"> </span><span class="nt">"idade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12"</span><span class="p">,</span><span class="w"> </span><span class="nt">"parentesco"</span><span class="p">:</span><span class="w"> </span><span class="s2">"filho"</span><span class="p">,</span><span class="w"> </span><span class="nt">"renda_mensal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w"> </span><span class="nt">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"nome"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clara"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"idade"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"parentesco"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pai_mae"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"renda_mensal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1412"</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">"pcd"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">"qtd_pessoas"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"renda_total"</span><span class="p">:</span><span class="w"> </span><span class="mi">2912</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"renda_per_capita"</span><span class="p">:</span><span class="w"> </span><span class="mf">970.6666666666666</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">"membros-total"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"renda_mensal"</span><span class="p">:</span><span class="w"> </span><span class="mi">1412</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note que as células de texto da matriz chegam como texto (<code>"12"</code>), e que o cálculo da página é uma ajuda ao cidadão: quem recebe as respostas deve refazer as contas que decidem alguma coisa, como a elegibilidade, em vez de confiar no valor enviado.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Voltar para o topo
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.setdig.ms.gov.br/" target="_blank" rel="noopener" title="SETDIG" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.indexes", "toc.follow", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
