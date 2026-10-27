@@ -1,0 +1,172 @@
+{
+  "displayName": "X-Forms: certificado de destruição de soqueira de algodão IAGRO",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'SOQ-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const areas = {\n    ate_50_hectares: 'Até 50 hectares',\n    acima_50_hectares: 'Mais de 50 hectares',\n  };\n  const nomeArquivo = (v) => (Array.isArray(v) ? v[0]?.name : '') ?? '';\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    nome: a.nome_completo ?? '',\n    email: a.email ?? '',\n    areaPlantio: areas[a.area_plantio] ?? '',\n    relatorioFiscalizacao: nomeArquivo(a.arquivo_relatorio_fiscalizacao),\n    guiaDaems: nomeArquivo(a.arquivo_guia_daems),\n    comprovantePagamento: nomeArquivo(a.arquivo_comprovante_pagamento),\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "pedidos_certificado_soqueira",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "nome": "{{step_1.nome}}",
+                  "email": "{{step_1.email}}",
+                  "area_plantio": "{{step_1.areaPlantio}}",
+                  "relatorio_fiscalizacao": "{{step_1.relatorioFiscalizacao}}",
+                  "guia_daems": "{{step_1.guiaDaems}}",
+                  "comprovante_pagamento": "{{step_1.comprovantePagamento}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome"
+                    },
+                    "email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email"
+                    },
+                    "area_plantio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "area_plantio"
+                    },
+                    "relatorio_fiscalizacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "relatorio_fiscalizacao"
+                    },
+                    "guia_daems": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "guia_daems"
+                    },
+                    "comprovante_pagamento": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "comprovante_pagamento"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

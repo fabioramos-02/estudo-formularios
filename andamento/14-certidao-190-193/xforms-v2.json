@@ -1,0 +1,476 @@
+{
+  "title": "Pedir certidão de atendimento de emergência (190 ou 193)",
+  "description": "Para quem precisa de uma certidão oficial que comprove a ligação para o 190 (Polícia Militar) ou para o 193 (Corpo de Bombeiros). Vale para ligações feitas nas cidades de Campo Grande, Dourados, Corumbá e Ponta Porã. Serve para uso pessoal, administrativo ou na Justiça.",
+  "pages": [
+    {
+      "name": "chamada",
+      "title": "Sobre a ligação",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "numero_emergencia",
+          "isRequired": true,
+          "requiredErrorText": "Escolha o número para continuar.",
+          "title": "Para qual número foi feita a ligação?",
+          "choices": [
+            {
+              "value": "190",
+              "text": "190 — Polícia Militar"
+            },
+            {
+              "value": "193",
+              "text": "193 — Corpo de Bombeiros"
+            }
+          ]
+        },
+        {
+          "type": "dropdown",
+          "name": "municipio_ocorrencia",
+          "isRequired": true,
+          "requiredErrorText": "Escolha a cidade para continuar.",
+          "title": "Em que cidade aconteceu o fato?",
+          "placeholder": "Selecione",
+          "choices": [
+            "Água Clara",
+            "Alcinópolis",
+            "Amambai",
+            "Anastácio",
+            "Anaurilândia",
+            "Angélica",
+            "Antônio João",
+            "Aparecida do Taboado",
+            "Aquidauana",
+            "Aral Moreira",
+            "Bandeirantes",
+            "Bataguassu",
+            "Batayporã",
+            "Bela Vista",
+            "Bodoquena",
+            "Bonito",
+            "Brasilândia",
+            "Caarapó",
+            "Camapuã",
+            "Campo Grande",
+            "Caracol",
+            "Cassilândia",
+            "Chapadão do Sul",
+            "Corguinho",
+            "Coronel Sapucaia",
+            "Corumbá",
+            "Costa Rica",
+            "Coxim",
+            "Deodápolis",
+            "Dois Irmãos do Buriti",
+            "Douradina",
+            "Dourados",
+            "Eldorado",
+            "Fátima do Sul",
+            "Figueirão",
+            "Glória de Dourados",
+            "Guia Lopes da Laguna",
+            "Iguatemi",
+            "Inocência",
+            "Itaporã",
+            "Itaquiraí",
+            "Ivinhema",
+            "Japorã",
+            "Jaraguari",
+            "Jardim",
+            "Jateí",
+            "Juti",
+            "Ladário",
+            "Laguna Carapã",
+            "Maracaju",
+            "Miranda",
+            "Mundo Novo",
+            "Naviraí",
+            "Nioaque",
+            "Nova Alvorada do Sul",
+            "Nova Andradina",
+            "Novo Horizonte do Sul",
+            "Paraíso das Águas",
+            "Paranaíba",
+            "Paranhos",
+            "Pedro Gomes",
+            "Ponta Porã",
+            "Porto Murtinho",
+            "Ribas do Rio Pardo",
+            "Rio Brilhante",
+            "Rio Negro",
+            "Rio Verde de Mato Grosso",
+            "Rochedo",
+            "Santa Rita do Pardo",
+            "São Gabriel do Oeste",
+            "Selvíria",
+            "Sete Quedas",
+            "Sidrolândia",
+            "Sonora",
+            "Tacuru",
+            "Taquarussu",
+            "Terenos",
+            "Três Lagoas",
+            "Vicentina"
+          ]
+        },
+        {
+          "type": "html",
+          "name": "aviso_cidade",
+          "visibleIf": "{municipio_ocorrencia} notempty and {municipio_ocorrencia} <> 'Campo Grande' and {municipio_ocorrencia} <> 'Dourados' and {municipio_ocorrencia} <> 'Corumbá' and {municipio_ocorrencia} <> 'Ponta Porã'",
+          "html": "<p><strong>Atenção:</strong> este serviço vale para ligações feitas em Campo Grande, Dourados, Corumbá e Ponta Porã. Para outra cidade, o pedido pode não ser atendido.</p>"
+        }
+      ]
+    },
+    {
+      "name": "perfil",
+      "title": "Quem está fazendo o pedido",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "perfil_solicitante",
+          "isRequired": true,
+          "requiredErrorText": "Escolha uma opção para continuar.",
+          "title": "Você é",
+          "choices": [
+            {
+              "value": "proprio",
+              "text": "A pessoa que fez a ligação"
+            },
+            {
+              "value": "representante_legal",
+              "text": "Representante legal de quem fez a ligação"
+            },
+            {
+              "value": "procurador",
+              "text": "Procurador, com procuração de quem fez a ligação"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "seus_dados",
+      "title": "Seus dados para contato",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_completo",
+          "visibleIf": "{perfil_solicitante} = 'representante_legal' or {perfil_solicitante} = 'procurador'",
+          "requiredIf": "{perfil_solicitante} = 'representante_legal' or {perfil_solicitante} = 'procurador'",
+          "requiredErrorText": "Preencha o seu nome completo para continuar.",
+          "title": "Seu nome completo",
+          "autocomplete": "name",
+          "tooltip": "Vem da sua conta. Corrija se estiver diferente do documento."
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o e-mail para continuar.",
+          "title": "Seu e-mail",
+          "inputType": "email",
+          "autocomplete": "email",
+          "placeholder": "nome@exemplo.com.br",
+          "validators": [
+            {
+              "type": "email",
+              "text": "Digite um e-mail no formato nome@dominio."
+            }
+          ],
+          "tooltip": "A resposta do pedido chega neste e-mail."
+        },
+        {
+          "type": "text",
+          "name": "telefone_celular",
+          "isRequired": true,
+          "requiredErrorText": "Digite o celular com DDD, 11 números.",
+          "title": "Seu celular",
+          "description": "De preferência com WhatsApp.",
+          "inputType": "tel",
+          "autocomplete": "tel",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          },
+          "placeholder": "(00) 00000-0000",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}$",
+              "text": "Digite o celular com DDD, 11 números."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "quem_ligou",
+      "title": "Quem fez a ligação",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_completo_ligou",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome de quem ligou para continuar.",
+          "title": "Nome completo de quem ligou",
+          "autocomplete": "name",
+          "resetValueIf": "{perfil_solicitante} = 'representante_legal' or {perfil_solicitante} = 'procurador'"
+        },
+        {
+          "type": "text",
+          "name": "cpf_ligou",
+          "isRequired": true,
+          "requiredErrorText": "Digite um CPF válido, com 11 números.",
+          "title": "CPF de quem ligou",
+          "description": "Cadastro de Pessoa Física.",
+          "autocomplete": "cpf",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "resetValueIf": "{perfil_solicitante} = 'representante_legal' or {perfil_solicitante} = 'procurador'",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "data_nascimento_ligou",
+          "isRequired": true,
+          "requiredErrorText": "Informe a data de nascimento para continuar.",
+          "title": "Data de nascimento de quem ligou",
+          "inputType": "date",
+          "startWithNewLine": false,
+          "maxValueExpression": "today()"
+        },
+        {
+          "type": "text",
+          "name": "logradouro_ligou",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o endereço para continuar.",
+          "title": "Endereço de quem ligou",
+          "description": "Rua ou avenida, número e bairro.",
+          "autocomplete": "street-address"
+        },
+        {
+          "type": "text",
+          "name": "complemento_ligou",
+          "title": "Complemento",
+          "description": "Se tiver. Ex.: casa, apartamento, perto de mercado ou escola."
+        },
+        {
+          "type": "dropdown",
+          "name": "municipio_ligou",
+          "isRequired": true,
+          "requiredErrorText": "Escolha a cidade para continuar.",
+          "title": "Cidade",
+          "placeholder": "Selecione",
+          "choices": [
+            "Água Clara",
+            "Alcinópolis",
+            "Amambai",
+            "Anastácio",
+            "Anaurilândia",
+            "Angélica",
+            "Antônio João",
+            "Aparecida do Taboado",
+            "Aquidauana",
+            "Aral Moreira",
+            "Bandeirantes",
+            "Bataguassu",
+            "Batayporã",
+            "Bela Vista",
+            "Bodoquena",
+            "Bonito",
+            "Brasilândia",
+            "Caarapó",
+            "Camapuã",
+            "Campo Grande",
+            "Caracol",
+            "Cassilândia",
+            "Chapadão do Sul",
+            "Corguinho",
+            "Coronel Sapucaia",
+            "Corumbá",
+            "Costa Rica",
+            "Coxim",
+            "Deodápolis",
+            "Dois Irmãos do Buriti",
+            "Douradina",
+            "Dourados",
+            "Eldorado",
+            "Fátima do Sul",
+            "Figueirão",
+            "Glória de Dourados",
+            "Guia Lopes da Laguna",
+            "Iguatemi",
+            "Inocência",
+            "Itaporã",
+            "Itaquiraí",
+            "Ivinhema",
+            "Japorã",
+            "Jaraguari",
+            "Jardim",
+            "Jateí",
+            "Juti",
+            "Ladário",
+            "Laguna Carapã",
+            "Maracaju",
+            "Miranda",
+            "Mundo Novo",
+            "Naviraí",
+            "Nioaque",
+            "Nova Alvorada do Sul",
+            "Nova Andradina",
+            "Novo Horizonte do Sul",
+            "Paraíso das Águas",
+            "Paranaíba",
+            "Paranhos",
+            "Pedro Gomes",
+            "Ponta Porã",
+            "Porto Murtinho",
+            "Ribas do Rio Pardo",
+            "Rio Brilhante",
+            "Rio Negro",
+            "Rio Verde de Mato Grosso",
+            "Rochedo",
+            "Santa Rita do Pardo",
+            "São Gabriel do Oeste",
+            "Selvíria",
+            "Sete Quedas",
+            "Sidrolândia",
+            "Sonora",
+            "Tacuru",
+            "Taquarussu",
+            "Terenos",
+            "Três Lagoas",
+            "Vicentina"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ocorrencia",
+      "title": "O que aconteceu",
+      "elements": [
+        {
+          "type": "text",
+          "name": "endereco_ocorrencia",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o endereço do fato para continuar.",
+          "title": "Onde aconteceu o fato",
+          "description": "Rua ou avenida, número e bairro. Se não houver número, escreva \"sem número\"."
+        },
+        {
+          "type": "text",
+          "name": "data_fato",
+          "isRequired": true,
+          "requiredErrorText": "Informe a data do fato para continuar.",
+          "title": "Data do fato",
+          "inputType": "date",
+          "maxValueExpression": "today()"
+        },
+        {
+          "type": "text",
+          "name": "hora_fato",
+          "title": "Hora aproximada",
+          "description": "Se não souber, deixe em branco.",
+          "inputType": "time",
+          "startWithNewLine": false
+        },
+        {
+          "type": "comment",
+          "name": "descricao_ocorrencia",
+          "isRequired": true,
+          "requiredErrorText": "Conte o que aconteceu para continuar.",
+          "title": "Conte o que aconteceu",
+          "description": "Em poucas linhas: o que aconteceu e por que você ligou para a emergência."
+        },
+        {
+          "type": "text",
+          "name": "finalidade_certidao",
+          "isRequired": true,
+          "requiredErrorText": "Diga para que precisa da certidão para continuar.",
+          "title": "Para que você precisa da certidão?",
+          "description": "Ex.: processo na Justiça."
+        },
+        {
+          "type": "comment",
+          "name": "informacoes_adicionais",
+          "title": "Informações adicionais",
+          "description": "Se quiser, acrescente algo que ajude na análise."
+        }
+      ]
+    },
+    {
+      "name": "documentos",
+      "title": "Documentos",
+      "description": "Arquivos em PDF, até 5 MB cada.",
+      "elements": [
+        {
+          "type": "file",
+          "name": "arquivo_documento_identificacao",
+          "title": "Documento de identificação de quem ligou",
+          "description": "Um documento com o número do CPF, como RG ou CNH.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true,
+          "requiredErrorText": "Anexe o documento de identificação para continuar.",
+          "isRequired": true
+        },
+        {
+          "type": "file",
+          "name": "arquivo_documento_representante",
+          "title": "Seu documento de identificação",
+          "description": "Documento do representante legal ou do procurador.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true,
+          "requiredErrorText": "Anexe o seu documento de identificação para continuar.",
+          "visibleIf": "{perfil_solicitante} = 'representante_legal' or {perfil_solicitante} = 'procurador'",
+          "requiredIf": "{perfil_solicitante} = 'representante_legal' or {perfil_solicitante} = 'procurador'"
+        },
+        {
+          "type": "file",
+          "name": "arquivo_procuracao",
+          "title": "Procuração",
+          "description": "A procuração dada por quem fez a ligação.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true,
+          "requiredErrorText": "Anexe a procuração para continuar.",
+          "visibleIf": "{perfil_solicitante} = 'procurador'",
+          "requiredIf": "{perfil_solicitante} = 'procurador'"
+        },
+        {
+          "type": "file",
+          "name": "arquivo_outros_documentos",
+          "title": "Outros documentos",
+          "description": "Se tiver, anexe documentos que ajudem na análise. Pode anexar mais de um.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos",
+          "html": "<p><strong>Depois do envio:</strong> a SEJUSP analisa o pedido e a resposta chega no e-mail informado.</p>"
+        }
+      ]
+    }
+  ],
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off"
+}

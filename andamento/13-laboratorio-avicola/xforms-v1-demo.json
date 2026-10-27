@@ -1,0 +1,153 @@
+{
+  "title": "Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola",
+  "description": "Serviço para cadastrar ou atualizar os dados de laboratórios que realizam análises de sanidade avícola para os programas oficiais de monitoramento sanitário.",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "FICHA DE CADASTRO DE LABORATÓRIO DE DIAGNÓSTICO EM SANIDADE AVÍCOLA",
+      "description": "DADOS PARA CADASTRO DO LABORATÓRIO",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome",
+          "description": "nome",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "escopo_aves",
+          "title": "Escopo - Aves (Salmonela/Micoplasma)",
+          "description": "adicionar o tipo de testes ou outro escopo"
+        },
+        {
+          "type": "text",
+          "name": "nome_fantasia",
+          "title": "Nome fantasia",
+          "description": "inserir nome fantasia do laboratório",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "razao_social",
+          "startWithNewLine": false,
+          "title": "Razão social",
+          "description": "igual ao que está no cartão CNPJ",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cnpj",
+          "title": "CNPJ",
+          "description": "número do CNPJ",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "inscricao_estadual",
+          "startWithNewLine": false,
+          "title": "Inscrição Estadual",
+          "description": "número da IE",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "portaria_credenciamento",
+          "title": "Nº Portaria de Credenciamento",
+          "description": "campo obrigatório apenas para os laboratórios que forem credenciados junto ao MAPA"
+        },
+        {
+          "type": "text",
+          "name": "crl",
+          "startWithNewLine": false,
+          "title": "Nº do CRL",
+          "description": "campo opcional, preencher se houver"
+        },
+        {
+          "type": "text",
+          "name": "telefone",
+          "title": "Telefone",
+          "description": "telefone do laboratório",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "startWithNewLine": false,
+          "title": "E-mail",
+          "description": "e-mail do laboratório",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cep",
+          "title": "CEP",
+          "description": "CEP",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "99999-999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "enredeco_completo",
+          "visible": false,
+          "visibleIf": "{cep} notempty",
+          "title": "Endereço completo",
+          "description": "Rua/Avenida, nº e bairro",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "uf",
+          "visible": false,
+          "visibleIf": "{cep} notempty",
+          "title": "UF",
+          "description": "UF do estado",
+          "isRequired": true,
+          "choices": [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "municipio",
+          "visible": false,
+          "visibleIf": "{cep} notempty",
+          "startWithNewLine": false,
+          "title": "Município",
+          "description": "Informe o município",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

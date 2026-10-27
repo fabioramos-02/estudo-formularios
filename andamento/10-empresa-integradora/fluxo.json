@@ -1,0 +1,202 @@
+{
+  "displayName": "X-Forms: cadastrar empresa integradora de aves ou suínos IAGRO",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'INT-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const tipos = { cadastro: 'Cadastro novo', atualizacao: 'Atualização' };\n  const atividades = { avicultura: 'Avicultura', suinocultura: 'Suinocultura' };\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    tipoPedido: tipos[a.tipo_pedido] ?? '',\n    representante: a.nome_representante_legal ?? '',\n    emailRepresentante: a.email_representante ?? '',\n    razaoSocial: a.razao_social ?? '',\n    nomeFantasia: a.nome_fantasia ?? '',\n    cnpj: a.cnpj ?? '',\n    inscricaoEstadual: a.inscricao_estadual ?? '',\n    atividade: atividades[a.atividade_integradora] ?? '',\n    emailEmpresa: a.email_empresa ?? '',\n    municipio: a.municipio ?? '',\n    uf: a.uf ?? '',\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "cadastros_empresa_integradora",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "tipo_pedido": "{{step_1.tipoPedido}}",
+                  "representante": "{{step_1.representante}}",
+                  "email_representante": "{{step_1.emailRepresentante}}",
+                  "razao_social": "{{step_1.razaoSocial}}",
+                  "nome_fantasia": "{{step_1.nomeFantasia}}",
+                  "cnpj": "{{step_1.cnpj}}",
+                  "inscricao_estadual": "{{step_1.inscricaoEstadual}}",
+                  "atividade": "{{step_1.atividade}}",
+                  "email_empresa": "{{step_1.emailEmpresa}}",
+                  "municipio": "{{step_1.municipio}}",
+                  "uf": "{{step_1.uf}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "tipo_pedido": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "tipo_pedido"
+                    },
+                    "representante": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "representante"
+                    },
+                    "email_representante": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email_representante"
+                    },
+                    "razao_social": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "razao_social"
+                    },
+                    "nome_fantasia": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome_fantasia"
+                    },
+                    "cnpj": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "cnpj"
+                    },
+                    "inscricao_estadual": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "inscricao_estadual"
+                    },
+                    "atividade": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "atividade"
+                    },
+                    "email_empresa": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email_empresa"
+                    },
+                    "municipio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "municipio"
+                    },
+                    "uf": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "uf"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

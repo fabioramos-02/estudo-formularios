@@ -1,0 +1,181 @@
+{
+  "title": "Cadastrar ou atualizar empresa integradora de ave ou suíno",
+  "description": "Serviço para cadastrar ou atualizar os dados de empresas integradoras da cadeia de avicultura e suinocultura em Mato Grosso do Sul.",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "Dados do Representante legal",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_representante",
+          "title": "Nome",
+          "description": "Representante legal",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone_representante",
+          "title": "Telefone",
+          "description": "do representante legal",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "email_representante",
+          "startWithNewLine": false,
+          "title": "E-mail",
+          "description": "do representante legal",
+          "isRequired": true
+        }
+      ]
+    },
+    {
+      "name": "página2",
+      "title": "FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS",
+      "description": "FICHA DE CADASTRO DE EMPRESAS INTEGRADORAS DE AVES E SUÍNOS",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_fantasia",
+          "title": "Nome fantasia",
+          "description": "nome fantasia da empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "razao_social",
+          "startWithNewLine": false,
+          "title": "Razão social",
+          "description": "como está no cartão CNPJ",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cnpj",
+          "title": "CNPJ",
+          "description": "nº do CNPJ",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "inscricao_estadual",
+          "startWithNewLine": false,
+          "title": "Inscrição Estadual",
+          "description": "nº da IE",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone_empresa",
+          "title": "Telefone",
+          "description": "telefone da integradora",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "email_empresa",
+          "startWithNewLine": false,
+          "title": "E-mail",
+          "description": "e-mail da integradora",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "uf_empresa",
+          "title": "UF",
+          "description": "UF do estado",
+          "choices": [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "municipio_empresa",
+          "startWithNewLine": false,
+          "title": "Município",
+          "description": "informe seu município",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cep",
+          "title": "CEP",
+          "description": "nº do CEP",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "via_acesso",
+          "startWithNewLine": false,
+          "title": "Via de acesso",
+          "description": "ponto de referência"
+        },
+        {
+          "type": "text",
+          "name": "coordenada_geografica",
+          "title": "Coordenada geográfica",
+          "description": "informar coordenadas em graus decimais “Ex.: S: -20.00000 -50.00000”"
+        },
+        {
+          "type": "checkbox",
+          "name": "integradora",
+          "title": "Integradora de:",
+          "choices": [
+            {
+              "value": "avicultura",
+              "text": "Avicultura"
+            },
+            {
+              "value": "suinocultura",
+              "text": "Suinocultura"
+            }
+          ],
+          "maxSelectedChoices": 1,
+          "minSelectedChoices": 1
+        },
+        {
+          "type": "text",
+          "name": "informacoes_complementares",
+          "title": "Informações complementares",
+          "description": "outras infos importantes"
+        }
+      ]
+    }
+  ]
+}

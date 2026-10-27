@@ -1,0 +1,96 @@
+{
+  "externalId": "pedidos_certidao_emergencia",
+  "nome": "Certidão de atendimento 190/193 SEJUSP",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "perfil",
+      "Perfil",
+      "TEXT"
+    ],
+    [
+      "nome_ligou",
+      "Nome ligou",
+      "TEXT"
+    ],
+    [
+      "numero_emergencia",
+      "Numero emergencia",
+      "TEXT"
+    ],
+    [
+      "municipio_ocorrencia",
+      "Municipio ocorrencia",
+      "TEXT"
+    ],
+    [
+      "data_fato",
+      "Data fato",
+      "TEXT"
+    ],
+    [
+      "hora_fato",
+      "Hora fato",
+      "TEXT"
+    ],
+    [
+      "finalidade",
+      "Finalidade",
+      "TEXT"
+    ],
+    [
+      "documento_identificacao",
+      "Documento identificacao",
+      "TEXT"
+    ],
+    [
+      "documento_representante",
+      "Documento representante",
+      "TEXT"
+    ],
+    [
+      "procuracao",
+      "Procuracao",
+      "TEXT"
+    ],
+    [
+      "outros_documentos",
+      "Outros documentos",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

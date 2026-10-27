@@ -1,0 +1,86 @@
+{
+  "externalId": "cadastros_empresa_integradora",
+  "nome": "Cadastrar empresa integradora de aves ou suínos IAGRO",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "tipo_pedido",
+      "Tipo pedido",
+      "TEXT"
+    ],
+    [
+      "representante",
+      "Representante",
+      "TEXT"
+    ],
+    [
+      "email_representante",
+      "Email representante",
+      "TEXT"
+    ],
+    [
+      "razao_social",
+      "Razão social",
+      "TEXT"
+    ],
+    [
+      "nome_fantasia",
+      "Nome fantasia",
+      "TEXT"
+    ],
+    [
+      "cnpj",
+      "CNPJ",
+      "TEXT"
+    ],
+    [
+      "inscricao_estadual",
+      "Inscricao estadual",
+      "TEXT"
+    ],
+    [
+      "atividade",
+      "Atividade",
+      "TEXT"
+    ],
+    [
+      "email_empresa",
+      "Email empresa",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "uf",
+      "UF",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

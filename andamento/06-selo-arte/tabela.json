@@ -1,0 +1,76 @@
+{
+  "externalId": "pedidos_selo_arte",
+  "nome": "Pedido de Selo Arte IAGRO",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "estabelecimento",
+      "Estabelecimento",
+      "TEXT"
+    ],
+    [
+      "servico_inspecao",
+      "Servico inspecao",
+      "TEXT"
+    ],
+    [
+      "numero_registro",
+      "Numero registro",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "produtos",
+      "Produtos",
+      "TEXT"
+    ],
+    [
+      "declaracao",
+      "Declaracao",
+      "TEXT"
+    ],
+    [
+      "logomarca",
+      "Logomarca",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

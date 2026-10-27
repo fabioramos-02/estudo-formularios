@@ -1,0 +1,220 @@
+{
+  "displayName": "X-Forms: cópia de laudo pericial CGP",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'LAU-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const perfis = {\n    envolvido: 'Pessoa envolvida no fato',\n    procurador: 'Procurador',\n    familiar: 'Familiar de 1º grau de vítima que faleceu',\n  };\n  const tipos = {\n    analises_laboratoriais: 'Análises laboratoriais',\n    criminalistica: 'Criminalística',\n    identificacao: 'Identificação',\n    medicina_legal: 'Medicina legal',\n  };\n  // aceita vários arquivos por anexo (frente e verso)\n  const nomeArquivo = (v) => (Array.isArray(v) ? v.map((f) => f?.name).filter(Boolean).join('; ') : '');\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    nome: a.nome_completo ?? '',\n    email: a.email ?? '',\n    perfil: perfis[a.perfil_solicitante] ?? '',\n    municipio: a.municipio ?? '',\n    uf: a.uf ?? '',\n    nomeVitima: a.nome_vitima ?? '',\n    nomeOutorgante: a.nome_outorgante ?? '',\n    dataFato: a.data_fato ?? '',\n    numeroOcorrencia: a.numero_ocorrencia ?? '',\n    tipoLaudo: (a.tipo_laudo ?? []).map((t) => tipos[t] ?? t).join('; '),\n    documentoEnvolvido: nomeArquivo(a.arquivo_documento_identificacao_envolvido),\n    documentoSolicitante: nomeArquivo(a.arquivo_documento_identificacao_solicitante),\n    procuracao: nomeArquivo(a.arquivo_procuracao),\n    comprovanteParentesco: nomeArquivo(a.arquivo_comprovante_parentesco),\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "pedidos_copia_laudos",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "nome": "{{step_1.nome}}",
+                  "email": "{{step_1.email}}",
+                  "perfil": "{{step_1.perfil}}",
+                  "municipio": "{{step_1.municipio}}",
+                  "uf": "{{step_1.uf}}",
+                  "nome_vitima": "{{step_1.nomeVitima}}",
+                  "nome_outorgante": "{{step_1.nomeOutorgante}}",
+                  "data_fato": "{{step_1.dataFato}}",
+                  "numero_ocorrencia": "{{step_1.numeroOcorrencia}}",
+                  "tipo_laudo": "{{step_1.tipoLaudo}}",
+                  "documento_envolvido": "{{step_1.documentoEnvolvido}}",
+                  "documento_solicitante": "{{step_1.documentoSolicitante}}",
+                  "procuracao": "{{step_1.procuracao}}",
+                  "comprovante_parentesco": "{{step_1.comprovanteParentesco}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome"
+                    },
+                    "email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email"
+                    },
+                    "perfil": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "perfil"
+                    },
+                    "municipio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "municipio"
+                    },
+                    "uf": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "uf"
+                    },
+                    "nome_vitima": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome_vitima"
+                    },
+                    "nome_outorgante": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome_outorgante"
+                    },
+                    "data_fato": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "data_fato"
+                    },
+                    "numero_ocorrencia": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "numero_ocorrencia"
+                    },
+                    "tipo_laudo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "tipo_laudo"
+                    },
+                    "documento_envolvido": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "documento_envolvido"
+                    },
+                    "documento_solicitante": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "documento_solicitante"
+                    },
+                    "procuracao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "procuracao"
+                    },
+                    "comprovante_parentesco": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "comprovante_parentesco"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

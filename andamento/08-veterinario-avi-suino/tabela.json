@@ -1,0 +1,91 @@
+{
+  "externalId": "cadastros_veterinario_avi_suino",
+  "nome": "Cadastrar veterinário de aves e suínos IAGRO",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "tipo_pedido",
+      "Tipo pedido",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "crmv",
+      "Crmv",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "uf",
+      "UF",
+      "TEXT"
+    ],
+    [
+      "empresa_vinculada",
+      "Empresa vinculada",
+      "TEXT"
+    ],
+    [
+      "cnpj_empresa",
+      "Cnpj empresa",
+      "TEXT"
+    ],
+    [
+      "empresa",
+      "Empresa",
+      "TEXT"
+    ],
+    [
+      "portaria_mapa",
+      "Portaria mapa",
+      "TEXT"
+    ],
+    [
+      "comprovante_vinculo",
+      "Comprovante vinculo",
+      "TEXT"
+    ],
+    [
+      "arquivo_portaria_mapa",
+      "Arquivo portaria mapa",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

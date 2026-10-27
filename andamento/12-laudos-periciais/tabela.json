@@ -1,0 +1,101 @@
+{
+  "externalId": "pedidos_copia_laudos",
+  "nome": "Cópia de laudo pericial CGP",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "perfil",
+      "Perfil",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "uf",
+      "UF",
+      "TEXT"
+    ],
+    [
+      "nome_vitima",
+      "Nome vitima",
+      "TEXT"
+    ],
+    [
+      "nome_outorgante",
+      "Nome outorgante",
+      "TEXT"
+    ],
+    [
+      "data_fato",
+      "Data fato",
+      "TEXT"
+    ],
+    [
+      "numero_ocorrencia",
+      "Numero ocorrencia",
+      "TEXT"
+    ],
+    [
+      "tipo_laudo",
+      "Tipo laudo",
+      "TEXT"
+    ],
+    [
+      "documento_envolvido",
+      "Documento envolvido",
+      "TEXT"
+    ],
+    [
+      "documento_solicitante",
+      "Documento solicitante",
+      "TEXT"
+    ],
+    [
+      "procuracao",
+      "Procuracao",
+      "TEXT"
+    ],
+    [
+      "comprovante_parentesco",
+      "Comprovante parentesco",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "displayName": "X-Forms: cadastrar laboratório de sanidade avícola IAGRO",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'LAB-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const tipos = { cadastro: 'Cadastro novo', atualizacao: 'Atualização' };\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    tipoPedido: tipos[a.tipo_pedido] ?? '',\n    nome: a.nome_completo ?? '',\n    razaoSocial: a.razao_social ?? '',\n    nomeFantasia: a.nome_fantasia ?? '',\n    cnpj: a.cnpj ?? '',\n    inscricaoEstadual: a.inscricao_estadual ?? '',\n    emailLaboratorio: a.email_laboratorio ?? '',\n    escopo: a.escopo_analises ?? '',\n    credenciadoMapa: a.credenciado_mapa === 'sim' ? 'Sim' : 'Não',\n    portariaCredenciamento: a.numero_portaria_credenciamento ?? '',\n    crl: a.numero_crl ?? '',\n    municipio: a.municipio ?? '',\n    uf: a.uf ?? '',\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "cadastros_laboratorio_avicola",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "tipo_pedido": "{{step_1.tipoPedido}}",
+                  "nome": "{{step_1.nome}}",
+                  "razao_social": "{{step_1.razaoSocial}}",
+                  "nome_fantasia": "{{step_1.nomeFantasia}}",
+                  "cnpj": "{{step_1.cnpj}}",
+                  "inscricao_estadual": "{{step_1.inscricaoEstadual}}",
+                  "email_laboratorio": "{{step_1.emailLaboratorio}}",
+                  "escopo": "{{step_1.escopo}}",
+                  "credenciado_mapa": "{{step_1.credenciadoMapa}}",
+                  "portaria_credenciamento": "{{step_1.portariaCredenciamento}}",
+                  "crl": "{{step_1.crl}}",
+                  "municipio": "{{step_1.municipio}}",
+                  "uf": "{{step_1.uf}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "tipo_pedido": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "tipo_pedido"
+                    },
+                    "nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome"
+                    },
+                    "razao_social": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "razao_social"
+                    },
+                    "nome_fantasia": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome_fantasia"
+                    },
+                    "cnpj": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "cnpj"
+                    },
+                    "inscricao_estadual": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "inscricao_estadual"
+                    },
+                    "email_laboratorio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email_laboratorio"
+                    },
+                    "escopo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "escopo"
+                    },
+                    "credenciado_mapa": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "credenciado_mapa"
+                    },
+                    "portaria_credenciamento": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "portaria_credenciamento"
+                    },
+                    "crl": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "crl"
+                    },
+                    "municipio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "municipio"
+                    },
+                    "uf": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "uf"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}
