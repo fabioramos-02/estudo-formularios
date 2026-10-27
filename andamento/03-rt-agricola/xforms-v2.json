@@ -1,0 +1,154 @@
+{
+  "title": "Cadastrar-se como responsável técnico agrícola na IAGRO",
+  "description": "Para profissionais que querem ser responsável técnico (RT) por cultivos de soja ou algodão ou por estabelecimentos que vendem insumos agrícolas em MS. O cadastro é feito na IAGRO (Agência Estadual de Defesa Sanitária Animal e Vegetal).",
+  "pages": [
+    {
+      "name": "dados_pessoais",
+      "title": "Seus dados",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_completo",
+          "title": "Nome completo",
+          "isRequired": true,
+          "autocomplete": "name",
+          "requiredErrorText": "Preencha o nome completo para continuar.",
+          "tooltip": "Vem da sua conta. Corrija se estiver diferente do documento."
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "title": "CPF",
+          "description": "Cadastro de Pessoa Física.",
+          "isRequired": true,
+          "autocomplete": "cpf",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "requiredErrorText": "Digite um CPF válido, com 11 números.",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ],
+          "tooltip": "Vem da sua conta."
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "E-mail",
+          "isRequired": true,
+          "inputType": "email",
+          "autocomplete": "email",
+          "placeholder": "nome@dominio.com.br",
+          "requiredErrorText": "Preencha o e-mail para continuar.",
+          "validators": [
+            {
+              "type": "email",
+              "text": "Digite um e-mail no formato nome@dominio."
+            }
+          ],
+          "tooltip": "A resposta do cadastro chega neste e-mail."
+        },
+        {
+          "type": "text",
+          "name": "telefone_celular",
+          "title": "Celular",
+          "startWithNewLine": false,
+          "isRequired": true,
+          "inputType": "tel",
+          "autocomplete": "tel",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          },
+          "placeholder": "(00) 00000-0000",
+          "requiredErrorText": "Digite o celular com DDD, 11 números."
+        }
+      ]
+    },
+    {
+      "name": "cadastro",
+      "title": "Para que é o cadastro",
+      "elements": [
+        {
+          "type": "checkbox",
+          "name": "objetivo_cadastro",
+          "title": "Você quer ser responsável técnico por",
+          "description": "Marque uma ou as duas opções.",
+          "isRequired": true,
+          "requiredErrorText": "Marque pelo menos uma opção para continuar.",
+          "tooltip": "Responsável técnico (RT) é o profissional que responde pela parte técnica do cultivo ou do estabelecimento perante a IAGRO.",
+          "choices": [
+            {
+              "value": "estabelecimento_insumos",
+              "text": "Estabelecimentos que vendem insumos agrícolas"
+            },
+            {
+              "value": "cultivo_soja_algodao",
+              "text": "Cultivos de soja ou algodão"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "documentos",
+      "title": "Documentos",
+      "description": "Arquivos em PDF, JPG ou PNG, até 5 MB cada.",
+      "elements": [
+        {
+          "type": "file",
+          "name": "arquivo_documento_identidade",
+          "title": "Documento de identidade (RG ou CNH)",
+          "description": "Com o CPF legível.",
+          "isRequired": true,
+          "requiredErrorText": "Anexe o documento de identidade para continuar.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true
+        },
+        {
+          "type": "file",
+          "name": "arquivo_carteira_conselho",
+          "title": "Carteira do conselho de classe",
+          "description": "CREA ou CFTA.",
+          "isRequired": true,
+          "requiredErrorText": "Anexe a carteira do conselho para continuar.",
+          "tooltip": "CREA: Conselho Regional de Engenharia e Agronomia. CFTA: Conselho Federal dos Técnicos Agrícolas.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true
+        },
+        {
+          "type": "file",
+          "name": "arquivo_comprovante_residencia",
+          "title": "Comprovante de residência",
+          "description": "De endereço em MS, emitido há no máximo 90 dias.",
+          "isRequired": true,
+          "requiredErrorText": "Anexe o comprovante de residência para continuar.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos",
+          "html": "<p><strong>Depois do envio:</strong> a IAGRO analisa o cadastro e a resposta chega no e-mail informado.</p>"
+        }
+      ]
+    }
+  ],
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off"
+}
