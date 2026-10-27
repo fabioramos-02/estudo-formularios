@@ -1,0 +1,156 @@
+[
+  {
+    "pasta": "01-wordpress",
+    "formulario": "solicitar-acesso-wordpress",
+    "cms_id": 2025,
+    "servico": "solicitar-acesso-ao-wordpress131",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/solicitar-acesso-wordpress?serviceSlug=solicitar-acesso-ao-wordpress131",
+    "nome_servico": "Solicitar acesso ao Wordpress",
+    "orgao": "SETDIG",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/solicitar-acesso-ao-wordpress131",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "02-diarias-fundect",
+    "formulario": "pedir-diarias-passagens-fundect",
+    "cms_id": 2454,
+    "servico": "solicitacao-de-diarias-para-servidores-da-fundect16",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-diarias-passagens-fundect?serviceSlug=solicitacao-de-diarias-para-servidores-da-fundect16",
+    "nome_servico": "Solicitação de Diárias para Servidores da Fundect",
+    "orgao": "Fundect",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/solicitacao-de-diarias-para-servidores-da-fundect16",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "03-rt-agricola",
+    "formulario": "cadastrar-responsavel-tecnico-agricola",
+    "cms_id": 2272,
+    "servico": "cadastro-de-responsavel-tecnico-para-cultivos-agricolas70",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-responsavel-tecnico-agricola?serviceSlug=cadastro-de-responsavel-tecnico-para-cultivos-agricolas70",
+    "nome_servico": "Cadastrar profissional habilitado para cultivos e estabelecimentos insumos agrícolas",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/cadastro-de-responsavel-tecnico-para-cultivos-agricolas70",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "04-industria-agrotoxicos",
+    "formulario": "cadastrar-industria-agrotoxicos-e-saniagro",
+    "cms_id": 2310,
+    "servico": "cadastrar-industria-produtos-agrotoxicos-no-e-saniagro176",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-industria-agrotoxicos-e-saniagro?serviceSlug=cadastrar-industria-produtos-agrotoxicos-no-e-saniagro176",
+    "nome_servico": "Cadastrar indústria de produtos agrotóxicos no e-saniagro",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-industria-produtos-agrotoxicos-no-e-saniagro176",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "05-cancelar-agrotoxicos",
+    "formulario": "cancelar-registro-empresa-agrotoxicos",
+    "cms_id": 2293,
+    "servico": "baixar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico141",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cancelar-registro-empresa-agrotoxicos?serviceSlug=baixar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico141",
+    "nome_servico": "Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/baixar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico141",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "06-selo-arte",
+    "formulario": "obter-selo-arte",
+    "cms_id": 1341,
+    "servico": "obtencao-do-selo-arte50",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/obter-selo-arte?serviceSlug=obtencao-do-selo-arte50",
+    "nome_servico": "Obter selo arte",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/obtencao-do-selo-arte50",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "07-negativa-tombamento",
+    "formulario": "pedir-certidao-negativa-tombamento",
+    "cms_id": 2312,
+    "servico": "orientacoes-para-solicitacao-de-certidao-negativa-de-tombamento142",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-certidao-negativa-tombamento?serviceSlug=orientacoes-para-solicitacao-de-certidao-negativa-de-tombamento142",
+    "nome_servico": "Orientações para solicitação de certidão negativa de tombamento",
+    "orgao": "FCMS",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/orientacoes-para-solicitacao-de-certidao-negativa-de-tombamento142",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "08-veterinario-avi-suino",
+    "formulario": "cadastrar-veterinario-aves-suinos",
+    "cms_id": 2440,
+    "servico": "cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura84",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-veterinario-aves-suinos?serviceSlug=cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura84",
+    "nome_servico": "Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura84",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "09-bibliotecas-publicas",
+    "formulario": "cadastrar-biblioteca-publica",
+    "cms_id": 2406,
+    "servico": "cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms195",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-biblioteca-publica?serviceSlug=cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms195",
+    "nome_servico": "Cadastro no Sistema Estadual de Bibliotecas Públicas de Mato Grosso do Sul (SEBP/MS)",
+    "orgao": "FCMS",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms195",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "10-empresa-integradora",
+    "formulario": "cadastrar-empresa-integradora-aves-suinos",
+    "cms_id": 2439,
+    "servico": "cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino1",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-empresa-integradora-aves-suinos?serviceSlug=cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino1",
+    "nome_servico": "Cadastrar ou atualizar empresa integradora de ave ou suíno",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino1",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "11-soqueira-algodao",
+    "formulario": "pedir-certificado-destruicao-soqueira-algodao",
+    "cms_id": 1708,
+    "servico": "emitir-certificado-de-destruicao-de-soqueira-de-algodao48",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-certificado-destruicao-soqueira-algodao?serviceSlug=emitir-certificado-de-destruicao-de-soqueira-de-algodao48",
+    "nome_servico": "Requerer certificado de destruição de soqueira de algodão",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/emitir-certificado-de-destruicao-de-soqueira-de-algodao48",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "12-laudos-periciais",
+    "formulario": "pedir-copia-laudo-pericial",
+    "cms_id": 1309,
+    "servico": "emissao-de-copia-de-laudos-periciais145",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-copia-laudo-pericial?serviceSlug=emissao-de-copia-de-laudos-periciais145",
+    "nome_servico": "Solicitar cópia de laudos periciais",
+    "orgao": "CGP",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/emissao-de-copia-de-laudos-periciais145",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "13-laboratorio-avicola",
+    "formulario": "cadastrar-laboratorio-sanidade-avicola",
+    "cms_id": 2438,
+    "servico": "cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola80",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-laboratorio-sanidade-avicola?serviceSlug=cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola80",
+    "nome_servico": "Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola",
+    "orgao": "IAGRO",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola80",
+    "vinculado_em": "2026-10-27 (API do CMS)"
+  },
+  {
+    "pasta": "14-certidao-190-193",
+    "formulario": "pedir-certidao-atendimento-190-193",
+    "cms_id": 1400,
+    "servico": "emissao-de-certidao-de-atendimento66",
+    "url": "https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-certidao-atendimento-190-193?serviceSlug=emissao-de-certidao-de-atendimento66",
+    "nome_servico": "Solicitar emissão de certidão de atendimento de emergência",
+    "orgao": "SEJUSP",
+    "pagina_servico": "https://portal.dev.pgd.ms.gov.br/servicos/emissao-de-certidao-de-atendimento66",
+    "vinculado_em": "2026-10-27 (pelo usuário)"
+  }
+]
