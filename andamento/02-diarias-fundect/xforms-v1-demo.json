@@ -1,0 +1,148 @@
+{
+  "title": "Solicitação de Diárias para Servidores da Fundect",
+  "description": "Serviço para solicitação online e acompanhamento de diárias de viagens oficiais da Fundect, permitindo o envio eletrónico de pedidos e documentos comprovativos.",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "Dados do Servidor e da Viagem",
+      "description": "Informe os dados do servidor que vai viajar e os dados de sua viagem",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome",
+          "description": "Informe seu nome",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "matricula",
+          "title": "Matricula",
+          "description": "Informe sua matrícula",
+          "isRequired": true
+        },
+        {
+          "type": "checkbox",
+          "name": "solicitacao",
+          "title": "Tipo de Solicitação",
+          "isRequired": true,
+          "choices": [
+            "Diárias",
+            "Passagens",
+            "Ambos"
+          ],
+          "maxSelectedChoices": 1,
+          "minSelectedChoices": 1
+        }
+      ]
+    },
+    {
+      "name": "página2",
+      "title": "Roteiro da Viagem",
+      "description": "Preencha as informações do roteiro da viagem",
+      "elements": [
+        {
+          "type": "text",
+          "name": "cidade_origem",
+          "title": "Cidade de Origem",
+          "description": "Informe a cidade de origem",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cidade_destino",
+          "startWithNewLine": false,
+          "title": "Cidade de Destino",
+          "description": "Informe a cidade de Destino",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "data_saida",
+          "title": "Data/Saída",
+          "description": "Informe a data de saída",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "expression"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "data_retorno",
+          "startWithNewLine": false,
+          "title": "Data/Retorno",
+          "description": "Informe a data de retorno",
+          "isRequired": true
+        },
+        {
+          "type": "comment",
+          "name": "objetivo_viagem",
+          "title": "Objetivo da Viagem",
+          "description": "Informe o objetivo da viagem",
+          "isRequired": true
+        },
+        {
+          "type": "comment",
+          "name": "veiculo_utilizado",
+          "visible": false,
+          "title": "Veículo utilizado",
+          "description": "Preencha apenas se não foi teve passagens."
+        },
+        {
+          "type": "file",
+          "name": "documento_pessoal",
+          "title": "Documento pessoal com foto",
+          "description": "Anexe aqui uma cópia do Documento pessoal com foto (PDF)",
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    },
+    {
+      "name": "página3",
+      "title": "Dados Bancários e Pessoais",
+      "description": "Dados obrigatórios para estagiário. Servidores não precisam preencher, pois seus dados já constam no sistema de Recursos Humanos.",
+      "elements": [
+        {
+          "type": "text",
+          "name": "cpf",
+          "title": "CPF",
+          "description": "Informe seu CFP que irá receber",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          }
+        },
+        {
+          "type": "text",
+          "name": "rg",
+          "title": "RG",
+          "description": "Informe o número do RG"
+        },
+        {
+          "type": "text",
+          "name": "banco",
+          "title": "Banco",
+          "description": "Informe o código ou nome do banco",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "agencia",
+          "description": "Informe o número da Agência com Dígito",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "conta_corrente",
+          "title": "Conta Corrente",
+          "description": "Informe o número da conta para recebimento",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}
