@@ -1,0 +1,90 @@
+{
+  "title": "Cadastrar profissional habilitado para cultivos e estabelecimentos de insumos agrícolas",
+  "description": "Cadastrar responsável técnico para cultivos e estabelecimentos de insumos agrícolas",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "Requerimento de cadastro RT",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome",
+          "description": "Informe nome completo",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "title": "CPF",
+          "description": "informe seu CPF",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          }
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "Email",
+          "description": "informe seu email",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone",
+          "startWithNewLine": false,
+          "title": "Telefone",
+          "description": "informe seu telefone",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "file",
+          "name": "rg_cnh",
+          "title": "Documento de identidade - RG ou CNH",
+          "description": "Documento com CPF legível",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "carteira_conselho",
+          "title": "Carteira do conselho de classe",
+          "description": "Carteira do conselho de classe (CREA ou CFTA)",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "comprovante_residencia",
+          "title": "Comprovante de residência",
+          "description": "No MS, emitido, no máximo, há 90 dias",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "checkbox",
+          "name": "pergunta1",
+          "title": "Objetivo do cadastro de RT",
+          "description": "selecione uma ou duas opções",
+          "isRequired": true,
+          "choices": [
+            "RT para estabelecimentos de insumos agrícolas",
+            "RT para cultivos agrícolas de soja ou algodão"
+          ],
+          "maxSelectedChoices": 2,
+          "minSelectedChoices": 1
+        }
+      ]
+    }
+  ]
+}

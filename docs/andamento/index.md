@@ -34,7 +34,14 @@ Além disso, esta seção guarda:
 
 *No X-Forms e X-Flows de DEV desde 27/10/2026. Corrigido: o servidor não conseguia enviar (dados bancários obrigatórios para todos).*
 
-### 3–14. A fazer
+### 3. IAGRO — Cadastro de responsável técnico agrícola ✅
+
+- [Notas do Antonio](mapeamento/02-rt-agricola.md)
+- [Diário da refatoração](03-rt-agricola/notas.md)
+
+*No X-Forms e X-Flows de DEV desde 27/10/2026. Uma página com 8 campos virou três páginas curtas; nome, CPF e e-mail vêm da conta.*
+
+### 4–14. A fazer
 
 Ver a tabela em [Auditoria dos 14](../05-auditoria.md).
 

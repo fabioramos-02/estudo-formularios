@@ -44,7 +44,7 @@ fonte de verdade sobre o que a ferramenta faz; a lógica completa está em
 | Recurso | JSON | Uso no padrão |
 |---|---|---|
 | Dica no ícone | `tooltip` | Informação **complementar** (por que pedimos, exemplo). O que é preciso para preencher vai em `description`, visível (B3, D1). |
-| Pré-preenchimento da conta | `autocomplete`: `name`, `email`, `cpf` (`[FATO]`, testado em DEV); `celular`, `cidade` (`[HIPÓTESE]`) | Resolve C2. **Preenche todo campo com essa chave**, inclusive o de outra pessoa: nesse caso, `resetValueIf` limpa (ver `docs/andamento/01-wordpress/xforms-v2.json`). |
+| Pré-preenchimento da conta | `autocomplete`: `name`, `email`, `cpf` (`[FATO]`, testado em DEV); `celular`, `cidade` (`[HIPÓTESE]`); `tel` **não** preenche (`[FATO]`, testado em DEV) | Resolve C2. **Preenche todo campo com essa chave**, inclusive o de outra pessoa: nesse caso, `resetValueIf` limpa (ver `docs/andamento/01-wordpress/xforms-v2.json`). |
 | Obrigatório condicional | `requiredIf` junto com `visibleIf` | Campo que só aparece em um caso só é obrigatório nesse caso (C9). |
 | Outras regras | `enableIf`, `resetValueIf`, `setValueIf` + `setValueExpression`, `choicesVisibleIf` | `resetValueIf` apaga resposta que deixou de valer (ex.: troca de PF para PJ). |
 | Data com limite | `minValueExpression` / `maxValueExpression` com `today()` | "Data não pode ser no passado" sem validador. |
