@@ -1,0 +1,232 @@
+{
+  "displayName": "X-Forms: cadastro de biblioteca pública FCMS",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'BIB-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const tipos = { publica: 'Pública', comunitaria: 'Comunitária', associada: 'Associada' };\n  const simNao = (v) => (v === 'sim' ? 'Sim' : v === 'nao' ? 'Não' : '');\n  const nomeArquivo = (v) => (Array.isArray(v) ? v.map((f) => f?.name).filter(Boolean).join(', ') : '');\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    biblioteca: a.nome_biblioteca ?? '',\n    tipo: tipos[a.tipo_biblioteca] ?? '',\n    legislacao: a.legislacao_criacao ?? '',\n    emFuncionamento: simNao(a.em_funcionamento),\n    diagnostico: simNao(a.respondeu_diagnostico),\n    responsavel: a.nome_responsavel_biblioteca ?? '',\n    pessoas: String(a.numero_pessoas_trabalham ?? ''),\n    acessibilidade: simNao(a.possui_acessibilidade),\n    municipio: a.municipio ?? '',\n    instituicao: a.nome_instituicao_vinculada ?? '',\n    cnpj: a.tipo_documento_instituicao === 'cnpj' ? (a.cnpj_instituicao ?? '') : '',\n    emailInstituicao: a.email_instituicao ?? '',\n    arquivoLegislacao: nomeArquivo(a.arquivo_legislacao_criacao),\n    fotoCapa: nomeArquivo(a.arquivo_foto_capa),\n    fotoDivulgacao: nomeArquivo(a.arquivo_foto_divulgacao),\n    cadastrosAnteriores: nomeArquivo(a.arquivo_cadastros_anteriores),\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "cadastros_bibliotecas_publicas",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "biblioteca": "{{step_1.biblioteca}}",
+                  "tipo": "{{step_1.tipo}}",
+                  "legislacao_criacao": "{{step_1.legislacao}}",
+                  "em_funcionamento": "{{step_1.emFuncionamento}}",
+                  "respondeu_diagnostico": "{{step_1.diagnostico}}",
+                  "responsavel": "{{step_1.responsavel}}",
+                  "pessoas_trabalham": "{{step_1.pessoas}}",
+                  "acessibilidade": "{{step_1.acessibilidade}}",
+                  "municipio": "{{step_1.municipio}}",
+                  "instituicao": "{{step_1.instituicao}}",
+                  "cnpj_instituicao": "{{step_1.cnpj}}",
+                  "email_instituicao": "{{step_1.emailInstituicao}}",
+                  "arquivo_legislacao": "{{step_1.arquivoLegislacao}}",
+                  "foto_capa": "{{step_1.fotoCapa}}",
+                  "foto_divulgacao": "{{step_1.fotoDivulgacao}}",
+                  "cadastros_anteriores": "{{step_1.cadastrosAnteriores}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "biblioteca": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "biblioteca"
+                    },
+                    "tipo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "tipo"
+                    },
+                    "legislacao_criacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "legislacao_criacao"
+                    },
+                    "em_funcionamento": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "em_funcionamento"
+                    },
+                    "respondeu_diagnostico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "respondeu_diagnostico"
+                    },
+                    "responsavel": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "responsavel"
+                    },
+                    "pessoas_trabalham": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "pessoas_trabalham"
+                    },
+                    "acessibilidade": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "acessibilidade"
+                    },
+                    "municipio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "municipio"
+                    },
+                    "instituicao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "instituicao"
+                    },
+                    "cnpj_instituicao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "cnpj_instituicao"
+                    },
+                    "email_instituicao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email_instituicao"
+                    },
+                    "arquivo_legislacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "arquivo_legislacao"
+                    },
+                    "foto_capa": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "foto_capa"
+                    },
+                    "foto_divulgacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "foto_divulgacao"
+                    },
+                    "cadastros_anteriores": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "cadastros_anteriores"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

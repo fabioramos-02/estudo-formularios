@@ -1,0 +1,203 @@
+{
+  "title": "Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura",
+  "description": "Cadastro ou atualização dos dados cadastrais de médicos veterinários que atuam no setor privado das cadeias produtivas da avicultura e da suinocultura no Estado de Mato Grosso do Sul.",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "pagina_cadastro_medico",
+      "title": "FICHA DE CADASTRO DE MÉDICOS VETERINÁRIOS – AVICULTURA/SUINOCULTURA",
+      "description": "CADASTRO DE MÉDICOS VETERINÁRIOS",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome",
+          "description": "nome completo",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "startWithNewLine": false,
+          "title": "CPF",
+          "description": "nº do CPF",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "orgao_expedidor_uf",
+          "title": "Órgão expedidor UF",
+          "description": "estado que emitiu RG",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "orgao_expedidor",
+          "startWithNewLine": false,
+          "title": "Órgão expedidor",
+          "description": "órgão expedidor do RG",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "rg",
+          "startWithNewLine": false,
+          "title": "RG",
+          "description": "nº do registro geral",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "Email",
+          "description": "e-mail do laboratório",
+          "isRequired": true
+        },
+        {
+          "type": "multipletext",
+          "name": "telefone",
+          "startWithNewLine": false,
+          "title": "Telefones de Contato",
+          "isRequired": true,
+          "items": [
+            {
+              "name": "telefone_primario",
+              "isRequired": true,
+              "maskType": "pattern",
+              "maskSettings": {
+                "pattern": "(99) 99999-9999"
+              },
+              "title": "Telefone Principal "
+            },
+            {
+              "name": "telefone_adicional",
+              "isRequired": true,
+              "maskType": "pattern",
+              "maskSettings": {
+                "pattern": "(99) 99999-9999"
+              },
+              "title": "Telefone Adicional"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "cep",
+          "title": "CEP",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "endereco_completo",
+          "title": "Endereço completo",
+          "description": "Rua/Avenida, nº e bairro",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "uf",
+          "title": "UF",
+          "description": "indicar o UF",
+          "isRequired": true,
+          "choices": [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "municipio",
+          "startWithNewLine": false,
+          "title": "Município",
+          "description": "indicar o município",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "crmv_ms",
+          "title": "CRMV/MS",
+          "description": "nº do CRMV"
+        },
+        {
+          "type": "boolean",
+          "name": "empresa_vincula",
+          "title": "Vinculado a alguma empresa integradora ou cooperativa? ",
+          "isRequired": true,
+          "labelTrue": "Sim",
+          "labelFalse": "Não"
+        }
+      ]
+    },
+    {
+      "name": "pagina_empresa_vinculada",
+      "visible": false,
+      "visibleIf": "{empresa_vincula} = true",
+      "title": "EMPRESA INTEGRADORA OU COOPERATIVA VINCULADA",
+      "elements": [
+        {
+          "type": "text",
+          "name": "cnpj_empresa",
+          "title": "CNPJ",
+          "description": "CNPJ da empresa integradora ou cooperativa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "razao_social_fantasia",
+          "title": "Razão social e nome fantasia",
+          "description": "da empresa integradora ou cooperativa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "portaria_habitacao",
+          "title": "Nº Portaria de Habilitação no MAPA",
+          "description": "Info necessária para emissão de GTA de aves e suínos. Anexar documento campo abaixo.",
+          "isRequired": true
+        },
+        {
+          "type": "file",
+          "name": "documento_empresa",
+          "title": "Documento da empresa, integradora ou cooperativa",
+          "description": "Documento comprobatório de vínculo com a empresa/integradora quando o profissional for vinculado a alguma destas",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "documento_portaria_habitacao_mapa",
+          "description": "quando for emitir GTA",
+          "isRequired": true,
+          "allowMultiple": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    }
+  ]
+}

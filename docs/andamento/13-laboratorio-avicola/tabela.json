@@ -1,0 +1,96 @@
+{
+  "externalId": "cadastros_laboratorio_avicola",
+  "nome": "Cadastrar laboratório de sanidade avícola IAGRO",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "tipo_pedido",
+      "Tipo pedido",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "razao_social",
+      "Razão social",
+      "TEXT"
+    ],
+    [
+      "nome_fantasia",
+      "Nome fantasia",
+      "TEXT"
+    ],
+    [
+      "cnpj",
+      "CNPJ",
+      "TEXT"
+    ],
+    [
+      "inscricao_estadual",
+      "Inscricao estadual",
+      "TEXT"
+    ],
+    [
+      "email_laboratorio",
+      "Email laboratorio",
+      "TEXT"
+    ],
+    [
+      "escopo",
+      "Escopo",
+      "TEXT"
+    ],
+    [
+      "credenciado_mapa",
+      "Credenciado mapa",
+      "TEXT"
+    ],
+    [
+      "portaria_credenciamento",
+      "Portaria credenciamento",
+      "TEXT"
+    ],
+    [
+      "crl",
+      "Crl",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "uf",
+      "UF",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

@@ -73,6 +73,8 @@ sempre em **Visualizar**. No portal:
 - Coluna de escolha usa os `choices` **da matriz**, não da coluna.
 - `choicesVisibleIf` vale para a lista toda; não existe `%` nem `not`.
 - Célula de matriz chega como texto (`"12"`). Booleano começa em `false`.
+- `[FATO]` O Designer apaga propriedades com valor padrão ao salvar (`isRequired: false`, `storeDataAsText: true`,
+  `allowMultiple: false`, `searchEnabled`). Não escrever no JSON, ou o hash de conferência não bate.
 
 ### Envio para o X-Flows
 

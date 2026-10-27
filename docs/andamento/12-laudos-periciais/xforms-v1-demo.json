@@ -1,0 +1,233 @@
+{
+  "title": "Solicitar cópia de laudos periciais",
+  "description": "Serviço para solicitação de cópias de laudos periciais emitidos pela CGP/SEJUSP/MS para fins judiciais, seguros ou outras finalidades oficiais.",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "Dados do Solicitante da cópia de laudos periciais",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_solicitante",
+          "title": "Nome",
+          "description": "Nome completo do solicitante",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf_solicitante",
+          "startWithNewLine": false,
+          "title": "CPF",
+          "description": "Insira o CPF do solicitante",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "rg",
+          "title": "RG",
+          "description": "Insira o Registro Geral do solicitante",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "orgao_emissor",
+          "startWithNewLine": false,
+          "title": "Órgão emissor",
+          "description": "Insira o órgão emissor do RG",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone_solicitante",
+          "title": "Telefone",
+          "description": "Insira o telefone do solicitante",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "email_solicitante",
+          "startWithNewLine": false,
+          "title": "E-mail",
+          "description": "Insira o e-mail do solicitante",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "endereco_solicitante",
+          "title": "Endereço",
+          "description": "Insira o endereço completo do solicitante (Rua, número, bairro, município e CEP)",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "data_nascimento",
+          "title": "Data de nascimento",
+          "description": "Insira a data de nascimento do solicitante",
+          "isRequired": true,
+          "inputType": "date"
+        },
+        {
+          "type": "checkbox",
+          "name": "tipo_solicitante",
+          "startWithNewLine": false,
+          "title": "Tipo de solicitante",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "pessoa_envolvida_evento",
+              "text": "Pessoa envolvida no evento"
+            },
+            {
+              "value": "procurador_devidamente_constituido",
+              "text": "Procurador devidamente constituído"
+            },
+            {
+              "value": "familiar_1_grau",
+              "text": "Familiar de 1º grau de vítima fatal"
+            }
+          ],
+          "maxSelectedChoices": 1,
+          "minSelectedChoices": 1
+        }
+      ]
+    },
+    {
+      "name": "página2",
+      "title": "Dados sobre a vítima do evento",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_vitima",
+          "title": "Nome da vítima",
+          "description": "Nome da vítima envolvida no evento",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "nome_outorgante",
+          "startWithNewLine": false,
+          "title": "Nome do outorgante",
+          "description": "Se for procurador, insira o nome completo do procurador"
+        },
+        {
+          "type": "file",
+          "name": "copia_procuracao",
+          "title": "Anexar cópia da procuração (se aplicável)",
+          "description": "Formatos de arquivos suportados: .pdf, .png, .jpg, .webp, .zip, .jpeg",
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "documento_identificacao_pessoa_envolvida",
+          "title": "Documento de identificação da pessoa envolvida no evento",
+          "description": "Formatos de arquivos suportados: .pdf, .png, .jpg, .webp, .zip, .jpeg",
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "documento_identificacao_pessoal_solicitante",
+          "title": "Documento de Identificação pessoal do solicitante (familiares de 1º grau) ou Procurador (se aplicável)",
+          "description": "Formatos de arquivos suportados: .pdf, .png, .jpg, .webp, .zip, .jpeg",
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "documento_comprove_relacao_parentesco",
+          "title": "Documento que comprove a relação de parentesco com a vítima fatal (se aplicável)",
+          "description": "Formatos de arquivos suportados: .pdf, .png, .jpg, .webp, .zip, .jpeg",
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    },
+    {
+      "name": "página3",
+      "title": "Dados sobre o inquérito ou boletim de ocorrência",
+      "elements": [
+        {
+          "type": "text",
+          "name": "numero_inquerito_boletim",
+          "title": "Número do inquérito/boletim de ocorrência policial ou processo penal",
+          "description": "Número do inquérito/boletim de ocorrência policial ou processo penal"
+        },
+        {
+          "type": "text",
+          "name": "endereco_evento",
+          "title": "Local de ocorrência do fato",
+          "description": "Endereço completo de ocorrência do fato (Rua, Bairro, Cidade, CEP, complemento)"
+        },
+        {
+          "type": "text",
+          "name": "descricao_fato",
+          "title": "Descrição dofato",
+          "description": "Descreva aqui o ocorrido",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "data_fato",
+          "title": "Data do fato",
+          "description": "Insira a data do fato",
+          "isRequired": true,
+          "inputType": "date"
+        },
+        {
+          "type": "checkbox",
+          "name": "tipo_laudo",
+          "startWithNewLine": false,
+          "title": "Informe o tipo do laudo pericial solicitado",
+          "choices": [
+            {
+              "value": "analise_laboratorias",
+              "text": "Análise Laboratorias"
+            },
+            {
+              "value": "criminalistica",
+              "text": "Criminalística"
+            },
+            {
+              "value": "identificacao",
+              "text": "Identificação"
+            },
+            {
+              "value": "medicina_legal",
+              "text": "Medicina-Legal"
+            }
+          ],
+          "minSelectedChoices": 1
+        },
+        {
+          "type": "text",
+          "name": "informacoes_adicionais",
+          "title": "Informações adicionais",
+          "description": "Campo de texto livre para observações"
+        },
+        {
+          "type": "checkbox",
+          "name": "termo",
+          "title": "Condições para fornecimento da cópia do laudo pericial",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "aceito",
+              "text": "Estou ciente de que a emissão da cópia do laudo pericial só será fornecida após a averiguação de que o inquérito policial ou o processo penal não está em segredo de justiça, e de que receberei um e-mail contendo orientações para a continuidade do serviço, bem como para o recolhimento da guia de Documento de Arrecadação do Estado de Mato Grosso do Sul – DAEMS, e de que as cópias de laudos periciais são taxadas por folha no valor de 0,5 (zero vírgula cinco) UFERMS."
+            }
+          ],
+          "minSelectedChoices": 1
+        }
+      ]
+    }
+  ]
+}

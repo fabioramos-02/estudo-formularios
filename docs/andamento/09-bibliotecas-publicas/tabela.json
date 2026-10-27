@@ -1,0 +1,111 @@
+{
+  "externalId": "cadastros_bibliotecas_publicas",
+  "nome": "Cadastro de biblioteca pública FCMS",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "biblioteca",
+      "Biblioteca",
+      "TEXT"
+    ],
+    [
+      "tipo",
+      "Tipo",
+      "TEXT"
+    ],
+    [
+      "legislacao_criacao",
+      "Legislacao criacao",
+      "TEXT"
+    ],
+    [
+      "em_funcionamento",
+      "Em funcionamento",
+      "TEXT"
+    ],
+    [
+      "respondeu_diagnostico",
+      "Respondeu diagnostico",
+      "TEXT"
+    ],
+    [
+      "responsavel",
+      "Responsavel",
+      "TEXT"
+    ],
+    [
+      "pessoas_trabalham",
+      "Pessoas trabalham",
+      "TEXT"
+    ],
+    [
+      "acessibilidade",
+      "Acessibilidade",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "instituicao",
+      "Instituicao",
+      "TEXT"
+    ],
+    [
+      "cnpj_instituicao",
+      "Cnpj instituicao",
+      "TEXT"
+    ],
+    [
+      "email_instituicao",
+      "Email instituicao",
+      "TEXT"
+    ],
+    [
+      "arquivo_legislacao",
+      "Arquivo legislacao",
+      "TEXT"
+    ],
+    [
+      "foto_capa",
+      "Foto capa",
+      "TEXT"
+    ],
+    [
+      "foto_divulgacao",
+      "Foto divulgacao",
+      "TEXT"
+    ],
+    [
+      "cadastros_anteriores",
+      "Cadastros anteriores",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

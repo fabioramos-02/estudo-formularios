@@ -1,0 +1,404 @@
+{
+  "title": "Cadastro no Sistema Estadual de Bibliotecas Públicas",
+  "description": "Cadastro oficial de bibliotecas públicas e comunitárias de Mato Grosso do Sul junto à Fundação de Cultura de Mato Grosso do Sul (FCMS), que garante reconhecimento institucional e acesso a formações, recursos, acervos, equipamentos e parcerias.",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "pagina_dados_biblioteca",
+      "title": "Cadastro de Dados da Biblioteca",
+      "description": "Manter os dados atualizados anualmente ou sempre que houver alteração na gestão, endereço ou estrutura.",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_responsavel_biblioteca",
+          "title": "Nome do responsável pela biblioteca",
+          "description": "Informe o nome do responsável pela biblioteca",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cargo_responsavel_biblioteca",
+          "startWithNewLine": false,
+          "title": "Cargo do Responsável pela biblioteca",
+          "description": "Informe o cargo do responsável",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "escolaridade_responsavel_biblioteca",
+          "title": "Escolaridade do responsável pela biblioteca",
+          "description": "Informe a escolaridade do responsável",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "nome_biblioteca",
+          "title": "Nome da biblioteca",
+          "description": "Informe o nome da biblioteca",
+          "isRequired": true
+        },
+        {
+          "type": "boolean",
+          "name": "diagnostico_mais_recente_biblioteca",
+          "startWithNewLine": false,
+          "title": "Respondeu ao diagnóstico mais recente das bibliotecas?",
+          "description": "Informe se respondeu ao diagnóstico mais recente das bibliotecas?",
+          "isRequired": true,
+          "labelTrue": "Sim",
+          "labelFalse": "Não"
+        },
+        {
+          "type": "checkbox",
+          "name": "esta_funcionamento",
+          "title": "Está em funcionamento ?",
+          "description": "A biblioteca a ser cadastrada está em funcionamento",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "sim",
+              "text": "Sim"
+            },
+            {
+              "value": "nao",
+              "text": "Não"
+            }
+          ],
+          "maxSelectedChoices": 1,
+          "minSelectedChoices": 1
+        },
+        {
+          "type": "checkbox",
+          "name": "tipo_cadastrada",
+          "startWithNewLine": false,
+          "title": "Tipo de biblioteca a ser cadastrada",
+          "description": "Selecione o tipo de biblioteca a ser cadastrada",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "publica",
+              "text": "Pública"
+            },
+            {
+              "value": "comunitaria",
+              "text": "Comunitária"
+            },
+            {
+              "value": "associada",
+              "text": "Associada"
+            }
+          ],
+          "maxSelectedChoices": 1,
+          "minSelectedChoices": 1
+        },
+        {
+          "type": "text",
+          "name": "legislacao_criacao",
+          "visible": false,
+          "visibleIf": "{tipo_cadastrada} = ['publica']",
+          "title": "Legislação de Criação",
+          "description": "(Campo de preenchimento - Ex: Lei Municipal nº XXXX/XXXX, Decreto nº YYYY/YYYY)",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "numero_pessoas_bibliotecas",
+          "title": "Número de pessoas que trabalham na biblioteca",
+          "description": "Informe o número de pessoas que trabalham na biblioteca",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "expression"
+            }
+          ],
+          "inputType": "number",
+          "min": 0,
+          "maskType": "numeric",
+          "maskSettings": {
+            "allowNegativeValues": false,
+            "thousandsSeparator": ".",
+            "precision": 0,
+            "min": 0
+          }
+        },
+        {
+          "type": "comment",
+          "name": "nome_completo_pessoas_trabalham_biblioteca",
+          "visible": false,
+          "visibleIf": "{numero_pessoas_bibliotecas} notempty",
+          "startWithNewLine": false,
+          "title": "Nome completo das pessoas que trabalham na biblioteca",
+          "description": "Informe o nome completo das pessoas que trabalham na biblioteca"
+        },
+        {
+          "type": "text",
+          "name": "descreva_biblioteca_frase",
+          "title": "Descreva sua biblioteca em uma frase",
+          "description": "Descreva sua biblioteca em uma frase",
+          "isRequired": true
+        },
+        {
+          "type": "comment",
+          "name": "historia_biblioteca",
+          "title": "Conte a história da biblioteca",
+          "description": "Conte a história da biblioteca",
+          "isRequired": true
+        },
+        {
+          "type": "comment",
+          "name": "horario_funcionamento",
+          "visible": false,
+          "visibleIf": "{esta_funcionamento} = ['sim']",
+          "title": "Horário de funcionamento",
+          "description": "Indicar horários para: Período do ano*, Segunda*, Terça*, Quarta*, Quinta*, Sexta*, Sábado*, Domingo*, Feriados*)",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "informacoes_adicionais_horario_funcionamento",
+          "title": "Informações adicionais sobre o horário de funcionamento",
+          "description": "Informações adicionais sobre horário de funcionamento"
+        },
+        {
+          "type": "text",
+          "name": "endereco_biblioteca",
+          "title": "Endereço da Biblioteca",
+          "description": "Informe (CEP, Logradouro, Número, Complemento, Bairro)",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "municipio",
+          "title": "Município",
+          "description": "Selecione o município",
+          "isRequired": true,
+          "choices": [
+            "Água Clara",
+            "Alcinópolis",
+            "Amambai",
+            "Anastácio",
+            "Anaurilândia",
+            "Angélica",
+            "Antônio João",
+            "Aparecida do Taboado",
+            "Aquidauana",
+            "Aral Moreira",
+            "Bandeirantes",
+            "Bataguassu",
+            "Batayporã",
+            "Bela Vista",
+            "Bodoquena",
+            "Bonito",
+            "Brasilândia",
+            "Caarapó",
+            "Camapuã",
+            "Campo Grande",
+            "Caracol",
+            "Cassilândia",
+            "Chapadão do Sul",
+            "Corguinho",
+            "Coronel Sapucaia",
+            "Corumbá",
+            "Costa Rica",
+            "Coxim",
+            "Deodápolis",
+            "Dois Irmãos do Buriti",
+            "Douradina",
+            "Dourados",
+            "Eldorado",
+            "Fátima do Sul",
+            "Figueirão",
+            "Glória de Dourados",
+            "Guia Lopes da Laguna",
+            "Iguatemi",
+            "Inocência",
+            "Itaporã",
+            "Itaquiraí",
+            "Ivinhema",
+            "Japorã",
+            "Jaraguari",
+            "Jardim",
+            "Jateí",
+            "Juti",
+            "Ladário",
+            "Laguna Carapã",
+            "Maracaju",
+            "Miranda",
+            "Mundo Novo",
+            "Naviraí",
+            "Nioaque",
+            "Nova Alvorada do Sul",
+            "Nova Andradina",
+            "Novo Horizonte do Sul",
+            "Paraíso das Águas",
+            "Paranaíba",
+            "Paranhos",
+            "Pedro Gomes",
+            "Ponta Porã",
+            "Porto Murtinho",
+            "Ribas do Rio Pardo",
+            "Rio Brilhante",
+            "Rio Negro",
+            "Rio Verde de Mato Grosso",
+            "Rochedo",
+            "Santa Rita do Pardo",
+            "São Gabriel do Oeste",
+            "Selvíria",
+            "Sete Quedas",
+            "Sidrolândia",
+            "Sonora",
+            "Tacuru",
+            "Taquarussu",
+            "Terenos",
+            "Três Lagoas",
+            "Vicentina"
+          ]
+        },
+        {
+          "type": "boolean",
+          "name": "facilidade_pessoas_deficiencia",
+          "title": "Possui alguma facilidade para pessoas com deficiência ou mobilidade reduzida?",
+          "description": "Informe se possui alguma facilidade para pessoas com deficiência ou mobilidade reduzida?",
+          "labelTrue": "Sim",
+          "labelFalse": "Não"
+        },
+        {
+          "type": "text",
+          "name": "facilidade_acessibilidade_oferece",
+          "visible": false,
+          "visibleIf": "{facilidade_pessoas_deficiencia} = true",
+          "startWithNewLine": false,
+          "title": "Quais facilidades de acessibilidade a biblioteca oferece",
+          "description": "Quais facilidades de acessibilidade a biblioteca oferece?"
+        }
+      ]
+    },
+    {
+      "name": "pagina_anexos",
+      "title": "Informações adicionais e anexos de arquivos",
+      "description": "Anexar documento de criação da biblioteca (decreto, lei ou ato administrativo, no caso de bibliotecas públicas).\nEnviar comprovante de funcionamento (fotos atuais do espaço, horário de atendimento e endereço completo).",
+      "elements": [
+        {
+          "type": "text",
+          "name": "rede_sociais",
+          "title": "Contato e Redes Sociais da Biblioteca",
+          "description": "Informe E-mail, Telefone, Whatsapp, Instagram, Facebook, Twitter, Canal no Youtube, Linkedin, Telegram, Hashtags Sugeridas"
+        },
+        {
+          "type": "file",
+          "name": "legislacao_arquivo",
+          "visible": false,
+          "visibleIf": "{tipo_cadastrada} = ['publica']",
+          "title": "Legislação",
+          "description": "Anexe a legislação de criação da biblioteca (PDF)",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "foto_capa",
+          "title": "Foto de capa",
+          "description": "Anexe um arquivo contendo foto da fachada frontal ou da entrada da biblioteca(Tipo JPEG)",
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "foto_divulgacao",
+          "title": "Foto de divulgação",
+          "description": "Anexe uma imagem da Foto de divulgação (JPEG)",
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "documentacao_cadastro_anteriores",
+          "title": "Documentação de Cadastros anteriores",
+          "description": "Anexe documentos que comprovem cadastros anteriores no Sistema Estadual ou Nacional de Bibliotecas.(PDF ou JPEG)",
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    },
+    {
+      "name": "pagina_instituicao",
+      "title": "Dados sobre a Instituição ligada a biblioteca",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_responsavel_instituicao",
+          "title": "Nome do Responsável",
+          "description": "Informe o Nome do Responsável",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cargo_reponsavel_instituicao",
+          "startWithNewLine": false,
+          "title": "Cargo do responsável",
+          "description": "Informe o cargo do responsável",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone_instituicao",
+          "title": "Telefone da Instituição",
+          "description": "Informe o telefone da instituição",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "email_instituicao",
+          "startWithNewLine": false,
+          "title": "E-mail da Instituição",
+          "description": "Informe o e-mail da instituição",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "nome_instiucao_vinculada",
+          "title": "Nome da instituição à qual a biblioteca está vinculada",
+          "description": "Informe o nome da instituição à qual a biblioteca está vinculada",
+          "isRequired": true
+        },
+        {
+          "type": "checkbox",
+          "name": "tipo_documento_instituicao",
+          "title": "Tipo de documento da instituição",
+          "description": "Selecione o tipo de documento da instituição",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "cnpj",
+              "text": "CNPJ"
+            },
+            {
+              "value": "cpf",
+              "text": "CPF"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "numero_documento_vinculado_biblioteca",
+          "startWithNewLine": false,
+          "title": "Número do documento vinculado à biblioteca",
+          "description": "Informe o Número do documento vinculado à biblioteca",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "endereco_intituicao",
+          "title": "Endereço da Instituição",
+          "description": "Endereço completo da instituição (CEP, Logradouro, Número, Complemento, Bairro)",
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}

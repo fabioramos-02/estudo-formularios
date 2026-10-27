@@ -1,0 +1,81 @@
+{
+  "externalId": "cancelamentos_registro_agrotoxicos",
+  "nome": "cancelar registro de agrotóxicos IAGRO",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "razao_social",
+      "Razão social",
+      "TEXT"
+    ],
+    [
+      "cnpj",
+      "CNPJ",
+      "TEXT"
+    ],
+    [
+      "inscricao_estadual",
+      "Inscricao estadual",
+      "TEXT"
+    ],
+    [
+      "municipio",
+      "Município",
+      "TEXT"
+    ],
+    [
+      "uf",
+      "UF",
+      "TEXT"
+    ],
+    [
+      "motivo",
+      "Motivo",
+      "TEXT"
+    ],
+    [
+      "cartao_cnpj",
+      "Cartao cnpj",
+      "TEXT"
+    ],
+    [
+      "guia_recolhimento",
+      "Guia recolhimento",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

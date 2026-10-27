@@ -1,0 +1,252 @@
+{
+  "title": "Pedir o Selo Arte",
+  "description": "Para quem produz alimentos de origem animal de forma artesanal e quer o Selo Arte para os seus produtos.",
+  "pages": [
+    {
+      "name": "solicitante",
+      "title": "Quem está fazendo o pedido",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_completo",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome completo para continuar.",
+          "title": "Seu nome completo",
+          "autocomplete": "name",
+          "tooltip": "Vem da sua conta. Corrija se estiver diferente do documento."
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "isRequired": true,
+          "requiredErrorText": "Digite um CPF válido, com 11 números.",
+          "title": "CPF",
+          "description": "Cadastro de Pessoa Física.",
+          "autocomplete": "cpf",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ],
+          "tooltip": "Vem da sua conta."
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o e-mail para continuar.",
+          "title": "E-mail",
+          "inputType": "email",
+          "autocomplete": "email",
+          "placeholder": "nome@exemplo.com.br",
+          "validators": [
+            {
+              "type": "email",
+              "text": "Digite um e-mail no formato nome@dominio."
+            }
+          ],
+          "tooltip": "A resposta do pedido chega neste e-mail."
+        }
+      ]
+    },
+    {
+      "name": "estabelecimento",
+      "title": "Sobre o estabelecimento",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_estabelecimento",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome do estabelecimento para continuar.",
+          "title": "Nome do estabelecimento",
+          "description": "Onde os produtos são fabricados."
+        },
+        {
+          "type": "text",
+          "name": "registro_servico_inspecao",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o serviço de inspeção para continuar.",
+          "title": "Serviço de inspeção em que o estabelecimento é registrado"
+        },
+        {
+          "type": "text",
+          "name": "numero_registro",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o número do registro para continuar.",
+          "title": "Número do registro",
+          "description": "O número no serviço de inspeção."
+        }
+      ]
+    },
+    {
+      "name": "endereco",
+      "title": "Endereço do estabelecimento",
+      "elements": [
+        {
+          "type": "text",
+          "name": "logradouro",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o endereço para continuar.",
+          "title": "Endereço",
+          "description": "Rua, número, complemento e bairro.",
+          "autocomplete": "street-address"
+        },
+        {
+          "type": "dropdown",
+          "name": "municipio",
+          "isRequired": true,
+          "requiredErrorText": "Escolha o município para continuar.",
+          "title": "Município",
+          "placeholder": "Selecione",
+          "choices": [
+            "Água Clara",
+            "Alcinópolis",
+            "Amambai",
+            "Anastácio",
+            "Anaurilândia",
+            "Angélica",
+            "Antônio João",
+            "Aparecida do Taboado",
+            "Aquidauana",
+            "Aral Moreira",
+            "Bandeirantes",
+            "Bataguassu",
+            "Batayporã",
+            "Bela Vista",
+            "Bodoquena",
+            "Bonito",
+            "Brasilândia",
+            "Caarapó",
+            "Camapuã",
+            "Campo Grande",
+            "Caracol",
+            "Cassilândia",
+            "Chapadão do Sul",
+            "Corguinho",
+            "Coronel Sapucaia",
+            "Corumbá",
+            "Costa Rica",
+            "Coxim",
+            "Deodápolis",
+            "Dois Irmãos do Buriti",
+            "Douradina",
+            "Dourados",
+            "Eldorado",
+            "Fátima do Sul",
+            "Figueirão",
+            "Glória de Dourados",
+            "Guia Lopes da Laguna",
+            "Iguatemi",
+            "Inocência",
+            "Itaporã",
+            "Itaquiraí",
+            "Ivinhema",
+            "Japorã",
+            "Jaraguari",
+            "Jardim",
+            "Jateí",
+            "Juti",
+            "Ladário",
+            "Laguna Carapã",
+            "Maracaju",
+            "Miranda",
+            "Mundo Novo",
+            "Naviraí",
+            "Nioaque",
+            "Nova Alvorada do Sul",
+            "Nova Andradina",
+            "Novo Horizonte do Sul",
+            "Paraíso das Águas",
+            "Paranaíba",
+            "Paranhos",
+            "Pedro Gomes",
+            "Ponta Porã",
+            "Porto Murtinho",
+            "Ribas do Rio Pardo",
+            "Rio Brilhante",
+            "Rio Negro",
+            "Rio Verde de Mato Grosso",
+            "Rochedo",
+            "Santa Rita do Pardo",
+            "São Gabriel do Oeste",
+            "Selvíria",
+            "Sete Quedas",
+            "Sidrolândia",
+            "Sonora",
+            "Tacuru",
+            "Taquarussu",
+            "Terenos",
+            "Três Lagoas",
+            "Vicentina"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pedido",
+      "title": "Produtos e declaração",
+      "elements": [
+        {
+          "type": "comment",
+          "name": "produtos",
+          "isRequired": true,
+          "requiredErrorText": "Escreva os produtos para continuar.",
+          "title": "Para quais produtos você pede o selo?",
+          "description": "Escreva um produto por linha."
+        },
+        {
+          "type": "html",
+          "name": "texto_declaracao",
+          "html": "<p>Ao pedir o Selo Arte, declaro que estou ciente de que:</p><ul><li>devo seguir os procedimentos da legislação em vigor para a produção artesanal de alimentos de origem animal;</li><li>o produto para o qual peço o selo, fabricado no meu estabelecimento, cumpre todos os requisitos das leis e normas que se aplicam a ele;</li><li>só posso produzir e vender com o Selo Arte depois da homologação;</li><li>devo cumprir todas as exigências do serviço de inspeção em que estou registrado, incluindo as boas práticas agropecuárias e de fabricação e as demais leis que se aplicam.</li></ul>"
+        },
+        {
+          "type": "checkbox",
+          "name": "declaracao_ciencia",
+          "isRequired": true,
+          "requiredErrorText": "Marque a declaração para enviar o pedido.",
+          "title": "Declaração",
+          "choices": [
+            {
+              "value": "ciente",
+              "text": "Li e estou ciente do que está escrito acima."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "documentos",
+      "title": "Documentos",
+      "description": "Arquivo em PDF, JPG ou PNG, até 5 MB.",
+      "elements": [
+        {
+          "type": "file",
+          "name": "arquivo_logomarca",
+          "isRequired": true,
+          "requiredErrorText": "Anexe a logomarca para continuar.",
+          "title": "Logomarca do estabelecimento",
+          "description": "A identidade visual usada nos produtos.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos",
+          "html": "<p><strong>Depois do envio:</strong> a IAGRO analisa o pedido e a resposta chega no e-mail informado.</p>"
+        }
+      ]
+    }
+  ],
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off"
+}

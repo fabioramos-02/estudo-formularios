@@ -55,9 +55,52 @@ Além disso, esta seção guarda:
 
 *No X-Forms e X-Flows de DEV desde 27/10/2026. Saíram RG, órgão expedidor e UF do órgão; entrou e-mail para a resposta.*
 
-### 6–14. A fazer
+### 6. IAGRO — Pedir o Selo Arte — rascunho
 
-Ver a tabela em [Auditoria dos 14](../05-auditoria.md).
+- [Notas do Antonio](mapeamento/06-selo-arte.md)
+- [Rascunho da refatoração](06-selo-arte/notas.md)
+
+### 7. FCMS — Pedir certidão negativa de tombamento — rascunho
+
+- [Notas do Antonio](mapeamento/07-negativa-tombamento.md)
+- [Rascunho da refatoração](07-negativa-tombamento/notas.md)
+
+### 8. IAGRO — Cadastrar ou atualizar médico veterinário de aves ou suínos — rascunho
+
+- [Notas do Antonio](mapeamento/08-veterinario-avi-suino.md)
+- [Rascunho da refatoração](08-veterinario-avi-suino/notas.md)
+
+### 9. FCMS — Cadastrar biblioteca no Sistema Estadual de Bibliotecas Públicas — rascunho
+
+- [Notas do Antonio](mapeamento/09-bibliotecas-publicas.md)
+- [Rascunho da refatoração](09-bibliotecas-publicas/notas.md)
+
+### 10. IAGRO — Cadastrar ou atualizar empresa integradora de aves ou suínos — rascunho
+
+- [Notas do Antonio](mapeamento/10-empresa-integradora.md)
+- [Rascunho da refatoração](10-empresa-integradora/notas.md)
+
+### 11. IAGRO — Pedir certificado de destruição de soqueira de algodão — rascunho
+
+- [Notas do Antonio](mapeamento/11-soqueira-algodao.md)
+- [Rascunho da refatoração](11-soqueira-algodao/notas.md)
+
+### 12. CGP/SEJUSP — Pedir cópia de laudo pericial — rascunho
+
+- [Notas do Antonio](mapeamento/12-laudos-periciais.md)
+- [Rascunho da refatoração](12-laudos-periciais/notas.md)
+
+### 13. IAGRO — Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola — rascunho
+
+- [Notas do Antonio](mapeamento/13-laboratorio-avicola.md)
+- [Rascunho da refatoração](13-laboratorio-avicola/notas.md)
+
+### 14. SEJUSP — Pedir certidão de atendimento de emergência (190 ou 193) — rascunho
+
+- [Notas do Antonio](mapeamento/14-certidao-190-193.md)
+- [Rascunho da refatoração](14-certidao-190-193/notas.md)
+
+*Rascunhos de 27/10/2026, em revisão. Ainda não estão no X-Forms nem no X-Flows de DEV.*
 
 ---
 

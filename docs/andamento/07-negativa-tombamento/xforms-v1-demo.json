@@ -1,0 +1,99 @@
+{
+  "title": "Solicitação da Negativa de Tombamento",
+  "description": "Formulário de Solicitação Negativa de Tombamento",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "Formulário de Solicitação da Certidão Negativa de Tombamento",
+      "description": "\nA Certidão Negativa de Tombamento é um documento oficial que atesta que determinado imóvel ou bem não está protegido por tombamento em nível municipal, estadual ou federal. Este serviço oferece orientações completas para quem deseja solicitar a certidão junto ao órgão responsável pelo patrimônio cultural.\n",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome do Requerente",
+          "description": "Informe o Nome do Requerente",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf_requerente",
+          "title": "CPF do Requerente",
+          "description": "Informe o CFP do Requerente",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          }
+        },
+        {
+          "type": "text",
+          "name": "rg_requerente",
+          "startWithNewLine": false,
+          "title": "RG do Requerente",
+          "description": "Informe o RG do Requerente",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf_proprietario",
+          "title": "CPF do Proprietário",
+          "description": "Informe o CFP do Proprietário",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "rg_proprietario",
+          "startWithNewLine": false,
+          "title": "RG do Proprietário",
+          "description": "Informe o RG do Proprietário",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "identificacao_imovel",
+          "title": "Identificação do imóvel",
+          "description": "Informe nome e localização do imóvel.",
+          "isRequired": true
+        },
+        {
+          "type": "file",
+          "name": "procuracao",
+          "title": "Procuração",
+          "description": "Não sendo o requerente o proprietário, deve ser anexada procuração (Assinada por govbr ou certificado digital)",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "certidao_matricula_atualizada_imovel",
+          "title": "Certidão de matrícula atualizada do imóvel",
+          "description": "Anexe a Certidão de matrícula atualizada do imóvel (PDF)",
+          "isRequired": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "rg_cpf_proprietario",
+          "title": "RG e CPF do Proprietário",
+          "description": "Anexe RG e CPF do Proprietário",
+          "isRequired": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "rg_cpf_requerente",
+          "title": "RG e CPF do Requerente",
+          "description": "Anexe RG e CPF do Requerente",
+          "isRequired": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    }
+  ]
+}

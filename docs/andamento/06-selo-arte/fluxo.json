@@ -1,0 +1,190 @@
+{
+  "displayName": "X-Forms: pedido de Selo Arte IAGRO",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'ART-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const nomeArquivo = (v) => (Array.isArray(v) ? v[0]?.name : '') ?? '';\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    nome: a.nome_completo ?? '',\n    email: a.email ?? '',\n    estabelecimento: a.nome_estabelecimento ?? '',\n    servicoInspecao: a.registro_servico_inspecao ?? '',\n    numeroRegistro: a.numero_registro ?? '',\n    municipio: a.municipio ?? '',\n    produtos: a.produtos ?? '',\n    declaracao: (a.declaracao_ciencia ?? []).includes('ciente') ? 'Aceita' : '',\n    logomarca: nomeArquivo(a.arquivo_logomarca),\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "pedidos_selo_arte",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "nome": "{{step_1.nome}}",
+                  "email": "{{step_1.email}}",
+                  "estabelecimento": "{{step_1.estabelecimento}}",
+                  "servico_inspecao": "{{step_1.servicoInspecao}}",
+                  "numero_registro": "{{step_1.numeroRegistro}}",
+                  "municipio": "{{step_1.municipio}}",
+                  "produtos": "{{step_1.produtos}}",
+                  "declaracao": "{{step_1.declaracao}}",
+                  "logomarca": "{{step_1.logomarca}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome"
+                    },
+                    "email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email"
+                    },
+                    "estabelecimento": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "estabelecimento"
+                    },
+                    "servico_inspecao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico_inspecao"
+                    },
+                    "numero_registro": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "numero_registro"
+                    },
+                    "municipio": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "municipio"
+                    },
+                    "produtos": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "produtos"
+                    },
+                    "declaracao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "declaracao"
+                    },
+                    "logomarca": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "logomarca"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

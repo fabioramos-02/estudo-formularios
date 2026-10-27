@@ -1,0 +1,180 @@
+{
+  "title": "Pedir certidão negativa de tombamento",
+  "description": "A certidão atesta que um imóvel não é tombado, ou seja, não está protegido como patrimônio cultural pelo município, pelo Estado ou pela União. O pedido vai para a FCMS (Fundação de Cultura de Mato Grosso do Sul).",
+  "pages": [
+    {
+      "name": "solicitante",
+      "title": "Quem está fazendo o pedido",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_completo",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome completo para continuar.",
+          "title": "Seu nome completo",
+          "autocomplete": "name",
+          "tooltip": "Vem da sua conta. Corrija se estiver diferente do documento."
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "isRequired": true,
+          "requiredErrorText": "Digite um CPF válido, com 11 números.",
+          "title": "CPF",
+          "description": "Cadastro de Pessoa Física.",
+          "autocomplete": "cpf",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ],
+          "tooltip": "Vem da sua conta."
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o e-mail para continuar.",
+          "title": "E-mail",
+          "inputType": "email",
+          "autocomplete": "email",
+          "placeholder": "nome@exemplo.com.br",
+          "validators": [
+            {
+              "type": "email",
+              "text": "Digite um e-mail no formato nome@dominio."
+            }
+          ],
+          "tooltip": "A resposta do pedido chega neste e-mail."
+        },
+        {
+          "type": "radiogroup",
+          "name": "perfil_solicitante",
+          "isRequired": true,
+          "requiredErrorText": "Escolha uma opção para continuar.",
+          "title": "Você é o proprietário do imóvel?",
+          "tooltip": "Quem pede em nome do proprietário anexa uma procuração no fim do formulário.",
+          "choices": [
+            {
+              "value": "proprietario",
+              "text": "Sim, sou o proprietário"
+            },
+            {
+              "value": "representante",
+              "text": "Não, peço em nome do proprietário"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "imovel",
+      "title": "Sobre o imóvel",
+      "elements": [
+        {
+          "type": "comment",
+          "name": "identificacao_imovel",
+          "isRequired": true,
+          "requiredErrorText": "Escreva o nome e a localização do imóvel para continuar.",
+          "title": "Nome e localização do imóvel",
+          "description": "Como o imóvel é conhecido e onde fica: endereço e município."
+        },
+        {
+          "type": "text",
+          "name": "cpf_proprietario",
+          "requiredErrorText": "Digite o CPF do proprietário, com 11 números.",
+          "title": "CPF do proprietário",
+          "visibleIf": "{perfil_solicitante} = 'representante'",
+          "requiredIf": "{perfil_solicitante} = 'representante'",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "documentos",
+      "title": "Documentos",
+      "description": "Arquivos em PDF, até 5 MB cada.",
+      "elements": [
+        {
+          "type": "file",
+          "name": "arquivo_certidao_matricula",
+          "isRequired": true,
+          "requiredErrorText": "Anexe a certidão de matrícula para continuar.",
+          "title": "Certidão de matrícula do imóvel",
+          "description": "A certidão atualizada, emitida pelo cartório de registro de imóveis.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true
+        },
+        {
+          "type": "file",
+          "name": "arquivo_documento_requerente",
+          "isRequired": true,
+          "requiredErrorText": "Anexe o seu RG e CPF para continuar.",
+          "title": "Seu RG e CPF",
+          "description": "Pode enviar mais de um arquivo, por exemplo frente e verso.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true
+        },
+        {
+          "type": "file",
+          "name": "arquivo_documento_proprietario",
+          "requiredErrorText": "Anexe o RG e o CPF do proprietário para continuar.",
+          "title": "RG e CPF do proprietário",
+          "description": "Pode enviar mais de um arquivo, por exemplo frente e verso.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "visibleIf": "{perfil_solicitante} = 'representante'",
+          "requiredIf": "{perfil_solicitante} = 'representante'"
+        },
+        {
+          "type": "file",
+          "name": "arquivo_procuracao",
+          "requiredErrorText": "Anexe a procuração para continuar.",
+          "title": "Procuração",
+          "description": "Dada pelo proprietário a você, assinada pelo gov.br ou com certificado digital.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false,
+          "waitForUpload": true,
+          "visibleIf": "{perfil_solicitante} = 'representante'",
+          "requiredIf": "{perfil_solicitante} = 'representante'"
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos",
+          "html": "<p><strong>Depois do envio:</strong> a FCMS analisa o pedido e a resposta chega no e-mail informado.</p>"
+        }
+      ]
+    }
+  ],
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off"
+}

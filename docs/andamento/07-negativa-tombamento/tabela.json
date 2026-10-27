@@ -1,0 +1,71 @@
+{
+  "externalId": "pedidos_negativa_tombamento",
+  "nome": "Certidão negativa de tombamento FCMS",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "perfil",
+      "Perfil",
+      "TEXT"
+    ],
+    [
+      "imovel",
+      "Imovel",
+      "TEXT"
+    ],
+    [
+      "certidao_matricula",
+      "Certidao matricula",
+      "TEXT"
+    ],
+    [
+      "documento_requerente",
+      "Documento requerente",
+      "TEXT"
+    ],
+    [
+      "documento_proprietario",
+      "Documento proprietario",
+      "TEXT"
+    ],
+    [
+      "procuracao",
+      "Procuracao",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

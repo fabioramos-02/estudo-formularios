@@ -1,0 +1,214 @@
+{
+  "displayName": "X-Forms: certidão de atendimento 190/193 SEJUSP",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  const protocolo = 'CER-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const perfis = {\n    proprio: 'Quem fez a ligação',\n    representante_legal: 'Representante legal',\n    procurador: 'Procurador',\n  };\n  const numeros = { '190': '190 (Polícia Militar)', '193': '193 (Corpo de Bombeiros)' };\n  const nomeArquivo = (v) => (Array.isArray(v) ? v[0]?.name : '') ?? '';\n  const nomeArquivos = (v) => (Array.isArray(v) ? v.map((f) => f?.name).filter(Boolean).join('; ') : '');\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    nome: a.nome_completo || a.nome_completo_ligou || '',\n    email: a.email ?? '',\n    perfil: perfis[a.perfil_solicitante] ?? '',\n    nomeLigou: a.nome_completo_ligou ?? '',\n    numeroEmergencia: numeros[a.numero_emergencia] ?? '',\n    municipioOcorrencia: a.municipio_ocorrencia ?? '',\n    dataFato: a.data_fato ?? '',\n    horaFato: a.hora_fato ?? '',\n    finalidade: a.finalidade_certidao ?? '',\n    documentoIdentificacao: nomeArquivo(a.arquivo_documento_identificacao),\n    documentoRepresentante: nomeArquivo(a.arquivo_documento_representante),\n    procuracao: nomeArquivo(a.arquivo_procuracao),\n    outrosDocumentos: nomeArquivos(a.arquivo_outros_documentos),\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "pedidos_certidao_emergencia",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "nome": "{{step_1.nome}}",
+                  "email": "{{step_1.email}}",
+                  "perfil": "{{step_1.perfil}}",
+                  "nome_ligou": "{{step_1.nomeLigou}}",
+                  "numero_emergencia": "{{step_1.numeroEmergencia}}",
+                  "municipio_ocorrencia": "{{step_1.municipioOcorrencia}}",
+                  "data_fato": "{{step_1.dataFato}}",
+                  "hora_fato": "{{step_1.horaFato}}",
+                  "finalidade": "{{step_1.finalidade}}",
+                  "documento_identificacao": "{{step_1.documentoIdentificacao}}",
+                  "documento_representante": "{{step_1.documentoRepresentante}}",
+                  "procuracao": "{{step_1.procuracao}}",
+                  "outros_documentos": "{{step_1.outrosDocumentos}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome"
+                    },
+                    "email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "email"
+                    },
+                    "perfil": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "perfil"
+                    },
+                    "nome_ligou": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome_ligou"
+                    },
+                    "numero_emergencia": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "numero_emergencia"
+                    },
+                    "municipio_ocorrencia": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "municipio_ocorrencia"
+                    },
+                    "data_fato": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "data_fato"
+                    },
+                    "hora_fato": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "hora_fato"
+                    },
+                    "finalidade": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "finalidade"
+                    },
+                    "documento_identificacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "documento_identificacao"
+                    },
+                    "documento_representante": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "documento_representante"
+                    },
+                    "procuracao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "procuracao"
+                    },
+                    "outros_documentos": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "outros_documentos"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra o pedido na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

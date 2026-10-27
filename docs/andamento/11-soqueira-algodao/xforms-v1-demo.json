@@ -1,0 +1,95 @@
+{
+  "title": "Requerer certificado de destruição de soqueira de algodão",
+  "description": "Solicicitação do Certificado de Destruição de Soqueira de Algodão",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "pagina",
+      "title": "REQUERIMENTO DE CERTIFICADO",
+      "description": "Requerer certificado de destruição de soqueira de algodão",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome",
+          "description": "Nome do responsável",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "startWithNewLine": false,
+          "title": "CPF",
+          "description": "Informe seu CPF",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone",
+          "title": "Telefone",
+          "description": "Informe seu telefone",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "startWithNewLine": false,
+          "title": "Email",
+          "description": "Informe seu email",
+          "isRequired": true
+        },
+        {
+          "type": "checkbox",
+          "name": "area_plantio",
+          "title": "Área de plantio",
+          "description": "selecione uma ou duas opções",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "igual_menor_50_hectares",
+              "text": "Área de plantio até 50 hectares"
+            },
+            {
+              "value": "acima_50_hectares",
+              "text": "Área de plantio acima de 50 hectares"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "relatorio_fiscalizacao",
+          "title": "Relatório de Fiscalização (RF)",
+          "description": "Emitir o relatório no E-Saniagro",
+          "isRequired": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "guia_daems",
+          "title": "Guia da DAEMS",
+          "description": "Emitir DAEMS correspondente à sua área de plantio",
+          "isRequired": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "comprovante_pagamento",
+          "title": "Comprovante de pagamento",
+          "description": "Comprovante de pagamento",
+          "isRequired": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    }
+  ]
+}

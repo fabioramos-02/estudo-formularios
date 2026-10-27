@@ -1,0 +1,61 @@
+{
+  "externalId": "pedidos_certificado_soqueira",
+  "nome": "Certificado de destruição de soqueira de algodão IAGRO",
+  "campos": [
+    [
+      "protocolo",
+      "Protocolo",
+      "TEXT"
+    ],
+    [
+      "recebido_em",
+      "Recebido em",
+      "DATE"
+    ],
+    [
+      "situacao",
+      "Situação",
+      "TEXT"
+    ],
+    [
+      "nome",
+      "Nome",
+      "TEXT"
+    ],
+    [
+      "email",
+      "E-mail",
+      "TEXT"
+    ],
+    [
+      "area_plantio",
+      "Area plantio",
+      "TEXT"
+    ],
+    [
+      "relatorio_fiscalizacao",
+      "Relatorio fiscalizacao",
+      "TEXT"
+    ],
+    [
+      "guia_daems",
+      "Guia daems",
+      "TEXT"
+    ],
+    [
+      "comprovante_pagamento",
+      "Comprovante pagamento",
+      "TEXT"
+    ],
+    [
+      "servico",
+      "Serviço (serviceSlug)",
+      "TEXT"
+    ],
+    [
+      "usuario",
+      "Usuário (sub)",
+      "TEXT"
+    ]
+  ]
+}

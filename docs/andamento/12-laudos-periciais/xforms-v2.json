@@ -1,0 +1,461 @@
+{
+  "title": "Pedir cópia de laudo pericial",
+  "description": "Para pedir cópia de laudo emitido pela Coordenadoria-Geral de Perícias (CGP), da Secretaria de Estado de Justiça e Segurança Pública (SEJUSP). Serve para processo na Justiça, seguro ou outra finalidade oficial.",
+  "pages": [
+    {
+      "name": "perfil",
+      "title": "Quem está fazendo o pedido",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "perfil_solicitante",
+          "isRequired": true,
+          "requiredErrorText": "Escolha uma opção para continuar.",
+          "title": "Você é",
+          "choices": [
+            {
+              "value": "envolvido",
+              "text": "A pessoa envolvida no fato"
+            },
+            {
+              "value": "procurador",
+              "text": "Procurador, com procuração da pessoa envolvida"
+            },
+            {
+              "value": "familiar",
+              "text": "Familiar de 1º grau de vítima que faleceu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "seus_dados",
+      "title": "Seus dados",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_completo",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome completo para continuar.",
+          "title": "Seu nome completo",
+          "autocomplete": "name",
+          "tooltip": "Vem da sua conta. Corrija se estiver diferente do documento."
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "isRequired": true,
+          "requiredErrorText": "Digite um CPF válido, com 11 números.",
+          "title": "CPF",
+          "description": "Cadastro de Pessoa Física.",
+          "autocomplete": "cpf",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "data_nascimento",
+          "isRequired": true,
+          "requiredErrorText": "Informe a data de nascimento para continuar.",
+          "title": "Data de nascimento",
+          "inputType": "date",
+          "startWithNewLine": false,
+          "maxValueExpression": "today()"
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o e-mail para continuar.",
+          "title": "E-mail",
+          "inputType": "email",
+          "autocomplete": "email",
+          "placeholder": "nome@exemplo.com.br",
+          "validators": [
+            {
+              "type": "email",
+              "text": "Digite um e-mail no formato nome@dominio."
+            }
+          ],
+          "tooltip": "As orientações para continuar o pedido chegam neste e-mail."
+        },
+        {
+          "type": "text",
+          "name": "telefone_celular",
+          "isRequired": true,
+          "requiredErrorText": "Digite o celular com DDD, 11 números.",
+          "title": "Celular",
+          "startWithNewLine": false,
+          "inputType": "tel",
+          "autocomplete": "tel",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          },
+          "placeholder": "(00) 00000-0000",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\(?\\d{2}\\)?\\s?\\d{4,5}-?\\d{4}$",
+              "text": "Digite o celular com DDD, 11 números."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "endereco",
+      "title": "Seu endereço",
+      "elements": [
+        {
+          "type": "text",
+          "name": "cep",
+          "isRequired": true,
+          "requiredErrorText": "Digite o CEP com 8 números.",
+          "title": "CEP",
+          "autocomplete": "postal-code",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "99999-999"
+          },
+          "placeholder": "00000-000",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{5}-?\\d{3}$",
+              "text": "Digite o CEP com 8 números."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "logradouro",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o endereço para continuar.",
+          "title": "Endereço",
+          "description": "Rua, número e complemento.",
+          "autocomplete": "street-address"
+        },
+        {
+          "type": "text",
+          "name": "bairro",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o bairro para continuar.",
+          "title": "Bairro"
+        },
+        {
+          "type": "text",
+          "name": "municipio",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o município para continuar.",
+          "title": "Município",
+          "startWithNewLine": false
+        },
+        {
+          "type": "dropdown",
+          "name": "uf",
+          "isRequired": true,
+          "requiredErrorText": "Escolha o estado para continuar.",
+          "title": "Estado",
+          "placeholder": "Selecione",
+          "choices": [
+            {
+              "value": "AC",
+              "text": "Acre"
+            },
+            {
+              "value": "AL",
+              "text": "Alagoas"
+            },
+            {
+              "value": "AP",
+              "text": "Amapá"
+            },
+            {
+              "value": "AM",
+              "text": "Amazonas"
+            },
+            {
+              "value": "BA",
+              "text": "Bahia"
+            },
+            {
+              "value": "CE",
+              "text": "Ceará"
+            },
+            {
+              "value": "DF",
+              "text": "Distrito Federal"
+            },
+            {
+              "value": "ES",
+              "text": "Espírito Santo"
+            },
+            {
+              "value": "GO",
+              "text": "Goiás"
+            },
+            {
+              "value": "MA",
+              "text": "Maranhão"
+            },
+            {
+              "value": "MT",
+              "text": "Mato Grosso"
+            },
+            {
+              "value": "MS",
+              "text": "Mato Grosso do Sul"
+            },
+            {
+              "value": "MG",
+              "text": "Minas Gerais"
+            },
+            {
+              "value": "PA",
+              "text": "Pará"
+            },
+            {
+              "value": "PB",
+              "text": "Paraíba"
+            },
+            {
+              "value": "PR",
+              "text": "Paraná"
+            },
+            {
+              "value": "PE",
+              "text": "Pernambuco"
+            },
+            {
+              "value": "PI",
+              "text": "Piauí"
+            },
+            {
+              "value": "RJ",
+              "text": "Rio de Janeiro"
+            },
+            {
+              "value": "RN",
+              "text": "Rio Grande do Norte"
+            },
+            {
+              "value": "RS",
+              "text": "Rio Grande do Sul"
+            },
+            {
+              "value": "RO",
+              "text": "Rondônia"
+            },
+            {
+              "value": "RR",
+              "text": "Roraima"
+            },
+            {
+              "value": "SC",
+              "text": "Santa Catarina"
+            },
+            {
+              "value": "SP",
+              "text": "São Paulo"
+            },
+            {
+              "value": "SE",
+              "text": "Sergipe"
+            },
+            {
+              "value": "TO",
+              "text": "Tocantins"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "fato",
+      "title": "Sobre o fato e o laudo",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_vitima",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome da vítima para continuar.",
+          "title": "Nome completo da vítima",
+          "description": "Se a vítima é você, repita o seu nome."
+        },
+        {
+          "type": "text",
+          "name": "nome_outorgante",
+          "visibleIf": "{perfil_solicitante} = 'procurador'",
+          "requiredIf": "{perfil_solicitante} = 'procurador'",
+          "requiredErrorText": "Preencha o nome de quem deu a procuração para continuar.",
+          "title": "Nome de quem deu a procuração",
+          "description": "A pessoa que você representa (outorgante)."
+        },
+        {
+          "type": "text",
+          "name": "data_fato",
+          "isRequired": true,
+          "requiredErrorText": "Informe a data do fato para continuar.",
+          "title": "Data do fato",
+          "inputType": "date",
+          "maxValueExpression": "today()"
+        },
+        {
+          "type": "text",
+          "name": "numero_ocorrencia",
+          "title": "Número do boletim de ocorrência, do inquérito ou do processo penal",
+          "description": "Se tiver. Ajuda a encontrar o laudo."
+        },
+        {
+          "type": "text",
+          "name": "local_fato",
+          "title": "Onde o fato aconteceu",
+          "description": "Rua, bairro, cidade e CEP, se souber."
+        },
+        {
+          "type": "checkbox",
+          "name": "tipo_laudo",
+          "title": "Tipo de laudo",
+          "description": "Pode marcar mais de um. Se não souber, deixe em branco.",
+          "choices": [
+            {
+              "value": "analises_laboratoriais",
+              "text": "Análises laboratoriais"
+            },
+            {
+              "value": "criminalistica",
+              "text": "Criminalística"
+            },
+            {
+              "value": "identificacao",
+              "text": "Identificação"
+            },
+            {
+              "value": "medicina_legal",
+              "text": "Medicina legal"
+            }
+          ]
+        },
+        {
+          "type": "comment",
+          "name": "descricao_fato",
+          "isRequired": true,
+          "requiredErrorText": "Conte o que aconteceu para continuar.",
+          "title": "O que aconteceu",
+          "description": "Conte em poucas linhas."
+        },
+        {
+          "type": "comment",
+          "name": "informacoes_adicionais",
+          "title": "Informações adicionais",
+          "description": "Se quiser, acrescente algo que ajude no pedido."
+        }
+      ]
+    },
+    {
+      "name": "documentos",
+      "title": "Documentos",
+      "description": "Arquivos em PDF, JPG ou PNG, até 5 MB cada. Pode anexar mais de um arquivo, como a frente e o verso do documento.",
+      "elements": [
+        {
+          "type": "file",
+          "name": "arquivo_documento_identificacao_envolvido",
+          "title": "Documento de identificação da pessoa envolvida no fato",
+          "description": "Se a pessoa envolvida é você, anexe o seu documento.",
+          "requiredErrorText": "Anexe o documento de identificação da pessoa envolvida para continuar.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "isRequired": true
+        },
+        {
+          "type": "file",
+          "name": "arquivo_documento_identificacao_solicitante",
+          "title": "Seu documento de identificação",
+          "description": "Documento de quem está fazendo o pedido.",
+          "requiredErrorText": "Anexe o seu documento de identificação para continuar.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "visibleIf": "{perfil_solicitante} = 'procurador' or {perfil_solicitante} = 'familiar'",
+          "requiredIf": "{perfil_solicitante} = 'procurador' or {perfil_solicitante} = 'familiar'"
+        },
+        {
+          "type": "file",
+          "name": "arquivo_procuracao",
+          "title": "Procuração",
+          "description": "A procuração dada pela pessoa que você representa.",
+          "requiredErrorText": "Anexe a procuração para continuar.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "visibleIf": "{perfil_solicitante} = 'procurador'",
+          "requiredIf": "{perfil_solicitante} = 'procurador'"
+        },
+        {
+          "type": "file",
+          "name": "arquivo_comprovante_parentesco",
+          "title": "Comprovante de parentesco",
+          "description": "Documento que mostra o seu parentesco com a vítima.",
+          "requiredErrorText": "Anexe o comprovante de parentesco para continuar.",
+          "acceptedTypes": ".pdf,.jpg,.jpeg,.png",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": true,
+          "waitForUpload": true,
+          "visibleIf": "{perfil_solicitante} = 'familiar'",
+          "requiredIf": "{perfil_solicitante} = 'familiar'"
+        }
+      ]
+    },
+    {
+      "name": "condicoes",
+      "title": "Condições do pedido",
+      "elements": [
+        {
+          "type": "html",
+          "name": "texto_condicoes",
+          "html": "<p><strong>Antes de enviar, leia as condições:</strong></p><ul><li>A cópia do laudo só é entregue depois de confirmado que o inquérito policial ou o processo penal não está em segredo de justiça.</li><li>Você vai receber um e-mail com as orientações para continuar o pedido e para pagar a guia DAEMS (Documento de Arrecadação do Estado de Mato Grosso do Sul).</li><li>A cópia é cobrada por folha: 0,5 (meia) UFERMS por folha. UFERMS é a Unidade Fiscal Estadual de Referência de Mato Grosso do Sul.</li></ul>"
+        },
+        {
+          "type": "checkbox",
+          "name": "aceite_condicoes",
+          "isRequired": true,
+          "requiredErrorText": "Marque que está ciente das condições para enviar.",
+          "title": "Confirmação",
+          "choices": [
+            {
+              "value": "ciente",
+              "text": "Li e estou ciente das condições acima."
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos",
+          "html": "<p><strong>Depois do envio:</strong> a CGP manda para o e-mail informado as orientações para continuar o pedido e para pagar a guia DAEMS.</p>"
+        }
+      ]
+    }
+  ],
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off"
+}
