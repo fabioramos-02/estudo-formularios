@@ -26,6 +26,7 @@ Além disso, esta seção guarda:
 - [Diário da refatoração](01-wordpress/notas.md)
 
 *Redução: 51 → 32 campos (`name` únicos); 7 → 5 páginas visíveis por vez.*
+*Versão 2 no X-Forms e X-Flows de DEV desde 27/10/2026 — ver o fim do diário.*
 
 ### 2–14. A fazer
 

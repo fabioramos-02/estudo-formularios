@@ -1,0 +1,208 @@
+{
+  "displayName": "X-Forms: solicitar acesso ao WordPress",
+  "trigger": {
+    "name": "trigger",
+    "valid": true,
+    "displayName": "Recebe a resposta do X-Forms",
+    "nextAction": {
+      "name": "step_1",
+      "skip": false,
+      "type": "CODE",
+      "valid": true,
+      "settings": {
+        "input": {
+          "dados": "{{trigger.body}}"
+        },
+        "sampleData": {},
+        "sourceCode": {
+          "code": "export const code = async (inputs) => {\n  const { answers = {}, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const a = answers;\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  // Data de MS (UTC-4) no protocolo, para não virar o dia depois das 20h\n  const dataMS = new Date(new Date(recebidoEm).getTime() - 4 * 3600 * 1000).toISOString().slice(0, 10).replace(/-/g, '');\n  // ponytail: aleatório como no exemplo; trocar pelo protocolo da API de Tramitação quando houver\n  const protocolo = 'WP-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n  const mesmoGestor = a.responsavel_e_gestor === true;\n  return {\n    protocolo,\n    recebidoEm,\n    situacao: 'Recebido',\n    perfil: a.perfil_solicitante ?? '',\n    nomeSite: a.nome_site ?? '',\n    urlSite: a.url_site ?? '',\n    permissao: a.permissao_acesso ?? '',\n    colaboradorNome: a.nome_colaborador ?? '',\n    colaboradorEmail: a.email_colaborador ?? '',\n    colaboradorLogin: a.login_rede_colaborador ?? '',\n    colaboradorOrgao: a.orgao_colaborador ?? '',\n    gestorNome: a.nome_gestor ?? '',\n    gestorEmail: a.email_gestor ?? '',\n    responsavelNome: (mesmoGestor ? a.nome_gestor : a.nome_responsavel) ?? '',\n    responsavelEmail: (mesmoGestor ? a.email_gestor : a.email_responsavel) ?? '',\n    servico: serviceSlug ?? '',\n    usuario: userId ?? 'não informado',\n  };\n};",
+          "packageJson": "{}"
+        },
+        "propertySettings": {
+          "dados": {
+            "type": "MANUAL"
+          }
+        },
+        "errorHandlingOptions": {
+          "retryOnFailure": {
+            "value": false
+          },
+          "continueOnFailure": {
+            "value": false
+          }
+        }
+      },
+      "nextAction": {
+        "name": "step_2",
+        "skip": false,
+        "type": "PIECE",
+        "valid": true,
+        "settings": {
+          "input": {
+            "table_id": "solicitacoes_wordpress",
+            "values": {
+              "values": [
+                {
+                  "protocolo": "{{step_1.protocolo}}",
+                  "recebido_em": "{{step_1.recebidoEm}}",
+                  "situacao": "{{step_1.situacao}}",
+                  "perfil": "{{step_1.perfil}}",
+                  "nome_site": "{{step_1.nomeSite}}",
+                  "url_site": "{{step_1.urlSite}}",
+                  "permissao": "{{step_1.permissao}}",
+                  "colaborador_nome": "{{step_1.colaboradorNome}}",
+                  "colaborador_email": "{{step_1.colaboradorEmail}}",
+                  "colaborador_login": "{{step_1.colaboradorLogin}}",
+                  "colaborador_orgao": "{{step_1.colaboradorOrgao}}",
+                  "gestor_nome": "{{step_1.gestorNome}}",
+                  "gestor_email": "{{step_1.gestorEmail}}",
+                  "responsavel_nome": "{{step_1.responsavelNome}}",
+                  "responsavel_email": "{{step_1.responsavelEmail}}",
+                  "servico": "{{step_1.servico}}",
+                  "usuario": "{{step_1.usuario}}"
+                }
+              ]
+            }
+          },
+          "pieceName": "@activepieces/piece-tables",
+          "actionName": "tables-create-records",
+          "sampleData": {},
+          "pieceVersion": "0.3.0",
+          "propertySettings": {
+            "values": {
+              "type": "MANUAL",
+              "schema": {
+                "values": {
+                  "type": "ARRAY",
+                  "required": true,
+                  "properties": {
+                    "protocolo": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "protocolo"
+                    },
+                    "recebido_em": {
+                      "type": "DATE_TIME",
+                      "required": false,
+                      "displayName": "recebido_em"
+                    },
+                    "situacao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "situacao"
+                    },
+                    "perfil": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "perfil"
+                    },
+                    "nome_site": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "nome_site"
+                    },
+                    "url_site": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "url_site"
+                    },
+                    "permissao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "permissao"
+                    },
+                    "colaborador_nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "colaborador_nome"
+                    },
+                    "colaborador_email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "colaborador_email"
+                    },
+                    "colaborador_login": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "colaborador_login"
+                    },
+                    "colaborador_orgao": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "colaborador_orgao"
+                    },
+                    "gestor_nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "gestor_nome"
+                    },
+                    "gestor_email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "gestor_email"
+                    },
+                    "responsavel_nome": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "responsavel_nome"
+                    },
+                    "responsavel_email": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "responsavel_email"
+                    },
+                    "servico": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "servico"
+                    },
+                    "usuario": {
+                      "type": "SHORT_TEXT",
+                      "required": false,
+                      "displayName": "usuario"
+                    }
+                  },
+                  "description": "Add one or more records to insert",
+                  "displayName": "Records"
+                }
+              }
+            },
+            "table_id": {
+              "type": "MANUAL"
+            }
+          },
+          "errorHandlingOptions": {
+            "retryOnFailure": {
+              "value": false
+            },
+            "continueOnFailure": {
+              "value": false
+            }
+          }
+        },
+        "displayName": "Registra a solicitação na tabela"
+      },
+      "displayName": "Gera protocolo e organiza o pedido"
+    },
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "propertySettings": {
+        "authType": {
+          "type": "MANUAL"
+        },
+        "authFields": {
+          "type": "MANUAL",
+          "schema": {}
+        }
+      },
+      "pieceName": "@activepieces/piece-webhook",
+      "pieceVersion": "0.1.32",
+      "triggerName": "catch_webhook",
+      "input": {
+        "authType": "none",
+        "authFields": {}
+      }
+    }
+  },
+  "schemaVersion": "21"
+}

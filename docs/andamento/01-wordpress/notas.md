@@ -175,11 +175,11 @@ Depois: mensagem específica **como corrigir** (checklist D2).
 
 ## Limitações do X-Forms observadas
 
-- **[FATO]** Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado declarando as duas ordens no JSON, cada página com `visibleIf` no `perfil_solicitante`, e reaproveitando os mesmos `name` de campo nas duplicatas para que o cidadão preencha o dado uma única vez.
+- **[FATO]** (ainda vale) Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado declarando as duas ordens no JSON, cada página com `visibleIf` no `perfil_solicitante`, e reaproveitando os mesmos `name` de campo nas duplicatas para que o cidadão preencha o dado uma única vez.
 - **[HIPÓTESE]** X-Forms respeita `name` compartilhado entre páginas exclusivas por `visibleIf`. Validar na plataforma. Fallback: sufixo `_alt` na 2ª cópia + coalescer no fluxo.
 - **[FATO]** Validação cruzada entre campos (ex.: "se `orgao_gestor` = AGEMS, `email_gestor` deve terminar em `@segov.ms.gov.br`") não é expressável na configuração declarativa. Não aplicada em `saida.json`.
 - **[FATO]** Máscara de CPF/telefone não persiste no webhook — dígitos chegam sem formatação. O fluxo Activepieces é o local certo pra formatar antes de enviar por e-mail/PDF.
-- **[FATO]** Tooltip não suportado. Ajuda vai em `description` (visível permanente).
+- ~~**[FATO]** Tooltip não suportado.~~ Superado em 27/10/2026: o X-Forms atual tem `tooltip` (ver Versão 2).
 - **[FATO]** Multivalorado (múltiplos itens do mesmo tipo) só via `matrix` / `paneldynamic` — não usado aqui.
 
 ---
@@ -192,3 +192,77 @@ Depois: mensagem específica **como corrigir** (checklist D2).
 4. Atualizar `docs/05-auditoria.md` — status "solicitacao-de-acesso-wordpress" → **feito**, link para este `notas.md`.
 5. Validar com Antonio: rótulos reescritos preservam intenção original?
 6. Aplicar orquestrador aos outros 13 formulários.
+
+---
+
+## Versão 2 — X-Forms e X-Flows de DEV (27/10/2026)
+
+Piloto da migração para o ambiente novo (`portal.dev.pgd.ms.gov.br`). Base: a versão que estava no ar
+no Designer antigo (demo-aws), não o `saida.json` acima.
+
+### Arquivos
+
+| Arquivo | O que é |
+|---|---|
+| `entrada.json` | Original do FormFlow (sem mudança). |
+| `saida.json` | Primeira refatoração automática (histórico). |
+| `xforms-v1-demo.json` | O que estava no ar no demo-aws. Reconstruído e conferido por hash (`6987800b0108`). |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, importada no X-Forms de DEV. |
+| `gerar_fluxo.py` → `fluxo-wordpress.json` | Fluxo importado no X-Flows de DEV. |
+
+### O que a v1 (demo-aws) já tinha mudado em relação ao `saida.json`
+
+- `[FATO]` As páginas duplicadas por perfil foram unificadas (5 páginas, sem `visibleIf` de ordem). A
+  ordem é sempre gestor → colaborador → responsável.
+- `[FATO]` `searchEnabled` e `progressBarType` saíram. O Designer não grava `searchEnabled` porque a
+  busca já é o padrão do SurveyJS 1.12.
+
+### O que mudou na v2
+
+| Mudança | Regra |
+|---|---|
+| Perfil: imagens (39 KB de SVG) → botões de opção | GOV.UK radios; C4 |
+| Tipo de acesso: caixa de seleção limitada a 1 → escolha única, com o que cada papel faz no texto da opção | C4, B1 |
+| Aviso "Estes são os seus dados" na página do perfil escolhido (`html` + `visibleIf`) | A3, B1 |
+| Nome e e-mail pré-preenchidos com a conta só na página de quem preenche (`resetValueIf` limpa a outra) | C2 |
+| "O responsável é o gestor?" (Sim/Não): se sim, os 9 campos do responsável somem e o fluxo copia os do gestor | C3 |
+| CPF com validador (`regex`) e mensagem que diz como corrigir | C6, D2 |
+| Setor: `isRequired` → `requiredIf` com a mesma condição do `visibleIf` | C9 |
+| `tooltip` em tipo de acesso, celular, e-mail do colaborador e na pergunta do responsável | B3 |
+| "Depois do envio" em `html` na última página (o portal não mostra `completedHtml`) | B6 |
+| Sem numeração de perguntas (setor escondido fazia pular de 11 para 13) | — |
+| Lista de órgãos: "SETRAT" repetido removido; "Rede Eduvativa" e "Poíticas" corrigidos | C4 |
+
+Campos de entrada: 33 (v1: 32; entrou a pergunta Sim/Não). Para quem responde "Sim", são 24.
+
+### Fluxo (X-Flows de DEV)
+
+`Recebe a resposta do X-Forms` (webhook) → `Gera protocolo e organiza o pedido` (CODE) →
+`Registra a solicitação na tabela` (Tables → `solicitacoes_wordpress`).
+
+- Protocolo `WP-AAAAMMDD-XXXXXX` com a data de MS (UTC-4). Ainda aleatório, como no exemplo do
+  Leonardo: trocar pelo protocolo da API de Tramitação quando ela existir.
+- A tabela guarda só o que a equipe usa para criar o acesso: site, tipo de acesso, colaborador (nome,
+  e-mail, login, órgão), gestor e responsável (nome e e-mail). CPF, matrícula e celular ficam só nas
+  respostas do X-Forms (minimização, LGPD art. 6º III).
+- Sem e-mail: o X-Flows de DEV não tem conexão Gmail. Criar a conexão é uma autorização da conta.
+
+### Teste em DEV
+
+| Teste | Resultado |
+|---|---|
+| Fluxo sozinho, payload fictício | `SUCCEEDED`; responsável copiado do gestor |
+| Prévia (`?isPreview=true`): dica, aviso por perfil, setor condicional | ok |
+| Pré-preenchimento | `[FATO]` `autocomplete: "name"` e `"email"` trazem nome e e-mail da conta. CPF e celular não. |
+| Pré-preenchimento na página da outra pessoa | erro na 1ª versão; corrigido com `resetValueIf` e testado de novo |
+| Envio real como colaborador, "responsável é o gestor = Sim" | "Resposta enviada!" → execução `SUCCEEDED` → linha `WP-20261027-V72CFK` na tabela |
+
+### Pendências
+
+- `[RECOMENDAÇÃO]` Cadastrar o serviço no catálogo do portal e usar o slug dele no link. O teste usou
+  `serviceSlug=solicitacao-de-inclusao-no-programa-mais-social118` (do exemplo do Leonardo) porque o
+  WordPress não tem serviço em DEV.
+- Definir quem recebe o pedido (e-mail ou fila da SETDIG) e criar a conexão Gmail no X-Flows de DEV.
+- Lista de órgãos com nomes repetidos de outro jeito (EPE 2x, FADEB 2x, PROCON 2x, AGETRAN e SETRAT são
+  municipais). Pedir a lista oficial ao órgão.
+- Duas linhas de teste na tabela `solicitacoes_wordpress` (Site de Teste e Site de Teste do Estudo).
