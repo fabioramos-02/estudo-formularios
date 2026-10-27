@@ -48,7 +48,14 @@ Além disso, esta seção guarda:
 
 *No X-Forms e X-Flows de DEV desde 27/10/2026. Corrigido: a procuração era obrigatória para todos; agora só para consultoria.*
 
-### 5–14. A fazer
+### 5. IAGRO — Cancelar registro de empresa de agrotóxicos ✅
+
+- [Notas do Antonio](mapeamento/05-cancelar-agrotoxicos.md)
+- [Diário da refatoração](05-cancelar-agrotoxicos/notas.md)
+
+*No X-Forms e X-Flows de DEV desde 27/10/2026. Saíram RG, órgão expedidor e UF do órgão; entrou e-mail para a resposta.*
+
+### 6–14. A fazer
 
 Ver a tabela em [Auditoria dos 14](../05-auditoria.md).
 
