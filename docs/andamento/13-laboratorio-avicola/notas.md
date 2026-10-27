@@ -64,6 +64,14 @@ pedido e credenciamento entram em texto ("Cadastro novo", "Sim").
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola (ID [2438](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2438)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola80> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-laboratorio-sanidade-avicola?serviceSlug=cadastrar-ou-atualizar-laboratorio-de-diagnostico-em-sanidade-avicola80> |
+
 ## Pendências
 
 - Confirmar com a IAGRO: o "Nome" da v1 era de quem preenche, do responsável técnico ou do laboratório?
@@ -72,5 +80,5 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
 - Confirmar com a IAGRO: o endereço precisa mesmo aparecer só depois do CEP? A condição da v1 foi
   mantida, mas não ajuda quem preenche: o CEP é obrigatório e os campos sempre aparecem.
 - Confirmar com a IAGRO: o escopo das análises é mesmo opcional? Na v1 era.
-- O serviço não existe no catálogo de DEV.
+- ~~O serviço não existe no catálogo de DEV.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

@@ -257,7 +257,15 @@ Campos de entrada: 33 (v1: 32; entrou a pergunta Sim/Não). Para quem responde "
 | Pré-preenchimento na página da outra pessoa | erro na 1ª versão; corrigido com `resetValueIf` e testado de novo |
 | Envio real como colaborador, "responsável é o gestor = Sim" | "Resposta enviada!" → execução `SUCCEEDED` → linha `WP-20261027-V72CFK` na tabela |
 
-### Pendências
+### Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Solicitar acesso ao Wordpress (ID [2025](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2025)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/solicitar-acesso-ao-wordpress131> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/solicitar-acesso-wordpress?serviceSlug=solicitar-acesso-ao-wordpress131> |
+
+## Pendências
 
 - `[RECOMENDAÇÃO]` Cadastrar o serviço no catálogo do portal e usar o slug dele no link. O teste usou
   `serviceSlug=solicitacao-de-inclusao-no-programa-mais-social118` (do exemplo do Leonardo) porque o

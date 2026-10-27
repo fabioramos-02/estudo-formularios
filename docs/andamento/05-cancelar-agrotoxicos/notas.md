@@ -56,6 +56,14 @@ em texto curto.
 | Estado sem escolher (Enter na busca não seleciona) | bloqueou com "Escolha o estado para continuar." |
 | Envio | "Resposta enviada!" → `SUCCEEDED` → linha `CAG-20261027-0CFFPK`, motivo "Não vai continuar vendendo (Lei Estadual 2.951/2004)" |
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico (ID [2293](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2293)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/baixar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico141> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cancelar-registro-empresa-agrotoxicos?serviceSlug=baixar-o-registro-de-estabelecimento-comercial-e-prestador-de-servico-de-agrotoxico141> |
+
 ## Pendências
 
 - Confirmar com a IAGRO: pode tirar o RG? Na v2 ele saiu.
@@ -63,5 +71,5 @@ em texto curto.
   formulário só diz "A guia paga".
 - `[RECOMENDAÇÃO]` O comprovante de inscrição no CNPJ é público na Receita Federal (Lei 14.129/2021).
   Mesmo caso do formulário 04.
-- O serviço não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.
+- ~~O serviço não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

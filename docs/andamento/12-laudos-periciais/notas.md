@@ -76,6 +76,14 @@ separados por `;`.
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Solicitar cópia de laudos periciais (ID [1309](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/1309)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/emissao-de-copia-de-laudos-periciais145> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-copia-laudo-pericial?serviceSlug=emissao-de-copia-de-laudos-periciais145> |
+
 ## Pendências
 
 - Confirmar com a CGP: pode tirar o RG e o órgão emissor? Na v2 eles saíram.
@@ -90,4 +98,4 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
 - Confirmar com a CGP: os formatos `.webp` e `.zip` da v1 eram necessários? Na v2 ficaram PDF, JPG e PNG,
   até 5 MB.
 - Confirmar com a CGP: qual o prazo para o e-mail com as orientações chegar. A v2 não promete prazo.
-- O serviço não existe no catálogo de DEV. Destino do pedido e conexão Gmail, como nos anteriores.
+- ~~O serviço não existe no catálogo de DEV.~~ Vinculado em 27/10/2026. Destino do pedido e conexão Gmail, como nos anteriores.

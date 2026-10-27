@@ -63,6 +63,14 @@ e atividade entram em texto ("Atualização", "Avicultura").
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cadastrar ou atualizar empresa integradora de ave ou suíno (ID [2439](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2439)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino1> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-empresa-integradora-aves-suinos?serviceSlug=cadastrar-ou-atualizar-empresa-integradora-de-ave-ou-suino1> |
+
 ## Pendências
 
 - Confirmar com a IAGRO: quem costuma preencher é o próprio representante legal? Se for, nome e e-mail
@@ -74,5 +82,5 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
   acesso e coordenada). Basta assim?
 - Confirmar com a IAGRO: o formato da coordenada geográfica. A v2 mantém o exemplo da v1
   ("S: -20.00000 -50.00000"), sem validação.
-- O serviço não existe no catálogo de DEV.
+- ~~O serviço não existe no catálogo de DEV.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

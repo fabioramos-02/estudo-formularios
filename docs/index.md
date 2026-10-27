@@ -34,6 +34,7 @@ desistência no meio vira atendimento presencial, telefone e retrabalho para o �
 | **O diagnóstico** — 14 formulários do FormFlow avaliados | [5. Auditoria](05-auditoria.md) |
 | **A ferramenta** — manual do Designer do X-Forms (X-VIA) | [Manual do X-Forms](xforms-manual/README.md) |
 | **Relatório consolidado** — os 14 em DEV e as pendências por órgão | [Relatório consolidado](relatorio-consolidado.md) |
+| **Serviços em DEV** — os 14 com página do serviço e botão "Acessar serviço" | [Serviços em DEV](servicos-em-dev.md) |
 
 ## Quem faz o quê
 

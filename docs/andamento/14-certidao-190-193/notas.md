@@ -74,6 +74,14 @@ quem preenche (ou o de quem ligou, quando é a mesma pessoa). Os anexos entram p
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Solicitar emissão de certidão de atendimento de emergência (ID [1400](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/1400)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/emissao-de-certidao-de-atendimento66> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-certidao-atendimento-190-193?serviceSlug=emissao-de-certidao-de-atendimento66> |
+
 ## Pendências
 
 - Confirmar com a SEJUSP: o serviço atende só Campo Grande, Dourados, Corumbá e Ponta Porã? Se sim, o
@@ -89,4 +97,4 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
 - `[HIPÓTESE]` `resetValueIf` apaga o nome e o CPF que a conta preencheu quando a pessoa escolhe
   representante ou procurador. Se voltar para "a pessoa que ligou", os campos ficam vazios. Conferir
   em **Visualizar** no portal.
-- O serviço não existe no catálogo de DEV. Destino do pedido e conexão Gmail, como nos anteriores.
+- ~~O serviço não existe no catálogo de DEV.~~ Vinculado em 27/10/2026. Destino do pedido e conexão Gmail, como nos anteriores.

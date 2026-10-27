@@ -66,6 +66,14 @@ a portaria, que aceita vários, pelos nomes separados por `;`.
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cadastrar ou atualizar médico veterinário - avicultura ou suinocultura (ID [2440](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2440)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura84> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-veterinario-aves-suinos?serviceSlug=cadastrar-ou-atualizar-medico-veterinario-avicultura-ou-suinocultura84> |
+
 ## Pendências
 
 - Confirmar com a IAGRO: pode tirar o RG? Na v2 ele saiu.
@@ -76,5 +84,5 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
 - Confirmar com a IAGRO: a portaria de habilitação no MAPA vale para todo veterinário com vínculo ou
   só para quem emite GTA? A v1 dizia "quando for emitir GTA", mas obrigava todos.
 - Confirmar com a IAGRO: que documento comprova o vínculo com a empresa ou cooperativa.
-- O serviço não existe no catálogo de DEV.
+- ~~O serviço não existe no catálogo de DEV.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

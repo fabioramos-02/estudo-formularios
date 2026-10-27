@@ -58,8 +58,16 @@ entram pelo nome do arquivo.
 | Anexo | o seletor só aceita `.pdf,.jpg,.jpeg,.png` |
 | Envio com os três anexos | "Resposta enviada!" → `SUCCEEDED` → linha `RTA-20261027-UK4EA4`, objetivo "Estabelecimentos de insumos; Cultivos de soja ou algodão" |
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cadastrar profissional habilitado para cultivos e estabelecimentos insumos agrícolas (ID [2272](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2272)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/cadastro-de-responsavel-tecnico-para-cultivos-agricolas70> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-responsavel-tecnico-agricola?serviceSlug=cadastro-de-responsavel-tecnico-para-cultivos-agricolas70> |
+
 ## Pendências
 
-- O serviço não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.
+- ~~O serviço não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Confirmar com a IAGRO: o tamanho de 5 MB por anexo serve? Foto do documento (JPG/PNG) é aceita?
 - Destino do pedido e conexão Gmail, como no WordPress.

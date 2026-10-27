@@ -10,8 +10,8 @@
   padrão do estudo. O X-Forms monta o formulário; o X-Flows recebe a resposta, gera um protocolo e grava
   o pedido numa tabela.
 - `[FATO]` Cada formulário recebeu pelo menos um envio de teste, e o fluxo rodou sem erro nos 14.
-- `[FATO]` Nenhum dos 14 serviços existe no catálogo do portal de DEV. Os testes usaram o serviço de
-  exemplo do Leonardo.
+- `[FATO]` Os 14 serviços do catálogo de DEV já abrem o formulário: o Link do Serviço foi gravado no CMS
+  em 27/10/2026. Ver [Serviços em DEV](servicos-em-dev.md).
 - `[FATO]` O pedido ainda não chega a ninguém: falta definir o destino de cada órgão e criar a conexão
   de e-mail no X-Flows.
 - Os órgãos precisam responder perguntas sobre os próprios serviços. A lista está no fim, por órgão.
@@ -62,8 +62,8 @@ dados bancários ficam só nas respostas do X-Forms (LGPD, art. 6º, III).
 
 ### Para colocar os serviços no ar
 
-1. **Catálogo.** Cadastrar os 14 serviços no catálogo do portal de DEV, ou indicar os slugs que já
-   existem. Sem isso o link não funciona para o cidadão ("Erro ao enviar resposta!").
+1. ~~**Catálogo.**~~ Feito em 27/10/2026: os 14 serviços já existiam no CMS de DEV e receberam o Link do
+   Serviço. Ver [Serviços em DEV](servicos-em-dev.md).
 2. **Destino do pedido.** Criar a conexão de e-mail (Gmail) no X-Flows de DEV, ou outra saída, e combinar
    com cada órgão quem recebe.
 3. **Protocolo.** Hoje o fluxo gera um protocolo provisório (`ART-20261027-XXXXXX`). Trocar pelo
@@ -194,6 +194,6 @@ sozinho. O diário de cada formulário tem o detalhe.
 
 ## Próximos passos
 
-1. Leonardo: catálogo, destino do pedido e conexão de e-mail. Sem isso nenhum serviço vai ao ar.
+1. Leonardo: destino do pedido e conexão de e-mail. Sem isso o pedido não chega ao órgão.
 2. Órgãos: responder as perguntas acima. O estudo ajusta o formulário e testa de novo.
 3. Estudo: testar pela tela os outros caminhos das perguntas condicionais dos formulários 06 a 14.

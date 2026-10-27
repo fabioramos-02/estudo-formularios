@@ -64,10 +64,18 @@ entram pelo nome do arquivo.
 | Envio, caminho consultoria | "Resposta enviada!" → `SUCCEEDED` → linha `AGI-20261027-GMMSE2`, UF `MS`, CNPJ sem máscara |
 | Envio, caminho própria indústria | outro envio da mesma conta, feito à mão em paralelo → `SUCCEEDED` → linha `AGI-20261027-OV3YG1`, sem procuração |
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cadastrar indústria de produtos agrotóxicos no e-saniagro (ID [2310](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2310)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/cadastrar-industria-produtos-agrotoxicos-no-e-saniagro176> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-industria-agrotoxicos-e-saniagro?serviceSlug=cadastrar-industria-produtos-agrotoxicos-no-e-saniagro176> |
+
 ## Pendências
 
 - `[RECOMENDAÇÃO]` O comprovante de inscrição no CNPJ é público na Receita Federal. Pela Lei
   14.129/2021, a IAGRO não deveria pedir o anexo. Confirmar com a IAGRO se pode sair.
 - Confirmar com a IAGRO: "Contato" da v1 era quem preenche ou outra pessoa da indústria?
-- O serviço não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.
+- ~~O serviço não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

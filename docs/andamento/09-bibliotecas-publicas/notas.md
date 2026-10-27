@@ -77,6 +77,14 @@ CNPJ da instituição quando houver e o e-mail da instituição, para a resposta
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Cadastro no Sistema Estadual de Bibliotecas Públicas de Mato Grosso do Sul (SEBP/MS) (ID [2406](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2406)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms195> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/cadastrar-biblioteca-publica?serviceSlug=cadastro-no-sistema-estadual-de-bibliotecas-publicas-de-mato-grosso-do-sul-sebpms195> |
+
 ## Pendências
 
 - Perguntar à FCMS: o que é o "diagnóstico mais recente das bibliotecas" e onde se responde? Hoje o
@@ -89,5 +97,5 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
 - Perguntar à FCMS: escolaridade pode virar lista de opções? Hoje é texto livre.
 - Perguntar à FCMS: telefone fixo (10 números) é comum? A máscara aceita só celular, como na v1.
 - Perguntar à FCMS: qual o prazo de resposta. A v2 não informa prazo.
-- O serviço não existe no catálogo de DEV. O teste vai usar o `serviceSlug` do exemplo do Leonardo.
+- ~~O serviço não existe no catálogo de DEV. O teste vai usar o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

@@ -63,6 +63,14 @@ A tabela não guarda CPF nem endereço, só o município (LGPD art. 6º III). A 
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Obter selo arte (ID [1341](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/1341)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/obtencao-do-selo-arte50> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/obter-selo-arte?serviceSlug=obtencao-do-selo-arte50> |
+
 ## Pendências
 
 - Limpar as linhas de teste da tabela `pedidos_selo_arte` (o envio de teste repetiu 5 vezes).
@@ -73,5 +81,5 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
   [Auditoria](../../05-auditoria.md).
 - Perguntar à IAGRO: qual o prazo de resposta e se há outros documentos exigidos. A v2 não informa prazo.
 - Perguntar à IAGRO: a logomarca precisa de tamanho ou resolução mínima?
-- O serviço não existe no catálogo de DEV. O teste vai usar o `serviceSlug` do exemplo do Leonardo.
+- ~~O serviço não existe no catálogo de DEV. O teste vai usar o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

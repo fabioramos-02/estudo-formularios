@@ -61,6 +61,14 @@ objeto do pedido. Anexos pelo nome do arquivo; quando há mais de um, os nomes v
 
 Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Orientações para solicitação de certidão negativa de tombamento (ID [2312](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2312)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/orientacoes-para-solicitacao-de-certidao-negativa-de-tombamento142> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-certidao-negativa-tombamento?serviceSlug=orientacoes-para-solicitacao-de-certidao-negativa-de-tombamento142> |
+
 ## Pendências
 
 - Confirmar com a FCMS: pode tirar o RG do requerente e do proprietário? Na v2 eles saíram.
@@ -71,5 +79,5 @@ Não testado pela tela: os outros caminhos das condições e as mensagens de err
   tempo)?
 - Perguntar à FCMS: qual o prazo de resposta e como a certidão é entregue. A v2 não informa prazo.
 - A v1 falava em "imóvel ou bem", mas o formulário só trata de imóvel. Confirmar se bem móvel entra.
-- O serviço não existe no catálogo de DEV. O teste vai usar o `serviceSlug` do exemplo do Leonardo.
+- ~~O serviço não existe no catálogo de DEV. O teste vai usar o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Destino do pedido e conexão Gmail, como nos anteriores.

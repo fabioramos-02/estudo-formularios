@@ -61,8 +61,16 @@ A tabela não guarda CPF nem dados bancários: diz só onde eles estão ("Nas re
 
 Não testado: caminho do servidor (a página bancária deve sumir) e o envio com anexo.
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Solicitação de Diárias para Servidores da Fundect (ID [2454](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/2454)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/solicitacao-de-diarias-para-servidores-da-fundect16> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-diarias-passagens-fundect?serviceSlug=solicitacao-de-diarias-para-servidores-da-fundect16> |
+
 ## Pendências
 
-- Serviço da Fundect não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.
+- ~~Serviço da Fundect não existe no catálogo de DEV. O teste usou o `serviceSlug` do exemplo do Leonardo.~~ Vinculado em 27/10/2026.
 - Confirmar com a Fundect: estagiário tem matrícula? O documento com foto vale só para estagiário?
 - Destino do pedido e conexão Gmail, como no WordPress.

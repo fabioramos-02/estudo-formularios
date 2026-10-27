@@ -57,6 +57,14 @@ de plantio é gravada em texto legível. Os anexos entram pelo nome do arquivo.
 | Abrir o formulário no portal | abriu sem erro; nome, CPF e e-mail vindos da conta |
 | Envio pela tela, com os três anexos | "Resposta enviada!" → `SUCCEEDED` → linha `SOQ-20261027-0B9722` |
 
+## Serviço no catálogo (27/10/2026)
+
+| | |
+|---|---|
+| Serviço no CMS | Requerer certificado de destruição de soqueira de algodão (ID [1708](https://cms.app.dev.pgd.ms.gov.br/admin/content/services/1708)) |
+| Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/emitir-certificado-de-destruicao-de-soqueira-de-algodao48> |
+| Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/pedir-certificado-destruicao-soqueira-algodao?serviceSlug=emitir-certificado-de-destruicao-de-soqueira-de-algodao48> |
+
 ## Pendências
 
 - Confirmar com a IAGRO: algum caso precisa de mais de um arquivo por anexo (por exemplo, mais de um
@@ -68,4 +76,4 @@ de plantio é gravada em texto legível. Os anexos entram pelo nome do arquivo.
   não pede nada sobre ela.
 - `[HIPÓTESE]` O comprovante de pagamento da DAEMS pode ser conferido pelo governo, sem anexo (Lei
   14.129/2021). Perguntar à IAGRO.
-- O serviço não existe no catálogo de DEV. Destino do pedido e conexão Gmail, como nos anteriores.
+- ~~O serviço não existe no catálogo de DEV.~~ Vinculado em 27/10/2026. Destino do pedido e conexão Gmail, como nos anteriores.
