@@ -1,0 +1,199 @@
+{
+  "title": "Cancelar o registro de estabelecimento comercial e prestador de serviço de agrotóxico",
+  "description": "Serviço para solicitar o encerramento oficial do registro de empresas que atuam com agrotóxicos (fabricação, comércio, transporte, armazenamento ou prestação de serviços).",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "TERMO DE COMPROMISSO",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome",
+          "title": "Nome",
+          "description": "Nome do responsável pela empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cpf",
+          "title": "CPF",
+          "description": "Informe o CPF",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          }
+        },
+        {
+          "type": "dropdown",
+          "name": "uf_orgao",
+          "title": "UF",
+          "description": "UF do Órgão Expedidor",
+          "isRequired": true,
+          "choices": [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "orgao_expedidor",
+          "startWithNewLine": false,
+          "title": "Órgão Expedidor",
+          "description": "Informe o Órgão Expedidor do RG",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "rg",
+          "startWithNewLine": false,
+          "title": "RG",
+          "description": "Informe do o RG do responsável da empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "nome_empresa",
+          "title": "Nome da empresa",
+          "description": "Nome da empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cnpj",
+          "startWithNewLine": false,
+          "title": "CNPJ",
+          "description": "Informe o CNPJ da empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "inscricao_estadual",
+          "title": "Inscrição Estadual",
+          "description": "Informe a Inscrição Estadual",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "uf",
+          "title": "UF",
+          "description": "Informe a UF",
+          "isRequired": true,
+          "choices": [
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PA",
+            "PB",
+            "PR",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SP",
+            "SE",
+            "TO"
+          ]
+        },
+        {
+          "type": "text",
+          "name": "municipio",
+          "startWithNewLine": false,
+          "title": "Município",
+          "description": "Selecione os motivos",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "endereco",
+          "title": "Endereço",
+          "description": "Informe o endereço",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "motivo",
+          "title": "Motivo",
+          "description": "Selecione os motivos",
+          "isRequired": true,
+          "choices": [
+            {
+              "value": "Não comercializamos produtos agrotóxicosm seus componentes e afins",
+              "text": "Não comercializamos produtos agrotóxicosm seus componentes e afins."
+            },
+            {
+              "value": "Não pretendemos continuar com a comercialização de agrotóxicos, seus componentes e afins, tendo em vista as exigências da Lei Estadual Nº 2951 de 17/12/04 em vigor",
+              "text": "Não pretendemos continuar com a comercialização de agrotóxicos, seus componentes e afins, tendo em vista as exigências da Lei Estadual Nº 2951 de 17/12/04 em vigor."
+            },
+            {
+              "value": "Não transportamos produtos agrotóxicos, seus componentes e afins",
+              "text": "Não transportamos produtos agrotóxicos, seus componentes e afins."
+            },
+            {
+              "value": "Não prestamos serviços na aplicação de produtos agrotóxicos, seus componentes e afins",
+              "text": "Não prestamos serviços na aplicação de produtos agrotóxicos, seus componentes e afins."
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "copia_cnpj",
+          "title": "Cópia do CNPJ",
+          "description": "Anexe uma cópia do CNPJ",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "guia_recolhimento",
+          "title": "Guia de recolhimento",
+          "description": "Anexe a guia de recolhimento",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        }
+      ]
+    }
+  ]
+}
