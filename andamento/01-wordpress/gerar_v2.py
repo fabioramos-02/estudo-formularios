@@ -65,6 +65,34 @@ perfil["type"] = "radiogroup"
 for c in perfil["choices"]:
     c.pop("imageLink", None)
 
+# Sites: o gestor pode cuidar de mais de um. Lista com uma linha por site no lugar de nome + endereço.
+# Chega no webhook como answers.sites = [{nome_site, url_site}, ...]
+site = pag["site"]
+site["title"] = "Sobre os sites"
+inicio = [i for i, e in enumerate(site["elements"]) if e["name"] in ("nome_site", "url_site")]
+site["elements"][inicio[0]:inicio[-1] + 1] = [{
+    "type": "matrixdynamic", "name": "sites",
+    "title": "Para quais sites é o acesso?",
+    # o portal não aplica validador de coluna nem mostra o erro da célula: a regra vai no texto (testado 27/10/2026)
+    "description": "Uma linha para cada site, com o endereço completo (https://…). "
+                   "Use \"Adicionar outro site\" se for mais de um.",
+    "tooltip": "Se você é gestor de mais de um site, coloque todos aqui. O tipo de acesso escolhido abaixo "
+               "vale para todos os sites da lista.",
+    "isRequired": True,
+    "requiredErrorText": "Preencha o nome e o endereço de cada site. Se sobrou uma linha vazia, clique em Remover.",
+    "rowCount": 1, "minRowCount": 1, "maxRowCount": 10,
+    "addRowText": "Adicionar outro site", "removeRowText": "Remover",
+    "columns": [
+        {"name": "nome_site", "title": "Nome do site", "cellType": "text", "isRequired": True,
+         "requiredErrorText": "Preencha o nome do site."},
+        {"name": "url_site", "title": "Endereço do site", "cellType": "text", "isRequired": True,
+         "placeholder": "https://exemplo.ms.gov.br",
+         "requiredErrorText": "Digite o endereço completo, começando com https://",
+         "validators": [{"type": "regex", "regex": r"^https?://\S+\.\S+$",
+                         "text": "Digite o endereço completo, começando com https://"}]},
+    ],
+}]
+
 # Permissão: escolha única (C4) com o que cada papel faz
 for e in pag["site"]["elements"]:
     if e["name"] == "permissao_acesso":

@@ -1250,6 +1250,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#versao-21-varios-sites-no-mesmo-pedido-27102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versão 2.1 — vários sites no mesmo pedido (27/10/2026)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pendencias" class="md-nav__link">
     <span class="md-ellipsis">
       Pendências
@@ -2168,6 +2177,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#versao-21-varios-sites-no-mesmo-pedido-27102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versão 2.1 — vários sites no mesmo pedido (27/10/2026)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pendencias" class="md-nav__link">
     <span class="md-ellipsis">
       Pendências
@@ -2874,6 +2892,39 @@ no Designer antigo (demo-aws), não o <code>saida.json</code> acima.</p>
 </tr>
 </tbody>
 </table>
+<h2 id="versao-21-varios-sites-no-mesmo-pedido-27102026">Versão 2.1 — vários sites no mesmo pedido (27/10/2026)<a class="headerlink" href="#versao-21-varios-sites-no-mesmo-pedido-27102026" title="Permanent link">&para;</a></h2>
+<p>O gestor pode cuidar de mais de um site. "Nome do site" e "Endereço do site" viraram uma lista
+(<code>matrixdynamic</code> <code>sites</code>): uma linha por site, botão "Adicionar outro site", até 10. O <code>tooltip</code> explica que o
+tipo de acesso escolhido vale para todos os sites da lista.</p>
+<table>
+<thead>
+<tr>
+<th>Teste em DEV</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lista na tela</td>
+<td>aparece com uma linha, "Adicionar outro site" e "Remover"</td>
+</tr>
+<tr>
+<td>Linha vazia</td>
+<td>bloqueou, mas com a mensagem geral da lista, não a da célula</td>
+</tr>
+<tr>
+<td>Endereço sem <code>https://</code></td>
+<td><code>[FATO]</code> <strong>passou</strong>: o portal não aplica o validador da coluna</td>
+</tr>
+<tr>
+<td>Envio com dois sites (API, <code>serviceSlug</code> real)</td>
+<td><code>SUCCEEDED</code> → linha <code>WP-20261027-S6WHZF</code>, sites separados por "; "</td>
+</tr>
+</tbody>
+</table>
+<p>Por isso a regra do endereço foi para a descrição da lista, e a mensagem geral passou a dizer
+"Preencha o nome e o endereço de cada site. Se sobrou uma linha vazia, clique em Remover."
+Hash no ar: <code>1c14701a0b6b</code>. O fluxo grava <code>nome_site</code> e <code>url_site</code> como lista em texto (<code>a; b</code>).</p>
 <h2 id="pendencias">Pendências<a class="headerlink" href="#pendencias" title="Permanent link">&para;</a></h2>
 <ul>
 <li><code>[RECOMENDAÇÃO]</code> Cadastrar o serviço no catálogo do portal e usar o slug dele no link. O teste usou
