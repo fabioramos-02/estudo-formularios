@@ -1,0 +1,224 @@
+{
+  "title": "Pedir diárias e passagens na Fundect",
+  "description": "Para servidores e estagiários da Fundect (Fundação de Apoio ao Desenvolvimento do Ensino, Ciência e Tecnologia de MS) que vão viajar a serviço.",
+  "pages": [
+    {
+      "name": "solicitante",
+      "title": "Quem vai viajar",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "vinculo",
+          "title": "Você é",
+          "isRequired": true,
+          "requiredErrorText": "Escolha uma opção para continuar.",
+          "tooltip": "O estagiário informa também os dados bancários. Os do servidor já estão no sistema de Recursos Humanos.",
+          "choices": [
+            {
+              "value": "servidor",
+              "text": "Servidor da Fundect"
+            },
+            {
+              "value": "estagiario",
+              "text": "Estagiário da Fundect"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "nome_completo",
+          "title": "Nome completo",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o nome completo para continuar.",
+          "autocomplete": "name",
+          "tooltip": "Vem da sua conta. Corrija se estiver diferente do documento."
+        },
+        {
+          "type": "text",
+          "name": "email",
+          "title": "E-mail",
+          "isRequired": true,
+          "inputType": "email",
+          "autocomplete": "email",
+          "requiredErrorText": "Preencha o e-mail para continuar.",
+          "validators": [
+            {
+              "type": "email",
+              "text": "Digite um e-mail no formato nome@dominio."
+            }
+          ],
+          "tooltip": "A resposta do pedido chega neste e-mail."
+        },
+        {
+          "type": "text",
+          "name": "matricula",
+          "title": "Matrícula",
+          "description": "O número que aparece no seu contracheque.",
+          "isRequired": true,
+          "requiredErrorText": "Preencha a matrícula para continuar."
+        },
+        {
+          "type": "radiogroup",
+          "name": "tipo_solicitacao",
+          "title": "O que você precisa?",
+          "isRequired": true,
+          "requiredErrorText": "Escolha uma opção para continuar.",
+          "choices": [
+            {
+              "value": "diarias",
+              "text": "Diárias"
+            },
+            {
+              "value": "passagens",
+              "text": "Passagens"
+            },
+            {
+              "value": "ambos",
+              "text": "Diárias e passagens"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "viagem",
+      "title": "Sobre a viagem",
+      "elements": [
+        {
+          "type": "text",
+          "name": "cidade_origem",
+          "title": "Cidade de saída",
+          "isRequired": true,
+          "requiredErrorText": "Preencha a cidade de saída para continuar."
+        },
+        {
+          "type": "text",
+          "name": "cidade_destino",
+          "title": "Cidade de destino",
+          "startWithNewLine": false,
+          "isRequired": true,
+          "requiredErrorText": "Preencha a cidade de destino para continuar."
+        },
+        {
+          "type": "text",
+          "name": "data_saida",
+          "title": "Data de ida",
+          "inputType": "date",
+          "isRequired": true,
+          "requiredErrorText": "Preencha a data de ida para continuar."
+        },
+        {
+          "type": "text",
+          "name": "data_retorno",
+          "title": "Data de volta",
+          "inputType": "date",
+          "startWithNewLine": false,
+          "isRequired": true,
+          "requiredErrorText": "Preencha a data de volta para continuar.",
+          "validators": [
+            {
+              "type": "expression",
+              "expression": "{data_retorno} >= {data_saida}",
+              "text": "A data de volta precisa ser no mesmo dia ou depois da data de ida."
+            }
+          ]
+        },
+        {
+          "type": "comment",
+          "name": "objetivo_viagem",
+          "title": "Para que é a viagem?",
+          "description": "Diga a atividade e onde vai acontecer.",
+          "isRequired": true,
+          "maxLength": 500,
+          "requiredErrorText": "Conte para que é a viagem para continuar."
+        },
+        {
+          "type": "comment",
+          "name": "veiculo_utilizado",
+          "title": "Como você vai viajar?",
+          "description": "Exemplo: carro oficial, carro próprio, ônibus.",
+          "visibleIf": "{tipo_solicitacao} = 'diarias'",
+          "maxLength": 200,
+          "tooltip": "Aparece só quando você não pediu passagem."
+        },
+        {
+          "type": "file",
+          "name": "arquivo_documento_pessoal",
+          "title": "Documento com foto (opcional)",
+          "description": "Cópia em PDF, até 5 MB.",
+          "acceptedTypes": ".pdf",
+          "maxSize": 5242880,
+          "storeDataAsText": true,
+          "allowMultiple": false
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos_servidor",
+          "visibleIf": "{vinculo} = 'servidor'",
+          "html": "<p><strong>Depois do envio:</strong> a Fundect analisa o pedido e a resposta chega no e-mail informado.</p>"
+        }
+      ]
+    },
+    {
+      "name": "dados_bancarios",
+      "title": "Dados para receber o pagamento",
+      "description": "Só para estagiário. Os dados do servidor já estão no sistema de Recursos Humanos.",
+      "visibleIf": "{vinculo} = 'estagiario'",
+      "elements": [
+        {
+          "type": "text",
+          "name": "cpf",
+          "title": "CPF",
+          "description": "Cadastro de Pessoa Física.",
+          "isRequired": true,
+          "autocomplete": "cpf",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "999.999.999-99"
+          },
+          "placeholder": "000.000.000-00",
+          "requiredErrorText": "Digite um CPF válido, com 11 números.",
+          "validators": [
+            {
+              "type": "regex",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$",
+              "text": "Digite um CPF com 11 números."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "banco",
+          "title": "Banco",
+          "placeholder": "Ex.: 001 ou Banco do Brasil",
+          "isRequired": true,
+          "requiredErrorText": "Preencha o banco para continuar."
+        },
+        {
+          "type": "text",
+          "name": "agencia",
+          "title": "Agência",
+          "description": "Com o dígito, se tiver.",
+          "isRequired": true,
+          "requiredErrorText": "Preencha a agência para continuar."
+        },
+        {
+          "type": "text",
+          "name": "conta",
+          "title": "Conta corrente",
+          "description": "Com o dígito.",
+          "startWithNewLine": false,
+          "isRequired": true,
+          "requiredErrorText": "Preencha a conta para continuar."
+        },
+        {
+          "type": "html",
+          "name": "aviso_proximos_passos_estagiario",
+          "html": "<p><strong>Depois do envio:</strong> a Fundect analisa o pedido e a resposta chega no e-mail informado.</p>"
+        }
+      ]
+    }
+  ],
+  "showProgressBar": "top",
+  "showQuestionNumbers": "off"
+}

@@ -28,7 +28,13 @@ Além disso, esta seção guarda:
 *Redução: 51 → 32 campos (`name` únicos); 7 → 5 páginas visíveis por vez.*
 *Versão 2 no X-Forms e X-Flows de DEV desde 27/10/2026 — ver o fim do diário.*
 
-### 2–14. A fazer
+### 2. Fundect — Pedir diárias e passagens ✅
+
+- [Diário da refatoração](02-diarias-fundect/notas.md)
+
+*No X-Forms e X-Flows de DEV desde 27/10/2026. Corrigido: o servidor não conseguia enviar (dados bancários obrigatórios para todos).*
+
+### 3–14. A fazer
 
 Ver a tabela em [Auditoria dos 14](../05-auditoria.md).
 
