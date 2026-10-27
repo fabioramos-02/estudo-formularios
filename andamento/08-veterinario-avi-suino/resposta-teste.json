@@ -1,0 +1,33 @@
+{
+  "tipo_pedido": "cadastro",
+  "nome_completo": "Pessoa Teste SETDIG",
+  "cpf": "529.982.247-25",
+  "email": "teste.setdig@exemplo.com.br",
+  "telefones": {
+    "telefone_celular": "(67) 99999-0000",
+    "telefone_adicional": "(67) 99999-0000"
+  },
+  "numero_crmv": "Teste",
+  "cep": "11111-111",
+  "logradouro": "Teste",
+  "municipio": "Teste",
+  "uf": "AC",
+  "empresa_vinculada": "sim",
+  "cnpj_empresa": "11.111.111/1111-11",
+  "razao_social_empresa": "Teste",
+  "numero_portaria_mapa": "Teste",
+  "arquivo_vinculo_empresa": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "arquivo_portaria_mapa": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ]
+}

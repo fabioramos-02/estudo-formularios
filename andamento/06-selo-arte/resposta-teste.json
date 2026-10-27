@@ -1,0 +1,21 @@
+{
+  "nome_completo": "Pessoa Teste SETDIG",
+  "cpf": "529.982.247-25",
+  "email": "teste.setdig@exemplo.com.br",
+  "nome_estabelecimento": "Pessoa Teste SETDIG",
+  "registro_servico_inspecao": "Teste",
+  "numero_registro": "Teste",
+  "logradouro": "Teste",
+  "municipio": "Água Clara",
+  "produtos": "Texto de teste do estudo de formulários da SETDIG.",
+  "declaracao_ciencia": [
+    "ciente"
+  ],
+  "arquivo_logomarca": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ]
+}

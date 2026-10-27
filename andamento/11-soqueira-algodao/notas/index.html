@@ -26,7 +26,7 @@
     
     
       
-        <title>11. Soqueira de algodão — Rascunho - Estudo de Formulários — X-Forms</title>
+        <title>11. Soqueira de algodão — Refatoração - Estudo de Formulários — X-Forms</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              11. Soqueira de algodão — Rascunho
+              11. Soqueira de algodão — Refatoração
             
           </span>
         </div>
@@ -1054,7 +1054,7 @@
         
   
   <span class="md-ellipsis">
-    6. Selo Arte — Rascunho
+    6. Selo Arte — Refatoração
   </span>
   
 
@@ -1075,7 +1075,7 @@
         
   
   <span class="md-ellipsis">
-    7. Negativa de tombamento — Rascunho
+    7. Negativa de tombamento — Refatoração
   </span>
   
 
@@ -1096,7 +1096,7 @@
         
   
   <span class="md-ellipsis">
-    8. Veterinário avi/suíno — Rascunho
+    8. Veterinário avi/suíno — Refatoração
   </span>
   
 
@@ -1117,7 +1117,7 @@
         
   
   <span class="md-ellipsis">
-    9. Bibliotecas públicas — Rascunho
+    9. Bibliotecas públicas — Refatoração
   </span>
   
 
@@ -1138,7 +1138,7 @@
         
   
   <span class="md-ellipsis">
-    10. Empresa integradora — Rascunho
+    10. Empresa integradora — Refatoração
   </span>
   
 
@@ -1168,7 +1168,7 @@
           
   
   <span class="md-ellipsis">
-    11. Soqueira de algodão — Rascunho
+    11. Soqueira de algodão — Refatoração
   </span>
   
 
@@ -1179,7 +1179,7 @@
         
   
   <span class="md-ellipsis">
-    11. Soqueira de algodão — Rascunho
+    11. Soqueira de algodão — Refatoração
   </span>
   
 
@@ -1228,9 +1228,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#teste-em-dev" class="md-nav__link">
+  <a href="#teste-em-dev-27102026" class="md-nav__link">
     <span class="md-ellipsis">
-      Teste em DEV
+      Teste em DEV (27/10/2026)
     </span>
   </a>
   
@@ -1265,7 +1265,7 @@
         
   
   <span class="md-ellipsis">
-    12. Laudos periciais — Rascunho
+    12. Laudos periciais — Refatoração
   </span>
   
 
@@ -1286,7 +1286,7 @@
         
   
   <span class="md-ellipsis">
-    13. Laboratório avícola — Rascunho
+    13. Laboratório avícola — Refatoração
   </span>
   
 
@@ -1307,7 +1307,7 @@
         
   
   <span class="md-ellipsis">
-    14. Certidão 190/193 — Rascunho
+    14. Certidão 190/193 — Refatoração
   </span>
   
 
@@ -1753,9 +1753,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#teste-em-dev" class="md-nav__link">
+  <a href="#teste-em-dev-27102026" class="md-nav__link">
     <span class="md-ellipsis">
-      Teste em DEV
+      Teste em DEV (27/10/2026)
     </span>
   </a>
   
@@ -1803,11 +1803,11 @@
 </tr>
 <tr>
 <td><code>gerar_v2.py</code> → <code>xforms-v2.json</code></td>
-<td>Versão 2, a importar no X-Forms de DEV (<code>/app/x-forms/forms/pedir-certificado-destruicao-soqueira-algodao</code>). Hash <code>A_PREENCHER</code>.</td>
+<td>Versão 2, a importar no X-Forms de DEV (<code>/app/x-forms/forms/pedir-certificado-destruicao-soqueira-algodao</code>). Hash <code>f74bbf68c7eb</code>.</td>
 </tr>
 <tr>
 <td><code>gerar_fluxo.py</code> → <code>fluxo.json</code></td>
-<td>Fluxo do X-Flows de DEV (<code>A_PREENCHER</code>). Usa <code>../fluxo_xflows.py</code>.</td>
+<td>Fluxo do X-Flows de DEV (<code>pOE9w0meyUrEzMQJ5EtUi</code>). Usa <code>../fluxo_xflows.py</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1904,8 +1904,29 @@
 <p>Webhook → CODE (protocolo <code>SOQ-AAAAMMDD-XXXXXX</code>) → Tables <code>pedidos_certificado_soqueira</code>.
 A tabela não guarda CPF nem celular, que ficam só nas respostas do X-Forms (LGPD art. 6º III). A área
 de plantio é gravada em texto legível. Os anexos entram pelo nome do arquivo.</p>
-<h2 id="teste-em-dev">Teste em DEV<a class="headerlink" href="#teste-em-dev" title="Permanent link">&para;</a></h2>
-<p>A fazer.</p>
+<h2 id="teste-em-dev-27102026">Teste em DEV (27/10/2026)<a class="headerlink" href="#teste-em-dev-27102026" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Teste</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Importação por API (<code>createForm</code>)</td>
+<td>schema salvo igual ao local (hash <code>f74bbf68c7eb</code>), publicado, webhook certo</td>
+</tr>
+<tr>
+<td>Abrir o formulário no portal</td>
+<td>abriu sem erro; nome, CPF e e-mail vindos da conta</td>
+</tr>
+<tr>
+<td>Envio pela tela, com os três anexos</td>
+<td>"Resposta enviada!" → <code>SUCCEEDED</code> → linha <code>SOQ-20261027-0B9722</code></td>
+</tr>
+</tbody>
+</table>
 <h2 id="pendencias">Pendências<a class="headerlink" href="#pendencias" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Confirmar com a IAGRO: algum caso precisa de mais de um arquivo por anexo (por exemplo, mais de um

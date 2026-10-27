@@ -1,0 +1,21 @@
+{
+  "nome_completo": "Pessoa Teste SETDIG",
+  "cpf": "529.982.247-25",
+  "email": "teste.setdig@exemplo.com.br",
+  "perfil_solicitante": "proprietario",
+  "identificacao_imovel": "Texto de teste do estudo de formulários da SETDIG.",
+  "arquivo_certidao_matricula": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "arquivo_documento_requerente": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ]
+}

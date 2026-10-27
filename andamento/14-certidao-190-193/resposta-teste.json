@@ -1,0 +1,33 @@
+{
+  "numero_emergencia": "190",
+  "municipio_ocorrencia": "Água Clara",
+  "perfil_solicitante": "proprio",
+  "email": "teste.setdig@exemplo.com.br",
+  "telefone_celular": "(11) 11111-1111",
+  "nome_completo_ligou": "Pessoa Teste SETDIG",
+  "cpf_ligou": "529.982.247-25",
+  "data_nascimento_ligou": "2026-10-01",
+  "logradouro_ligou": "Teste",
+  "complemento_ligou": "Teste",
+  "municipio_ligou": "Água Clara",
+  "endereco_ocorrencia": "Teste",
+  "data_fato": "2026-10-01",
+  "hora_fato": "10:00",
+  "descricao_ocorrencia": "Texto de teste do estudo de formulários da SETDIG.",
+  "finalidade_certidao": "Teste",
+  "informacoes_adicionais": "Texto de teste do estudo de formulários da SETDIG.",
+  "arquivo_documento_identificacao": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "arquivo_outros_documentos": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ]
+}

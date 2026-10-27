@@ -26,7 +26,7 @@
     
     
       
-        <title>12. Laudos periciais — Rascunho - Estudo de Formulários — X-Forms</title>
+        <title>12. Laudos periciais — Refatoração - Estudo de Formulários — X-Forms</title>
       
     
     
@@ -109,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              12. Laudos periciais — Rascunho
+              12. Laudos periciais — Refatoração
             
           </span>
         </div>
@@ -1054,7 +1054,7 @@
         
   
   <span class="md-ellipsis">
-    6. Selo Arte — Rascunho
+    6. Selo Arte — Refatoração
   </span>
   
 
@@ -1075,7 +1075,7 @@
         
   
   <span class="md-ellipsis">
-    7. Negativa de tombamento — Rascunho
+    7. Negativa de tombamento — Refatoração
   </span>
   
 
@@ -1096,7 +1096,7 @@
         
   
   <span class="md-ellipsis">
-    8. Veterinário avi/suíno — Rascunho
+    8. Veterinário avi/suíno — Refatoração
   </span>
   
 
@@ -1117,7 +1117,7 @@
         
   
   <span class="md-ellipsis">
-    9. Bibliotecas públicas — Rascunho
+    9. Bibliotecas públicas — Refatoração
   </span>
   
 
@@ -1138,7 +1138,7 @@
         
   
   <span class="md-ellipsis">
-    10. Empresa integradora — Rascunho
+    10. Empresa integradora — Refatoração
   </span>
   
 
@@ -1159,7 +1159,7 @@
         
   
   <span class="md-ellipsis">
-    11. Soqueira de algodão — Rascunho
+    11. Soqueira de algodão — Refatoração
   </span>
   
 
@@ -1189,7 +1189,7 @@
           
   
   <span class="md-ellipsis">
-    12. Laudos periciais — Rascunho
+    12. Laudos periciais — Refatoração
   </span>
   
 
@@ -1200,7 +1200,7 @@
         
   
   <span class="md-ellipsis">
-    12. Laudos periciais — Rascunho
+    12. Laudos periciais — Refatoração
   </span>
   
 
@@ -1249,9 +1249,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#teste-em-dev" class="md-nav__link">
+  <a href="#teste-em-dev-27102026" class="md-nav__link">
     <span class="md-ellipsis">
-      Teste em DEV
+      Teste em DEV (27/10/2026)
     </span>
   </a>
   
@@ -1286,7 +1286,7 @@
         
   
   <span class="md-ellipsis">
-    13. Laboratório avícola — Rascunho
+    13. Laboratório avícola — Refatoração
   </span>
   
 
@@ -1307,7 +1307,7 @@
         
   
   <span class="md-ellipsis">
-    14. Certidão 190/193 — Rascunho
+    14. Certidão 190/193 — Refatoração
   </span>
   
 
@@ -1753,9 +1753,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#teste-em-dev" class="md-nav__link">
+  <a href="#teste-em-dev-27102026" class="md-nav__link">
     <span class="md-ellipsis">
-      Teste em DEV
+      Teste em DEV (27/10/2026)
     </span>
   </a>
   
@@ -1803,11 +1803,11 @@
 </tr>
 <tr>
 <td><code>gerar_v2.py</code> → <code>xforms-v2.json</code></td>
-<td>Versão 2, a importar no X-Forms de DEV (<code>/app/x-forms/forms/pedir-copia-laudo-pericial</code>). Hash <code>A_PREENCHER</code>.</td>
+<td>Versão 2, a importar no X-Forms de DEV (<code>/app/x-forms/forms/pedir-copia-laudo-pericial</code>). Hash <code>2daf7c468f9a</code>.</td>
 </tr>
 <tr>
 <td><code>gerar_fluxo.py</code> → <code>fluxo.json</code></td>
-<td>Fluxo do X-Flows de DEV (<code>A_PREENCHER</code>). Usa <code>../fluxo_xflows.py</code>.</td>
+<td>Fluxo do X-Flows de DEV (<code>dWZfs9hkuEAYmt6MFUdfj</code>). Usa <code>../fluxo_xflows.py</code>.</td>
 </tr>
 </tbody>
 </table>
@@ -1950,8 +1950,30 @@ A tabela guarda o que serve para achar o laudo e acompanhar o pedido: perfil, no
 fato, número da ocorrência e tipo de laudo. Não guarda CPF, data de nascimento, celular, endereço
 completo nem o relato, só município e UF (LGPD art. 6º III). Os anexos entram pelo nome dos arquivos,
 separados por <code>;</code>.</p>
-<h2 id="teste-em-dev">Teste em DEV<a class="headerlink" href="#teste-em-dev" title="Permanent link">&para;</a></h2>
-<p>A fazer.</p>
+<h2 id="teste-em-dev-27102026">Teste em DEV (27/10/2026)<a class="headerlink" href="#teste-em-dev-27102026" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Teste</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Importação por API (<code>createForm</code>)</td>
+<td>schema salvo igual ao local (hash <code>2daf7c468f9a</code>), publicado, webhook certo</td>
+</tr>
+<tr>
+<td>Abrir o formulário no portal</td>
+<td>abriu sem erro</td>
+</tr>
+<tr>
+<td>Envio por API (<code>submitFormResponse</code>) com <code>resposta-teste.json</code> (dados fictícios, primeira opção de cada escolha)</td>
+<td>aceito → <code>SUCCEEDED</code> → linha <code>LAU-20261027-S724J3</code></td>
+</tr>
+</tbody>
+</table>
+<p>Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.</p>
 <h2 id="pendencias">Pendências<a class="headerlink" href="#pendencias" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Confirmar com a CGP: pode tirar o RG e o órgão emissor? Na v2 eles saíram.</li>

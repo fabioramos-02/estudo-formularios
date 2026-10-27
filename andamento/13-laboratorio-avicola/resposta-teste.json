@@ -1,0 +1,18 @@
+{
+  "tipo_pedido": "cadastro",
+  "nome_completo": "Pessoa Teste SETDIG",
+  "razao_social": "Teste",
+  "nome_fantasia": "Pessoa Teste SETDIG",
+  "cnpj": "11.111.111/1111-11",
+  "inscricao_estadual": "Teste",
+  "telefone_laboratorio": "Teste",
+  "email_laboratorio": "teste.setdig@exemplo.com.br",
+  "escopo_analises": "Texto de teste do estudo de formulários da SETDIG.",
+  "credenciado_mapa": "sim",
+  "numero_portaria_credenciamento": "Teste",
+  "numero_crl": "Teste",
+  "cep": "11111-111",
+  "logradouro": "Teste",
+  "municipio": "Teste",
+  "uf": "AC"
+}
