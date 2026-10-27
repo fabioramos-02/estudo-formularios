@@ -73,6 +73,8 @@ sempre em **Visualizar**. No portal:
 - Coluna de escolha usa os `choices` **da matriz**, não da coluna.
 - `choicesVisibleIf` vale para a lista toda; não existe `%` nem `not`.
 - Célula de matriz chega como texto (`"12"`). Booleano começa em `false`.
+- `[FATO]` Validador de **coluna** de matriz não é aplicado e a mensagem da célula não aparece: só a
+  `requiredErrorText` da matriz. A regra vai no texto (descrição) e a mensagem geral cobre todos os casos.
 - `[FATO]` O Designer apaga propriedades com valor padrão ao salvar (`isRequired: false`, `storeDataAsText: true`,
   `allowMultiple: false`, `searchEnabled`). Não escrever no JSON, ou o hash de conferência não bate.
 
@@ -95,6 +97,9 @@ hora; editor cria rascunho que vai para aprovação.
   e está nos scripts da página; muda a cada deploy. Muitas chamadas seguidas dão 429: espaçar.
 - Portal: `submitFormResponse` (`[{slug, serviceSlug, answers}]`); anexo vai como `data:` base64 em `answers`.
   Pula a validação da tela. `docs/andamento/resposta_teste.py` gera `answers` fictícios.
+- X-Flows: pastas por órgão. `POST /api/v1/folders {projectId, displayName}`; mover fluxo com
+  `POST /api/v1/flows/<id> {type: 'CHANGE_FOLDER', request: {folderId}}`; mover tabela com
+  `POST /api/v1/tables/<id> {folderId}`. Atualizar código de fluxo existente: `IMPORT_FLOW` no mesmo id + `LOCK_AND_PUBLISH`.
 - A CSP dos portais bloqueia `fetch` para localhost: arquivos passam por `postMessage` com uma aba local aberta
   por clique.
 

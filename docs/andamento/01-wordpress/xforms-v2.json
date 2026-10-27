@@ -26,23 +26,45 @@
     },
     {
       "name": "site",
-      "title": "Sobre o site",
+      "title": "Sobre os sites",
       "elements": [
         {
-          "type": "text",
-          "name": "nome_site",
-          "title": "Nome do site",
+          "type": "matrixdynamic",
+          "name": "sites",
+          "title": "Para quais sites é o acesso?",
+          "description": "Uma linha para cada site, com o endereço completo (https://…). Use \"Adicionar outro site\" se for mais de um.",
+          "tooltip": "Se você é gestor de mais de um site, coloque todos aqui. O tipo de acesso escolhido abaixo vale para todos os sites da lista.",
           "isRequired": true,
-          "requiredErrorText": "Preencha o nome do site para continuar."
-        },
-        {
-          "type": "text",
-          "name": "url_site",
-          "title": "Endereço do site",
-          "isRequired": true,
-          "inputType": "url",
-          "placeholder": "https://exemplo.ms.gov.br",
-          "requiredErrorText": "Digite o endereço completo, começando com https://"
+          "requiredErrorText": "Preencha o nome e o endereço de cada site. Se sobrou uma linha vazia, clique em Remover.",
+          "rowCount": 1,
+          "minRowCount": 1,
+          "maxRowCount": 10,
+          "addRowText": "Adicionar outro site",
+          "removeRowText": "Remover",
+          "columns": [
+            {
+              "name": "nome_site",
+              "title": "Nome do site",
+              "cellType": "text",
+              "isRequired": true,
+              "requiredErrorText": "Preencha o nome do site."
+            },
+            {
+              "name": "url_site",
+              "title": "Endereço do site",
+              "cellType": "text",
+              "isRequired": true,
+              "placeholder": "https://exemplo.ms.gov.br",
+              "requiredErrorText": "Digite o endereço completo, começando com https://",
+              "validators": [
+                {
+                  "type": "regex",
+                  "regex": "^https?://\\S+\\.\\S+$",
+                  "text": "Digite o endereço completo, começando com https://"
+                }
+              ]
+            }
+          ]
         },
         {
           "type": "radiogroup",

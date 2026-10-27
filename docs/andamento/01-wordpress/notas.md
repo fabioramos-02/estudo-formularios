@@ -265,6 +265,23 @@ Campos de entrada: 33 (v1: 32; entrou a pergunta Sim/Não). Para quem responde "
 | Página do serviço | <https://portal.dev.pgd.ms.gov.br/servicos/solicitar-acesso-ao-wordpress131> |
 | Acessar serviço | <https://portal.dev.pgd.ms.gov.br/app/x-forms/forms/solicitar-acesso-wordpress?serviceSlug=solicitar-acesso-ao-wordpress131> |
 
+## Versão 2.1 — vários sites no mesmo pedido (27/10/2026)
+
+O gestor pode cuidar de mais de um site. "Nome do site" e "Endereço do site" viraram uma lista
+(`matrixdynamic` `sites`): uma linha por site, botão "Adicionar outro site", até 10. O `tooltip` explica que o
+tipo de acesso escolhido vale para todos os sites da lista.
+
+| Teste em DEV | Resultado |
+|---|---|
+| Lista na tela | aparece com uma linha, "Adicionar outro site" e "Remover" |
+| Linha vazia | bloqueou, mas com a mensagem geral da lista, não a da célula |
+| Endereço sem `https://` | `[FATO]` **passou**: o portal não aplica o validador da coluna |
+| Envio com dois sites (API, `serviceSlug` real) | `SUCCEEDED` → linha `WP-20261027-S6WHZF`, sites separados por "; " |
+
+Por isso a regra do endereço foi para a descrição da lista, e a mensagem geral passou a dizer
+"Preencha o nome e o endereço de cada site. Se sobrou uma linha vazia, clique em Remover."
+Hash no ar: `1c14701a0b6b`. O fluxo grava `nome_site` e `url_site` como lista em texto (`a; b`).
+
 ## Pendências
 
 - `[RECOMENDAÇÃO]` Cadastrar o serviço no catálogo do portal e usar o slug dele no link. O teste usou

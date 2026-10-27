@@ -21,13 +21,15 @@ CODIGO = r"""export const code = async (inputs) => {
   // ponytail: aleatório como no exemplo; trocar pelo protocolo da API de Tramitação quando houver
   const protocolo = 'WP-' + dataMS + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();
   const mesmoGestor = a.responsavel_e_gestor === true;
+  // sites chega como lista [{nome_site, url_site}]; a tabela guarda um site por item, separados por '; '
+  const sites = Array.isArray(a.sites) ? a.sites : [];
   return {
     protocolo,
     recebidoEm,
     situacao: 'Recebido',
     perfil: a.perfil_solicitante ?? '',
-    nomeSite: a.nome_site ?? '',
-    urlSite: a.url_site ?? '',
+    nomeSite: sites.map((s) => s.nome_site ?? '').join('; '),
+    urlSite: sites.map((s) => s.url_site ?? '').join('; '),
     permissao: a.permissao_acesso ?? '',
     colaboradorNome: a.nome_colaborador ?? '',
     colaboradorEmail: a.email_colaborador ?? '',
