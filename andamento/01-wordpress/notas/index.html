@@ -1114,6 +1114,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#versao-2-x-forms-e-x-flows-de-dev-27102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versão 2 — X-Forms e X-Flows de DEV (27/10/2026)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versão 2 — X-Forms e X-Flows de DEV (27/10/2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-a-v1-demo-aws-ja-tinha-mudado-em-relacao-ao-saidajson" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que a v1 (demo-aws) já tinha mudado em relação ao saida.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-mudou-na-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que mudou na v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-x-flows-de-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluxo (X-Flows de DEV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teste-em-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste em DEV
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pendencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pendências
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1681,6 +1750,75 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#versao-2-x-forms-e-x-flows-de-dev-27102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      Versão 2 — X-Forms e X-Flows de DEV (27/10/2026)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Versão 2 — X-Forms e X-Flows de DEV (27/10/2026)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arquivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arquivos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-a-v1-demo-aws-ja-tinha-mudado-em-relacao-ao-saidajson" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que a v1 (demo-aws) já tinha mudado em relação ao saida.json
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-que-mudou-na-v2" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que mudou na v2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fluxo-x-flows-de-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fluxo (X-Flows de DEV)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teste-em-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste em DEV
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pendencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pendências
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2199,11 +2337,11 @@ Depois: mensagem específica <strong>como corrigir</strong> (checklist D2).</p>
 <hr />
 <h2 id="limitacoes-do-x-forms-observadas">Limitações do X-Forms observadas<a class="headerlink" href="#limitacoes-do-x-forms-observadas" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>[FATO]</strong> Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado declarando as duas ordens no JSON, cada página com <code>visibleIf</code> no <code>perfil_solicitante</code>, e reaproveitando os mesmos <code>name</code> de campo nas duplicatas para que o cidadão preencha o dado uma única vez.</li>
+<li><strong>[FATO]</strong> (ainda vale) Reordenação dinâmica de páginas por escolha do usuário não suportada. Contornado declarando as duas ordens no JSON, cada página com <code>visibleIf</code> no <code>perfil_solicitante</code>, e reaproveitando os mesmos <code>name</code> de campo nas duplicatas para que o cidadão preencha o dado uma única vez.</li>
 <li><strong>[HIPÓTESE]</strong> X-Forms respeita <code>name</code> compartilhado entre páginas exclusivas por <code>visibleIf</code>. Validar na plataforma. Fallback: sufixo <code>_alt</code> na 2ª cópia + coalescer no fluxo.</li>
 <li><strong>[FATO]</strong> Validação cruzada entre campos (ex.: "se <code>orgao_gestor</code> = AGEMS, <code>email_gestor</code> deve terminar em <code>@segov.ms.gov.br</code>") não é expressável na configuração declarativa. Não aplicada em <code>saida.json</code>.</li>
 <li><strong>[FATO]</strong> Máscara de CPF/telefone não persiste no webhook — dígitos chegam sem formatação. O fluxo Activepieces é o local certo pra formatar antes de enviar por e-mail/PDF.</li>
-<li><strong>[FATO]</strong> Tooltip não suportado. Ajuda vai em <code>description</code> (visível permanente).</li>
+<li>~~<strong>[FATO]</strong> Tooltip não suportado.~~ Superado em 27/10/2026: o X-Forms atual tem <code>tooltip</code> (ver Versão 2).</li>
 <li><strong>[FATO]</strong> Multivalorado (múltiplos itens do mesmo tipo) só via <code>matrix</code> / <code>paneldynamic</code> — não usado aqui.</li>
 </ul>
 <hr />
@@ -2216,6 +2354,156 @@ Depois: mensagem específica <strong>como corrigir</strong> (checklist D2).</p>
 <li>Validar com Antonio: rótulos reescritos preservam intenção original?</li>
 <li>Aplicar orquestrador aos outros 13 formulários.</li>
 </ol>
+<hr />
+<h2 id="versao-2-x-forms-e-x-flows-de-dev-27102026">Versão 2 — X-Forms e X-Flows de DEV (27/10/2026)<a class="headerlink" href="#versao-2-x-forms-e-x-flows-de-dev-27102026" title="Permanent link">&para;</a></h2>
+<p>Piloto da migração para o ambiente novo (<code>portal.dev.pgd.ms.gov.br</code>). Base: a versão que estava no ar
+no Designer antigo (demo-aws), não o <code>saida.json</code> acima.</p>
+<h3 id="arquivos">Arquivos<a class="headerlink" href="#arquivos" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Arquivo</th>
+<th>O que é</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>entrada.json</code></td>
+<td>Original do FormFlow (sem mudança).</td>
+</tr>
+<tr>
+<td><code>saida.json</code></td>
+<td>Primeira refatoração automática (histórico).</td>
+</tr>
+<tr>
+<td><code>xforms-v1-demo.json</code></td>
+<td>O que estava no ar no demo-aws. Reconstruído e conferido por hash (<code>6987800b0108</code>).</td>
+</tr>
+<tr>
+<td><code>gerar_v2.py</code> → <code>xforms-v2.json</code></td>
+<td>Versão 2, importada no X-Forms de DEV.</td>
+</tr>
+<tr>
+<td><code>gerar_fluxo.py</code> → <code>fluxo-wordpress.json</code></td>
+<td>Fluxo importado no X-Flows de DEV.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="o-que-a-v1-demo-aws-ja-tinha-mudado-em-relacao-ao-saidajson">O que a v1 (demo-aws) já tinha mudado em relação ao <code>saida.json</code><a class="headerlink" href="#o-que-a-v1-demo-aws-ja-tinha-mudado-em-relacao-ao-saidajson" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>[FATO]</code> As páginas duplicadas por perfil foram unificadas (5 páginas, sem <code>visibleIf</code> de ordem). A
+  ordem é sempre gestor → colaborador → responsável.</li>
+<li><code>[FATO]</code> <code>searchEnabled</code> e <code>progressBarType</code> saíram. O Designer não grava <code>searchEnabled</code> porque a
+  busca já é o padrão do SurveyJS 1.12.</li>
+</ul>
+<h3 id="o-que-mudou-na-v2">O que mudou na v2<a class="headerlink" href="#o-que-mudou-na-v2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mudança</th>
+<th>Regra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perfil: imagens (39 KB de SVG) → botões de opção</td>
+<td>GOV.UK radios; C4</td>
+</tr>
+<tr>
+<td>Tipo de acesso: caixa de seleção limitada a 1 → escolha única, com o que cada papel faz no texto da opção</td>
+<td>C4, B1</td>
+</tr>
+<tr>
+<td>Aviso "Estes são os seus dados" na página do perfil escolhido (<code>html</code> + <code>visibleIf</code>)</td>
+<td>A3, B1</td>
+</tr>
+<tr>
+<td>Nome e e-mail pré-preenchidos com a conta só na página de quem preenche (<code>resetValueIf</code> limpa a outra)</td>
+<td>C2</td>
+</tr>
+<tr>
+<td>"O responsável é o gestor?" (Sim/Não): se sim, os 9 campos do responsável somem e o fluxo copia os do gestor</td>
+<td>C3</td>
+</tr>
+<tr>
+<td>CPF com validador (<code>regex</code>) e mensagem que diz como corrigir</td>
+<td>C6, D2</td>
+</tr>
+<tr>
+<td>Setor: <code>isRequired</code> → <code>requiredIf</code> com a mesma condição do <code>visibleIf</code></td>
+<td>C9</td>
+</tr>
+<tr>
+<td><code>tooltip</code> em tipo de acesso, celular, e-mail do colaborador e na pergunta do responsável</td>
+<td>B3</td>
+</tr>
+<tr>
+<td>"Depois do envio" em <code>html</code> na última página (o portal não mostra <code>completedHtml</code>)</td>
+<td>B6</td>
+</tr>
+<tr>
+<td>Sem numeração de perguntas (setor escondido fazia pular de 11 para 13)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Lista de órgãos: "SETRAT" repetido removido; "Rede Eduvativa" e "Poíticas" corrigidos</td>
+<td>C4</td>
+</tr>
+</tbody>
+</table>
+<p>Campos de entrada: 33 (v1: 32; entrou a pergunta Sim/Não). Para quem responde "Sim", são 24.</p>
+<h3 id="fluxo-x-flows-de-dev">Fluxo (X-Flows de DEV)<a class="headerlink" href="#fluxo-x-flows-de-dev" title="Permanent link">&para;</a></h3>
+<p><code>Recebe a resposta do X-Forms</code> (webhook) → <code>Gera protocolo e organiza o pedido</code> (CODE) →
+<code>Registra a solicitação na tabela</code> (Tables → <code>solicitacoes_wordpress</code>).</p>
+<ul>
+<li>Protocolo <code>WP-AAAAMMDD-XXXXXX</code> com a data de MS (UTC-4). Ainda aleatório, como no exemplo do
+  Leonardo: trocar pelo protocolo da API de Tramitação quando ela existir.</li>
+<li>A tabela guarda só o que a equipe usa para criar o acesso: site, tipo de acesso, colaborador (nome,
+  e-mail, login, órgão), gestor e responsável (nome e e-mail). CPF, matrícula e celular ficam só nas
+  respostas do X-Forms (minimização, LGPD art. 6º III).</li>
+<li>Sem e-mail: o X-Flows de DEV não tem conexão Gmail. Criar a conexão é uma autorização da conta.</li>
+</ul>
+<h3 id="teste-em-dev">Teste em DEV<a class="headerlink" href="#teste-em-dev" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Teste</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fluxo sozinho, payload fictício</td>
+<td><code>SUCCEEDED</code>; responsável copiado do gestor</td>
+</tr>
+<tr>
+<td>Prévia (<code>?isPreview=true</code>): dica, aviso por perfil, setor condicional</td>
+<td>ok</td>
+</tr>
+<tr>
+<td>Pré-preenchimento</td>
+<td><code>[FATO]</code> <code>autocomplete: "name"</code> e <code>"email"</code> trazem nome e e-mail da conta. CPF e celular não.</td>
+</tr>
+<tr>
+<td>Pré-preenchimento na página da outra pessoa</td>
+<td>erro na 1ª versão; corrigido com <code>resetValueIf</code> e testado de novo</td>
+</tr>
+<tr>
+<td>Envio real como colaborador, "responsável é o gestor = Sim"</td>
+<td>"Resposta enviada!" → execução <code>SUCCEEDED</code> → linha <code>WP-20261027-V72CFK</code> na tabela</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pendencias">Pendências<a class="headerlink" href="#pendencias" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>[RECOMENDAÇÃO]</code> Cadastrar o serviço no catálogo do portal e usar o slug dele no link. O teste usou
+  <code>serviceSlug=solicitacao-de-inclusao-no-programa-mais-social118</code> (do exemplo do Leonardo) porque o
+  WordPress não tem serviço em DEV.</li>
+<li>Definir quem recebe o pedido (e-mail ou fila da SETDIG) e criar a conexão Gmail no X-Flows de DEV.</li>
+<li>Lista de órgãos com nomes repetidos de outro jeito (EPE 2x, FADEB 2x, PROCON 2x, AGETRAN e SETRAT são
+  municipais). Pedir a lista oficial ao órgão.</li>
+<li>Duas linhas de teste na tabela <code>solicitacoes_wordpress</code> (Site de Teste e Site de Teste do Estudo).</li>
+</ul>
 
 
 
