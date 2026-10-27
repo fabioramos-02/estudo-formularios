@@ -55,52 +55,52 @@ Além disso, esta seção guarda:
 
 *No X-Forms e X-Flows de DEV desde 27/10/2026. Saíram RG, órgão expedidor e UF do órgão; entrou e-mail para a resposta.*
 
-### 6. IAGRO — Pedir o Selo Arte — rascunho
+### 6. IAGRO — Pedir o Selo Arte ✅
 
 - [Notas do Antonio](mapeamento/06-selo-arte.md)
-- [Rascunho da refatoração](06-selo-arte/notas.md)
+- [Diário da refatoração](06-selo-arte/notas.md)
 
-### 7. FCMS — Pedir certidão negativa de tombamento — rascunho
+### 7. FCMS — Pedir certidão negativa de tombamento ✅
 
 - [Notas do Antonio](mapeamento/07-negativa-tombamento.md)
-- [Rascunho da refatoração](07-negativa-tombamento/notas.md)
+- [Diário da refatoração](07-negativa-tombamento/notas.md)
 
-### 8. IAGRO — Cadastrar ou atualizar médico veterinário de aves ou suínos — rascunho
+### 8. IAGRO — Cadastrar ou atualizar médico veterinário de aves ou suínos ✅
 
 - [Notas do Antonio](mapeamento/08-veterinario-avi-suino.md)
-- [Rascunho da refatoração](08-veterinario-avi-suino/notas.md)
+- [Diário da refatoração](08-veterinario-avi-suino/notas.md)
 
-### 9. FCMS — Cadastrar biblioteca no Sistema Estadual de Bibliotecas Públicas — rascunho
+### 9. FCMS — Cadastrar biblioteca no Sistema Estadual de Bibliotecas Públicas ✅
 
 - [Notas do Antonio](mapeamento/09-bibliotecas-publicas.md)
-- [Rascunho da refatoração](09-bibliotecas-publicas/notas.md)
+- [Diário da refatoração](09-bibliotecas-publicas/notas.md)
 
-### 10. IAGRO — Cadastrar ou atualizar empresa integradora de aves ou suínos — rascunho
+### 10. IAGRO — Cadastrar ou atualizar empresa integradora de aves ou suínos ✅
 
 - [Notas do Antonio](mapeamento/10-empresa-integradora.md)
-- [Rascunho da refatoração](10-empresa-integradora/notas.md)
+- [Diário da refatoração](10-empresa-integradora/notas.md)
 
-### 11. IAGRO — Pedir certificado de destruição de soqueira de algodão — rascunho
+### 11. IAGRO — Pedir certificado de destruição de soqueira de algodão ✅
 
 - [Notas do Antonio](mapeamento/11-soqueira-algodao.md)
-- [Rascunho da refatoração](11-soqueira-algodao/notas.md)
+- [Diário da refatoração](11-soqueira-algodao/notas.md)
 
-### 12. CGP/SEJUSP — Pedir cópia de laudo pericial — rascunho
+### 12. CGP/SEJUSP — Pedir cópia de laudo pericial ✅
 
 - [Notas do Antonio](mapeamento/12-laudos-periciais.md)
-- [Rascunho da refatoração](12-laudos-periciais/notas.md)
+- [Diário da refatoração](12-laudos-periciais/notas.md)
 
-### 13. IAGRO — Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola — rascunho
+### 13. IAGRO — Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola ✅
 
 - [Notas do Antonio](mapeamento/13-laboratorio-avicola.md)
-- [Rascunho da refatoração](13-laboratorio-avicola/notas.md)
+- [Diário da refatoração](13-laboratorio-avicola/notas.md)
 
-### 14. SEJUSP — Pedir certidão de atendimento de emergência (190 ou 193) — rascunho
+### 14. SEJUSP — Pedir certidão de atendimento de emergência (190 ou 193) ✅
 
 - [Notas do Antonio](mapeamento/14-certidao-190-193.md)
-- [Rascunho da refatoração](14-certidao-190-193/notas.md)
+- [Diário da refatoração](14-certidao-190-193/notas.md)
 
-*Rascunhos de 27/10/2026, em revisão. Ainda não estão no X-Forms nem no X-Flows de DEV.*
+*06 a 14 no X-Forms e X-Flows de DEV desde 27/10/2026, importados por API (`lote-06-14.json`). Testados com um envio cada; os outros caminhos das condições ainda não.*
 
 ---
 

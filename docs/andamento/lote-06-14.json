@@ -1,0 +1,74 @@
+[
+  {
+    "pasta": "06-selo-arte",
+    "slug": "obter-selo-arte",
+    "titulo": "Pedir o Selo Arte",
+    "descricao": "Pedir o Selo Arte. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "c81a8020375c",
+    "fluxo": "8bjn9jvi02Tco1J4RmGHn"
+  },
+  {
+    "pasta": "07-negativa-tombamento",
+    "slug": "pedir-certidao-negativa-tombamento",
+    "titulo": "Pedir certidão negativa de tombamento",
+    "descricao": "Pedir certidão negativa de tombamento. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "4956e23b23ac",
+    "fluxo": "H6sT6cLKqpBx5ZcBcvjpR"
+  },
+  {
+    "pasta": "08-veterinario-avi-suino",
+    "slug": "cadastrar-veterinario-aves-suinos",
+    "titulo": "Cadastrar ou atualizar médico veterinário de aves ou suínos",
+    "descricao": "Cadastrar ou atualizar médico veterinário de aves ou suínos. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "118236e6e4fb",
+    "fluxo": "GZk1GB2cCfvqkBSjneilf"
+  },
+  {
+    "pasta": "09-bibliotecas-publicas",
+    "slug": "cadastrar-biblioteca-publica",
+    "titulo": "Cadastrar biblioteca no Sistema Estadual de Bibliotecas Públicas",
+    "descricao": "Cadastrar biblioteca no Sistema Estadual de Bibliotecas Públicas. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "283f55d01c91",
+    "fluxo": "aJIQiLJiONonf9NVwDx4u"
+  },
+  {
+    "pasta": "10-empresa-integradora",
+    "slug": "cadastrar-empresa-integradora-aves-suinos",
+    "titulo": "Cadastrar ou atualizar empresa integradora de aves ou suínos",
+    "descricao": "Cadastrar ou atualizar empresa integradora de aves ou suínos. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "3c4f5f5f9e72",
+    "fluxo": "nxaMG6ua1oO6kgwsMmNDD"
+  },
+  {
+    "pasta": "11-soqueira-algodao",
+    "slug": "pedir-certificado-destruicao-soqueira-algodao",
+    "titulo": "Pedir certificado de destruição de soqueira de algodão",
+    "descricao": "Pedir certificado de destruição de soqueira de algodão. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "f74bbf68c7eb",
+    "fluxo": "pOE9w0meyUrEzMQJ5EtUi"
+  },
+  {
+    "pasta": "12-laudos-periciais",
+    "slug": "pedir-copia-laudo-pericial",
+    "titulo": "Pedir cópia de laudo pericial",
+    "descricao": "Pedir cópia de laudo pericial. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "2daf7c468f9a",
+    "fluxo": "dWZfs9hkuEAYmt6MFUdfj"
+  },
+  {
+    "pasta": "13-laboratorio-avicola",
+    "slug": "cadastrar-laboratorio-sanidade-avicola",
+    "titulo": "Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola",
+    "descricao": "Cadastrar ou atualizar laboratório de diagnóstico em sanidade avícola. Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "586ac9fb8691",
+    "fluxo": "sEcb6w2R5yzQmCpDDum77"
+  },
+  {
+    "pasta": "14-certidao-190-193",
+    "slug": "pedir-certidao-atendimento-190-193",
+    "titulo": "Pedir certidão de atendimento de emergência (190 ou 193)",
+    "descricao": "Pedir certidão de atendimento de emergência (190 ou 193). Refatorado pelo estudo de formulários da SETDIG.",
+    "hash": "7bb3bd919892",
+    "fluxo": "YyOm7iK7xlkACYgvE1R3o"
+  }
+]

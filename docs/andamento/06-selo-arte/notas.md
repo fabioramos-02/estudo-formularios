@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`498b9751607a`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, para importar no X-Forms de DEV (`/app/x-forms/forms/obter-selo-arte`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, para importar no X-Forms de DEV (`/app/x-forms/forms/obter-selo-arte`). Hash `c81a8020375c`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`8bjn9jvi02Tco1J4RmGHn`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -53,11 +53,19 @@ Webhook → CODE (protocolo `ART-AAAAMMDD-XXXXXX`) → Tables `pedidos_selo_arte
 A tabela não guarda CPF nem endereço, só o município (LGPD art. 6º III). A declaração é gravada como
 "Aceita"; a logomarca, pelo nome do arquivo.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `c81a8020375c`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro; nome, CPF e e-mail vindos da conta |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `ART-20261027-3WKZ6L` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
+
+- Limpar as linhas de teste da tabela `pedidos_selo_arte` (o envio de teste repetiu 5 vezes).
 
 - Confirmar com a IAGRO: "Registro no serviço de inspeção" é o serviço (municipal, estadual ou
   federal)? Se for, vira botões de opção com a lista que a IAGRO indicar.

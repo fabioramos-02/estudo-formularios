@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`a8e73f23c2a3`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, a importar no X-Forms de DEV (`/app/x-forms/forms/pedir-certificado-destruicao-soqueira-algodao`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, a importar no X-Forms de DEV (`/app/x-forms/forms/pedir-certificado-destruicao-soqueira-algodao`). Hash `f74bbf68c7eb`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`pOE9w0meyUrEzMQJ5EtUi`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -49,9 +49,13 @@ Webhook → CODE (protocolo `SOQ-AAAAMMDD-XXXXXX`) → Tables `pedidos_certifica
 A tabela não guarda CPF nem celular, que ficam só nas respostas do X-Forms (LGPD art. 6º III). A área
 de plantio é gravada em texto legível. Os anexos entram pelo nome do arquivo.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `f74bbf68c7eb`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro; nome, CPF e e-mail vindos da conta |
+| Envio pela tela, com os três anexos | "Resposta enviada!" → `SUCCEEDED` → linha `SOQ-20261027-0B9722` |
 
 ## Pendências
 

@@ -86,6 +86,18 @@ Link público: `/app/x-forms/forms/<slug>?serviceSlug=<serviço>` — `serviceSl
 existir no catálogo do portal, senão "Erro ao enviar resposta!". Admin que cria formulário publica na
 hora; editor cria rascunho que vai para aprovação.
 
+### Importar e testar por API (sem clicar)
+
+`[FATO]` testado em 27/10/2026 com os formulários 06–14 (`docs/andamento/lote-06-14.json`):
+- Designer antigo (demo-aws): `GET /api/x-forms-ms/v1/forms/<slug>` com o Bearer da sessão devolve o schema.
+- Designer de DEV: server actions do Next.js `createForm` (`[{title, slug, description, schema, callbackURL,
+  callbackIncludeUserAuth, authRequired}]`) e `getFormBySlug` (`[slug]`). O ID vai no cabeçalho `next-action`
+  e está nos scripts da página; muda a cada deploy. Muitas chamadas seguidas dão 429: espaçar.
+- Portal: `submitFormResponse` (`[{slug, serviceSlug, answers}]`); anexo vai como `data:` base64 em `answers`.
+  Pula a validação da tela. `docs/andamento/resposta_teste.py` gera `answers` fictícios.
+- A CSP dos portais bloqueia `fetch` para localhost: arquivos passam por `postMessage` com uma aba local aberta
+  por clique.
+
 ## Como escrever
 
 - Marcadores obrigatórios: `[FATO]`, `[INTERPRETAÇÃO]`, `[HIPÓTESE]`, `[RECOMENDAÇÃO]`,

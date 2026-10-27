@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`1a8b57a23373`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, para importar no X-Forms de DEV (`/app/x-forms/forms/cadastrar-biblioteca-publica`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, para importar no X-Forms de DEV (`/app/x-forms/forms/cadastrar-biblioteca-publica`). Hash `283f55d01c91`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`aJIQiLJiONonf9NVwDx4u`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -67,9 +67,15 @@ A tabela não guarda CPF, telefone nem endereços completos, só o município (L
 CNPJ da instituição quando houver e o e-mail da instituição, para a resposta. Escolhas em texto legível
 ("Pública", "Sim"); anexos pelo nome do arquivo, separados por vírgula quando há mais de um.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `283f55d01c91`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `BIB-20261027-60EKBQ` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
 

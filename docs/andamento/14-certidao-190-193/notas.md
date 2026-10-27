@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`07a70ee96768`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, a importar no X-Forms de DEV (`/app/x-forms/forms/pedir-certidao-atendimento-190-193`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, a importar no X-Forms de DEV (`/app/x-forms/forms/pedir-certidao-atendimento-190-193`). Hash `7bb3bd919892`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`YyOm7iK7xlkACYgvE1R3o`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -64,9 +64,15 @@ A tabela guarda o que serve para achar a ligação: 190 ou 193, cidade, data e h
 CPF, data de nascimento, celular, endereços nem o relato (LGPD art. 6º III). O nome do pedido é o de
 quem preenche (ou o de quem ligou, quando é a mesma pessoa). Os anexos entram pelo nome do arquivo.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `7bb3bd919892`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `CER-20261027-ZCAUNU` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
 

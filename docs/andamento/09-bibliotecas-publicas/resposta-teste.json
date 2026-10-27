@@ -1,0 +1,58 @@
+{
+  "nome_biblioteca": "Pessoa Teste SETDIG",
+  "tipo_biblioteca": "publica",
+  "legislacao_criacao": "Teste",
+  "em_funcionamento": "sim",
+  "respondeu_diagnostico": "sim",
+  "descricao_biblioteca": "Teste",
+  "historia_biblioteca": "Texto de teste do estudo de formulários da SETDIG.",
+  "nome_responsavel_biblioteca": "Pessoa Teste SETDIG",
+  "cargo_responsavel_biblioteca": "Teste",
+  "escolaridade_responsavel_biblioteca": "Teste",
+  "horario_funcionamento": "Texto de teste do estudo de formulários da SETDIG.",
+  "informacoes_adicionais_horario": "Texto de teste do estudo de formulários da SETDIG.",
+  "numero_pessoas_trabalham": "Teste",
+  "possui_acessibilidade": "sim",
+  "acessibilidade_oferecida": "Texto de teste do estudo de formulários da SETDIG.",
+  "cep_biblioteca": "11111-111",
+  "logradouro_biblioteca": "Teste",
+  "bairro_biblioteca": "Teste",
+  "municipio": "Água Clara",
+  "contatos_redes_sociais": "Texto de teste do estudo de formulários da SETDIG.",
+  "nome_instituicao_vinculada": "Pessoa Teste SETDIG",
+  "tipo_documento_instituicao": "cnpj",
+  "cnpj_instituicao": "11.111.111/1111-11",
+  "endereco_instituicao": "Texto de teste do estudo de formulários da SETDIG.",
+  "telefone_instituicao": "(11) 11111-1111",
+  "email_instituicao": "teste.setdig@exemplo.com.br",
+  "nome_responsavel_instituicao": "Pessoa Teste SETDIG",
+  "cargo_responsavel_instituicao": "Teste",
+  "arquivo_legislacao_criacao": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "arquivo_foto_capa": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "arquivo_foto_divulgacao": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "arquivo_cadastros_anteriores": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "perfil_solicitante": "envolvido",
+  "nome_completo": "Pessoa Teste SETDIG",
+  "cpf": "529.982.247-25",
+  "data_nascimento": "2026-10-01",
+  "email": "teste.setdig@exemplo.com.br",
+  "telefone_celular": "(11) 11111-1111",
+  "cep": "11111-111",
+  "logradouro": "Teste",
+  "bairro": "Teste",
+  "municipio": "Teste",
+  "uf": "AC",
+  "nome_vitima": "Pessoa Teste SETDIG",
+  "data_fato": "2026-10-01",
+  "numero_ocorrencia": "Teste",
+  "local_fato": "Teste",
+  "tipo_laudo": [
+    "analises_laboratoriais"
+  ],
+  "descricao_fato": "Texto de teste do estudo de formulários da SETDIG.",
+  "informacoes_adicionais": "Texto de teste do estudo de formulários da SETDIG.",
+  "arquivo_documento_identificacao_envolvido": [
+    {
+      "name": "teste-anexo.pdf",
+      "type": "application/pdf",
+      "content": "data:application/pdf;base64,JVBERi0xLjQKMSAwIG9iajw8L1R5cGUvQ2F0YWxvZy9QYWdlcyAyIDAgUj4+ZW5kb2JqCiUlRU9GCg=="
+    }
+  ],
+  "aceite_condicoes": [
+    "ciente"
+  ]
+}

@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`ebe1d050de88`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, a importar no X-Forms de DEV (`/app/x-forms/forms/pedir-copia-laudo-pericial`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, a importar no X-Forms de DEV (`/app/x-forms/forms/pedir-copia-laudo-pericial`). Hash `2daf7c468f9a`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`dWZfs9hkuEAYmt6MFUdfj`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -66,9 +66,15 @@ fato, número da ocorrência e tipo de laudo. Não guarda CPF, data de nasciment
 completo nem o relato, só município e UF (LGPD art. 6º III). Os anexos entram pelo nome dos arquivos,
 separados por `;`.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `2daf7c468f9a`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `LAU-20261027-S724J3` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
 

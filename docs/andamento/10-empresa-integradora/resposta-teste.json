@@ -1,0 +1,19 @@
+{
+  "tipo_pedido": "cadastro",
+  "nome_representante_legal": "Pessoa Teste SETDIG",
+  "telefone_representante": "(11) 11111-1111",
+  "email_representante": "teste.setdig@exemplo.com.br",
+  "razao_social": "Teste",
+  "nome_fantasia": "Pessoa Teste SETDIG",
+  "cnpj": "11.111.111/1111-11",
+  "inscricao_estadual": "Teste",
+  "atividade_integradora": "avicultura",
+  "telefone_empresa": "(11) 11111-1111",
+  "email_empresa": "teste.setdig@exemplo.com.br",
+  "cep": "11111-111",
+  "municipio": "Teste",
+  "uf": "AC",
+  "via_acesso": "Teste",
+  "coordenada_geografica": "Teste",
+  "informacoes_complementares": "Texto de teste do estudo de formulários da SETDIG."
+}

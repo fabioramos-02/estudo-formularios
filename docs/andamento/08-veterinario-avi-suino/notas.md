@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`967dd2a2cfbc`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, proposta para o X-Forms de DEV (`/app/x-forms/forms/cadastrar-veterinario-aves-suinos`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, proposta para o X-Forms de DEV (`/app/x-forms/forms/cadastrar-veterinario-aves-suinos`). Hash `118236e6e4fb`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`GZk1GB2cCfvqkBSjneilf`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -56,9 +56,15 @@ A tabela não guarda CPF, telefones nem endereço completo, só município e UF 
 de pedido e o vínculo entram em texto ("Cadastro novo", "Sim"). Os anexos entram pelo nome do arquivo;
 a portaria, que aceita vários, pelos nomes separados por `;`.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `118236e6e4fb`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `VET-20261027-VH6OBA` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
 

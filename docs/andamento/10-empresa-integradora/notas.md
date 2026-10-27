@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`ed6fec40473d`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, proposta para o X-Forms de DEV (`/app/x-forms/forms/cadastrar-empresa-integradora-aves-suinos`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, proposta para o X-Forms de DEV (`/app/x-forms/forms/cadastrar-empresa-integradora-aves-suinos`). Hash `3c4f5f5f9e72`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`nxaMG6ua1oO6kgwsMmNDD`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -53,9 +53,15 @@ Webhook → CODE (protocolo `INT-AAAAMMDD-XXXXXX`) → Tables `cadastros_empresa
 A tabela não guarda telefones, CEP nem coordenada, só município e UF (LGPD art. 6º III). Tipo de pedido
 e atividade entram em texto ("Atualização", "Avicultura").
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `3c4f5f5f9e72`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `INT-20261027-CNNAVX` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
 

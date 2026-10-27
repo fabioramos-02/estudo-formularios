@@ -7,8 +7,8 @@
 | Arquivo | O que é |
 |---|---|
 | `xforms-v1-demo.json` | O que estava no ar no demo-aws. Conferido por hash (`90173274ea7b`). |
-| `gerar_v2.py` → `xforms-v2.json` | Versão 2, para importar no X-Forms de DEV (`/app/x-forms/forms/pedir-certidao-negativa-tombamento`). Hash `A_PREENCHER`. |
-| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`A_PREENCHER`). Usa `../fluxo_xflows.py`. |
+| `gerar_v2.py` → `xforms-v2.json` | Versão 2, para importar no X-Forms de DEV (`/app/x-forms/forms/pedir-certidao-negativa-tombamento`). Hash `4956e23b23ac`. |
+| `gerar_fluxo.py` → `fluxo.json` | Fluxo do X-Flows de DEV (`H6sT6cLKqpBx5ZcBcvjpR`). Usa `../fluxo_xflows.py`. |
 
 ## O que estava errado na v1
 
@@ -51,9 +51,15 @@ Webhook → CODE (protocolo `TOM-AAAAMMDD-XXXXXX`) → Tables `pedidos_negativa_
 A tabela não guarda CPF de ninguém (LGPD art. 6º III). Guarda a identificação do imóvel, que é o
 objeto do pedido. Anexos pelo nome do arquivo; quando há mais de um, os nomes vêm separados por vírgula.
 
-## Teste em DEV
+## Teste em DEV (27/10/2026)
 
-A fazer.
+| Teste | Resultado |
+|---|---|
+| Importação por API (`createForm`) | schema salvo igual ao local (hash `4956e23b23ac`), publicado, webhook certo |
+| Abrir o formulário no portal | abriu sem erro; nome, CPF e e-mail vindos da conta |
+| Envio por API (`submitFormResponse`) com `resposta-teste.json` (dados fictícios, primeira opção de cada escolha) | aceito → `SUCCEEDED` → linha `TOM-20261027-LG05H7` |
+
+Não testado pela tela: os outros caminhos das condições e as mensagens de erro. O envio por API pula a validação da tela.
 
 ## Pendências
 
