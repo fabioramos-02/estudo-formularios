@@ -41,7 +41,14 @@ Além disso, esta seção guarda:
 
 *No X-Forms e X-Flows de DEV desde 27/10/2026. Uma página com 8 campos virou três páginas curtas; nome, CPF e e-mail vêm da conta.*
 
-### 4–14. A fazer
+### 4. IAGRO — Cadastrar indústria de agrotóxicos no e-Saniagro ✅
+
+- [Notas do Antonio](mapeamento/04-industria-agrotoxicos.md)
+- [Diário da refatoração](04-industria-agrotoxicos/notas.md)
+
+*No X-Forms e X-Flows de DEV desde 27/10/2026. Corrigido: a procuração era obrigatória para todos; agora só para consultoria.*
+
+### 5–14. A fazer
 
 Ver a tabela em [Auditoria dos 14](../05-auditoria.md).
 

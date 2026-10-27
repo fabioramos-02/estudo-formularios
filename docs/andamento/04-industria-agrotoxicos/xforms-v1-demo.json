@@ -1,0 +1,151 @@
+{
+  "title": "Cadastrar indústria produtos agrotóxicos no e-saniagro",
+  "description": "Cadastrar indústria produtos agrotóxicos no e-saniagro",
+  "logoPosition": "right",
+  "pages": [
+    {
+      "name": "página1",
+      "title": "Requerimento para cadastro da indústria de produtos agrotóxicos no e-saniagro",
+      "elements": [
+        {
+          "type": "text",
+          "name": "representante_legal",
+          "title": "Representante legal",
+          "description": "Informe o nome do representante legal, se for o caso.",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "cnpj",
+          "title": "CNPJ",
+          "description": "Informe o CNPJ",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "razao_social",
+          "startWithNewLine": false,
+          "title": "Razão Social",
+          "description": "Informe a razão social da empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "contato",
+          "title": "Contato",
+          "description": "Informe o nome do contato da empresa",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "telefone_contato",
+          "startWithNewLine": false,
+          "title": "Telefone do Contato",
+          "description": "Informe o telefone do contato da empresa",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "cep",
+          "title": "CEP",
+          "description": "Informe o CEP da correspondência",
+          "isRequired": true,
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "99999-999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "endereco_correspondencia",
+          "startWithNewLine": false,
+          "title": "Endereço da correspondência",
+          "description": "Informe o endereço de correspondência",
+          "isRequired": true
+        },
+        {
+          "type": "dropdown",
+          "name": "estado",
+          "title": "Estado",
+          "description": "Informe a sigla do Estado da correspondência",
+          "isRequired": true,
+          "choices": [
+            "acre",
+            "alagoas",
+            "amapá",
+            "amazonas",
+            "bahia",
+            "ceará",
+            "distrito federal",
+            "espírito santo",
+            "goiás",
+            "maranhão",
+            "mato grosso",
+            "mato grosso do sul",
+            "minas gerais",
+            "pará",
+            "paraíba",
+            "paraná",
+            "pernambuco",
+            "piauí",
+            "rio de janeiro",
+            "rio grande do norte",
+            "rio grande do sul",
+            "rondônia",
+            "roraima",
+            "santa catarina",
+            "são paulo",
+            "sergipe",
+            "tocantins"
+          ],
+          "choicesMin": 1,
+          "choicesMax": 1
+        },
+        {
+          "type": "text",
+          "name": "cidade",
+          "title": "Cidade",
+          "description": "Informe a Cidade da correspondência",
+          "isRequired": true
+        },
+        {
+          "type": "text",
+          "name": "bairro",
+          "title": "Bairro",
+          "description": "Informe o Bairro",
+          "isRequired": true
+        },
+        {
+          "type": "file",
+          "name": "cnpj_anexo",
+          "title": "CNPJ",
+          "description": "Anexe a cópia do CNPJ da empresa*",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "contrato_social",
+          "title": "Contrato social",
+          "description": "Anexe o contrato social atualizado*",
+          "isRequired": true,
+          "waitForUpload": true,
+          "filePlaceholder": "Nenhum arquivo selecionado"
+        },
+        {
+          "type": "file",
+          "name": "procuracao_remetente",
+          "title": "Procuração do remetente",
+          "description": "Procuração específica do representante (se representada por empresa de consultoria ou serviços de registros)",
+          "isRequired": true,
+          "waitForUpload": true
+        }
+      ]
+    }
+  ]
+}
