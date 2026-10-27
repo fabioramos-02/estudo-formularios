@@ -1,0 +1,256 @@
+{
+  "title": "Pré-cadastro familiar para programas sociais (demonstração)",
+  "description": "Formulário de exemplo do X-Forms. Os dados da sua conta já vêm preenchidos, as dicas ficam no ícone ao lado de cada pergunta e a renda da família é calculada enquanto você preenche. Não é um cadastro oficial.",
+  "completedHtml": "<h3>Pré-cadastro enviado</h3><p>Recebemos os dados da sua família. A análise recalcula a renda per capita e define a prioridade do atendimento.</p>",
+  "pages": [
+    {
+      "name": "responsavel",
+      "title": "Responsável familiar",
+      "description": "Alguns campos já vêm preenchidos com os dados da sua conta. Confira antes de seguir.",
+      "elements": [
+        {
+          "type": "text",
+          "name": "nome_responsavel",
+          "title": "Nome completo",
+          "isRequired": true,
+          "tooltip": "Vem da sua conta do portal. Corrija aqui se estiver diferente do documento.",
+          "autocomplete": "name"
+        },
+        {
+          "type": "text",
+          "name": "cpf_responsavel",
+          "title": "CPF",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "regex",
+              "text": "Informe um CPF com 11 dígitos, com ou sem pontos e traço.",
+              "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d{2}$"
+            }
+          ],
+          "tooltip": "Preenchido a partir do seu cadastro. Serve só para identificar a família.",
+          "autocomplete": "cpf"
+        },
+        {
+          "type": "text",
+          "name": "email_responsavel",
+          "title": "E-mail",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "email",
+              "text": "Informe um e-mail válido, como nome@exemplo.com."
+            }
+          ],
+          "tooltip": "Para onde enviaremos o número do protocolo.",
+          "inputType": "email",
+          "autocomplete": "email"
+        },
+        {
+          "type": "text",
+          "name": "celular_responsavel",
+          "title": "Celular",
+          "tooltip": "Opcional. Digite o DDD e o número; a máscara completa o formato. Número incompleto não é enviado.",
+          "inputType": "tel",
+          "autocomplete": "celular",
+          "maskType": "pattern",
+          "maskSettings": {
+            "pattern": "(99) 99999-9999"
+          }
+        },
+        {
+          "type": "text",
+          "name": "municipio",
+          "title": "Município onde a família mora",
+          "isRequired": true,
+          "tooltip": "Um dos 79 municípios de Mato Grosso do Sul. O atendimento é feito pelo CRAS do município.",
+          "autocomplete": "cidade"
+        },
+        {
+          "type": "text",
+          "name": "renda_responsavel",
+          "title": "Sua renda mensal (R$)",
+          "defaultValue": 0,
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "numeric",
+              "text": "Informe um valor entre R$ 0 e R$ 100.000.",
+              "minValue": 0,
+              "maxValue": 100000
+            }
+          ],
+          "tooltip": "Some salário, trabalho informal, pensão e aposentadoria. Não inclua benefícios como o Bolsa Família.",
+          "inputType": "number",
+          "min": 0
+        }
+      ]
+    },
+    {
+      "name": "moradia",
+      "title": "Moradia",
+      "elements": [
+        {
+          "type": "radiogroup",
+          "name": "tipo_moradia",
+          "title": "A casa onde a família mora é",
+          "isRequired": true,
+          "tooltip": "Cedida é quando alguém empresta a casa sem cobrar aluguel.",
+          "choices": [
+            { "value": "propria", "text": "Própria" },
+            { "value": "alugada", "text": "Alugada" },
+            { "value": "cedida", "text": "Cedida" },
+            { "value": "outra", "text": "Outra situação" }
+          ]
+        },
+        {
+          "type": "text",
+          "name": "valor_aluguel",
+          "visibleIf": "{tipo_moradia} = 'alugada'",
+          "title": "Valor mensal do aluguel (R$)",
+          "requiredIf": "{tipo_moradia} = 'alugada'",
+          "validators": [
+            {
+              "type": "numeric",
+              "text": "Informe um valor maior que zero.",
+              "minValue": 1
+            }
+          ],
+          "tooltip": "Só o aluguel, sem água, luz e condomínio.",
+          "inputType": "number",
+          "min": 0
+        },
+        {
+          "type": "comment",
+          "name": "descricao_moradia",
+          "visibleIf": "{tipo_moradia} = 'outra'",
+          "title": "Conte qual é a situação da moradia",
+          "requiredIf": "{tipo_moradia} = 'outra'",
+          "tooltip": "Exemplos: ocupação, abrigo, casa de parentes em troca de cuidados.",
+          "maxLength": 300
+        },
+        {
+          "type": "boolean",
+          "name": "possui_pcd",
+          "title": "Alguém da família é pessoa com deficiência?",
+          "isRequired": true,
+          "tooltip": "Quando a resposta é sim, a composição familiar pede que você indique quem.",
+          "labelTrue": "Sim",
+          "labelFalse": "Não"
+        }
+      ]
+    },
+    {
+      "name": "familia",
+      "title": "Composição familiar",
+      "description": "Você, como responsável, já entra na conta. Cadastre as outras pessoas que moram com você.",
+      "elements": [
+        {
+          "type": "boolean",
+          "name": "mora_sozinho",
+          "title": "Você mora sozinho(a)?",
+          "isRequired": true,
+          "labelTrue": "Sim",
+          "labelFalse": "Não"
+        },
+        {
+          "type": "matrixdynamic",
+          "name": "membros",
+          "visibleIf": "{mora_sozinho} = false",
+          "title": "Pessoas que moram com você",
+          "requiredIf": "{mora_sozinho} = false",
+          "tooltip": "Inclua só quem mora na mesma casa e divide as despesas.",
+          "columns": [
+            { "name": "nome", "title": "Nome", "cellType": "text", "isRequired": true },
+            { "name": "idade", "title": "Idade (anos)", "cellType": "text", "isRequired": true, "inputType": "number", "min": 0, "max": 120 },
+            { "name": "parentesco", "title": "Parentesco", "isRequired": true },
+            { "name": "renda_mensal", "title": "Renda mensal (R$)", "cellType": "text", "totalType": "sum", "totalDisplayStyle": "currency", "totalCurrency": "BRL", "inputType": "number", "min": 0 },
+            { "name": "pcd", "title": "Pessoa com deficiência?", "cellType": "boolean", "visibleIf": "{possui_pcd} = true" }
+          ],
+          "choices": [
+            { "value": "conjuge", "text": "Cônjuge ou companheiro(a)" },
+            { "value": "filho", "text": "Filho(a) ou enteado(a)" },
+            { "value": "pai_mae", "text": "Pai ou mãe" },
+            { "value": "irmao", "text": "Irmão ou irmã" },
+            { "value": "neto", "text": "Neto(a)" },
+            { "value": "outro", "text": "Outro" }
+          ],
+          "rowCount": 1,
+          "maxRowCount": 10,
+          "addRowText": "Adicionar pessoa",
+          "removeRowText": "Remover"
+        },
+        {
+          "type": "expression",
+          "name": "qtd_pessoas",
+          "title": "Pessoas na família",
+          "tooltip": "Você mais as pessoas cadastradas acima.",
+          "expression": "countInArray({membros}, 'nome') + 1"
+        },
+        {
+          "type": "expression",
+          "name": "renda_total",
+          "title": "Renda total da família",
+          "expression": "sumInArray({membros}, 'renda_mensal') + {renda_responsavel}",
+          "displayStyle": "currency",
+          "currency": "BRL"
+        },
+        {
+          "type": "expression",
+          "name": "renda_per_capita",
+          "title": "Renda por pessoa",
+          "tooltip": "Renda total dividida pelo número de pessoas. A análise refaz o cálculo.",
+          "expression": "(sumInArray({membros}, 'renda_mensal') + {renda_responsavel}) / (countInArray({membros}, 'nome') + 1)",
+          "displayStyle": "currency",
+          "currency": "BRL"
+        },
+        {
+          "type": "html",
+          "name": "aviso_renda_acima",
+          "visibleIf": "{renda_per_capita} > {limite_renda_per_capita}",
+          "html": "<p><strong>Atenção:</strong> pela renda informada, a família fica acima do limite deste exemplo (R$ 759,00 por pessoa). Você pode enviar mesmo assim, a análise confirma a situação.</p>"
+        },
+        {
+          "type": "html",
+          "name": "aviso_prioridade",
+          "visibleIf": "{qtd_pcd} > 0 or {qtd_idosos} > 0",
+          "html": "<p>Famílias com pessoa idosa ou com deficiência têm prioridade na análise.</p>"
+        }
+      ]
+    },
+    {
+      "name": "confirmacao",
+      "title": "Confirmação",
+      "elements": [
+        {
+          "type": "comment",
+          "name": "observacoes",
+          "title": "Algo mais que a equipe precise saber?",
+          "tooltip": "Opcional. Não informe dados de saúde de outras pessoas sem necessidade.",
+          "maxLength": 500
+        },
+        {
+          "type": "boolean",
+          "name": "declaracao_veracidade",
+          "title": "Declaro que as informações são verdadeiras",
+          "isRequired": true,
+          "validators": [
+            {
+              "type": "expression",
+              "text": "Para enviar, confirme que as informações são verdadeiras.",
+              "expression": "{declaracao_veracidade} = true"
+            }
+          ],
+          "labelTrue": "Sim",
+          "labelFalse": "Não"
+        }
+      ]
+    }
+  ],
+  "calculatedValues": [
+    { "name": "qtd_pcd", "expression": "countInArray({membros}, 'nome', '{pcd} = true')" },
+    { "name": "qtd_idosos", "expression": "countInArray({membros}, 'nome', '{idade} >= 60')" },
+    { "name": "limite_renda_per_capita", "expression": "759" }
+  ],
+  "showQuestionNumbers": "off"
+}

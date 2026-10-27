@@ -38,6 +38,15 @@ Entrega: JSON X-Forms com `name` normalizado + diff markdown das renomeações.
 3. **Blocos repetidos** (mesmo dado para pessoas diferentes no mesmo form): sufixo `_gestor`, `_colaborador`, `_responsavel`. Nunca `_2` — se aparece número, é sinal de duplicação estrutural que o passo `regras-diagramacao` resolve.
 4. **Upload:** prefixo `arquivo_` (`arquivo_procuracao`, `arquivo_comprovante`).
 5. **Contrato Activepieces:** o fluxo lê `step_1['answers'][name]`. Rename só antes de gerar o fluxo. Se fluxo já existe, avisar antes de renomear.
+6. **`name` ≠ `autocomplete`:** `autocomplete` (`name`, `cpf`, `email`, `celular`, `cidade`) diz de
+   onde vem o pré-preenchimento da conta. Não muda o `name` canônico: `autocomplete: "cidade"` continua
+   `name: "municipio"`.
+7. **Colunas de `matrixdynamic`:** nome curto, sem sufixo de pessoa (`nome`, `idade`, `parentesco`). A
+   lista já diz de quem é. Chega como `answers.<lista>[i].<coluna>`. A lista leva nome no plural
+   (`membros`, `dependentes`).
+8. **Calculados** (`expression`, `calculatedValues`): `qtd_` para contagem (`qtd_pessoas`),
+   `aviso_` para `html` condicional (`aviso_renda_acima`). Calculado também chega no `answers`: o
+   fluxo recalcula, não confia nele.
 
 ## Entrada e saída
 

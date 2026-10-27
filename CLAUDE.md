@@ -33,6 +33,33 @@ Divergir de uma âncora exige justificativa explícita no texto.
 
 Este repo define **o padrão**, não especifica implementação.
 
+## Recursos do X-Forms (exemplo de out/2026)
+
+Formato: JSON SurveyJS. Exemplo completo em `.claude/referencia/xforms-precadastro-familiar.json`
+e o fluxo Activepieces que o recebe em `.claude/referencia/activepieces-precadastro-familiar.json`.
+
+| Recurso | JSON | Uso no padrão |
+|---|---|---|
+| Dica no ícone | `tooltip` | Informação **complementar** (por que pedimos, exemplo). O que é preciso para preencher vai em `description`, visível (B3, D1). |
+| Pré-preenchimento da conta | `autocomplete`: `name`, `cpf`, `email`, `celular`, `cidade` | Resolve C2 (dado que o governo já tem). `[HIPÓTESE]` a confirmar: lista completa de chaves e se `celular`/`cidade` vêm do cadastro. |
+| Obrigatório condicional | `requiredIf` junto com `visibleIf` | Campo que só aparece em um caso só é obrigatório nesse caso (C9). |
+| Validação | `validators`: `regex`, `email`, `numeric` (`minValue`/`maxValue`), `expression` | `text` é a mensagem de erro: diz como corrigir (D2). `expression` dá erro quando é falsa. |
+| Máscara | `maskType: "pattern"` + `maskSettings.pattern` | C5. Valor chega sem máscara. |
+| Lista de pessoas | `matrixdynamic` (`columns`, `rowCount`, `maxRowCount`, `addRowText`, `totalType`) | Substitui blocos copiados (`_2`, `_3`) para N pessoas. Chega como lista: `answers.membros[i].nome`. |
+| Cálculo na tela | `expression` (com `displayStyle: "currency"`), `calculatedValues`, `countInArray`, `sumInArray` | Mostra o resultado enquanto a pessoa preenche. O fluxo recalcula: o valor do formulário não é a fonte oficial. |
+| Aviso condicional | `html` + `visibleIf` | Avisa sem bloquear o envio. |
+| Sim/Não | `boolean` + `labelTrue`/`labelFalse` | Pergunta de duas respostas. |
+| Texto longo | `comment` + `maxLength` | A6. |
+| Tela final | `completedHtml` | B6: o que acontece depois do envio. |
+| Numeração | `showQuestionNumbers: "off"` | Sem número nas perguntas. |
+
+`[HIPÓTESE]` Comparar dois campos (`{a} > {b}`) funciona em `visibleIf` e `validators.expression`.
+Isso pode tirar "comparação entre dois campos" da lista de limites em `docs/pendencias.md`. Testar
+na plataforma antes.
+
+Webhook (Activepieces): `{ answers, formName, serviceSlug, submittedAt, userId }`. `userId` é o `sub`
+da conta do portal.
+
 ## Como escrever
 
 - Marcadores obrigatórios: `[FATO]`, `[INTERPRETAÇÃO]`, `[HIPÓTESE]`, `[RECOMENDAÇÃO]`,
@@ -61,6 +88,7 @@ Ao editar uma página do Antonio, preservar o que ele escreveu — complementar,
 estudo-formularios/
 ├── README.md, CLAUDE.md, mkdocs.yml, requirements.txt
 ├── .github/workflows/gh-pages.yml
+├── .claude/referencia/       JSON de exemplo do X-Forms atual + fluxo Activepieces
 ├── .claude/skills/           5 skills project-local (autoload no Claude Code)
 │   ├── nomenclatura-campos/
 │   ├── regras-diagramacao/
@@ -100,6 +128,11 @@ Cada `SKILL.md` tem seção **"Como o Antonio edita esta skill"**. Quando a pesq
 termo canônico novo, uma regra nova ou um limite (páginas, campos), editar o SKILL.md, refletir
 em `docs/03-nomenclatura.md` ou `docs/04-checklist.md` e commit. As skills viajam versionadas
 junto com o estudo — não estão no `~/.claude/skills/` global.
+
+Skills globais relacionadas (geram formulário e fluxo do zero, não seguem o estudo):
+`xforms-formulario`, `activepieces-fluxo`, `demanda`. Fonte da verdade: vault Obsidian em
+`conhecimento-obsidian/30-ia/skills/portal-servicos/`. Editou em `~/.claude/skills/`? Copiar de volta
+para o vault.
 
 ## Base legal aplicável
 

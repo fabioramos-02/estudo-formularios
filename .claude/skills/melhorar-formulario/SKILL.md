@@ -71,6 +71,13 @@ Entrega: numa pasta `docs/andamento/<slug>/`:
 - Gerar fluxo via `activepieces-fluxo`.
 ```
 
+## Recursos do X-Forms atual
+
+Antes de marcar algo como limitação, conferir a tabela "Recursos do X-Forms" no `CLAUDE.md` e o
+exemplo `.claude/referencia/xforms-precadastro-familiar.json`. Já existem: pré-preenchimento da conta
+(`autocomplete`), `tooltip`, `requiredIf`, `matrixdynamic`, `expression`, `calculatedValues`, `html`
+condicional e `completedHtml`. Usar na refatoração quando deixam o formulário mais fácil de preencher.
+
 ## Contrato com skills
 
 - Cada skill atômica **lê** um JSON e **escreve** um JSON (arquivo intermediário em `tmp/` ou stdout).

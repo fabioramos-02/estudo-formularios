@@ -1,0 +1,206 @@
+﻿{
+  "name": "X-Forms: pré-cadastro familiar (demonstração)",
+  "type": "SHARED",
+  "summary": "",
+  "description": "",
+  "tags": [],
+  "blogUrl": "",
+  "metadata": {
+    "externalId": "V0MGMn1MBGhIBE9XsAcPJ"
+  },
+  "author": "Fabio  Willian Lima Ramos",
+  "categories": [],
+  "pieces": [
+    "@activepieces/piece-webhook",
+    "@activepieces/piece-tables"
+  ],
+  "flows": [
+    {
+      "displayName": "X-Forms: pré-cadastro familiar (demonstração)",
+      "trigger": {
+        "name": "trigger",
+        "valid": true,
+        "displayName": "Recebe a resposta do X-Forms",
+        "nextAction": {
+          "name": "step_1",
+          "skip": false,
+          "type": "CODE",
+          "valid": true,
+          "settings": {
+            "input": {
+              "dados": "{{trigger.body}}"
+            },
+            "sampleData": {},
+            "sourceCode": {
+              "code": "export const code = async (inputs) => {\n  // Valores de exemplo: o limite real vem da regra do programa\n  const LIMITE_RENDA_PER_CAPITA = 759;\n  const IDADE_ADULTA = 18;\n  const IDADE_IDOSA = 60;\n  const PONTOS = { crianca: 2, idoso: 2, pcd: 3, aluguel: 2, semRenda: 3 };\n\n  const { answers = {}, formName, serviceSlug, submittedAt, userId } = inputs.dados ?? {};\n  const membros = Array.isArray(answers.membros) ? answers.membros : [];\n  const valor = (v) => Number(v) || 0;\n  const idade = (iso) => {\n    const nascimento = new Date(iso);\n    if (!iso || Number.isNaN(nascimento.getTime())) return null;\n    const hoje = new Date();\n    let anos = hoje.getFullYear() - nascimento.getFullYear();\n    const mes = hoje.getMonth() - nascimento.getMonth();\n    if (mes < 0 || (mes === 0 && hoje.getDate() < nascimento.getDate())) anos--;\n    return anos;\n  };\n\n  // O formulário pede a idade; data de nascimento fica como alternativa\n  const idadeDe = (m) => (m.idade !== undefined && m.idade !== '' ? Number(m.idade) : idade(m.data_nascimento));\n  const idades = membros.map(idadeDe).filter((a) => a !== null && !Number.isNaN(a));\n  const criancas = idades.filter((a) => a < IDADE_ADULTA).length;\n  const idosos = idades.filter((a) => a >= IDADE_IDOSA).length;\n  const pcd = membros.filter((m) => m.pcd === true).length;\n  const pagaAluguel = answers.tipo_moradia === 'alugada';\n\n  const pessoas = membros.length + 1;\n  const rendaTotal = valor(answers.renda_responsavel) + membros.reduce((t, m) => t + valor(m.renda_mensal), 0);\n  const rendaPerCapita = Math.round((rendaTotal / pessoas) * 100) / 100;\n  const elegivel = rendaPerCapita <= LIMITE_RENDA_PER_CAPITA;\n\n  const motivos = [];\n  let pontuacao = 0;\n  if (criancas) { pontuacao += criancas * PONTOS.crianca; motivos.push(criancas + ' criança(s) ou adolescente(s)'); }\n  if (idosos) { pontuacao += idosos * PONTOS.idoso; motivos.push(idosos + ' pessoa(s) idosa(s)'); }\n  if (pcd) { pontuacao += pcd * PONTOS.pcd; motivos.push(pcd + ' pessoa(s) com deficiência'); }\n  if (pagaAluguel) { pontuacao += PONTOS.aluguel; motivos.push('moradia alugada'); }\n  if (rendaTotal === 0) { pontuacao += PONTOS.semRenda; motivos.push('família sem renda'); }\n\n  const recebidoEm = submittedAt ?? new Date().toISOString();\n  const protocolo = 'MS-' + recebidoEm.slice(0, 10).replace(/-/g, '') + '-' + Math.random().toString(36).slice(2, 8).toUpperCase();\n\n  // O formulário também calcula a renda per capita; o fluxo recalcula porque é a fonte oficial\n  const divergenciaNoCalculo = answers.renda_per_capita !== undefined && Math.abs(valor(answers.renda_per_capita) - rendaPerCapita) > 0.01;\n\n  return {\n    protocolo,\n    formulario: formName,\n    servico: serviceSlug,\n    recebidoEm,\n    usuario: userId ?? 'não informado',\n    municipio: answers.municipio ?? 'não informado',\n    pessoas,\n    rendaTotal,\n    rendaPerCapita,\n    limiteRendaPerCapita: LIMITE_RENDA_PER_CAPITA,\n    situacao: elegivel ? 'Pré-elegível' : 'Acima do limite de renda',\n    pontuacao: elegivel ? pontuacao : 0,\n    motivos: motivos.length ? motivos.join(', ') : 'nenhum critério de prioridade',\n    divergenciaNoCalculo,\n  };\n};",
+              "packageJson": "{}"
+            },
+            "propertySettings": {
+              "dados": {
+                "type": "MANUAL"
+              }
+            },
+            "errorHandlingOptions": {
+              "retryOnFailure": {
+                "value": false
+              },
+              "continueOnFailure": {
+                "value": false
+              }
+            }
+          },
+          "nextAction": {
+            "name": "step_2",
+            "skip": false,
+            "type": "PIECE",
+            "valid": true,
+            "settings": {
+              "input": {
+                "values": {
+                  "values": [
+                    {
+                      "motivos": "{{step_1.motivos}}",
+                      "pessoas": "{{step_1.pessoas}}",
+                      "usuario": "{{step_1.usuario}}",
+                      "situacao": "{{step_1.situacao}}",
+                      "municipio": "{{step_1.municipio}}",
+                      "pontuacao": "{{step_1.pontuacao}}",
+                      "protocolo": "{{step_1.protocolo}}",
+                      "recebido_em": "{{step_1.recebidoEm}}",
+                      "renda_total": "{{step_1.rendaTotal}}",
+                      "renda_per_capita": "{{step_1.rendaPerCapita}}"
+                    }
+                  ]
+                },
+                "table_id": "precadastros_familiares_demo"
+              },
+              "pieceName": "@activepieces/piece-tables",
+              "actionName": "tables-create-records",
+              "sampleData": {},
+              "pieceVersion": "0.3.0",
+              "propertySettings": {
+                "values": {
+                  "type": "MANUAL",
+                  "schema": {
+                    "values": {
+                      "type": "ARRAY",
+                      "required": true,
+                      "properties": {
+                        "motivos": {
+                          "type": "SHORT_TEXT",
+                          "required": false,
+                          "description": "Text",
+                          "displayName": "Critérios de prioridade",
+                          "defaultValue": ""
+                        },
+                        "pessoas": {
+                          "type": "NUMBER",
+                          "required": false,
+                          "description": "Number",
+                          "displayName": "Pessoas na família"
+                        },
+                        "usuario": {
+                          "type": "SHORT_TEXT",
+                          "required": false,
+                          "description": "Text",
+                          "displayName": "Usuário (sub)",
+                          "defaultValue": ""
+                        },
+                        "situacao": {
+                          "type": "SHORT_TEXT",
+                          "required": false,
+                          "description": "Text",
+                          "displayName": "Situação",
+                          "defaultValue": ""
+                        },
+                        "municipio": {
+                          "type": "SHORT_TEXT",
+                          "required": false,
+                          "description": "Text",
+                          "displayName": "Município",
+                          "defaultValue": ""
+                        },
+                        "pontuacao": {
+                          "type": "NUMBER",
+                          "required": false,
+                          "description": "Number",
+                          "displayName": "Pontuação de prioridade"
+                        },
+                        "protocolo": {
+                          "type": "SHORT_TEXT",
+                          "required": false,
+                          "description": "Text",
+                          "displayName": "Protocolo",
+                          "defaultValue": ""
+                        },
+                        "recebido_em": {
+                          "type": "DATE_TIME",
+                          "required": false,
+                          "description": "Date",
+                          "displayName": "Recebido em"
+                        },
+                        "renda_total": {
+                          "type": "NUMBER",
+                          "required": false,
+                          "description": "Number",
+                          "displayName": "Renda total (R$)"
+                        },
+                        "renda_per_capita": {
+                          "type": "NUMBER",
+                          "required": false,
+                          "description": "Number",
+                          "displayName": "Renda per capita (R$)"
+                        }
+                      },
+                      "description": "Add one or more records to insert",
+                      "displayName": "Records"
+                    }
+                  }
+                },
+                "table_id": {
+                  "type": "MANUAL"
+                }
+              },
+              "errorHandlingOptions": {
+                "retryOnFailure": {
+                  "value": false
+                },
+                "continueOnFailure": {
+                  "value": false
+                }
+              }
+            },
+            "displayName": "Registra o pré-cadastro na tabela",
+            "lastUpdatedDate": "2026-10-23T20:18:43.439Z"
+          },
+          "displayName": "Calcula renda per capita e prioridade",
+          "lastUpdatedDate": "2026-10-23T20:05:36.053Z"
+        },
+        "lastUpdatedDate": "2026-10-23T20:05:36.081Z",
+        "type": "PIECE_TRIGGER",
+        "settings": {
+          "propertySettings": {
+            "authType": {
+              "type": "MANUAL"
+            },
+            "authFields": {
+              "type": "MANUAL",
+              "schema": {}
+            }
+          },
+          "pieceName": "@activepieces/piece-webhook",
+          "pieceVersion": "0.1.32",
+          "triggerName": "catch_webhook",
+          "input": {
+            "authType": "none",
+            "authFields": {}
+          }
+        }
+      },
+      "valid": true,
+      "schemaVersion": "21",
+      "notes": []
+    }
+  ],
+  "status": "PUBLISHED"
+}

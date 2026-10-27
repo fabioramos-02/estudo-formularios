@@ -50,6 +50,10 @@ Campos do mesmo assunto ficam juntos. Ordem canônica **dentro de uma página**:
 
 **Correção:** um bloco de cada perfil. Reordenação vira `visibleIf` na página + controle do fluxo condicional no X-Forms (se suportado) ou aviso `[FATO]` de limitação em `notas.md`.
 
+**Mesmo dado para N pessoas** (dependentes, membros da família, sócios): usar `matrixdynamic`, uma
+linha por pessoa (`addRowText: "Adicionar pessoa"`, `maxRowCount`). Nunca copiar o bloco com `_2`,
+`_3`. Exemplo em `.claude/referencia/xforms-precadastro-familiar.json` (`membros`).
+
 ### 6. Substituir reordenação dinâmica por `visibleIf`
 Se o X-Forms não suporta reordenar páginas por escolha, usar `visibleIf` para mostrar/esconder páginas — cidadão vê ordem lógica sem ver blocos vazios.
 
@@ -60,6 +64,22 @@ Exemplo:
 ```json
 {"type":"text","name":"setor","visibleIf":"{orgao} notempty"}
 ```
+
+Campo condicional obrigatório: `requiredIf` com a mesma condição do `visibleIf`. Nunca `isRequired`
+em campo que pode ficar escondido.
+
+```json
+{"type":"text","name":"valor_aluguel","visibleIf":"{tipo_moradia} = 'alugada'","requiredIf":"{tipo_moradia} = 'alugada'"}
+```
+
+### 8. Retorno na própria tela
+- Conta que a pessoa faria de cabeça (total, renda por pessoa): campo `expression` logo depois dos
+  dados que alimentam a conta. Valores auxiliares escondidos vão em `calculatedValues`.
+- Aviso que depende da resposta: `html` com `visibleIf`, na página onde a resposta foi dada. Avisa,
+  não bloqueia. Bloqueio é `validators`.
+- Pergunta de elegibilidade ou que bifurca o fluxo vem antes (regra 1).
+- Página de confirmação: `completedHtml` diz o que acontece depois do envio (B6).
+- `showQuestionNumbers: "off"`: numerar perguntas condicionais pula números.
 
 ## Entrada e saída
 

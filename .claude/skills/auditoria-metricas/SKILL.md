@@ -13,8 +13,12 @@ Entrega: bloco markdown com métricas do formulário. Não altera JSON.
 2. **Condicionais:** quantos `visibleIf` (bom sinal de fluxo cognitivo).
 3. **Obrigatoriedade:** obrigatórios vs opcionais.
 4. **Uploads:** contagem de campos `file`.
-5. **Herdáveis do gov.br:** flag para `cpf`, `nome_completo`, `email` (e variações com sufixo). Aponta que podem vir do login (Lei 14.129/2021 art. 5º I; LGPD art. 6º III — minimização).
-6. **Alertas de limite:**
+5. **Herdáveis do gov.br:** flag para `cpf`, `nome_completo`, `email` (e variações com sufixo). Aponta que podem vir do login (Lei 14.129/2021 art. 5º I; LGPD art. 6º III — minimização). Campo com `autocomplete` de pré-preenchimento (`name`, `cpf`, `email`, `celular`, `cidade`) já vem da conta: conta como **resolvido**, não como achado.
+6. **Recursos do X-Forms atual** (ver `CLAUDE.md` § Recursos do X-Forms):
+   - `html` e `expression` são exibição, não pergunta: ficam fora de "campos".
+   - Colunas de `matrixdynamic` contam à parte (`colunas_matriz`), uma vez, não por linha.
+   - Contar `tooltip`, `requiredIf` e `validators` com `text` (mensagem de erro própria).
+7. **Alertas de limite:**
    - Página com >8 campos → `[RECOMENDAÇÃO]` de dividir.
    - >7 páginas → `[RECOMENDAÇÃO]` de consolidar.
    - >40 campos totais → `[RECOMENDAÇÃO]` de rever necessidade.
@@ -25,19 +29,28 @@ Entrega: bloco markdown com métricas do formulário. Não altera JSON.
 ```python
 import json, sys, collections
 d = json.load(open(sys.argv[1], encoding='utf-8'))
+EXIBICAO = ('html', 'expression')  # mostram algo, não perguntam
+PREFILL = ('name', 'cpf', 'email', 'celular', 'cidade')  # autocomplete que vem da conta
 pages = d['pages']
-elems = [e for p in pages for e in p['elements']]
-tipos = collections.Counter(e['type'] for e in elems)
-obrig = sum(1 for e in elems if e.get('isRequired'))
-cond = sum(1 for e in elems if e.get('visibleIf'))
-herdaveis = [e['name'] for e in elems if e['name'].split('_')[0] in ('cpf','nome','email','telefone','rg')]
+todos = [e for p in pages for e in p.get('elements', [])]
+elems = [e for e in todos if e['type'] not in EXIBICAO]
+colunas = [c for e in elems if e['type'] == 'matrixdynamic' for c in e.get('columns', [])]
+tipos = collections.Counter(e['type'] for e in todos)
+obrig = sum(1 for e in elems if e.get('isRequired') or e.get('requiredIf'))
+cond = sum(1 for e in todos if e.get('visibleIf'))
+tooltips = sum(1 for e in elems if e.get('tooltip'))
+erros = sum(1 for e in elems for v in e.get('validators', []) if v.get('text'))
+herdaveis = [e['name'] for e in elems if e['name'].split('_')[0] in ('cpf','nome','email','telefone','celular','rg')]
+preenchidos = [e['name'] for e in elems if e.get('autocomplete') in PREFILL]
 dup = [e['name'] for e in elems if e['name'].endswith('2') or e['name'].endswith('_alternativo')]
-print(f"páginas={len(pages)} campos={len(elems)} obrig={obrig} cond={cond}")
+print(f"páginas={len(pages)} campos={len(elems)} colunas_matriz={len(colunas)} obrig={obrig} cond={cond}")
+print(f"tooltip={tooltips} msgs_erro={erros} calculados={len(d.get('calculatedValues', []))}")
 print("tipos:", dict(tipos))
-print("herdáveis:", herdaveis)
+print("herdáveis sem pré-preenchimento:", [n for n in herdaveis if n not in preenchidos])
+print("pré-preenchidos da conta:", preenchidos)
 print("duplicados:", dup)
 for p in pages:
-    n = len(p['elements'])
+    n = sum(1 for e in p.get('elements', []) if e['type'] not in EXIBICAO)
     tag = " ⚠ >8" if n > 8 else ""
     print(f"  {p.get('name')}: {n} campos{tag}")
 ```
@@ -55,6 +68,8 @@ for p in pages:
 | Condicionais (`visibleIf`) | 3 |
 | Tipos | text (39), dropdown (10), checkbox (1), imagepicker (1) |
 | Uploads | 0 |
+| Pré-preenchidos da conta (`autocomplete`) | 0 |
+| Com `tooltip` / com mensagem de erro própria | 0 / 0 |
 
 ### Campos por página
 | Página | Campos | Alerta |
