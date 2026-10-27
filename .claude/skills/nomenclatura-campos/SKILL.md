@@ -45,8 +45,8 @@ Entrega: JSON X-Forms com `name` normalizado + diff markdown das renomeações.
    lista já diz de quem é. Chega como `answers.<lista>[i].<coluna>`. A lista leva nome no plural
    (`membros`, `dependentes`).
 8. **Calculados** (`expression`, `calculatedValues`): `qtd_` para contagem (`qtd_pessoas`),
-   `aviso_` para `html` condicional (`aviso_renda_acima`). Calculado também chega no `answers`: o
-   fluxo recalcula, não confia nele.
+   `aviso_` para `html` condicional (`aviso_renda_acima`). A pergunta `expression` chega no
+   `answers` (o fluxo recalcula, não confia nela); `calculatedValues` não chegam.
 
 ## Entrada e saída
 

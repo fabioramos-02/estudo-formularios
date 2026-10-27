@@ -74,11 +74,16 @@ em campo que pode ficar escondido.
 
 ### 8. Retorno na própria tela
 - Conta que a pessoa faria de cabeça (total, renda por pessoa): campo `expression` logo depois dos
-  dados que alimentam a conta. Valores auxiliares escondidos vão em `calculatedValues`.
+  dados que alimentam a conta. Valores auxiliares escondidos vão em `calculatedValues` (não vão no
+  envio). Função com filtro (`countInArray(..., '{idade} >= 60')`) não funciona direto numa condição
+  no portal: calcular em `calculatedValues` e comparar o resultado.
 - Aviso que depende da resposta: `html` com `visibleIf`, na página onde a resposta foi dada. Avisa,
   não bloqueia. Bloqueio é `validators`.
 - Pergunta de elegibilidade ou que bifurca o fluxo vem antes (regra 1).
-- Página de confirmação: `completedHtml` diz o que acontece depois do envio (B6).
+- Página de confirmação (última): diz o que acontece depois do envio (B6) em `html` ou
+  `description`. **Não usar `completedHtml`**: o portal não mostra (manual, seção 9).
+- Quem não atende ao critério de elegibilidade: gatilho `complete` encerra cedo, com aviso `html`
+  antes explicando por quê.
 - `showQuestionNumbers: "off"`: numerar perguntas condicionais pula números.
 
 ## Entrada e saída

@@ -32,6 +32,7 @@ desistência no meio vira atendimento presencial, telefone e retrabalho para o �
 | **O padrão** — como diagramar, o que evitar, como nomear os campos | [1. Diagramação](01-diagramacao.md) · [2. Aprendizados](02-aprendizados.md) · [3. Nomenclatura](03-nomenclatura.md) |
 | **A régua** — checklist para avaliar qualquer formulário | [4. Checklist](04-checklist.md) |
 | **O diagnóstico** — 14 formulários do FormFlow avaliados | [5. Auditoria](05-auditoria.md) |
+| **A ferramenta** — manual do Designer do X-Forms (X-VIA) | [Manual do X-Forms](xforms-manual/README.md) |
 
 ## Quem faz o quê
 

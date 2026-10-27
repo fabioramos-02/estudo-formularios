@@ -115,8 +115,10 @@ Levantamento de 30/09/2026. Quando um item for resolvido, marque o quadrado e an
       `/melhorar-formulario`. Só o [01 WordPress](andamento/01-wordpress/notas.md) foi feito.
 - [ ] 🟡 Validar na plataforma a `[HIPÓTESE]` do WordPress: o mesmo `name` em páginas exclusivas por
       `visibleIf` grava certo?
-- [ ] 🟡 Levar à SGD os limites do X-Forms: comparação entre dois campos, data dinâmica
-      ("depois de hoje"), reordenação de páginas e salvar rascunho.
+- [ ] 🟡 Levar à SGD os limites do X-Forms: reordenação de páginas e salvar rascunho do cidadão.
+      Comparação entre dois campos e data dinâmica (`today()`) já existem — ver
+      [Lógica e expressões](xforms-manual/10-logica-e-expressoes.md). Novos limites vindos do manual:
+      a página final (`completedHtml`) não aparece no portal e não há função de arredondamento.
 
 ---
 

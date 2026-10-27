@@ -75,8 +75,11 @@ Entrega: numa pasta `docs/andamento/<slug>/`:
 
 Antes de marcar algo como limitação, conferir a tabela "Recursos do X-Forms" no `CLAUDE.md` e o
 exemplo `.claude/referencia/xforms-precadastro-familiar.json`. Já existem: pré-preenchimento da conta
-(`autocomplete`), `tooltip`, `requiredIf`, `matrixdynamic`, `expression`, `calculatedValues`, `html`
-condicional e `completedHtml`. Usar na refatoração quando deixam o formulário mais fácil de preencher.
+(`autocomplete`), `tooltip`, `requiredIf`, `resetValueIf`, `matrixdynamic`, `expression`,
+`calculatedValues`, `html` condicional, `minValueExpression: today()` e gatilhos. Usar na refatoração
+quando deixam o formulário mais fácil de preencher. Antes de salvar `saida.json`, conferir a seção
+"Portal ≠ SurveyJS" do `CLAUDE.md` (manual `docs/xforms-manual/10-logica-e-expressoes.md` §9): o
+portal não mostra `completedHtml` e não aplica `defaultValueExpression`.
 
 ## Contrato com skills
 

@@ -55,8 +55,8 @@ Texto = ação: "Enviar solicitação" > "OK" (checklist B5).
 ### Outros textos que o cidadão lê
 - `choices[].text`, `labelTrue`/`labelFalse` (Sim/Não), `addRowText` e `removeRowText` da lista de
   pessoas, `title` das colunas de `matrixdynamic`.
-- `html` (avisos na tela) e `completedHtml` (tela depois do envio). A tela final diz o que acontece
-  depois: protocolo, prazo, quem responde (B6).
+- `html` (avisos na tela). A última página diz o que acontece depois: protocolo, prazo, quem
+  responde (B6). `completedHtml` não aparece no portal: mover o texto para a última página.
 - `description` do formulário e das páginas.
 
 ## Fluxo

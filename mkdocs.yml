@@ -109,4 +109,16 @@ nav:
       - 1. WordPress — Refatoração: andamento/01-wordpress/notas.md
   - Fichas:
       - Como preencher: fichas/_template.md
+  - Manual do X-Forms:
+      - Visão geral: xforms-manual/README.md
+      - Acesso e Central: xforms-manual/01-acesso-e-central.md
+      - Lista de formulários: xforms-manual/02-lista-de-formularios.md
+      - Criar e editar: xforms-manual/03-criar-e-editar.md
+      - Tipos de pergunta: xforms-manual/04-tipos-de-pergunta.md
+      - Lógica e expressões: xforms-manual/10-logica-e-expressoes.md
+      - Alterações com aprovação: xforms-manual/05-aprovacao.md
+      - Divulgar e respostas: xforms-manual/06-divulgar-e-respostas.md
+      - Pesquisas NPS: xforms-manual/07-pesquisas-nps.md
+      - Problemas comuns: xforms-manual/08-problemas-comuns.md
+      - Manutenção do manual: xforms-manual/09-manutencao.md
   - Fontes: fontes.md

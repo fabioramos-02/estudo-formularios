@@ -23,6 +23,9 @@ Entrega: bloco markdown com métricas do formulário. Não altera JSON.
    - >7 páginas → `[RECOMENDAÇÃO]` de consolidar.
    - >40 campos totais → `[RECOMENDAÇÃO]` de rever necessidade.
    - Blocos duplicados por sufixo (`_2`, `_alternativo`) → `[FATO]` de duplicação estrutural.
+8. **Não funciona no portal** (manual, seção 9) → `[FATO]`: `completedHtml`, `defaultValueExpression`,
+   coluna de matriz com `inputType: "date"`, função `...InArray` com filtro dentro de `visibleIf`/
+   `requiredIf`/`enableIf`, `choices` dentro de coluna de matriz.
 
 ## Script de referência
 

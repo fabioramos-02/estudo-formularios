@@ -35,30 +35,54 @@ Este repo define **o padrão**, não especifica implementação.
 
 ## Recursos do X-Forms (exemplo de out/2026)
 
-Formato: JSON SurveyJS. Exemplo completo em `.claude/referencia/xforms-precadastro-familiar.json`
-e o fluxo Activepieces que o recebe em `.claude/referencia/activepieces-precadastro-familiar.json`.
+Formato: JSON SurveyJS 1.12.14. **Manual oficial do Designer (X-VIA) em `docs/xforms-manual/`** —
+fonte de verdade sobre o que a ferramenta faz; a lógica completa está em
+`docs/xforms-manual/10-logica-e-expressoes.md`. Exemplo completo em
+`.claude/referencia/xforms-precadastro-familiar.json` e o fluxo que o recebe em
+`.claude/referencia/activepieces-precadastro-familiar.json`.
 
 | Recurso | JSON | Uso no padrão |
 |---|---|---|
 | Dica no ícone | `tooltip` | Informação **complementar** (por que pedimos, exemplo). O que é preciso para preencher vai em `description`, visível (B3, D1). |
-| Pré-preenchimento da conta | `autocomplete`: `name`, `cpf`, `email`, `celular`, `cidade` | Resolve C2 (dado que o governo já tem). `[HIPÓTESE]` a confirmar: lista completa de chaves e se `celular`/`cidade` vêm do cadastro. |
+| Pré-preenchimento da conta | `autocomplete`: `name`, `cpf`, `email`, `celular`, `cidade` | Resolve C2 (dado que o governo já tem). `[HIPÓTESE]`: o manual não cita; confirmar com a X-VIA a lista de chaves. |
 | Obrigatório condicional | `requiredIf` junto com `visibleIf` | Campo que só aparece em um caso só é obrigatório nesse caso (C9). |
-| Validação | `validators`: `regex`, `email`, `numeric` (`minValue`/`maxValue`), `expression` | `text` é a mensagem de erro: diz como corrigir (D2). `expression` dá erro quando é falsa. |
+| Outras regras | `enableIf`, `resetValueIf`, `setValueIf` + `setValueExpression`, `choicesVisibleIf` | `resetValueIf` apaga resposta que deixou de valer (ex.: troca de PF para PJ). |
+| Data com limite | `minValueExpression` / `maxValueExpression` com `today()` | "Data não pode ser no passado" sem validador. |
+| Gatilhos (raiz) | `triggers`: `complete`, `skip`, `setvalue`, `copyvalue`, `runexpression` | `complete` encerra cedo quem não atende ao critério (elegibilidade primeiro). |
+| Validação | `validators`: `regex`, `email`, `numeric` (`minValue`/`maxValue`), `expression`, `text`, `answercount` | `text` é a mensagem de erro: diz como corrigir (D2). `expression` dá erro quando é falsa. |
 | Máscara | `maskType: "pattern"` + `maskSettings.pattern` | C5. Valor chega sem máscara. |
 | Lista de pessoas | `matrixdynamic` (`columns`, `rowCount`, `maxRowCount`, `addRowText`, `totalType`) | Substitui blocos copiados (`_2`, `_3`) para N pessoas. Chega como lista: `answers.membros[i].nome`. |
-| Cálculo na tela | `expression` (com `displayStyle: "currency"`), `calculatedValues`, `countInArray`, `sumInArray` | Mostra o resultado enquanto a pessoa preenche. O fluxo recalcula: o valor do formulário não é a fonte oficial. |
+| Cálculo na tela | `expression` (com `displayStyle: "currency"`), `calculatedValues`, `countInArray`, `sumInArray`, `iif`, `age`, `diffDays` | Mostra o resultado enquanto a pessoa preenche. Só a pergunta `expression` vai no envio; `calculatedValues` **não vão**. O fluxo recalcula: o valor do formulário não é a fonte oficial. |
 | Aviso condicional | `html` + `visibleIf` | Avisa sem bloquear o envio. |
 | Sim/Não | `boolean` + `labelTrue`/`labelFalse` | Pergunta de duas respostas. |
 | Texto longo | `comment` + `maxLength` | A6. |
-| Tela final | `completedHtml` | B6: o que acontece depois do envio. |
+| Tela final | `completedHtml` | **Não aparece no portal** (mostra só "Resposta enviada!"). O que acontece depois do envio (B6) vai na **última página**, em `html` ou `description`. |
 | Numeração | `showQuestionNumbers: "off"` | Sem número nas perguntas. |
 
-`[HIPÓTESE]` Comparar dois campos (`{a} > {b}`) funciona em `visibleIf` e `validators.expression`.
-Isso pode tirar "comparação entre dois campos" da lista de limites em `docs/pendencias.md`. Testar
-na plataforma antes.
+`[FATO]` Comparar dois campos (`{a} > {b}`) é aceito em condições e validadores (manual, seção 11:
+"Comparar com um limite que pode mudar"). Sai da lista de limites em `docs/pendencias.md`.
 
-Webhook (Activepieces): `{ answers, formName, serviceSlug, submittedAt, userId }`. `userId` é o `sub`
-da conta do portal.
+### Portal ≠ SurveyJS (manual, seção 9)
+
+A aba **Testar questionário** do Designer roda o SurveyJS; o cidadão vê outro renderizador. Conferir
+sempre em **Visualizar**. No portal:
+- Função com filtro (`countInArray({m}, 'nome', '{idade} >= 60')`) **não funciona dentro de condição**:
+  calcular num `calculatedValues` e comparar o resultado.
+- `defaultValueExpression` não é aplicado → usar `setValueIf` ou gatilho `runexpression`.
+- Data dentro de `matrixdynamic` vira texto livre → pedir idade ou data fora da matriz.
+- Coluna de escolha usa os `choices` **da matriz**, não da coluna.
+- `choicesVisibleIf` vale para a lista toda; não existe `%` nem `not`.
+- Célula de matriz chega como texto (`"12"`). Booleano começa em `false`.
+
+### Envio para o X-Flows
+
+Configurações do formulário → **Enviar as respostas também para uma API externa** (URL do webhook)
++ **Enviar a identificação de quem respondeu** (`userId`). Payload:
+`{ answers, formName, serviceSlug, submittedAt, userId }`; `answers` traz respostas visíveis, perguntas
+`expression` e totais de matriz (`"membros-total": {...}`). Perguntas ocultas ficam de fora.
+Link público: `/app/x-forms/forms/<slug>?serviceSlug=<serviço>` — `serviceSlug` obrigatório e precisa
+existir no catálogo do portal, senão "Erro ao enviar resposta!". Admin que cria formulário publica na
+hora; editor cria rascunho que vai para aprovação.
 
 ## Como escrever
 
@@ -89,6 +113,7 @@ estudo-formularios/
 ├── README.md, CLAUDE.md, mkdocs.yml, requirements.txt
 ├── .github/workflows/gh-pages.yml
 ├── .claude/referencia/       JSON de exemplo do X-Forms atual + fluxo Activepieces
+├── docs/xforms-manual/       Manual do Designer do X-Forms (X-VIA), na nav do MkDocs
 ├── .claude/skills/           5 skills project-local (autoload no Claude Code)
 │   ├── nomenclatura-campos/
 │   ├── regras-diagramacao/
